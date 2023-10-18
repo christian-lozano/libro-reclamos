@@ -138,6 +138,7 @@ ProductDetailProps) {
               precio: price,
               id: String(label),
               price: 0,
+              quantity: 0,
             })
           }
         >

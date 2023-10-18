@@ -320,8 +320,14 @@ export const NavTop = memo(function NavTop() {
   useEffect(() => {
     setDomLoaded(true)
   }, [])
-  const { items, removeItem, cartTotal, totalItems, updateItemQuantity } =
-    useCart()
+  const {
+    items,
+    removeItem,
+    cartTotal,
+    totalItems,
+    updateItemQuantity,
+    isEmpty,
+  } = useCart()
 
   const [openCart, setOpen] = useState(false)
 
@@ -346,7 +352,9 @@ export const NavTop = memo(function NavTop() {
     setAndler(true)
     setHoverMenu(dataHeader[index].infoNav)
   }
-
+  if (isEmpty) {
+    return <h1 className="text-center">your cart is empty</h1>
+  }
   return (
     <div>
       {/* /*---------------------------------*/
