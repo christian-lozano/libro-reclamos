@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useCart } from 'react-use-cart'
 
 import { Button } from '@/components/@ui/button/button'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
@@ -8,6 +9,13 @@ import {
 } from '@/layouts/search-page-layout'
 
 export default function Home(props: SearchPageLayoutProps) {
+  const { items, cartTotal } = useCart()
+
+  const [domLoaded, setDomLoaded] = useState(false)
+
+  useEffect(() => {
+    setDomLoaded(true)
+  }, [])
   return (
     <SearchPageLayout {...props}>
       <div className="  py-16">
@@ -97,38 +105,29 @@ export default function Home(props: SearchPageLayoutProps) {
               Revisa tus artículos. Y seleccione un método de envío adecuado.
             </p>
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-              <div className="flex flex-col rounded-lg bg-white sm:flex-row">
-                <img
-                  className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                  src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                  alt=""
-                />
-                <div className="flex w-full flex-col px-4 py-4">
-                  <span className="font-semibold">
-                    Nike Air Max Pro 8888 - Super Light
-                  </span>
-                  {/* <span className="float-right text-gray-400">
-                    42EU - 8.5US
+              {domLoaded &&
+                items.map((el, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col rounded-lg bg-white sm:flex-row"
+                  >
+                    <img
+                      className="m-2 h-24 w-28 rounded-md border object-cover object-center"
+                      src={el.img[0]}
+                      alt=""
+                    />
+                    <div className="flex w-full flex-col px-4 py-4">
+                      <span className="font-semibold">{el.title}</span>
+                      {/* <span className="float-right text-gray-400">
+                    42EU - 8.5U
                   </span> */}
-                  <p className="text-lg font-bold">S/138.99</p>
-                </div>
-              </div>
-              <div className="flex flex-col rounded-lg bg-white sm:flex-row">
-                <img
-                  className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                  src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                  alt=""
-                />
-                <div className="flex w-full flex-col px-4 py-4">
-                  <span className="font-semibold">
-                    Nike Air Max Pro 8888 - Super Light
-                  </span>
-                  {/* <span className="float-right text-gray-400">
-                    42EU - 8.5US
-                  </span> */}
-                  <p className="text-lg font-bold">S/138.99</p>
-                </div>
-              </div>
+                      <p className="text-lg font-bold">S/{el.price}</p>
+                      <p className="text-lg font-bold">
+                        Cantidad : ({el.quantity})
+                      </p>
+                    </div>
+                  </div>
+                ))}
             </div>
 
             <p className="mt-8 text-lg font-medium">Métodos de envío</p>
@@ -424,20 +423,30 @@ export default function Home(props: SearchPageLayoutProps) {
               </div>
 
               {/* <!-- Total --> */}
-              <div className="mt-6 border-t border-b py-2">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium text-gray-900">Subtotal</p>
-                  <p className="font-semibold text-gray-900">S/399.00</p>
+              {domLoaded && (
+                <div>
+                  <div className="mt-6 border-t border-b py-2">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-medium text-gray-900">
+                        Subtotal
+                      </p>
+                      <p className="font-semibold text-gray-900">
+                        S/{cartTotal}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-medium text-gray-900">Envío</p>
+                      <p className="font-semibold text-gray-900">S/8.00</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex items-center justify-between">
+                    <p className="text-sm font-medium text-gray-900">Total</p>
+                    <p className="text-2xl font-semibold text-gray-900">
+                      S/{cartTotal}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium text-gray-900">Envío</p>
-                  <p className="font-semibold text-gray-900">S/8.00</p>
-                </div>
-              </div>
-              <div className="mt-6 flex items-center justify-between">
-                <p className="text-sm font-medium text-gray-900">Total</p>
-                <p className="text-2xl font-semibold text-gray-900">S/408.00</p>
-              </div>
+              )}
             </div>
             <Button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
               Realizar pedido{' '}
