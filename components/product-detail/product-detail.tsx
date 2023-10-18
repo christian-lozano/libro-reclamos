@@ -172,7 +172,7 @@ ProductDetailProps) {
                 color: '#fff',
               },
             }}
-            position="top-center"
+            position="top-left"
             reverseOrder={true}
           />
         )}
