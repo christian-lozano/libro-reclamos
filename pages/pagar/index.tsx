@@ -67,7 +67,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2"
                     href="#"
                   >
-                    2
+                    1
                   </a>
                   <span className="font-semibold text-gray-900">Shipping</span>
                 </li>
