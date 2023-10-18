@@ -746,7 +746,7 @@ export const NavTop = memo(function NavTop() {
                           </Button>
                         </div>
                         <Button
-                          className="flex items-center px-2 py-1 pl-0 space-x-1 cursor-pointer"
+                          className="flex justify-end w-full items-center px-2 py-1 pl-0 space-x-1 cursor-pointer"
                           onClick={() => removeItem(el.id)}
                         >
                           <svg
@@ -775,7 +775,7 @@ export const NavTop = memo(function NavTop() {
                             ></rect>
                             <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                           </svg>
-                          <span>Remover</span>
+                          {/* <span>Remover</span> */}
                         </Button>
                       </div>
                     </div>
