@@ -161,7 +161,21 @@ ProductDetailProps) {
             classNameLabel="btn-bold"
           />
         </Button>
-        {domLoaded && <Toaster position="top-center" reverseOrder={false} />}
+        {domLoaded && (
+          <Toaster
+            toastOptions={{
+              className: '',
+              style: {
+                backgroundColor: '#000',
+                border: '1px solid #ae946d',
+                padding: '16px',
+                color: '#fff',
+              },
+            }}
+            position="top-center"
+            reverseOrder={true}
+          />
+        )}
         {popular && (
           <div className="mt-2">
             Hurry! This item is{' '}
