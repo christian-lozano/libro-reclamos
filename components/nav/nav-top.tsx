@@ -320,14 +320,8 @@ export const NavTop = memo(function NavTop() {
   useEffect(() => {
     setDomLoaded(true)
   }, [])
-  const {
-    items,
-    removeItem,
-    cartTotal,
-    totalItems,
-    updateItemQuantity,
-    isEmpty,
-  } = useCart()
+  const { items, removeItem, cartTotal, totalItems, updateItemQuantity } =
+    useCart()
 
   const [openCart, setOpen] = useState(false)
 
@@ -352,9 +346,13 @@ export const NavTop = memo(function NavTop() {
     setAndler(true)
     setHoverMenu(dataHeader[index].infoNav)
   }
-  if (isEmpty) {
-    return <h1 className="text-center">your cart is empty</h1>
-  }
+
+  // if (isEmpty) {
+  //   return (
+  //     <>{domLoaded && <h1 className="text-center">your cart is empty</h1>}</>
+  //   )
+  // }
+
   return (
     <div>
       {/* /*---------------------------------*/
@@ -732,7 +730,7 @@ export const NavTop = memo(function NavTop() {
                           <Button
                             className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
                             onClick={() =>
-                              updateItemQuantity(el.id, el.quantity - 1)
+                              updateItemQuantity(el.id, Number(el.quantity) - 1)
                             }
                           >
                             {' '}
@@ -745,9 +743,9 @@ export const NavTop = memo(function NavTop() {
                           />
                           <Button
                             className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                            // onClick={() =>
-                            //   updateItemQuantity(el.id, el.quantity + 1)
-                            // }
+                            onClick={() =>
+                              updateItemQuantity(el.id, Number(el.quantity) + 1)
+                            }
                           >
                             {' '}
                             +{' '}
