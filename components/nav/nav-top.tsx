@@ -316,12 +316,12 @@ const dataHeader = [
 export const NavTop = memo(function NavTop() {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
+  const { items, removeItem, cartTotal, totalItems, updateItemQuantity } =
+    useCart()
 
   useEffect(() => {
     setDomLoaded(true)
   }, [])
-  const { items, removeItem, cartTotal, totalItems, updateItemQuantity } =
-    useCart()
 
   const [openCart, setOpen] = useState(false)
 
