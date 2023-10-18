@@ -119,7 +119,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     <div className="flex w-full flex-col px-4 py-4">
                       <span className="font-semibold">{el.title}</span>
                       {/* <span className="float-right text-gray-400">
-                    42EU - 8.5U
+                    42EU__ 8.5U
                   </span> */}
                       <p className="text-lg font-bold">S/{el.price}</p>
                       <p className="text-lg font-bold">
