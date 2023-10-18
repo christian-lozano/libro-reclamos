@@ -1,6 +1,5 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
-import type { MouseEvent, MouseEventHandler } from 'react'
-import { useCallback } from 'react'
+import { useCart } from 'react-use-cart'
 
 import { ProductDescription } from '@/components/product/product-description'
 import { ProductLabel } from '@/components/product/product-label'
@@ -30,7 +29,7 @@ export type ProductDetailProps = {
   originalPrice?: number
   currency?: ProductPriceCurrency
   popular?: boolean
-  onCheckoutClick?: MouseEventHandler<HTMLButtonElement>
+  // onCheckoutClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 // export type ProductDetailRatingProps = Pick<ProductDetailProps, 'reviews'>
@@ -57,20 +56,21 @@ export function ProductDetail({
   originalPrice,
   currency,
   popular,
-  onCheckoutClick,
-}: ProductDetailProps) {
+}: // onCheckoutClick,
+ProductDetailProps) {
   // const [isFavorite, setIsFavorite] = useState(false)
   // const handleFavoriteClick = useCallback(
   //   () => setIsFavorite((favorite) => !favorite),
   //   []
   // )
+  const { addItem } = useCart()
 
-  const handleCheckoutClick = useCallback(
-    (e: MouseEvent<HTMLButtonElement>) => {
-      if (typeof onCheckoutClick === 'function') onCheckoutClick(e)
-    },
-    [onCheckoutClick]
-  )
+  // const handleCheckoutClick = useCallback(
+  //   (e: MouseEvent<HTMLButtonElement>) => {
+  //     if (typeof onCheckoutClick === 'function') onCheckoutClick(e)
+  //   },
+  //   [onCheckoutClick]
+  // )
 
   return (
     <div className="flex flex-col gap-6 mb-12 laptop:my-8 laptop:flex-row">
@@ -125,12 +125,21 @@ export function ProductDetail({
           />
         )}
         {sizes && sizes.length > 0 && <ProductSizes sizes={sizes} />}
+
         <Button
           type="primary"
           size="large"
           className="w-full mt-6"
-          disabled={!available}
-          onClick={handleCheckoutClick}
+          disabled={available}
+          onClick={() =>
+            addItem({
+              img: image,
+              title,
+              precio: price,
+              id: String(label),
+              price: 0,
+            })
+          }
         >
           <IconLabel
             icon={ShoppingBagIcon}
