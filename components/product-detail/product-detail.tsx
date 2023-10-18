@@ -168,7 +168,8 @@ ProductDetailProps) {
               style: {
                 backgroundColor: '#000',
                 border: '1px solid #ae946d',
-                padding: '16px',
+                fontSize: '10px',
+                padding: '9px',
                 color: '#fff',
               },
             }}
