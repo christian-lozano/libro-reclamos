@@ -21,7 +21,7 @@ export default function Home(props: SearchPageLayoutProps) {
       <div className="  py-16">
         {/* <div className="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
           <a href="#" className="text-2xl font-bold text-gray-800">
-            sneekpeeks
+            sneekpeek
           </a>
           <div className="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
             <div className="relative">
