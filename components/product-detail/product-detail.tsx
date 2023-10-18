@@ -1,4 +1,6 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
+import { useEffect, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 import { useCart } from 'react-use-cart'
 
 import { ProductDescription } from '@/components/product/product-description'
@@ -63,8 +65,26 @@ ProductDetailProps) {
   //   () => setIsFavorite((favorite) => !favorite),
   //   []
   // )
-  const { addItem } = useCart()
 
+  const { addItem } = useCart()
+  const [domLoaded, setDomLoaded] = useState(false)
+
+  useEffect(() => {
+    setDomLoaded(true)
+  }, [])
+  // const handleCheckoutClick = useCallback(
+  const onCheckoutClick = () => {
+    const notify = () => toast(`Agregaste ${title} al Carrito `)
+    notify()
+    addItem({
+      img: image,
+      title,
+      precio: price,
+      id: String(label),
+      price: Number(price),
+    })
+  }
+  //   [onCheckoutClick]
   // const handleCheckoutClick = useCallback(
   //   (e: MouseEvent<HTMLButtonElement>) => {
   //     if (typeof onCheckoutClick === 'function') onCheckoutClick(e)
@@ -131,15 +151,7 @@ ProductDetailProps) {
           size="large"
           className="w-full mt-6"
           disabled={available}
-          onClick={() =>
-            addItem({
-              img: image,
-              title,
-              precio: price,
-              id: String(label),
-              price: Number(price),
-            })
-          }
+          onClick={() => onCheckoutClick()}
         >
           <IconLabel
             icon={ShoppingBagIcon}
@@ -149,6 +161,7 @@ ProductDetailProps) {
             classNameLabel="btn-bold"
           />
         </Button>
+        {domLoaded && <Toaster position="top-center" reverseOrder={false} />}
         {popular && (
           <div className="mt-2">
             Hurry! This item is{' '}
