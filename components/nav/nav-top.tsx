@@ -347,12 +347,6 @@ export const NavTop = memo(function NavTop() {
     setHoverMenu(dataHeader[index].infoNav)
   }
 
-  // if (isEmpty) {
-  //   return (
-  //     <>{domLoaded && <h1 className="text-center">your cart is empty</h1>}</>
-  //   )
-  // }
-
   return (
     <div>
       {/* /*---------------------------------*/
