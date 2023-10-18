@@ -693,7 +693,10 @@ export const NavTop = memo(function NavTop() {
           <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(100vh-345px)]">
             {domLoaded &&
               items.map((el) => (
-                <li className="flex flex-col py-6 sm:flex-row sm:justify-between items-center">
+                <li
+                  key={el.id}
+                  className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
+                >
                   <div className="flex w-full space-x-2 sm:space-x-4 items-center">
                     <img
                       className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
