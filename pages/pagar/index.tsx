@@ -106,7 +106,7 @@ export default function Home(props: SearchPageLayoutProps) {
             </p>
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
               {domLoaded &&
-                items.map((el, i) => (
+                items.map((el) => (
                   <li
                     key={el.id}
                     className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
