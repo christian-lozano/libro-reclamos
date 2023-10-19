@@ -96,13 +96,13 @@ ProductDetailProps) {
 
   return (
     <div className="flex flex-col gap-6 mb-12 laptop:my-8 laptop:flex-row">
-      <div className="laptop:w-8/12">
+      <div className="laptop:w-8/12 ">
         <div className="flex flex-col items-center laptop:min-h-[500px]">
           {image && (
             <ProductDetails
               src={image}
               alt={title}
-              className="w-5/5 laptop:w-2/5"
+              className="w-7/8 laptop:w-2/4"
             />
           )}
         </div>

@@ -18,24 +18,23 @@ export type ProductPageProps = SearchPageLayoutProps & {
 export default function Product({ objectID, ...props }: ProductPageProps) {
   return (
     <SearchPageLayout {...props}>
-      <Container>
+      <Container className="mt-12 xl:mt-20">
         <Configure filters={`objectID:${objectID?.toUpperCase()}`} />
-        <Configure
-          hitsPerPage={6}
-          // We cannot retrieve the user token at build time, so we disable perso
-          // feature to avoid an additional call to retrieve Algolia results at load time
-          enablePersonalization={false}
-          userToken={undefined}
-        />
         <Hits hitComponent={ProductDetailHit} />
-        <ProductsShowcase
-          title="Productos Relacionados"
-          indexId="spring-summer-2021"
-          ruleContexts={['home-spring-summer-2021']}
-          className="laptop:bg-gray-50"
-          hitComponent={ProductCardHitShowcase}
-        />
       </Container>
+      <Configure
+        hitsPerPage={6}
+        // We cannot retrieve the user token at build time, so we disable perso
+        // feature to avoid an additional call to retrieve Algolia results at load time
+        enablePersonalization={false}
+        userToken={undefined}
+      />
+      <ProductsShowcase
+        title="Recomendado Para ti"
+        indexId="recommended"
+        query="ninos"
+        hitComponent={ProductCardHitShowcase}
+      />
     </SearchPageLayout>
   )
 }
