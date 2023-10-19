@@ -826,7 +826,7 @@ export const NavTop = memo(function NavTop() {
                 className="flex w-full justify-center"
                 onClick={() => setOpen(!openCart)}
               >
-                <span className="mt-6 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                <span className="mt-6 w-full uppercase rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
                   COMPRAR AHORA
                 </span>
               </Link>
@@ -835,7 +835,7 @@ export const NavTop = memo(function NavTop() {
                 className="flex w-full justify-center"
                 onClick={() => setOpen(!openCart)}
               >
-                <span className="mt-2 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                <span className="mt-2 w-full uppercase rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
                   Pagar
                 </span>
               </Link>
