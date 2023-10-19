@@ -29,10 +29,12 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
         enablePersonalization={false}
         userToken={undefined}
       />
+
       <ProductsShowcase
         title="Recomendado Para ti"
-        indexId="recommended"
-        query="ninos"
+        indexId="spring-summer-2021"
+        ruleContexts={['home-spring-summer-2021']}
+        className="laptop:bg-gray-50"
         hitComponent={ProductCardHitShowcase}
       />
     </SearchPageLayout>

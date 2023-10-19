@@ -107,26 +107,41 @@ export default function Home(props: SearchPageLayoutProps) {
             <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
               {domLoaded &&
                 items.map((el, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col rounded-lg bg-white sm:flex-row"
+                  <li
+                    key={el.id}
+                    className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
                   >
-                    <img
-                      className="m-2 h-24 w-28 rounded-md border object-cover object-center"
-                      src={el.img[0]}
-                      alt=""
-                    />
-                    <div className="flex w-full flex-col px-4 py-4">
-                      <span className="font-semibold">{el.title}</span>
-                      {/* <span className="float-right text-gray-400">
-                    42EU__ 8.5U
-                  </span> */}
-                      <p className="text-lg font-bold">S/{el.price}</p>
-                      <p className="text-lg font-bold">
-                        Cantidad : ({el.quantity})
-                      </p>
+                    <div className="flex w-full space-x-2 sm:space-x-4 items-center">
+                      <img
+                        className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+                        src={el.img[0]}
+                        alt="Polaroid camera"
+                      />
+                      <div className="flex justify-center items-center w-full h-full">
+                        <div className="flex flex-col justify-between w-full">
+                          <div className="flex justify-between w-full pb-2 space-x-2">
+                            <div className="space-y-1">
+                              <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
+                                {el.title}
+                              </h2>
+                              {/* <p className="text-sm dark:text-gray-400">
+                              Classic
+                            </p> */}
+                            </div>
+                            <div className="text-right">
+                              <p className="xl:text-lg text-base font-semibold">
+                                S/{el.price}
+                              </p>
+                              <p className="text-sm line-through dark:text-gray-600">
+                                S/75.50
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex text-sm divide-x"></div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </li>
                 ))}
             </div>
 

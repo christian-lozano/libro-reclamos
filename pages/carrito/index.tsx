@@ -24,86 +24,107 @@ export default function Home(props: SearchPageLayoutProps) {
           <div className="rounded-lg md:w-2/3">
             {domLoaded &&
               items.map((el) => (
-                <div
-                  key={el.title}
-                  className="justify-between mb-6 rounded-lg bg-white  shadow-md flex sm:justify-start"
+                <li
+                  key={el.id}
+                  className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
                 >
-                  <img
-                    src={el.img[0]}
-                    alt="product-image"
-                    className="rounded-lg sm:w-40 w-40  xl:w-52 2xl:w-64"
-                  />
-                  <div className="2xl:ml-10 sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                    <div className="mt-5 xl:py-10 py-0  sm:mt-0 flex flex-col 2xl:justify-around 2xl:h-full">
-                      <h2 className="text-lg 2xl:text-xl font-bold text-gray-900">
-                        {el.title}
-                      </h2>
-                      <div className="flex flex-col 2xl:justify-evenly 2xl:h-24">
-                        {/* <label className="text-[#777] 2xl:text-base">
-                      Color:
-                      <span className="text-black ml-2 text-sm 2xl:text-base">
-                        Rosa
-                      </span>
-                    </label>
-                    <label className="text-[#777] 2xl:text-base">
-                      Talla:
-                      <span className="text-black ml-2 text-sm 2xl:text-base">42</span>
-                    </label> */}
-                      </div>
-                    </div>
-                    <div className="mt-4 flex xl:p-6 md:py-6 justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
-                      <div className="flex items-center border-gray-100">
-                        <Button
-                          className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                          onClick={() =>
-                            updateItemQuantity(el.id, Number(el.quantity) - 1)
-                          }
-                        >
-                          {' '}
-                          -{' '}
-                        </Button>
-                        <input
-                          className="h-8 w-8 border bg-white text-center text-xs outline-none"
-                          type="number"
-                          value={el.quantity}
-                        />
-                        <Button
-                          className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                          onClick={() =>
-                            updateItemQuantity(el.id, Number(el.quantity) + 1)
-                          }
-                        >
-                          {' '}
-                          +{' '}
-                        </Button>
-                      </div>
-                      <div className="flex flex-col items-center space-x-4">
-                        <p className="text-sm 2xl:text-base font-bold">
-                          S/{el.itemTotal}
-                        </p>
-
-                        <p className="text-sm 2xl:text-base font-bold">
-                          Precio Unidad S/{el.price}
-                        </p>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
-                          onClick={() => removeItem(el.id)}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
+                  <div className="flex w-full space-x-2 sm:space-x-4 items-center">
+                    <img
+                      className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+                      src={el.img[0]}
+                      alt="Polaroid camera"
+                    />
+                    <div className="flex justify-center items-center w-full h-full">
+                      <div className="flex flex-col justify-between w-full">
+                        <div className="flex justify-between w-full pb-2 space-x-2">
+                          <div className="space-y-1">
+                            <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
+                              {el.title}
+                            </h2>
+                            {/* <p className="text-sm dark:text-gray-400">
+                            Classic
+                          </p> */}
+                          </div>
+                          <div className="text-right">
+                            <p className="xl:text-lg text-base font-semibold">
+                              S/{el.price}
+                            </p>
+                            <p className="text-sm line-through dark:text-gray-600">
+                              S/75.50
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex text-sm divide-x">
+                          <div className="flex items-center border-gray-100">
+                            <Button
+                              className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                              onClick={() =>
+                                updateItemQuantity(
+                                  el.id,
+                                  Number(el.quantity) - 1
+                                )
+                              }
+                            >
+                              {' '}
+                              -{' '}
+                            </Button>
+                            <input
+                              className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
+                              type="number"
+                              value={el.quantity}
+                            />
+                            <Button
+                              className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                              onClick={() =>
+                                updateItemQuantity(
+                                  el.id,
+                                  Number(el.quantity) + 1
+                                )
+                              }
+                            >
+                              {' '}
+                              +{' '}
+                            </Button>
+                          </div>
+                          <div className=" flex justify-end w-full items-center ">
+                            <Button
+                              className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
+                              onClick={() => removeItem(el.id)}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                                className="w-4 h-4 fill-current ml-3"
+                              >
+                                <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="168"
+                                  y="216"
+                                ></rect>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="240"
+                                  y="216"
+                                ></rect>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="312"
+                                  y="216"
+                                ></rect>
+                                <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
+                              </svg>
+                              {/* <span>Remover</span> */}
+                            </Button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </li>
               ))}
             {/* pruductos  carrito*/}
           </div>
