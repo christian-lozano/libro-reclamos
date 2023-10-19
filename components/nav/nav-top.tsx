@@ -831,7 +831,7 @@ export const NavTop = memo(function NavTop() {
                 </span>
               </Link>
               <Link
-                href={'/Pagar'}
+                href={'/pagar'}
                 className="flex w-full justify-center"
                 onClick={() => setOpen(!openCart)}
               >
