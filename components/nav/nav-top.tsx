@@ -708,15 +708,15 @@ export const NavTop = memo(function NavTop() {
                       <div className="flex flex-col justify-between w-full">
                         <div className="flex justify-between w-full pb-2 space-x-2">
                           <div className="space-y-1">
-                            <h2 className="text-lg font-bold  sm:pr-8">
+                            <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
                               {el.title}
                             </h2>
-                            <p className="text-sm dark:text-gray-400">
+                            {/* <p className="text-sm dark:text-gray-400">
                               Classic
-                            </p>
+                            </p> */}
                           </div>
                           <div className="text-right">
-                            <p className="text-lg font-semibold">
+                            <p className="xl:text-lg text-base font-semibold">
                               S/{el.price}
                             </p>
                             <p className="text-sm line-through dark:text-gray-600">
@@ -739,7 +739,7 @@ export const NavTop = memo(function NavTop() {
                               -{' '}
                             </Button>
                             <input
-                              className="h-8 w-8 border bg-white text-center text-xs outline-none"
+                              className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
                               type="number"
                               value={el.quantity}
                             />
@@ -827,16 +827,16 @@ export const NavTop = memo(function NavTop() {
                 onClick={() => setOpen(!openCart)}
               >
                 <span className="mt-6 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
-                  Ver Carrito
+                  COMPRAR AHORA
                 </span>
               </Link>
               <Link
-                href={'/carrito'}
+                href={'/Pagar'}
                 className="flex w-full justify-center"
                 onClick={() => setOpen(!openCart)}
               >
-                <span className="mt-3 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
-                  Comprar
+                <span className="mt- w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                  Pagar
                 </span>
               </Link>
             </div>
