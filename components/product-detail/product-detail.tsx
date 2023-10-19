@@ -18,6 +18,7 @@ import { IconLabel } from '@ui/icon-label/icon-label'
 import { ProductDetails } from '../product/product-detail'
 
 export type ProductDetailProps = {
+  id?: string
   image?: string[]
   label?: string
   title?: string
@@ -45,6 +46,7 @@ export type ProductDetailProps = {
 // }
 
 export function ProductDetail({
+  id,
   image,
   label,
   title,
@@ -80,7 +82,7 @@ ProductDetailProps) {
       img: image,
       title,
       precio: price,
-      id: String(label),
+      id: String(id),
       price: Number(price),
     })
   }
