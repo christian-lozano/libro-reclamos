@@ -704,80 +704,92 @@ export const NavTop = memo(function NavTop() {
                       src={el.img[0]}
                       alt="Polaroid camera"
                     />
-                    <div className="flex flex-col justify-between w-full pb-4">
-                      <div className="flex justify-between w-full pb-2 space-x-2">
-                        <div className="space-y-1">
-                          <h3 className="text-lg font-bold  sm:pr-8">
-                            {el.title}
-                          </h3>
-                          <p className="text-sm dark:text-gray-400">Classic</p>
+                    <div className="flex justify-center items-center h-full">
+                      <div className="flex flex-col justify-between w-full">
+                        <div className="flex justify-between w-full pb-2 space-x-2">
+                          <div className="space-y-1">
+                            <h2 className="text-lg font-bold  sm:pr-8">
+                              {el.title}
+                            </h2>
+                            <p className="text-sm dark:text-gray-400">
+                              Classic
+                            </p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-lg font-semibold">
+                              S/{el.price}
+                            </p>
+                            <p className="text-sm line-through dark:text-gray-600">
+                              S/75.50
+                            </p>
+                          </div>
                         </div>
-                        <div className="text-right">
-                          <p className="text-lg font-semibold">S/{el.price}</p>
-                          <p className="text-sm line-through dark:text-gray-600">
-                            S/75.50
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex text-sm divide-x">
-                        <div className="flex items-center border-gray-100">
-                          <Button
-                            className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                            onClick={() =>
-                              updateItemQuantity(el.id, Number(el.quantity) - 1)
-                            }
-                          >
-                            {' '}
-                            -{' '}
-                          </Button>
-                          <input
-                            className="h-8 w-8 border bg-white text-center text-xs outline-none"
-                            type="number"
-                            value={el.quantity}
-                          />
-                          <Button
-                            className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                            onClick={() =>
-                              updateItemQuantity(el.id, Number(el.quantity) + 1)
-                            }
-                          >
-                            {' '}
-                            +{' '}
-                          </Button>
-                        </div>
-                        <div className=" flex justify-end w-full items-center ">
-                          <Button
-                            className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
-                            onClick={() => removeItem(el.id)}
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                              className="w-4 h-4 fill-current ml-3"
+                        <div className="flex text-sm divide-x">
+                          <div className="flex items-center border-gray-100">
+                            <Button
+                              className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                              onClick={() =>
+                                updateItemQuantity(
+                                  el.id,
+                                  Number(el.quantity) - 1
+                                )
+                              }
                             >
-                              <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
-                              <rect
-                                width="32"
-                                height="200"
-                                x="168"
-                                y="216"
-                              ></rect>
-                              <rect
-                                width="32"
-                                height="200"
-                                x="240"
-                                y="216"
-                              ></rect>
-                              <rect
-                                width="32"
-                                height="200"
-                                x="312"
-                                y="216"
-                              ></rect>
-                              <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
-                            </svg>
-                            {/* <span>Remover</span> */}
-                          </Button>
+                              {' '}
+                              -{' '}
+                            </Button>
+                            <input
+                              className="h-8 w-8 border bg-white text-center text-xs outline-none"
+                              type="number"
+                              value={el.quantity}
+                            />
+                            <Button
+                              className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
+                              onClick={() =>
+                                updateItemQuantity(
+                                  el.id,
+                                  Number(el.quantity) + 1
+                                )
+                              }
+                            >
+                              {' '}
+                              +{' '}
+                            </Button>
+                          </div>
+                          <div className=" flex justify-end w-full items-center ">
+                            <Button
+                              className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
+                              onClick={() => removeItem(el.id)}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                                className="w-4 h-4 fill-current ml-3"
+                              >
+                                <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="168"
+                                  y="216"
+                                ></rect>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="240"
+                                  y="216"
+                                ></rect>
+                                <rect
+                                  width="32"
+                                  height="200"
+                                  x="312"
+                                  y="216"
+                                ></rect>
+                                <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
+                              </svg>
+                              {/* <span>Remover</span> */}
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -815,7 +827,16 @@ export const NavTop = memo(function NavTop() {
                 onClick={() => setOpen(!openCart)}
               >
                 <span className="mt-6 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
-                  COMPRAR AHORA
+                  Ver Carrito
+                </span>
+              </Link>
+              <Link
+                href={'/carrito'}
+                className="flex w-full justify-center"
+                onClick={() => setOpen(!openCart)}
+              >
+                <span className="mt-3 w-full rounded-md text-center bg-black py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                  Comprar
                 </span>
               </Link>
             </div>
