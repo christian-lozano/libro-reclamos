@@ -124,9 +124,11 @@ export default function Home(props: SearchPageLayoutProps) {
                               <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
                                 {el.title}
                               </h2>
-                              {/* <p className="text-sm dark:text-gray-400">
-                              Classic
-                            </p> */}
+                              <p className="text-sm dark:text-gray-400">
+                                <p className="text-sm font-bold">
+                                  Cantidad : ({el.quantity})
+                                </p>
+                              </p>
                             </div>
                             <div className="text-right">
                               <p className="xl:text-lg text-base font-semibold">
