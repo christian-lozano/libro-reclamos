@@ -704,7 +704,7 @@ export const NavTop = memo(function NavTop() {
                       src={el.img[0]}
                       alt="Polaroid camera"
                     />
-                    <div className="flex justify-center items-center h-full">
+                    <div className="flex justify-center items-center w-full h-full">
                       <div className="flex flex-col justify-between w-full">
                         <div className="flex justify-between w-full pb-2 space-x-2">
                           <div className="space-y-1">
