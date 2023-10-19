@@ -26,7 +26,7 @@ export default function Home(props: SearchPageLayoutProps) {
               items.map((el) => (
                 <li
                   key={el.id}
-                  className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
+                  className="flex flex-col py-6 px-5 sm:flex-row sm:justify-between items-center"
                 >
                   <div className="flex w-full space-x-2 sm:space-x-4 items-center">
                     <img
