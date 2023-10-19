@@ -29,7 +29,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
         />
         <Hits hitComponent={ProductDetailHit} />
         <ProductsShowcase
-          title="Lo Nuevo en Zapatillas"
+          title="Productos Relacionados"
           indexId="spring-summer-2021"
           ruleContexts={['home-spring-summer-2021']}
           className="laptop:bg-gray-50"
