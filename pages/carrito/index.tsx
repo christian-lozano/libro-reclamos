@@ -18,7 +18,7 @@ export default function Home(props: SearchPageLayoutProps) {
   const { items, removeItem, cartTotal, updateItemQuantity } = useCart()
   return (
     <SearchPageLayout {...props}>
-      <div className="  py-16">
+      <div className="py-16">
         <h1 className="mb-10 text-center text-2xl font-bold">CARRITO</h1>
         <div className="mx-auto max-w-5xl 2xl:max-w-7xl justify-center px-1 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">

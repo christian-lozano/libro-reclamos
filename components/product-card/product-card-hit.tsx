@@ -48,7 +48,7 @@ export function ProductCardHitComponent({
     product.price = hit.price.discounted_value
 
     product.tags?.push({
-      label: `Descuento ${hit.price.discount_level}%`,
+      label: `${hit.price.discount_level}%`,
       theme: 'on-sale',
     } as ProductTagType)
   }
@@ -79,8 +79,8 @@ export function ProductCardHitComponent({
   // Tags
   if (product.reviews && product.reviews >= 90) {
     product.tags?.push({
-      label: 'popular',
-      theme: 'popular',
+      label: '',
+      theme: 'eco',
     } as ProductTagType)
   }
 
