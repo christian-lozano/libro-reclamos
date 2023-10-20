@@ -7,7 +7,7 @@ import classNames from "classnames";
 import SidebarContent from "./sidebar-content/sidebar-content.component";
 
 export default function MultilevelSidebar (props) {
-  const { open, wrapperClassName, headerClassName, header, options } = props;
+  const { open, wrapperClassName, headerClassName, header, options,onToggle} = props;
   const [activeTab, setActiveTab] = useState([]);
 
   const handleBackdropClick = () => {
@@ -23,6 +23,7 @@ export default function MultilevelSidebar (props) {
   };
 
   const handleTabClick = (tabData) => {
+
     if (!!tabData.disabled) {
       return;
     }
@@ -58,6 +59,7 @@ export default function MultilevelSidebar (props) {
   const renderSecondChildren = (parent, list) => {
     return (
       <SidebarContent
+      
         {...props}
         sidebarProps={{
           className: classNames("sidebar-main second", {
@@ -68,7 +70,7 @@ export default function MultilevelSidebar (props) {
         }}
         headerContent={
           <Fragment>
-            <div className="first-back-btn" onClick={() => handleBackClick()}>
+            <div className="first-back-btn " onClick={() => handleBackClick()}>
               <AngleLeft />
               <span>{parent.title}</span>
             </div>
@@ -92,6 +94,7 @@ export default function MultilevelSidebar (props) {
 
     return (
       <SidebarContent
+         onToggle={onToggle}
         {...props}
         sidebarProps={{
           className: classNames("sidebar-main second", {

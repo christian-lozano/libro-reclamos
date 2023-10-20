@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import classNames from "classnames";
+import Link from "next/link";
+import { Button } from "@/components/@ui/button/button";
 
 const SidebarContent = (props) => {
   const {
@@ -7,11 +9,13 @@ const SidebarContent = (props) => {
     headerContent,
     options,
     children,
-    handleTabClick
+    handleTabClick,
+    onToggle
   } = props;
 
   return (
     <div {...sidebarProps}>
+
       <div className="sidebar-main-content">
         {headerContent}
         <div className="sidebar-body">
@@ -20,20 +24,20 @@ const SidebarContent = (props) => {
               return (
                 <Fragment key={index}>
                   {list.to && !list.children && !list.disabled ? (
-                    <a href={list.to}>
+                    <Link href={list.to} >
                       <li
                         className={classNames({
                           disabled: list.disabled
                         })}
                         onClick={() => handleTabClick(list)}
                       >
-                        <span className="flex-align-center">
+                        <Button  onClick={()=>onToggle(false)}  className="flex-align-center w-full h-full">
                           {list.icon && list.icon}
                           <span>{list.title}</span>
-                        </span>
+                        </Button>
                         {children && list.children && <AngleRight />}
                       </li>
-                    </a>
+                    </Link>
                   ) : (
                     <li
                       className={classNames({ disabled: list.disabled })}
