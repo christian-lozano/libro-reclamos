@@ -689,9 +689,9 @@ export const NavTop = memo(function NavTop() {
             </svg>
           </IconButton>
         </div>
-        <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 xl:p-10 2xl:p-8  dark:bg-gray-900 dark:text-gray-100">
+        <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 xl:p-10 2xl:p-8  dark:bg-gray-900 dark:text-gray-100">  
           <h2 className="text-2xl font-semibold ">Carrito</h2>
-          <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(100vh-345px)]">
+          <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(95vh-345px)]">
             {domLoaded &&
               items.map((el) => (
                 <li
@@ -799,7 +799,7 @@ export const NavTop = memo(function NavTop() {
           </ul>
           {/* <!-- Sub total --> */}
           {domLoaded && (
-            <div className=" h-full w-full rounded-lg border  bottom-0 bg-white px-6 py-3 shadow-md md:mt-0 ">
+            <div className=" w-full rounded-lg border  bottom-0 bg-white px-6 py-3 shadow-md md:mt-0 ">
               <div className="mb-2 flex justify-between">
                 <p className="text-gray-700">Subtotal</p>
                 <p className="text-gray-700">S/{cartTotal}</p>
