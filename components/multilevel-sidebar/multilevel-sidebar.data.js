@@ -106,17 +106,21 @@ let options = [
             {
               id: 1,
               title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
+
             },
             {
               id: 2,
               title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
             },
             {
               id: 3,
               title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:"/catalog/Mujer/Calzado/Sandalias?p=1"
             }
           ]
         },
@@ -183,17 +187,21 @@ let options = [
             {
               id: 1,
               title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Hombre/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
+
             },
             {
               id: 2,
               title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Hombre/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
             },
             {
               id: 3,
               title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:"/catalog/Hombre/Calzado/Sandalias?p=1"
             }
           ]
         },
@@ -205,17 +213,23 @@ let options = [
             {
               id: 1,
               title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:" /catalog/Hombre/Ropa?p=1"
+             
             },
             {
               id: 2,
               title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:" /catalog/Hombre/Ropa?p=1"
+
             },
             {
               id: 3,
               title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:" /catalog/Hombre/Ropa?p=1"
+
             }
           ]
         },
@@ -260,17 +274,21 @@ let options = [
             {
               id: 1,
               title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
+
             },
             {
               id: 2,
               title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
             },
             {
               id: 3,
               title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              icon: <i className="fa fa-opera"></i>,
+              top:"/catalog/Mujer/Calzado/Sandalias?p=1"
             }
           ]
         },
