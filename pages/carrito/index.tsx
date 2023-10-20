@@ -148,7 +148,7 @@ export default function Home(props: SearchPageLayoutProps) {
                   {/* <p className="text-sm text-gray-700">including VAT</p> */}
                 </div>
               </div>
-              <div className="fixed md:relative bottom-0 w-full flex justify-center left-0">
+              <div className="fixed md:relative bottom-4 w-full flex justify-center left-0">
                 <Link href={'/pagar'} className="w-full">
                   <span className="mt-6 w-full text-center text-lg  bg-[#ae946d] py-3  font-bold text-white hover:bg-[#b99d73]">
                     PAGAR

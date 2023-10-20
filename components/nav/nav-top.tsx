@@ -689,9 +689,9 @@ export const NavTop = memo(function NavTop() {
             </svg>
           </IconButton>
         </div>
-        <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 xl:p-10 2xl:p-8  dark:bg-gray-900 dark:text-gray-100">  
+        <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 xl:p-10 2xl:p-8  dark:bg-gray-900 dark:text-gray-100">
           <h2 className="text-2xl font-semibold ">Carrito</h2>
-          <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(95vh-345px)]">
+          <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
             {domLoaded &&
               items.map((el) => (
                 <li

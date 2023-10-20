@@ -188,16 +188,16 @@ export default function Home(props: SearchPageLayoutProps) {
                   className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
                   htmlFor="radio_2"
                 >
-                  <img
+                  {/* <img
                     className="w-14 object-contain"
                     src="https://componentland.com/images/naorrAeygcJzX0SyNI4Y0.png"
                     alt=""
-                  />
+                  /> */}
                   <div className="ml-5">
-                    <span className="mt-2 font-semibold">Entrega Fedex</span>
-                    <p className="text-slate-500 text-sm leading-6">
-                      Delivery: 2-4 Dias
-                    </p>
+                    <span className="mt-2 font-semibold">Recojo en Tienda</span>
+                    {/* <p className="text-slate-500 text-sm leading-6">
+                      Tiempo máximo de espera : 2-4 Dias
+                    </p> */}
                   </div>
                 </label>
               </div>
