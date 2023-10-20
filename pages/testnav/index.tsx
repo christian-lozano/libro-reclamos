@@ -12,7 +12,7 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   const [open, setOpen] = useState(false)
 
-  const handleSidebarToggle = (isOpen) => {
+  const handleSidebarToggle = (isOpen: boolean) => {
     setOpen(isOpen)
   }
 
