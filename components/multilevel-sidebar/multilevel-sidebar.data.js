@@ -120,7 +120,7 @@ let options = [
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              top:"/catalog/Mujer/Calzado/Sandalias?p=1"
+              to:"/catalog/Mujer/Calzado/Sandalias?p=1"
             }
           ]
         },
@@ -201,7 +201,7 @@ let options = [
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              top:"/catalog/Hombre/Calzado/Sandalias?p=1"
+              to:"/catalog/Hombre/Calzado/Sandalias?p=1"
             }
           ]
         },
@@ -214,21 +214,21 @@ let options = [
               id: 1,
               title: "Nike",
               icon: <i className="fa fa-opera"></i>,
-              top:" /catalog/Hombre/Ropa?p=1"
+              to:" /catalog/Hombre/Ropa?p=1"
              
             },
             {
               id: 2,
               title: "Adidas",
               icon: <i className="fa fa-opera"></i>,
-              top:" /catalog/Hombre/Ropa?p=1"
+              to:" /catalog/Hombre/Ropa?p=1"
 
             },
             {
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              top:" /catalog/Hombre/Ropa?p=1"
+              to:" /catalog/Hombre/Ropa?p=1"
 
             }
           ]
@@ -288,7 +288,7 @@ let options = [
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              top:"/catalog/Mujer/Calzado/Sandalias?p=1"
+              to:"/catalog/Mujer/Calzado/Sandalias?p=1"
             }
           ]
         },
