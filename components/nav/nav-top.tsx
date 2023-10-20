@@ -799,7 +799,7 @@ export const NavTop = memo(function NavTop() {
           </ul>
           {/* <!-- Sub total --> */}
           {domLoaded && (
-            <div className=" h-full w-full rounded-lg border bg-white p-6 shadow-md md:mt-0 ">
+            <div className=" h-full w-full rounded-lg border  bottom-0 bg-white px-6 py-3 shadow-md md:mt-0 ">
               <div className="mb-2 flex justify-between">
                 <p className="text-gray-700">Subtotal</p>
                 <p className="text-gray-700">S/{cartTotal}</p>
