@@ -52,7 +52,7 @@ export function NavBottom() {
           <IconLabel icon={MenuIcon} label="Menu" labelPosition="right" />
         </Button>
       </Tablet>
-      {/* mobile   menu*/}
+      {/* mobil menu*/}
       <MultilevelSidebar
         open={open}
         options={options}
@@ -88,25 +88,22 @@ export function NavBottom() {
               <path d="M951.5 933.3C951.5 926.97 951.5 921 951.5 914.77C998.89 914.77 1046.08 914.77 1093.58 914.77C1093.58 920.87 1093.58 926.94 1093.58 933.3C1046.33 933.3 999.13 933.3 951.5 933.3Z" />
               <path d="M154.17 933.41C154.17 926.95 154.17 920.98 154.17 914.76C201.27 914.76 248.19 914.76 295.29 914.76C295.29 921.05 295.29 927.14 295.29 933.41C248.19 933.41 201.36 933.41 154.17 933.41Z" />
             </svg>
-            <Button
-              className="absolute right-3 top-3"
+
+            <svg
+              className="absolute right-3 top-3 w-6 h-6 cursor-pointer"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
               onClick={() => setOpen(!open)}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </Button>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </div>
         }
         onToggle={handleSidebarToggle}
