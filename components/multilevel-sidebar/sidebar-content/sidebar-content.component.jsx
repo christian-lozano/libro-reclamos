@@ -16,7 +16,7 @@ const SidebarContent = (props) => {
   return (
     <div {...sidebarProps}>
 
-      <div className="sidebar-main-content">
+      <div className="sidebar-main-content text-lg font-semibold">
         {headerContent}
         <div className="sidebar-body">
           <ul>
