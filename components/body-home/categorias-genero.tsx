@@ -32,7 +32,7 @@ export function CategoriasGenero() {
         <h2 className="xl:text-3xl text-xl text-center xl:py-10 py-5 font-bold">
           Nuestras Categorías
         </h2>
-        <div className="grid grid-cols-1  lg:grid-cols-1 laptop:grid-cols-3 gap-y-10 md:grid-cols-2 justify-items-center items-center gap-x-5 ">
+        <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-y-10 md:grid-cols-2 justify-items-center items-center gap-x-5 ">
           {DataCardBg.map((el, index) => (
             <Link
               key={index}

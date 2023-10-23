@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { Configure, Index } from 'react-instantsearch-dom'
+import { useMediaQuery } from 'react-responsive'
 
 import { Container } from '@/components/container/container'
 import { indexName as defaultIndexName } from '@/utils/env'
@@ -21,6 +22,9 @@ export function ProductsShowcase({
   hitComponent,
   ...searchParameters
 }: ProductsShowcaseProps) {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)',
+  })
   return (
     <Index indexName={indexName} indexId={indexId}>
       <Configure {...searchParameters} />
@@ -34,7 +38,9 @@ export function ProductsShowcase({
           <InfiniteHits
             hitComponent={hitComponent}
             animation={false}
-            gridClassName="grid-cols-2 laptop:grid-cols-6"
+            gridClassName={`${
+              isDesktopOrLaptop ? 'grid-cols-6' : 'grid-cols-2'
+            } laptop:grid-cols-6`}
           />
         </Container>
       </section>

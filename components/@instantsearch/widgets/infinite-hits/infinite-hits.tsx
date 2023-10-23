@@ -43,7 +43,7 @@ function InfiniteHitsComponent({
   showMore = false,
   viewMode = 'grid',
   animation = true,
-  gridClassName = 'grid-cols-2 laptop:grid-cols-5',
+  gridClassName = 'grid-cols-2 xl:grid-cols-5',
   listClassName = 'laptop:grid-cols-1',
 }: InfiniteHitsProps) {
   const [hitsPerPage, setHitsPerPage] = useState(0)
