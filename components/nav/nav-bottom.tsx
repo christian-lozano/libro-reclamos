@@ -43,7 +43,7 @@ export function NavBottom() {
     setOpen(isOpen)
   }
   return (
-    <div className="flex items-center px-4 relative divide-x border-b border-neutral-light laptop:h-12 laptop:mx-20 laptop:mb-5 laptop:px-0 laptop:justify-between laptop:border-none laptop:divide-none">
+    <div className="flex items-center mr-1 relative divide-x border-b border-neutral-light laptop:h-12 laptop:mx-20 laptop:mb-5 laptop:px-0 laptop:justify-between laptop:border-none laptop:divide-none">
       <Tablet>
         <Button
           className="p-3 pl-0 2xl:hidden xl:hidden"

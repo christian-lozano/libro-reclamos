@@ -88,7 +88,7 @@ export function NavAutocomplete() {
   )
 
   const autocompleteCn = classNames(
-    'w-full pl-2.5 laptop:w-80 laptop:p-0 laptop:ease-out laptop:absolute laptop:right-0',
+    'w-full pl-2.5 ml-0 laptop:w-80 p-3 bg-white laptop:p-0 laptop:ease-out laptop:absolute laptop:right-0',
     { focused: isExpanded }
   )
 
