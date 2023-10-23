@@ -1,5 +1,6 @@
 import Carousel from 'nuka-carousel'
 import { useState, useEffect } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 const sliderDesktop = [
   'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
@@ -19,87 +20,91 @@ export default function CarouselHome() {
   // console.log(data.attributes.SliderDesktop.data);
   const [indiceSlider, setIndiceSlider] = useState(0)
   useEffect(() => {}, [indiceSlider])
-
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)',
+  })
   return (
     <div>
-      <div className="block xl:hidden">
-        <Carousel
-          // autoplay={true}
-          autoplay={true}
-          autoplayInterval={10000}
-          wrapAround={true}
-          withoutControls={true}
-          adaptiveHeight={true}
-          zoomScale={1}
-          enableKeyboardControls={true}
-          // speed={100}
-          // goToSlide={indiceSlider}
-          // slideIndex={indiceSlider}
-          // dragThreshold={0}
-          afterSlide={(i) => setIndiceSlider(i)}
-          // slideCount={indiceSlider}
-        >
-          {sliderMobil.map((el, i) => (
-            <img src={el} key={i} alt="" />
-          ))}
-        </Carousel>
+      {!isDesktopOrLaptop ? (
+        <div>
+          <Carousel
+            // autoplay={true}
+            autoplay={true}
+            autoplayInterval={10000}
+            wrapAround={true}
+            withoutControls={true}
+            adaptiveHeight={true}
+            zoomScale={1}
+            enableKeyboardControls={true}
+            // speed={100}
+            // goToSlide={indiceSlider}
+            // slideIndex={indiceSlider}
+            // dragThreshold={0}
+            afterSlide={(i) => setIndiceSlider(i)}
+            // slideCount={indiceSlider}
+          >
+            {sliderMobil.map((el, i) => (
+              <img src={el} key={i} alt="" />
+            ))}
+          </Carousel>
 
-        <div className="flex w-full mt-0">
-          {sliderMobil.map((el, i) => (
-            <div
-              key={i}
-              // onClick={() => setIndiceSlider(i)}
-              className="py-5 w-full bg-transparent "
-            >
-              <div className="w-full bg-blue-gray-100">
-                <div
-                  className={`p-[1px] w-full transition  ease-in-out ${
-                    i === indiceSlider && 'bg-black '
-                  }`}
-                ></div>
+          <div className="flex w-full mt-0">
+            {sliderMobil.map((el, i) => (
+              <div
+                key={i}
+                // onClick={() => setIndiceSlider(i)}
+                className="py-5 w-full bg-transparent "
+              >
+                <div className="w-full bg-blue-gray-100">
+                  <div
+                    className={`p-[1px] w-full transition  ease-in-out ${
+                      i === indiceSlider && 'bg-black '
+                    }`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      {/* desktop */}
-      <div className="hidden xl:block">
-        <Carousel
-          autoplay={true}
-          autoplayInterval={10000}
-          wrapAround={true}
-          withoutControls={true}
-          adaptiveHeight={true}
-          zoomScale={1}
-          enableKeyboardControls={true}
-          // speed={100}
-          // slideIndex={indiceSlider}
-          // dragThreshold={1}
-          afterSlide={(i) => setIndiceSlider(i)}
-          // slideCount={indiceSlider}
-        >
-          {sliderDesktop.map((el, i) => (
-            <img src={el} key={i} alt="" />
-          ))}
-        </Carousel>
-        <div className="flex w-full mt-5 ">
-          {sliderDesktop.map((el, i) => (
-            <div
-              key={i}
-              // onClick={() => setIndiceSlider(i)}
-              className=" w-full bg-transparent "
-            >
-              <div className="w-full bg-blue-gray-100">
-                <div
-                  className={`p-[1.2px] w-full transition   ease-in-out ${
-                    i === indiceSlider && 'bg-black '
-                  }`}
-                ></div>
+      ) : (
+        <div>
+          <Carousel
+            autoplay={true}
+            autoplayInterval={10000}
+            wrapAround={true}
+            withoutControls={true}
+            adaptiveHeight={true}
+            zoomScale={1}
+            enableKeyboardControls={true}
+            // speed={100}
+            // slideIndex={indiceSlider}
+            // dragThreshold={1}
+            afterSlide={(i) => setIndiceSlider(i)}
+            // slideCount={indiceSlider}
+          >
+            {sliderDesktop.map((el, i) => (
+              <img src={el} key={i} alt="" />
+            ))}
+          </Carousel>
+          <div className="flex w-full mt-5 ">
+            {sliderDesktop.map((el, i) => (
+              <div
+                key={i}
+                // onClick={() => setIndiceSlider(i)}
+                className=" w-full bg-transparent "
+              >
+                <div className="w-full bg-blue-gray-100">
+                  <div
+                    className={`p-[1.2px] w-full transition   ease-in-out ${
+                      i === indiceSlider && 'bg-black '
+                    }`}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
 }
