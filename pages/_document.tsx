@@ -64,6 +64,10 @@ export default class MyDocument extends Document {
           <meta property="og:site_name" content="Fritz Sport E-commerce" />
           <meta property="og:url" content="https://www.fritzsportsac.com/" />
           <meta
+            httpEquiv="ScreenOrientation"
+            content="autoRotate:disabled"
+          ></meta>
+          <meta
             property="og:image"
             content="https://e-commerce-renny.vercel.app/static/images/socials/og.png"
           />
