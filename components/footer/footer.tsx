@@ -117,7 +117,7 @@ export const Footer = memo(function Footer() {
                 <img
                   src="/static/images/libroR/libro.png"
                   alt=""
-                  className="w-32 h-32"
+                  className=" h-20"
                 />
               </Button>
             </div>
