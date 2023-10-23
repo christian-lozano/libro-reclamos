@@ -224,7 +224,7 @@ export const Footer = memo(function Footer() {
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
               </h6>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-3 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3  gap-y-2  ">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-1 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3  gap-y-2  ">
                 <Input
                   size="lg"
                   label="Nombres"
