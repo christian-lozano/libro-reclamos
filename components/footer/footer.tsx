@@ -6,7 +6,7 @@ import {
   Select,
   Option,
 } from '@material-tailwind/react'
-import { memo, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 
 import { Link } from '@ui/link/link'
 
@@ -21,7 +21,15 @@ export const Footer = memo(function Footer() {
 
   const openDrawer = () => setOpen(true)
   const closeDrawer = () => setOpen(false)
+  const [matches, setMatches] = useState(
+    window.matchMedia('(min-width: 768px)').matches
+  )
 
+  useEffect(() => {
+    window
+      .matchMedia('(min-width: 768px)')
+      .addEventListener('change', (e) => setMatches(e.matches))
+  }, [])
   return (
     <div>
       <footer className="bg-white xl:bg-black font-sans dark:bg-white mt-10">
@@ -111,11 +119,13 @@ export const Footer = memo(function Footer() {
           <div className="sm:flex sm:items-center sm:justify-between   xl:flex xl:justify-around 2xl:flex 2xl:justify-around ">
             <div className=" flex justify-center mb-5 w-full">
               <Button
-                className=" flex justify-center my-4"
+                className=" flex justify-center my-3"
                 onClick={openDrawer}
               >
                 <img
-                  src="/static/images/libroR/libro.png"
+                  src={`/static/images/libroR/${
+                    !matches ? 'libro.png' : 'libroWhite.png'
+                  }`}
                   alt=""
                   className="h-12"
                 />
