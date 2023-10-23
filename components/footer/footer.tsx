@@ -7,6 +7,7 @@ import {
   Option,
 } from '@material-tailwind/react'
 import { memo, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 
 import { Link } from '@ui/link/link'
 
@@ -21,7 +22,9 @@ export const Footer = memo(function Footer() {
 
   const openDrawer = () => setOpen(true)
   const closeDrawer = () => setOpen(false)
-
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)',
+  })
   return (
     <div>
       <footer className="bg-white xl:bg-black font-sans dark:bg-white mt-10">
@@ -115,7 +118,9 @@ export const Footer = memo(function Footer() {
                 onClick={openDrawer}
               >
                 <img
-                  src="/static/images/libroR/libro.png"
+                  src={`/static/images/libroR/${
+                    isDesktopOrLaptop ? 'libro.png' : 'libroWhite.png'
+                  }`}
                   alt=""
                   className="h-12"
                 />
