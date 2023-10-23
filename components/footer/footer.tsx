@@ -224,7 +224,7 @@ export const Footer = memo(function Footer() {
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
               </h6>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3 gap-x-1 gap-y-2  ">
+              <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-3 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3  gap-y-2  ">
                 <Input
                   size="lg"
                   label="Nombres"
@@ -239,24 +239,10 @@ export const Footer = memo(function Footer() {
                   onResize={undefined}
                   onResizeCapture={undefined}
                 />
-                <Input
-                  size="lg"
-                  label="Dirección de Domicilio"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
-                <Input
-                  size="lg"
-                  label="Documento de Identidad"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
 
                 <Input
                   size="lg"
-                  label="Correo Electrónico"
+                  label="Documento de Identidad"
                   nonce={undefined}
                   onResize={undefined}
                   onResizeCapture={undefined}
@@ -270,6 +256,20 @@ export const Footer = memo(function Footer() {
                   onResizeCapture={undefined}
                 />
               </div>
+              <Input
+                size="lg"
+                label="Correo Electrónico"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />
+              <Input
+                size="lg"
+                label="Dirección de Domicilio"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />
               <Select
                 label="Queja o Reclamo"
                 nonce={undefined}
