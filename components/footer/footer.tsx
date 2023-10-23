@@ -219,7 +219,7 @@ export const Footer = memo(function Footer() {
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
               </h6>
-              <div className="grid grid-cols-2 laptop:grid-cols-1 2xl:grid-cols-2 2xl:gap-y-7 gap-x-1 gap-y-2  ">
+              <div className="grid grid-cols-1 sm:grid-cols-1 laptop:grid-cols-1 2xl:grid-cols-2 2xl:gap-y-7 gap-x-1 gap-y-2  ">
                 <Input
                   size="lg"
                   label="Dirección de Domicilio"
