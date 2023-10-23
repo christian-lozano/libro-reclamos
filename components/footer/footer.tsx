@@ -224,48 +224,47 @@ export const Footer = memo(function Footer() {
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
               </h6>
-              <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-1 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3  gap-y-2  ">
-                <Input
-                  size="lg"
-                  label="Nombres"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
-                <Input
-                  size="lg"
-                  label="Apellidos"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
-
-                <Input
-                  size="lg"
-                  label="Documento de Identidad"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
-
-                <Input
-                  size="lg"
-                  label="Numero de Teléfono"
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                />
-              </div>
+              {/* <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-1 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3  gap-y-2  "></div> */}
               <Input
                 size="lg"
-                label="Correo Electrónico"
+                label="Nombres"
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />
               <Input
                 size="lg"
-                label="Dirección de Domicilio"
+                label="Apellidos"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />
+              <Input
+                size="lg"
+                label="Doc de Identidad"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />
+              <Input
+                size="lg"
+                label="Numero de Teléfono"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />{' '}
+              <Input
+                // className="w-[80%]"
+                size="lg"
+                label="Dirección"
+                nonce={undefined}
+                onResize={undefined}
+                onResizeCapture={undefined}
+              />
+              <Input
+                // className="w-[80%]"
+                size="lg"
+                label="Correo Electrónico"
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
@@ -276,17 +275,12 @@ export const Footer = memo(function Footer() {
                 onResize={undefined}
                 onResizeCapture={undefined}
               >
-                <Option>Queja</Option>
+                <Option className="w-[80%]">Queja</Option>
                 <Option>Reclamo</Option>
               </Select>
               <Textarea
+                size="md"
                 label="Detalle de Reclamo o Queja"
-                nonce={undefined}
-                onResize={undefined}
-                onResizeCapture={undefined}
-              />
-              <Textarea
-                label="Detalle del Articulo"
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
