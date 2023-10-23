@@ -4,6 +4,7 @@ import { memo, useEffect, useState } from 'react'
 import isEqual from 'react-fast-compare'
 import type { InfiniteHitsProvided } from 'react-instantsearch-core'
 import { connectInfiniteHits } from 'react-instantsearch-dom'
+import { useMediaQuery } from 'react-responsive'
 
 import type { ViewMode } from '@/components/view-modes/view-modes'
 import { withDebugLayer } from '@dev/debug-layer/debug-layer'
@@ -51,6 +52,10 @@ function InfiniteHitsComponent({
   useEffect(() => {
     if (!hitsPerPage) setHitsPerPage(hits.length)
   }, [hitsPerPage, hits.length])
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)',
+  })
   return (
     <section className="w-full">
       {showLess && (
@@ -58,10 +63,12 @@ function InfiniteHitsComponent({
       )}
       <m.ol
         className={classNames('overflow-hidden', {
-          [classNames('grid grid-cols-2 gap-2', gridClassName)]:
+          [classNames('grid grid-cols-4 gap-2', gridClassName)]:
             viewMode === 'grid',
           [classNames(
-            'flex flex-col gap-4 laptop:grid laptop:gap-0',
+            `grid ${
+              isDesktopOrLaptop ? 'grid-cols-2' : 'grid-cols-1'
+            }  gap-4 laptop:grid laptop:gap-0`,
             listClassName
           )]: viewMode === 'list',
         })}
