@@ -42,7 +42,7 @@ export default class MyDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/icons/icon-16x16.png"
+            href="/static/images/libroR/libro.png"
           />
           <link
             rel="icon"
