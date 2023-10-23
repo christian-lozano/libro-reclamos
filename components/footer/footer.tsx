@@ -111,13 +111,13 @@ export const Footer = memo(function Footer() {
           <div className="sm:flex sm:items-center sm:justify-between   xl:flex xl:justify-around 2xl:flex 2xl:justify-around ">
             <div className=" flex justify-center mb-5 w-full">
               <Button
-                className=" flex justify-center mb-5"
+                className=" flex justify-center my-4"
                 onClick={openDrawer}
               >
                 <img
                   src="/static/images/libroR/libro.png"
                   alt=""
-                  className=" h-20"
+                  className="h-12"
                 />
               </Button>
             </div>
