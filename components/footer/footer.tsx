@@ -119,7 +119,7 @@ export const Footer = memo(function Footer() {
               >
                 <img
                   src={`/static/images/libroR/${
-                    isDesktopOrLaptop ? 'libro.png' : 'libroWhite.png'
+                    isDesktopOrLaptop ? 'libroWhite.png' : 'libro.png'
                   }`}
                   alt=""
                   className="h-12"
