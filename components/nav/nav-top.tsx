@@ -321,8 +321,14 @@ const dataHeader = [
 export const NavTop = memo(function NavTop() {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
-  const { items, removeItem, cartTotal, totalItems, updateItemQuantity } =
-    useCart()
+  const {
+    items,
+    removeItem,
+    cartTotal,
+    totalItems,
+    updateItemQuantity,
+    emptyCart,
+  } = useCart()
 
   useEffect(() => {
     setDomLoaded(true)
@@ -711,7 +717,26 @@ export const NavTop = memo(function NavTop() {
           </IconButton>
         </div>
         <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 xl:p-10 2xl:p-8  dark:bg-gray-900 dark:text-gray-100">
-          <h2 className="text-2xl font-semibold ">Carrito</h2>
+          <div className="flex">
+            <h2 className="text-2xl font-semibold ">Carrito</h2>
+            <Button
+              className="px-2 ml-5 py-1 pl-0 space-x-1 cursor-pointer"
+              onClick={() => emptyCart()}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                className="w-4 h-4 fill-current ml-3"
+              >
+                <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
+                <rect width="32" height="200" x="168" y="216"></rect>
+                <rect width="32" height="200" x="240" y="216"></rect>
+                <rect width="32" height="200" x="312" y="216"></rect>
+                <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
+              </svg>
+              {/* <span>Remover</span> */}
+            </Button>
+          </div>
           <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
             {domLoaded &&
               items.map((el) => (
