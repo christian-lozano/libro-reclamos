@@ -227,6 +227,20 @@ export const Footer = memo(function Footer() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 laptop:grid-cols-2 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3 gap-x-1 gap-y-2  ">
                 <Input
                   size="lg"
+                  label="Nombres"
+                  nonce={undefined}
+                  onResize={undefined}
+                  onResizeCapture={undefined}
+                />
+                <Input
+                  size="lg"
+                  label="Apellidos"
+                  nonce={undefined}
+                  onResize={undefined}
+                  onResizeCapture={undefined}
+                />
+                <Input
+                  size="lg"
                   label="Dirección de Domicilio"
                   nonce={undefined}
                   onResize={undefined}
@@ -247,16 +261,17 @@ export const Footer = memo(function Footer() {
                   onResize={undefined}
                   onResizeCapture={undefined}
                 />
+
                 <Input
                   size="lg"
-                  label="Correo Electrónico"
+                  label="Numero de Teléfono"
                   nonce={undefined}
                   onResize={undefined}
                   onResizeCapture={undefined}
                 />
               </div>
               <Select
-                label="Numero de Teléfono"
+                label="Queja o Reclamo"
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
