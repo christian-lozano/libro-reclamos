@@ -115,9 +115,9 @@ export const Footer = memo(function Footer() {
                 onClick={openDrawer}
               >
                 <img
-                  src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/esPE/Images/LibroPE_tcm202-841885.png"
+                  src="/static/images/libroR/libro.png"
                   alt=""
-                  className="w-24 h-24"
+                  className="w-32 h-32"
                 />
               </Button>
             </div>
