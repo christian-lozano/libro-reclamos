@@ -881,13 +881,13 @@ export const NavTop = memo(function NavTop() {
         >
           <div className="h-[15vh] w-full flex flex-col items-center justify-around">
             <Button
-              className="bg-black rounded-xl w-2/6 py-2 text-xs md:text-base text-white"
+              className="bg-black rounded-xl w-2/6 py-2 text-sm md:text-base text-white"
               onClick={() => setTiendaLima(!tiendaLima)}
             >
               Tienda Lima
             </Button>
             <Button
-              className="bg-black rounded-xl w-2/6 py-2 text-xs md:text-base text-white"
+              className="bg-black rounded-xl w-2/6 py-2 text-sm md:text-base text-white"
               onClick={() => setTiendaAguasVerdes(!tiendaAguasVerdes)}
             >
               Aguas Verdes
