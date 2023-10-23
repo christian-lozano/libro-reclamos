@@ -3,7 +3,12 @@
 // import PersonIcon from '@material-design-icons/svg/outlined/person.svg'
 import PinDropIcon from '@material-design-icons/svg/outlined/pin_drop.svg'
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
-import { Drawer, IconButton } from '@material-tailwind/react'
+import {
+  Dialog,
+  DialogBody,
+  Drawer,
+  IconButton,
+} from '@material-tailwind/react'
 import dynamic from 'next/dynamic'
 import { memo, useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
@@ -322,9 +327,13 @@ export const NavTop = memo(function NavTop() {
   useEffect(() => {
     setDomLoaded(true)
   }, [])
+  // ubicanos
+  const [openUbi, setOpenUbicanos] = useState(false)
+  const [tiendaLima, setTiendaLima] = useState(false)
+  const [tiendaAguasVerdes, setTiendaAguasVerdes] = useState(false)
 
+  //
   const [openCart, setOpen] = useState(false)
-
   const [activeHoverNavDesktop, setActiveHoverNavDesktop] = useState<
     any | null
   >(null)
@@ -423,12 +432,18 @@ export const NavTop = memo(function NavTop() {
                   {/* carrito y ubicanos */}
                   <div className="flex items-center w-28 justify-around">
                     <Tablet>
-                      <Button title="Ubicanos">
+                      <Button
+                        title="Ubicanos"
+                        onClick={() => setOpenUbicanos(!openUbi)}
+                      >
                         <IconLabel icon={PinDropIcon} label="Ubicanos" />
                       </Button>
                     </Tablet>
+
                     <Laptop>
-                      <IconLabel icon={PinDropIcon} />
+                      <Button onClick={() => setOpenUbicanos(!openUbi)}>
+                        <IconLabel icon={PinDropIcon} />
+                      </Button>
                     </Laptop>
                     {/* <Laptop>
               <Button title="Favorites">
@@ -601,18 +616,24 @@ export const NavTop = memo(function NavTop() {
                 className="can-hover:transition-colors can-hover:hover:text-neutral-dark"
                 onClick={(e) => e.preventDefault()}
               >
-                <IconLabel
-                  icon={PinDropIcon}
-                  label="Ubicanos"
-                  labelPosition="right"
-                  classNameLabel="label-regular"
-                />
+                <Button onClick={() => setOpenUbicanos(!openUbi)}>
+                  <IconLabel
+                    icon={PinDropIcon}
+                    label="Ubicanos"
+                    labelPosition="right"
+                    classNameLabel="label-regular"
+                  />
+                </Button>
               </Link>
             </div>
 
             <div className="flex items-center gap-6 laptop:gap-3 ">
               <Tablet>
-                <Button title="Ubicanos" className="relative w-16">
+                <Button
+                  title="Ubicanos"
+                  className="relative w-16"
+                  onClick={() => setOpenUbicanos(!openUbi)}
+                >
                   <IconLabel icon={PinDropIcon} />
                   <span className="absolute left-1 text-center">Ubicanos</span>
                 </Button>
@@ -843,6 +864,117 @@ export const NavTop = memo(function NavTop() {
           )}
         </div>
       </Drawer>
+
+      <Dialog
+        size="md"
+        open={openUbi}
+        handler={() => setOpenUbicanos(!openUbi)}
+        className=" shadow-none"
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      >
+        <DialogBody
+          nonce={undefined}
+          onResize={undefined}
+          onResizeCapture={undefined}
+        >
+          <div className="h-[15vh] w-full flex flex-col items-center justify-around">
+            <Button
+              className="bg-black rounded-xl w-2/6 py-2 text-white"
+              onClick={() => setTiendaLima(!tiendaLima)}
+            >
+              Tienda Lima
+            </Button>
+            <Button
+              className="bg-black rounded-xl w-2/6 py-2 text-white"
+              onClick={() => setTiendaAguasVerdes(!tiendaAguasVerdes)}
+            >
+              Aguas Verdes
+            </Button>
+          </div>
+        </DialogBody>
+      </Dialog>
+      {/* lima */}
+      <Dialog
+        size="md"
+        open={tiendaLima}
+        handler={() => setTiendaLima(!tiendaLima)}
+        className=" shadow-none"
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      >
+        <div>
+          <div className="bg-black w-10 h-10 rounded-full absolute right-0 flex justify-center items-center m-5">
+            <Button onClick={() => setTiendaLima(!tiendaLima)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="#fff"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </Button>
+          </div>
+
+          <iframe
+            title="maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d975.4430350206259!2d-77.03339623037913!3d-12.059192787751336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b939925501%3A0x56ad230febd44ef4!2sFritz%20Sport!5e0!3m2!1ses!2spe!4v1698078808081!5m2!1ses!2spe"
+            className="w-full rounded-3xl"
+            height="450"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </Dialog>
+      {/* aguas verdes */}
+      <Dialog
+        size="md"
+        open={tiendaAguasVerdes}
+        handler={() => setTiendaAguasVerdes(!tiendaAguasVerdes)}
+        className=" shadow-none"
+        nonce={undefined}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      >
+        <div>
+          <div className="bg-black w-10 h-10 rounded-full absolute right-0 flex justify-center items-center m-5">
+            <Button onClick={() => setTiendaAguasVerdes(!tiendaAguasVerdes)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="#fff"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </Button>
+          </div>
+
+          <iframe
+            title="maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.4530787859594!2d-80.25130761573114!3d-3.4819409329065985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x90339b82eee5b451%3A0xa414ce6fadeef6ff!2sFRITZ%20SPORT!5e0!3m2!1ses!2spe!4v1698079176305!5m2!1ses!2spe"
+            className="w-full rounded-3xl"
+            height="450"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </Dialog>
     </div>
   )
 })
