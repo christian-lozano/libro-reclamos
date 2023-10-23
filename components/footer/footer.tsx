@@ -29,7 +29,7 @@ export const Footer = memo(function Footer() {
     window
       .matchMedia('(min-width: 768px)')
       .addEventListener('change', (e) => setMatches(e.matches))
-  }, [])
+  }, [matches])
   return (
     <div>
       <footer className="bg-white xl:bg-black font-sans dark:bg-white mt-10">
