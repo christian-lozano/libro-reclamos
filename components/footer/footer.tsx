@@ -220,11 +220,11 @@ export const Footer = memo(function Footer() {
           onResizeCapture={undefined}
         >
           <form className="mt-8 mb-2 w-[full]  ">
-            <div className=" flex flex-col  xl:gap-0 2xl:gap-8 gap-x-6  gap-y-3">
+            <div className=" flex flex-col  2xl:gap-3 laptop:gap-8 gap-x-6  gap-y-3">
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
               </h6>
-              <div className="grid grid-cols-1 sm:grid-cols-1 laptop:grid-cols-1 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-0 gap-x-1 gap-y-2  ">
+              <div className="grid grid-cols-1 sm:grid-cols-1 laptop:grid-cols-1 2xl:grid-cols-2 laptop:gap-y-6 2xl:gap-y-3 gap-x-1 gap-y-2  ">
                 <Input
                   size="lg"
                   label="Dirección de Domicilio"
