@@ -15,6 +15,7 @@ export function ProductDetailHit({ hit }: ProductDetailHitProps) {
     description: hit.description,
     tags: [],
     sizes: [],
+    related: hit.related_products,
     rating: hit.reviews.rating,
     reviews: hit.reviews.count,
     price: hit.price.value,

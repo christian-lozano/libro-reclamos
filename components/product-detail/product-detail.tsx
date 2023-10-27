@@ -12,6 +12,7 @@ import { ProductSizes } from '@/components/product/product-sizes'
 import type { ProductTagType } from '@/components/product/product-tag'
 import { ProductTag } from '@/components/product/product-tag'
 import { ProductTitle } from '@/components/product/product-title'
+import type { ProductHit } from '@/typings/hits'
 import { Button } from '@ui/button/button'
 import { IconLabel } from '@ui/icon-label/icon-label'
 
@@ -32,6 +33,7 @@ export type ProductDetailProps = {
   originalPrice?: number
   currency?: ProductPriceCurrency
   popular?: boolean
+  related?: ProductHit[] | null
   // onCheckoutClick?: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -60,6 +62,7 @@ export function ProductDetail({
   originalPrice,
   currency,
   popular,
+  related,
 }: // onCheckoutClick,
 ProductDetailProps) {
   // const [isFavorite, setIsFavorite] = useState(false)
@@ -94,6 +97,7 @@ ProductDetailProps) {
   //   [onCheckoutClick]
   // )
 
+
   return (
     <div className="flex flex-col gap-6 mb-12 laptop:my-8 laptop:flex-row">
       <div className="laptop:w-8/12 ">
@@ -105,6 +109,13 @@ ProductDetailProps) {
               className="w-7/8 laptop:w-2/4"
             />
           )}
+        </div>
+        <div>
+          {related?.map((el) => (
+            <div key={el.sku} className="hidden">
+              <img src={el.image_urls[0]} alt="" />
+            </div>
+          ))}
         </div>
       </div>
 
