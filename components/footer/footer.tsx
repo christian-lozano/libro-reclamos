@@ -31,7 +31,7 @@ export const Footer = memo(function Footer() {
   const [telefono, setTelf] = useState('')
   const [desable, setDesable] = useState(false)
   const [mensajeEnviado, setMensajeEnviado] = useState(false)
-  const sendMail = async (e) => {
+  const sendMail = (e: { preventDefault: () => void }) => {
     e.preventDefault()
     setDesable(true)
     setMensajeEnviado(true)
