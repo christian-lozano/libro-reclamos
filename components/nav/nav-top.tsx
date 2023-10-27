@@ -613,7 +613,13 @@ export const NavTop = memo(function NavTop() {
                           >
                             <div className=" inline-flex items-center  justify-between  px-2  font-medium transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
                               <span
-                                className={`flex-shrink-0 font-normal text-black xl:text-sm   ${
+                                className={`flex-shrink-0 font-normal ${
+                                  index === 3 && 'text-[#E32B2B]'
+                                } ${
+                                  index === 3 &&
+                                  activeHoverNavDesktop === 3 &&
+                                  'text-[#E32B2B] border-b-2 border-[#E32B2B] '
+                                } text-black xl:text-sm   ${
                                   activeHoverNavDesktop === index &&
                                   'border-b-2 border-black '
                                 }  2xl:text-lg `}
