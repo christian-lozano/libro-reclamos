@@ -6,7 +6,7 @@ import {
   Select,
   Option,
 } from '@material-tailwind/react'
-import { memo, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Link } from '@ui/link/link'
@@ -22,6 +22,55 @@ export const Footer = memo(function Footer() {
 
   const openDrawer = () => setOpen(true)
   const closeDrawer = () => setOpen(false)
+
+  const [nombre, setNombre] = useState('')
+  const [apellido, setApellido] = useState('')
+  const [documento, setDocumento] = useState('')
+
+  const [email, setEmail] = useState('')
+  const [telefono, setTelf] = useState('')
+  const [desable, setDesable] = useState(false)
+  const [mensajeEnviado, setMensajeEnviado] = useState(false)
+  const sendMail = async (e) => {
+    e.preventDefault()
+    setDesable(true)
+    setMensajeEnviado(true)
+    // const response = await fetch('http://127.0.0.1:3000/api/send', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     nombre,
+    //     apellido,
+    //     documento,
+    //     email,
+    //     telefono,
+    //   }),
+    // })
+    // console.log(await response.json())
+
+    setMensajeEnviado(false)
+    setDesable(false)
+    setNombre('')
+    setEmail('')
+    setTelf('')
+    setApellido('')
+    setDocumento('')
+  }
+  useEffect(() => {
+    if (
+      nombre.length <= 3 ||
+      email.length <= 3 ||
+      telefono.length <= 3 ||
+      apellido.length <= 3 ||
+      documento.length <= 3
+    ) {
+      setDesable(false)
+    } else {
+      setDesable(true)
+    }
+  }, [nombre, telefono, email, apellido, documento])
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   })
@@ -219,7 +268,16 @@ export const Footer = memo(function Footer() {
           onResize={undefined}
           onResizeCapture={undefined}
         >
-          <form className="mt-8 mb-2 w-[full]  ">
+          <div className="flex justify-center">
+            <div
+              className={`${
+                !mensajeEnviado ? 'hidden' : 'block'
+              } absolute  top-8 xl:w-full w-5/6 py-3 flex justify-center text-center bg-blue-600 rounded-lg text-white `}
+            >
+              Solicitud Enviada
+            </div>
+          </div>
+          <form className="mt-8 mb-2 w-[full]  " onSubmit={sendMail}>
             <div className=" flex flex-col  2xl:gap-3 laptop:gap-8 gap-x-6  gap-y-3">
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
@@ -229,32 +287,41 @@ export const Footer = memo(function Footer() {
                 size="lg"
                 label="Nombres"
                 nonce={undefined}
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />
               <Input
+                value={apellido}
                 size="lg"
                 label="Apellidos"
                 nonce={undefined}
+                onChange={(e) => setApellido(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />
               <Input
+                value={documento}
                 size="lg"
                 label="Doc de Identidad"
                 nonce={undefined}
+                onChange={(e) => setDocumento(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />
               <Input
+                value={telefono}
                 size="lg"
                 label="Numero de Teléfono"
                 nonce={undefined}
+                onChange={(e) => setTelf(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />{' '}
               <Input
                 // className="w-[80%]"
+
                 size="lg"
                 label="Dirección"
                 nonce={undefined}
@@ -263,9 +330,11 @@ export const Footer = memo(function Footer() {
               />
               <Input
                 // className="w-[80%]"
+                value={email}
                 size="lg"
                 label="Correo Electrónico"
                 nonce={undefined}
+                onChange={(e) => setEmail(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />
@@ -287,9 +356,18 @@ export const Footer = memo(function Footer() {
               />
             </div>
             <div className="w-full flex justify-center">
-              <Button className="mt-2 bg-black py-2 px-4 w-2/4 text-white rounded-xl ">
-                Enviar
-              </Button>
+              {desable ? (
+                <button
+                  type="submit"
+                  className="mt-2 px-8  py-2 rounded-lg bg-blue-600  text-white"
+                >
+                  Enviar
+                </button>
+              ) : (
+                <Button className="mt-2 px-8  py-2 rounded-lg bg-red-500  text-white">
+                  Enviar
+                </Button>
+              )}
             </div>
           </form>
         </Card>
