@@ -330,19 +330,53 @@ let options = [
           children: [
             {
               id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20mujer&p=1"
+
             },
             {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 1,
+              title: "Mochilas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=mochilas%20mujer&p=1"
+
             },
             {
-              id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
-            }
+              id: 1,
+              title: "Guantes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=guantes%20mujer&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Gorras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=gorras%20mujer&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Medias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=medias%20mujer&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Tomatodos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=tomatodos%20mujer&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20mujer&p=1"
+
+            },
           ]
         },
     
@@ -503,19 +537,53 @@ let options = [
           children: [
             {
               id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20hombre&p=1"
+
             },
             {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 1,
+              title: "Mochilas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=mochilas%20hombre&p=1"
+
             },
             {
-              id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
-            }
+              id: 1,
+              title: "Guantes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=guantes%20hombre&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Gorras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=gorras%20hombre&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Medias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=medias%20hombre&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Tomatodos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=tomatodos%20hombre&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20hombre&p=1"
+
+            },
           ]
         },
     
@@ -674,19 +742,53 @@ let options = [
           children: [
             {
               id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20niño&p=1"
+
             },
             {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 1,
+              title: "Mochilas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=mochilas%20niño&p=1"
+
             },
             {
-              id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
-            }
+              id: 1,
+              title: "Guantes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=guantes%20niño&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Gorras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=gorras%20niño&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Medias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=medias%20niño&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Tomatodos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=tomatodos%20niño&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20niño&p=1"
+
+            },
           ]
         },
     
@@ -709,19 +811,22 @@ let options = [
               id: 9,
               title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/niña/Calzado?p=1"
+              to:"/catalog?q=zapatillas%20niña&p=1"
+
             },
             {
               id: 9,
               title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/niña/Calzado/Zapatillas?p=1"
+              to:"/catalog?q=zapatillas%20niña&p=1"
+
             },
             {
               id: 9,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/niña/Calzado/Sandalias?p=1"
+              to:"/catalog?q=sandalias%20niña&p=1"
+
             }
             ,
             {
@@ -844,19 +949,53 @@ let options = [
           children: [
             {
               id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20niña&p=1"
+
             },
             {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 1,
+              title: "Mochilas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=mochilas%20niña&p=1"
+
             },
             {
-              id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
-            }
+              id: 1,
+              title: "Guantes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=guantes%20niña&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Gorras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=gorras%20niña&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Medias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=medias%20niña&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Tomatodos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=tomatodos%20niña&p=1"
+
+            },
+            {
+              id: 1,
+              title: "Bolsos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=bolsos%20niña&p=1"
+
+            },
           ]
         },
     
