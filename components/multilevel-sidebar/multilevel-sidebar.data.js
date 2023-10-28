@@ -62,13 +62,6 @@ let options = [
             ,
             {
               id: 9,
-              title: "Calzado de Plataforma",
-              icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=plataforma%20hombre&p=1"
-            }
-            ,
-            {
-              id: 9,
               title: "Básquet",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=basquet%20hombre&p=1"
@@ -443,13 +436,6 @@ let options = [
               title: "Calzado Comodo",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=comodo%20hombre&p=1"
-            }
-            ,
-            {
-              id: 9,
-              title: "Calzado de Plataforma",
-              icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=plataforma%20hombre&p=1"
             }
             ,
             {
