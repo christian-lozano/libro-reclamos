@@ -59,7 +59,7 @@ const dataHeader = [
           {
             id: '8',
             title: 'Calzado Comodo',
-            url: '/catalog?q=calzado%comodo%20mujer&p=1',
+            url: '/catalog?q=comodo%20mujer&p=1',
           },
         ],
       },

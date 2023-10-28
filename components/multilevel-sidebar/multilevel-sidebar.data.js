@@ -17,19 +17,54 @@ let options = [
               id: 9,
               title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Calzado?p=1"
+              to:"/catalog?q=zapatillas%20hombre&p=1"
             },
             {
               id: 9,
               title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Calzado/Zapatillas?p=1"
+              to:"/catalog?q=zapatillas%20hombre&p=1"
             },
             {
               id: 9,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Calzado/Sandalias?p=1"
+              to:"/catalog?q=sandalias%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20hombre&p=1"
             }
           ]
         },
@@ -39,11 +74,10 @@ let options = [
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
+              id: 3,
               title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog/Mujer/Calzado?p=1"
-
             },
             {
               id: 3,
@@ -55,7 +89,42 @@ let options = [
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Sandalias?p=1",
+              to:"/catalog/Mujer/Calzado/Sandalias?p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20mujer&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20mujer&p=1"
             }
           ]
         },
@@ -104,23 +173,57 @@ let options = [
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
+              id: 3,
+              title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
-
+              to:"/catalog?q=zapatillas%20mujer&p=1"
             },
             {
-              id: 2,
-              title: "Adidas",
+              id: 3,
+              title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
+              to:"/catalog?q=zapatillas%20mujer&p=1"
             },
             {
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Sandalias?p=1"
+              to:"/catalog?q=sandalias%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20mujer&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20mujer&p=1"
             }
           ]
         },
@@ -130,19 +233,60 @@ let options = [
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
-            },
-            {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 3,
+              title: "Ver Toda la Ropa",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=ropa%20mujer&p=1"
+
             },
             {
               id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              title: "Polos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=polos%20mujer&p=1"
+
+            },
+            {
+              id: 3,
+              title: "Licras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=licras%20mujer&p=1"
+
+            }
+            ,
+            {
+              id: 3,
+              title: "Casacas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=casacas%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Pantalones",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=pantalones%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Camisetas de Futbol",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=camisetas%20mujer&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Shorts",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=shorts%20mujer&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Buzos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=Buzos%20mujer&p=1"
             }
           ]
         },
@@ -185,23 +329,57 @@ let options = [
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
+              id: 9,
+              title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
-
+              to:"/catalog/Hombre/Calzado?p=1"
             },
             {
-              id: 2,
-              title: "Adidas",
+              id: 9,
+              title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
+              to:"/catalog/Hombre/Calzado/Zapatillas?p=1"
             },
             {
-              id: 3,
+              id: 9,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog/Hombre/Calzado/Sandalias?p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20hombre&p=1"
             }
           ]
         },
@@ -211,25 +389,64 @@ let options = [
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
+              id: 3,
+              title: "Ver Toda la Ropa",
               icon: <i className="fa fa-opera"></i>,
-              to:" /catalog/Hombre/Ropa?p=1"
-             
-            },
-            {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>,
-              to:" /catalog/Hombre/Ropa?p=1"
-
+              to:"/catalog/Hombre/ropa?p=1"
             },
             {
               id: 3,
-              title: "Sandalias",
+              title: "Polos",
               icon: <i className="fa fa-opera"></i>,
-              to:" /catalog/Hombre/Ropa?p=1"
-
+              to:"/catalog/Hombre/Ropa/polos?p=1"
+            },
+            ,
+            {
+              id: 3,
+              title: "Poleras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=poleras%20hombre&p=1"
+            },
+            {
+              id: 3,
+              title: "Licras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/Hombre/Ropa/Licras?p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Casacas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=casacas%20hombre&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Pantalones",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=pantalones%20hombre&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Camisetas de Futbol",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=camisetas%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Shorts",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=shorts%20hombre&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Buzos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=Buzos%20hombre&p=1"
             }
           ]
         },
@@ -424,14 +641,14 @@ let options = [
       disabled: false,
       to: "/"
     },
-    {
-      id: 20,
-      title: "Nuestras Empresas",
-      icon: <i className="fa fa-graduation-cap"></i>,
-      hideBorder: false,
-      disabled: false,
-      to: "/"
-    },
+    // {
+    //   id: 20,
+    //   title: "Nuestras Empresas",
+    //   icon: <i className="fa fa-graduation-cap"></i>,
+    //   hideBorder: false,
+    //   disabled: false,
+    //   to: "/"
+    // },
   ];
   
   export default options;
