@@ -15,11 +15,11 @@ const data = {
   dataPageHombre: {
     page: 'Hombre',
     nav: [
-      { title: 'Calzado', url: '/catalog?q=zapatillas%20mujer&p=1' },
-      { title: 'Ropa', url: '/catalog?q=ropa%20mujer&p=1' },
+      { title: 'Calzado', url: '/catalog?q=zapatillas%20hombre&p=1' },
+      { title: 'Ropa', url: '/catalog?q=ropa%20hombre&p=1' },
       {
         title: 'Accesorios',
-        url: '/catalog?q=accesorios%20mujer&p=1',
+        url: '/catalog?q=accesorios%20hombre&p=1',
       },
       {
         title: 'Descuento',
