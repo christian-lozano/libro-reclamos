@@ -40,13 +40,14 @@ slider desaparece porque voy a carrito
       /> */}
       <CarouselHome />
       <CategoriasGenero />
-
       <ProductsShowcase
-        title="Lo Nuevo en Zapatillas"
-        indexId="Men"
-        query="nike"
+        title="Primavera / Verano 2023"
+        indexId="spring-summer-2021"
+        ruleContexts={['home-spring-summer-2021']}
+        className="laptop:bg-gray-50"
         hitComponent={ProductCardHitShowcase}
       />
+
       <BannerPromociones />
       <ProductsShowcase
         title="Primavera / Verano 2023"
@@ -56,9 +57,9 @@ slider desaparece porque voy a carrito
         hitComponent={ProductCardHitShowcase}
       />
       <ProductsShowcase
-        title="Recomendado Para ti"
-        indexId="recommended"
-        query="Clothing"
+        title="Lo Nuevo en Zapatillas"
+        indexId="Men"
+        query="nike"
         hitComponent={ProductCardHitShowcase}
       />
       <CarouselMarcasHome />
