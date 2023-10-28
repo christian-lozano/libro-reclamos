@@ -62,6 +62,13 @@ let options = [
             ,
             {
               id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
               title: "Básquet",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=basquet%20hombre&p=1"
@@ -118,6 +125,12 @@ let options = [
               title: "Calzado Comodo",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=comodo%20mujer&p=1"
+            }       ,
+            {
+              id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20mujer&p=1"
             }
             ,
             {
@@ -220,6 +233,13 @@ let options = [
             }
             ,
             {
+              id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20mujer&p=1"
+            }
+            ,
+            {
               id: 3,
               title: "Básquet",
               icon: <i className="fa fa-opera"></i>,
@@ -236,7 +256,7 @@ let options = [
               id: 3,
               title: "Ver Toda la Ropa",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=ropa%20mujer&p=1"
+              to:"/catalog?q=ropa %20mujer&p=1"
 
             },
             {
@@ -244,6 +264,14 @@ let options = [
               title: "Polos",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=polos%20mujer&p=1"
+
+            },
+            ,
+            {
+              id: 3,
+              title: "Poleras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=poleras%20mujer&p=1"
 
             },
             {
@@ -377,6 +405,13 @@ let options = [
             ,
             {
               id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20hombre&p=1"
+            }
+            ,
+            {
+              id: 9,
               title: "Básquet",
               icon: <i className="fa fa-opera"></i>,
               to:"/catalog?q=basquet%20hombre&p=1"
@@ -392,13 +427,15 @@ let options = [
               id: 3,
               title: "Ver Toda la Ropa",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/ropa?p=1"
+              to:"/catalog?q=ropa%20hombre&p=1"
+
             },
             {
               id: 3,
               title: "Polos",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Ropa/polos?p=1"
+              to:"/catalog?q=polos%20hombre&p=1"
+
             },
             ,
             {
@@ -411,7 +448,8 @@ let options = [
               id: 3,
               title: "Licras",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Hombre/Ropa/Licras?p=1"
+              to:"/catalog?q=licras%20hombre&p=1"
+
             }
             ,
             {
@@ -476,63 +514,153 @@ let options = [
       ]
     },
     {
-      id: 40,
-      title: "Niños",
+      id: 22,
+      title: "Niño",
       icon: <i className="fa fa-paragraph"></i>,
       hideBorder: true,
       disabled: false,
       to: "/shop",
       children: [
         {
-          id:39,
+          id: 21,
           title: "Calzado",
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
+              id: 3,
+              title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Nike"
-
+              to:"/catalog?q=zapatillas%20niño&p=1"
             },
             {
-              id: 2,
-              title: "Adidas",
+              id: 3,
+              title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Zapatillas?p=1&refinementList%5Bbrand%5D%5B0%5D=Adidas"
+              to:"/catalog?q=zapatillas%20niño&p=1"
             },
             {
               id: 3,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog/Mujer/Calzado/Sandalias?p=1"
+              to:"/catalog?q=sandalias%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20niño&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20niño&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20niño&p=1"
             }
           ]
         },
         {
-          id: 38,
+          id: 18,
           title: "Ropa",
           icon: <i className="fa fa-opera"></i>,
           children: [
             {
-              id: 1,
-              title: "Nike",
-              icon: <i className="fa fa-opera"></i>
-            },
-            {
-              id: 2,
-              title: "Adidas",
-              icon: <i className="fa fa-opera"></i>
+              id: 3,
+              title: "Ver Toda la Ropa",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=ropa%20niño&p=1"
+
             },
             {
               id: 3,
-              title: "Sandalias",
-              icon: <i className="fa fa-opera"></i>
+              title: "Polos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=polos%20niño&p=1"
+
+            },
+            ,
+            {
+              id: 3,
+              title: "Poleras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=poleras%20niño&p=1"
+
+            },
+            {
+              id: 3,
+              title: "Licras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=licras%20niño&p=1"
+
+            }
+            ,
+            {
+              id: 3,
+              title: "Casacas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=casacas%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Pantalones",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=pantalones%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Camisetas de Futbol",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=camisetas%20niño&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Shorts",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=shorts%20niño&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Buzos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=Buzos%20niño&p=1"
             }
           ]
         },
         {
-          id: 37,
+          id: 17,
           title: "Accesorios",
           icon: <i className="fa fa-opera"></i>,
           children: [
@@ -556,6 +684,178 @@ let options = [
     
       ]
     },
+    {
+      id: 32,
+      title: "Niña",
+      icon: <i className="fa fa-paragraph"></i>,
+      hideBorder: true,
+      disabled: false,
+      to: "/shop",
+      children: [
+        {
+          id: 38,
+          title: "Calzado",
+          icon: <i className="fa fa-opera"></i>,
+          children: [
+            {
+              id: 9,
+              title: "Ver Todas las Zapatillas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/niña/Calzado?p=1"
+            },
+            {
+              id: 9,
+              title: "Zapatillas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/niña/Calzado/Zapatillas?p=1"
+            },
+            {
+              id: 9,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog/niña/Calzado/Sandalias?p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Running",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=correr%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Chimpunes",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=chimpunes%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Originals",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=originals%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado Comodo",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=comodo%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Calzado de Plataforma",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=plataforma%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Básquet",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=basquet%20niña&p=1"
+            }
+          ]
+        },
+        {
+          id: 37,
+          title: "Ropa",
+          icon: <i className="fa fa-opera"></i>,
+          children: [
+            {
+              id: 3,
+              title: "Ver Toda la Ropa",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=ropa%20niña&p=1"
+
+            },
+            {
+              id: 3,
+              title: "Polos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=polos%20niña&p=1"
+
+            },
+            ,
+            {
+              id: 3,
+              title: "Poleras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=poleras%20niña&p=1"
+            },
+            {
+              id: 3,
+              title: "Licras",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=licras%20niña&p=1"
+
+            }
+            ,
+            {
+              id: 3,
+              title: "Casacas",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=casacas%20niña&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Pantalones",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=pantalones%20niña&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Camisetas de Futbol",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=camisetas%20niña&p=1"
+            }
+            ,
+            {
+              id: 9,
+              title: "Shorts",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=shorts%20niña&p=1"
+            }
+            ,
+            {
+              id: 3,
+              title: "Buzos",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/catalog?q=Buzos%20niña&p=1"
+            }
+          ]
+        },
+        {
+          id: 36,
+          title: "Accesorios",
+          icon: <i className="fa fa-opera"></i>,
+          children: [
+            {
+              id: 1,
+              title: "Nike",
+              icon: <i className="fa fa-opera"></i>
+            },
+            {
+              id: 2,
+              title: "Adidas",
+              icon: <i className="fa fa-opera"></i>
+            },
+            {
+              id: 3,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>
+            }
+          ]
+        },
+    
+      ]
+    },
+
+
     {
       id: 50,
       title: "OUTLET",

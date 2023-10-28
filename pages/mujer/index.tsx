@@ -18,13 +18,13 @@ const data = {
     nav: [
       {
         title: 'Calzado',
-        url: '/catalog/Women/Shoes/Sneakers?q=sneakers&p=1&indices%5BSTAGING_pwa_ecom_ui_template_products_query_suggestions%5D%5Bpage%5D=1',
+        url: '/catalog?q=zapatillas%20mujer&p=1',
       },
-      { title: 'Ropa', url: '/catalog/Women/Clothing?p=1' },
-      { title: 'Accesorios', url: '/catalog/Accessories/Women?p=1' },
+      { title: 'Ropa', url: '/catalog?q=ropa%20mujer&p=1' },
+      { title: 'Accesorios', url: '/catalog?q=accesorios%20mujer&p=1' },
       {
         title: 'Descuento',
-        url: '/catalog?p=1&sortBy=STAGING_pwa_ecom_ui_template_products_price_asc',
+        url: '/catalog/Mujer?sortBy=pwa_ecom_ui_template_products_price_asc&p=1',
       },
     ],
     cardHeader: {

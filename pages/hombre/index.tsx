@@ -15,15 +15,15 @@ const data = {
   dataPageHombre: {
     page: 'Hombre',
     nav: [
-      { title: 'Calzado', url: '/catalog/Men/Shoes?p=1' },
-      { title: 'Ropa', url: '/catalog/Men/Clothing?p=1' },
+      { title: 'Calzado', url: '/catalog?q=zapatillas%20mujer&p=1' },
+      { title: 'Ropa', url: '/catalog?q=ropa%20mujer&p=1' },
       {
         title: 'Accesorios',
-        url: '/catalog/Accessories/Men?p=1',
+        url: '/catalog?q=accesorios%20mujer&p=1',
       },
       {
         title: 'Descuento',
-        url: '/catalog/Men?p=1&sortBy=STAGING_pwa_ecom_ui_template_products_price_asc',
+        url: '/catalog/hombre?sortBy=pwa_ecom_ui_template_products_price_asc&p=1',
       },
     ],
     cardHeader: {
@@ -84,160 +84,6 @@ const data = {
       {
         id: '031afdg2321',
         filtro: 'Accesorios',
-
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-    ],
-  },
-  // --------------------------------------
-  dataPageMujer: {
-    page: 'Mujer',
-    nav: ['Calzado', 'Ropa', 'Accesorios', 'Descuento'],
-    cardHeader: {
-      imgDesktop:
-        'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1253,c_limit/071dc223-dc22-4474-ae5d-17ce75940bbe/women-s-shoes-clothing-accessories.jpg',
-      imgMobil:
-        'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BJKZ_STG/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw992bbf81/Landings/Mujeres/Imagenes/801134_SU23_Womens_Bras_OM_JustinePierre_00473%202.jpg',
-      titulo: 'POLAR TECNOLÓGICO NIKE',
-      desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/productos/mujer',
-    },
-    tituloRecienLlegados: 'Recien Llegados',
-
-    cardRecienLLegados: [
-      {
-        titulo: 'Lo Mejor para Primavera',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/1fa8b2ab7873ca01c984d05e8d1b4e3cc24a037f-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/mujer',
-      },
-
-      {
-        titulo: 'Nike ACG',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/2f9d331e815de76fdca6838290a344d7730b46c5-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/mujer',
-      },
-    ],
-    caracteristicasTitle: 'Estilos Destacados',
-    cartPopular: [
-      {
-        id: '01232as142',
-        filtro: 'Ropa',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwe23082ad/Landings/Mujeres/Imagenes/ropadk@2x.jpg',
-        url: '/productos/mujer',
-      },
-
-      {
-        id: '031afdg2321',
-        filtro: 'Bras',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw3d481f3e/Landings/Mujeres/Imagenes/brasdk@2x.jpg',
-        url: '/productos/mujer',
-      },
-
-      {
-        id: '031af12dg2321',
-        filtro: 'Calzado',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw80f95979/Landings/Mujeres/Imagenes/calzadodk@2x.jpg',
-        url: '/productos/mujer',
-      },
-      {
-        id: '031af12dg2321',
-        filtro: 'Accesorios',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dweb473897/Landings/Mujeres/Imagenes/accesoriosdk@2x.jpg',
-        url: '/productos/mujer',
-      },
-    ],
-    footerCarousel: 'Más para explorar',
-
-    carouselPopularMobil: [
-      {
-        id: '123213fdasd',
-        filtro: 'Ropa',
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: 'asd12321f',
-        filtro: 'Calzado',
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: '123ds123',
-        filtro: 'Accesorios',
-
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: '123d213s',
-        filtro: 'Brass',
-
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-    ],
-  },
-  // -------------------------------------
-  dataPageNinos: {
-    page: 'Niños',
-    nav: ['Calzado', 'Ropa', 'Accesorios', 'Descuento'],
-    cardHeader: {
-      imgDesktop:
-        'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/3e88b7a0-cb45-4c8c-ac18-777e704e01cf/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
-      imgMobil:
-        'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/072ae522-a82a-4b9c-a66f-04980766ccd5/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
-      titulo: 'POLAR TECNOLÓGICO NIKE',
-      desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/productos/ninos',
-    },
-    tituloRecienLlegados: 'Recien Llegados',
-
-    cardRecienLLegados: [
-      {
-        titulo: 'Lo Mejor para Primavera',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/39c75b85700442a4b0b1b73d33468b5d99f3b221-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/ninos',
-      },
-
-      {
-        titulo: 'Nike ACG',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/0218b2b5ebbfe1d26c927c78216879e1e09ff809-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/ninos',
-      },
-    ],
-    caracteristicasTitle: 'Estilos Destacados',
-    cartPopular: [
-      {
-        id: '01232as142',
-        filtro: 'Niño',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw2eeef74f/Guias%20Nike/ninos-nike.jpg',
-        url: '/productos/ninos',
-      },
-
-      {
-        id: '031afdg2321',
-        filtro: 'Niña',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw0c198359/Guias%20Nike/ninas-nike.jpg',
-        url: '/productos/ninos',
-      },
-    ],
-    footerCarousel: 'Más para explorar',
-    carouselPopularMobil: [
-      {
-        id: '123213fdasd',
-        filtro: 'Ropa',
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: 'asd12321f',
-        filtro: 'Calzado',
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: '123ds123',
-        filtro: 'Accesorios',
-
-        img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
-      },
-      {
-        id: '123d213s',
-        filtro: 'Brass',
 
         img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
       },
