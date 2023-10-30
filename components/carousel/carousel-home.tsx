@@ -2,19 +2,54 @@ import Carousel from 'nuka-carousel'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
+import { Button } from '../@ui/button/button'
+
 const sliderDesktop = [
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/c8d2856e-c08c-49b7-8d0d-e4813a45e413___edd9a1d5c3a220fb4f867aab63fff4da.jpg',
+  {
+    title: 'NUEVAS BAD BUNNY RESPONSE CL',
+    color: 'white',
+    desc: 'Recién llegadas.',
+    img: '/static/images/imgSliderHome/image1.jpg',
+    url: '#',
+  },
+  {
+    title: 'MARINERUSH PACK',
+    color: 'black',
+    desc: 'Recién llegadas.',
+    img: '/static/images/imgSliderHome/image2.jpg',
+    url: '#',
+  },
+  {
+    title: 'NUEVAS BAD BUNNY RESPONSE CL',
+    desc: 'Recién llegadas.',
+    color: 'black',
+    img: '/static/images/imgSliderHome/image3.jpg',
+    url: '#',
+  },
 ]
 const sliderMobil = [
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/d3346c84-40fc-4651-9b5c-e369b955b0f7___0bbf3a1b72a4fe8956e12eee38fc556a.jpg',
+  {
+    title: 'NUEVAS BAD BUNNY RESPONSE CL',
+    color: 'white',
+    desc: 'Recién llegadas.',
+    img: '/static/images/imgSliderHome/imageMobile1.jpg',
+    url: '#',
+  },
 
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/d3346c84-40fc-4651-9b5c-e369b955b0f7___0bbf3a1b72a4fe8956e12eee38fc556a.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/d3346c84-40fc-4651-9b5c-e369b955b0f7___0bbf3a1b72a4fe8956e12eee38fc556a.jpg',
-  'https://street47.vtexassets.com/assets/vtex.file-manager-graphql/images/d3346c84-40fc-4651-9b5c-e369b955b0f7___0bbf3a1b72a4fe8956e12eee38fc556a.jpg',
+  {
+    title: 'MARINERUSH PACK',
+    desc: 'Recién llegadas.',
+    color: 'black',
+    img: '/static/images/imgSliderHome/imageMobile2.jpg',
+    url: '#',
+  },
+  {
+    title: 'PACK CRAZYRUSH',
+    desc: 'Recién llegadas.',
+    color: 'black',
+    img: '/static/images/imgSliderHome/imageMobile3.jpg',
+    url: '#',
+  },
 ]
 export default function CarouselHome() {
   // console.log(data.attributes.SliderDesktop.data);
@@ -30,7 +65,8 @@ export default function CarouselHome() {
           <Carousel
             // autoplay={true}
             autoplay={true}
-            autoplayInterval={10000}
+            // autoplayInterval={10000}
+            autoplayInterval={5000}
             wrapAround={true}
             withoutControls={true}
             adaptiveHeight={true}
@@ -44,7 +80,29 @@ export default function CarouselHome() {
             // slideCount={indiceSlider}
           >
             {sliderMobil.map((el, i) => (
-              <img src={el} key={i} alt="" />
+              <div key={i} className="mt-12">
+                <div className="">
+                  <img className=" z-dev" src={el.img} alt="" />
+                  <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
+                    <div
+                      className={`absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]  `}
+                    >
+                      <h6 className={`text-center font-black text-${el.color}`}>
+                        {' '}
+                        {el.title}
+                      </h6>
+                      <p className={`text-center text-${el.color} text-base`}>
+                        {el.desc}
+                      </p>
+                      <Button
+                        className={`bg-black text-lg text-white mt-5 w-3/6 rounded-lg`}
+                      >
+                        Comprar
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </Carousel>
 
@@ -70,7 +128,7 @@ export default function CarouselHome() {
         <div>
           <Carousel
             autoplay={true}
-            autoplayInterval={10000}
+            autoplayInterval={8000}
             wrapAround={true}
             withoutControls={true}
             adaptiveHeight={true}
@@ -83,7 +141,14 @@ export default function CarouselHome() {
             // slideCount={indiceSlider}
           >
             {sliderDesktop.map((el, i) => (
-              <img src={el} key={i} alt="" />
+              <div key={i}>
+                <div className="relative">
+                  <img className=" z-dev" src={el.img} alt="" />
+                  <p className="absolute text-2xl text-black top-20 z-50">
+                    {el.title}
+                  </p>
+                </div>
+              </div>
             ))}
           </Carousel>
           <div className="flex w-full mt-5 ">
