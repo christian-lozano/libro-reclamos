@@ -85,7 +85,9 @@ export default function CarouselHome() {
                   <img className="z-dev" src={el.img} alt="" />
                   <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
                     <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]">
-                      <h6 className={`text-center font-black text-${el.color}`}>
+                      <h6
+                        className={`text-center text-xl font-black text-${el.color}`}
+                      >
                         {' '}
                         {el.title}
                       </h6>
@@ -93,7 +95,7 @@ export default function CarouselHome() {
                         {el.desc}
                       </p>
                       <Button
-                        className={`bg-black text-lg text-white mt-5  rounded-lg`}
+                        className={`bg-black text-lg text-white mt-5 w-32  rounded-lg uppercase`}
                       >
                         Comprar
                       </Button>
