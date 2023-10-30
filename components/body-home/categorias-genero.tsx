@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Button } from '../@ui/button/button'
 import { Link } from '../@ui/link/link'
 
 const DataCardBg = [
@@ -41,9 +42,25 @@ export function CategoriasGenero() {
             >
               <img src={el.imgCategory} alt="" />
               <div className="flex justify-center w-full">
-                <span className="my-3 uppercase text-white bg-black p-3  w-3/5 md:p-2 font-bold  text-sm laptop:text-base ">
-                  {el.button}
-                </span>
+                <Button
+                  className={`bg-black flex justify-around items-center laptop:text-lg  text-sm  font-medium border border-black shadow-lg text-black mt-5  py-1 px-3 rounded-sm uppercase`}
+                >
+                  <span className="mr-1 text-white"> {el.button}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="#fff"
+                    className="w-4 h-4 laptop:w-5 laptop:h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </Button>
               </div>
             </Link>
           ))}
