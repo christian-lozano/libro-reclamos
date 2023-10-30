@@ -95,9 +95,23 @@ export default function CarouselHome() {
                         {el.desc}
                       </p>
                       <Button
-                        className={`bg-black text-base text-white mt-5 w-32  rounded-lg uppercase`}
+                        className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
                       >
-                        Comprar
+                        Comprar Ahora
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                          />
+                        </svg>
                       </Button>
                     </div>
                   </div>
