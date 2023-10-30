@@ -82,11 +82,9 @@ export default function CarouselHome() {
             {sliderMobil.map((el, i) => (
               <div key={i} className="mt-12">
                 <div className="">
-                  <img className=" z-dev" src={el.img} alt="" />
+                  <img className="z-dev" src={el.img} alt="" />
                   <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
-                    <div
-                      className={`absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]  `}
-                    >
+                    <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]">
                       <h6 className={`text-center font-black text-${el.color}`}>
                         {' '}
                         {el.title}
