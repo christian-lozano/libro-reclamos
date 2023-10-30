@@ -95,7 +95,7 @@ export default function CarouselHome() {
                         {el.desc}
                       </p>
                       <Button
-                        className={`bg-black text-lg text-white mt-5 w-32  rounded-lg uppercase`}
+                        className={`bg-black text-base text-white mt-5 w-32  rounded-lg uppercase`}
                       >
                         Comprar
                       </Button>
