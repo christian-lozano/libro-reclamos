@@ -100,7 +100,7 @@ export function NavAutocomplete() {
       animate={{ width: isLaptop ? width : '110%' }}
       transition={transition}
     >
-      <div className="hidden absolute w-24 h-full -translate-x-full bg-gradient-to-l md:from-transparent from-white laptop:block" />
+      <div className="hidden absolute w-24 h-full -translate-x-full  bg-gradient-to-l md:from-transparent from-white laptop:block" />
       <AutocompleteBasic
         initialQuery={initialQuery}
         searchClient={searchClient}
