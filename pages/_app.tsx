@@ -20,6 +20,7 @@ import { AppLayout } from '@/layouts/app-layout'
 import { gaTrackingId, isDev, isProd } from '@/utils/env'
 import { scrollToTop } from '@/utils/scrollToTop'
 import '@/styles/_index.css'
+import IconWhatapp from '@/components/icon-whatsapp/icon-whatapp'
 
 export const Header = dynamic<HeaderProps>(() =>
   import(/* webpackChunkName: 'common' */ '@/components/header/header').then(
@@ -84,6 +85,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Overlay />
 
         {isDev && <Dev />}
+        <IconWhatapp />
       </AppLayout>
     </CartProvider>
   )

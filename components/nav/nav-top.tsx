@@ -682,7 +682,7 @@ export const NavTop = memo(function NavTop() {
                           </Link>
                         ))}
                         <Link
-                          href="#"
+                          href="/emprende"
                           className="h-full flex justify-center items-center "
                         >
                           <div className=" inline-flex items-center  justify-between  px-2  font-medium transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">

@@ -38,7 +38,7 @@ export function CategoriasGenero() {
             <Link
               key={index}
               href={el.url}
-              className="  laptop:rounded-xl laptop:rounded-xl laptop:rounded-xl text-center"
+              className="laptop:rounded-xl  text-center"
             >
               <img src={el.imgCategory} alt="" />
               <div className="flex justify-center w-full">
