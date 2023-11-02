@@ -138,6 +138,9 @@ export default function Home(props: SearchPageLayoutProps) {
                       key={value}
                       value={value}
                       className="text-lg font-bold"
+                      nonce={undefined}
+                      onResize={undefined}
+                      onResizeCapture={undefined}
                     >
                       {label}
                     </Tab>
