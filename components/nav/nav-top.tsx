@@ -715,7 +715,7 @@ export const NavTop = memo(function NavTop() {
                         title="Ubicanos"
                         onClick={() => setOpenUbicanos(!openUbi)}
                       >
-                        <IconLabel icon={PinDropIcon} label="Ubicanos" />
+                        <IconLabel icon={PinDropIcon} />
                       </Button>
                     </Tablet>
 
@@ -741,7 +741,10 @@ export const NavTop = memo(function NavTop() {
                     {domLoaded && (
                       <Button title="Cart" onClick={openDrawer}>
                         <Tablet>
-                          <IconLabel icon={ShoppingBagIcon} label="Cart" />
+                          <IconLabel icon={ShoppingBagIcon} />
+                          <span className="absolute bg-black text-white rounded-full w-5">
+                            {totalItems}
+                          </span>
                         </Tablet>
                         <Laptop>
                           <IconLabel icon={ShoppingBagIcon} />

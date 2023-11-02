@@ -17,54 +17,54 @@ let options = [
               id: 9,
               title: "Ver Todas las Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=zapatillas%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas?p=1"
             },
             {
               id: 9,
               title: "Zapatillas",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=zapatillas%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas?p=1"
             },
             {
               id: 9,
               title: "Sandalias",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=sandalias%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/sandalias?p=1"
             }
             ,
             {
               id: 9,
               title: "Running",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=correr%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/running?p=1"
             }
             ,
             {
               id: 9,
               title: "Chimpunes",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=chimpunes%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/chimpunes?p=1"
             }
             ,
             {
               id: 9,
               title: "Originals",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=originals%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/originals?p=1"
             }
             ,
             {
               id: 9,
               title: "Calzado Comodo",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=comodo%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/comodo?p=1"
             }
             ,
             {
               id: 9,
               title: "Básquet",
               icon: <i className="fa fa-opera"></i>,
-              to:"/catalog?q=basquet%20hombre&p=1"
+              to:"/catalog/hombre/calzado/zapatillas/basquet?p=1"
             }
           ]
         },
