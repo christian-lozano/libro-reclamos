@@ -6,14 +6,14 @@ import { Link } from '../@ui/link/link'
 const marcas = [
   {
     id: '01',
-    url: 'https://e-commerce-renny.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Adidas&p=1',
+    url: 'https://fritz-sport.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Adidas&p=1',
 
     value:
       'https://upload.wikimedia.org/wikipedia/commons/d/d6/Adidas_isologo.svg',
   },
   {
     id: '02',
-    url: 'https://e-commerce-renny.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Nike&p=1',
+    url: 'https://fritz-sport.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Nike&p=1',
 
     value:
       'https://www.brandemia.org/wp-content/uploads/2011/09/logo_nike_principal.jpg',
