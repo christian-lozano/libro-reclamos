@@ -58,8 +58,20 @@ export default function Home(props: SearchPageLayoutProps) {
                         data-tooltip-target="author-2"
                       /> */}
 
-                      <Button>Ver Horarios</Button>
-                      <Button>Ubicación</Button>
+                      <Button
+                        nonce={undefined}
+                        onResize={undefined}
+                        onResizeCapture={undefined}
+                      >
+                        Ver Horarios
+                      </Button>
+                      <Button
+                        nonce={undefined}
+                        onResize={undefined}
+                        onResizeCapture={undefined}
+                      >
+                        Ubicación
+                      </Button>
                     </div>
                     {/* <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
                       <svg
