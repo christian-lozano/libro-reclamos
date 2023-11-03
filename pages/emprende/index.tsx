@@ -264,23 +264,35 @@ export default function Home(props: SearchPageLayoutProps) {
                         </h6>
                       </div>
                       <div className="mt-10 flex flex-col md:flex-row justify-around items-center h-3/5 w-full">
-                        <Button
-                          className="text-base"
-                          nonce={undefined}
-                          onResize={undefined}
-                          onResizeCapture={undefined}
+                        <a
+                          href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                          target="_blank"
+                          rel="noreferrer"
                         >
-                          Regístrate por WhatsApp
-                        </Button>
+                          <Button
+                            className="text-base"
+                            nonce={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
+                          >
+                            Regístrate por WhatsApp
+                          </Button>
+                        </a>
 
-                        <Button
-                          className="ml-5 text-base mt-5 md:mt-0"
-                          nonce={undefined}
-                          onResize={undefined}
-                          onResizeCapture={undefined}
+                        <a
+                          href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
+                          target="_blank"
+                          rel="noreferrer"
                         >
-                          llama a un Asesor
-                        </Button>
+                          <Button
+                            className="ml-5 text-base mt-5 md:mt-0"
+                            nonce={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
+                          >
+                            llama a un Asesor
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>
