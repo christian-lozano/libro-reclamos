@@ -3,7 +3,7 @@ export default function IconWhatapp() {
     <a
       href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
       target="_blank"
-      className="z-30 fixed  sticky-0 bottom-0 xl:right-16 right-3   "
+      className="z-30 fixed  sticky-0 bottom-0 xl:right-16 right-5   "
       rel="noreferrer"
     >
       <div className=" cursor-pointer justify-end md:w-28  h-[50px] mb-[6vh]  relative  mr-1  pl-1  rounded-r-full flex items-center">
