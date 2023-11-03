@@ -103,9 +103,10 @@ export default function Home(props: SearchPageLayoutProps) {
       parrafo:
         'Realiza tu primera compra de s/299.00 para comenzar tu negocio.',
     },
+
     {
       title: '¡Gana!',
-      parrafo: ' Comparte tus catálogos y disfruta de tus ganancias.',
+      parrafo: 'Comparte tus catálogos y disfruta de tus ganancias.',
     },
   ]
   return (
@@ -184,7 +185,11 @@ export default function Home(props: SearchPageLayoutProps) {
                   >
                     {dataSocios.map(
                       ({ value, title, img, arr, arrSub, subTitle }) => (
-                        <TabPanel key={value} value={value}>
+                        <TabPanel
+                          key={value}
+                          value={value}
+                          className="text-black"
+                        >
                           <div className="flex flex-col laptop:flex-row xl:flex-row">
                             <div>
                               <img src={img} alt="" />
@@ -240,13 +245,12 @@ export default function Home(props: SearchPageLayoutProps) {
                         alt=""
                       />
 
-                      <div className="px-10 flex flex-col items-center justify-center">
+                      <div className="px-10 flex flex-col items-start justify-center">
                         {data3pasos.map((el, i) => (
                           <div key={i} className=" flex flex-col mt-3">
                             <p className="text-lg font-bold my-3">{el.title}</p>
                             <p className="text-base text-start xl:text-start ">
-                              Ingresa tus datos en el botón Inscríbete aquí o
-                              contáctate con un asesor.
+                              {el.parrafo}
                             </p>
                           </div>
                         ))}
