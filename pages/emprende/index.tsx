@@ -117,7 +117,6 @@ export default function Home(props: SearchPageLayoutProps) {
             alt=""
             className="hidden md:block"
           />
-
           <img
             src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/b7ca8649-5884-4e95-a25d-07ae91224897___be2aa7b36484dbb9b8c3811cc9004bab.png"
             alt=""
@@ -243,9 +242,9 @@ export default function Home(props: SearchPageLayoutProps) {
 
                       <div className="px-10 flex flex-col items-center justify-center">
                         {data3pasos.map((el, i) => (
-                          <div key={i} className=" flex flex-col">
+                          <div key={i} className=" flex flex-col mt-3">
                             <p className="text-lg font-bold my-3">{el.title}</p>
-                            <p className="text-base text-center xl:text-start ">
+                            <p className="text-base text-start xl:text-start ">
                               Ingresa tus datos en el botón Inscríbete aquí o
                               contáctate con un asesor.
                             </p>
