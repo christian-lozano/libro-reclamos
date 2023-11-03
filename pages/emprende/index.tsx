@@ -1,4 +1,5 @@
 import {
+  Button,
   Tab,
   TabPanel,
   Tabs,
@@ -53,7 +54,7 @@ export default function Home(props: SearchPageLayoutProps) {
     },
   ]
 
-  const data = [
+  const dataSocios = [
     {
       label: 'Directores',
       value: 'Directores',
@@ -91,102 +92,200 @@ export default function Home(props: SearchPageLayoutProps) {
       ],
     },
   ]
+  const data3pasos = [
+    {
+      title: '1. Regístrate',
+      parrafo:
+        ' Ingresa tus datos en el botón Inscríbete aquí o contáctate con un asesor. ',
+    },
+    {
+      title: '2. Tu primera compra',
+      parrafo:
+        'Realiza tu primera compra de s/299.00 para comenzar tu negocio.',
+    },
+    {
+      title: '¡Gana!',
+      parrafo: ' Comparte tus catálogos y disfruta de tus ganancias.',
+    },
+  ]
   return (
     <SearchPageLayout {...props}>
-      <div className="">
-        <img
-          src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/87e2b249-950c-4fc0-a060-6c769f732812___be97d770f6dca434a84e79c1f491ba5c.png"
-          alt=""
-        />
-      </div>
+      <div className=" pt-14 md:pt-16">
+        <div className="">
+          <img
+            src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/87e2b249-950c-4fc0-a060-6c769f732812___be97d770f6dca434a84e79c1f491ba5c.png"
+            alt=""
+            className="hidden md:block"
+          />
 
-      <div className="bg-white">
-        <div className="container flex flex-col mx-auto bg-white">
-          <div className="w-full draggable">
-            <div className="container flex flex-col items-center gap-16 mx-auto my-32">
-              <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-5">
-                {/*  */}
-                {dataEmprende.map((el) => (
-                  <div
-                    key={el.id}
-                    className="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl shadow-main"
-                  >
-                    <span>
-                      <img src={el.img} alt="" className="w-32" />
-                    </span>
-                    <p className="laptop:text-xl 2xl:text-lg font-extrabold text-center text-dark-grey-900">
-                      {el.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <Tabs value="Directores" className="">
-                <h4 className="text-center   text-2xl py-7">
-                  ¡Inicia a tu manera y gana!
-                </h4>
-                <TabsHeader
-                  className="bg-transparent"
-                  indicatorProps={{
-                    className: 'bg-gray-900/10 shadow-none !text-gray-900',
-                  }}
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                >
-                  {data.map(({ label, value }) => (
-                    <Tab
-                      key={value}
-                      value={value}
-                      className="text-lg font-bold"
-                      nonce={undefined}
-                      onResize={undefined}
-                      onResizeCapture={undefined}
+          <img
+            src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/b7ca8649-5884-4e95-a25d-07ae91224897___be2aa7b36484dbb9b8c3811cc9004bab.png"
+            alt=""
+            className="block md:hidden"
+          />
+        </div>
+
+        <div className="bg-white">
+          <div className="container flex flex-col mx-auto bg-white">
+            <div className="w-full draggable">
+              <div className="container flex flex-col items-center gap-16 mx-auto mt-32">
+                <div className="grid w-full grid-cols-2 gap-5 md:grid-cols-2 lg:grid-cols-5">
+                  {/*  */}
+                  {dataEmprende.map((el) => (
+                    <div
+                      key={el.id}
+                      className="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl shadow-main"
                     >
-                      {label}
-                    </Tab>
+                      <span>
+                        <img src={el.img} alt="" className="w-32" />
+                      </span>
+                      <p className="laptop:text-xl 2xl:text-lg font-extrabold text-center text-dark-grey-900">
+                        {el.title}
+                      </p>
+                    </div>
                   ))}
-                </TabsHeader>
-                <TabsBody
-                  nonce={undefined}
-                  onResize={undefined}
-                  onResizeCapture={undefined}
-                >
-                  {data.map(({ value, title, img, arr, arrSub, subTitle }) => (
-                    <TabPanel key={value} value={value}>
-                      <div className="flex flex-col laptop:flex-row xl:flex-row">
-                        <div>
-                          <img src={img} alt="" />
-                        </div>
-                        <div className="xl:px-5">
-                          <div className="text-center text-3xl font-bold my-7">
-                            {title}
-                          </div>
-                          <ul className="flex flex-col">
-                            {arr.map((el, i) => (
-                              <li key={i} className="my-3 mx-3 font-semibold">
-                                - {el}
-                              </li>
-                            ))}
-                          </ul>
-                          {/* sub title */}
-                          <div className="xl:px-5">
-                            <div className="text-center text-3xl font-bold my-7">
-                              {subTitle}
+                </div>
+                {/* 
+              /*---------------------------------*/
+                /* ¡Inicia a tu manera y gana! page Emprende*/
+                /* ---------------------------------*/}
+
+                {/* ------------------------------ */}
+                <Tabs value="Directores" className="">
+                  <h4 className="text-center   text-2xl py-7">
+                    ¡Inicia a tu manera y gana!
+                  </h4>
+                  <TabsHeader
+                    className="bg-transparent"
+                    indicatorProps={{
+                      className: 'bg-gray-900/10 shadow-none !text-gray-900',
+                    }}
+                    nonce={undefined}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
+                  >
+                    {dataSocios.map(({ label, value }) => (
+                      <Tab
+                        key={value}
+                        value={value}
+                        className="text-lg font-bold"
+                        nonce={undefined}
+                        onResize={undefined}
+                        onResizeCapture={undefined}
+                      >
+                        {label}
+                      </Tab>
+                    ))}
+                  </TabsHeader>
+                  {/* ------------------------------------------------------ */}
+                  <TabsBody
+                    nonce={undefined}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
+                  >
+                    {dataSocios.map(
+                      ({ value, title, img, arr, arrSub, subTitle }) => (
+                        <TabPanel key={value} value={value}>
+                          <div className="flex flex-col laptop:flex-row xl:flex-row">
+                            <div>
+                              <img src={img} alt="" />
                             </div>
-                            <ul className="flex flex-col">
-                              {arrSub.map((el, i) => (
-                                <li key={i} className="my-3 mx-3 font-semibold">
-                                  - {el}
-                                </li>
-                              ))}
-                            </ul>
+                            <div className="xl:px-5">
+                              <div className="text-center text-3xl font-bold my-7">
+                                {title}
+                              </div>
+                              <ul className="flex flex-col">
+                                {arr.map((el, i) => (
+                                  <li
+                                    key={i}
+                                    className="my-3 mx-3 font-semibold"
+                                  >
+                                    - {el}
+                                  </li>
+                                ))}
+                              </ul>
+                              {/* sub title */}
+                              <div className="xl:px-5">
+                                <div className="text-center text-3xl font-bold my-7">
+                                  {subTitle}
+                                </div>
+                                <ul className="flex flex-col">
+                                  {arrSub.map((el, i) => (
+                                    <li
+                                      key={i}
+                                      className="my-3 mx-3 font-semibold"
+                                    >
+                                      - {el}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </TabPanel>
+                      )
+                    )}
+                  </TabsBody>
+
+                  {/* ---------------------------------------------------------------- */}
+
+                  <div className="flex justify-center flex-col items-center mt-10 ">
+                    <h5 className="my-10  text-2xl">
+                      Afíliate en 3 simples pasos
+                    </h5>
+
+                    <div className="md:flex flex-col xl:flex-row w-5/6">
+                      <img
+                        className="md:w-5/12 xl:w-6/12"
+                        src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/383d673e-4393-4c04-a0c6-418627b4903b___ff7dcb03be130144b141d54b8335719e.png"
+                        alt=""
+                      />
+
+                      <div className="px-10 flex flex-col items-center justify-center">
+                        {data3pasos.map((el, i) => (
+                          <div key={i} className=" flex flex-col">
+                            <p className="text-lg font-bold my-3">{el.title}</p>
+                            <p className="text-base text-center xl:text-start ">
+                              Ingresa tus datos en el botón Inscríbete aquí o
+                              contáctate con un asesor.
+                            </p>
+                          </div>
+                        ))}
                       </div>
-                    </TabPanel>
-                  ))}
-                </TabsBody>
-              </Tabs>
+                    </div>
+                  </div>
+
+                  {/* ---------------------------------------------------------------- */}
+                  <div className="w-full flex  justify-center my-20 ">
+                    <div className="flex flex-col">
+                      <div>
+                        <h6 className="text-center text-3xl">
+                          ¡Empieza ahora!
+                        </h6>
+                      </div>
+                      <div className="mt-10 flex flex-col md:flex-row justify-around items-center h-3/5 w-full">
+                        <Button
+                          className="text-base"
+                          nonce={undefined}
+                          onResize={undefined}
+                          onResizeCapture={undefined}
+                        >
+                          Regístrate por WhatsApp
+                        </Button>
+
+                        <Button
+                          className="ml-5 text-base mt-5 md:mt-0"
+                          nonce={undefined}
+                          onResize={undefined}
+                          onResizeCapture={undefined}
+                        >
+                          llama a un Asesor
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </Tabs>
+              </div>
             </div>
           </div>
         </div>

@@ -1069,7 +1069,7 @@ let options = [
       icon: <i className="fa fa-graduation-cap"></i>,
       hideBorder: false,
       disabled: false,
-      to: "/"
+      to: "/emprende"
     },
     // {
     //   id: 20,
