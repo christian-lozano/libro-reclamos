@@ -226,7 +226,7 @@ export const Footer = memo(function Footer() {
                 rel="noreferrer"
               >
                 <svg
-                  fill="#ffffff"
+                  className="fill-black xl:fill-white"
                   width="30px"
                   height="30px"
                   viewBox="0 0 32 32"

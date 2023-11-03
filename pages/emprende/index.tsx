@@ -262,7 +262,7 @@ export default function Home(props: SearchPageLayoutProps) {
                           ¡Empieza ahora!
                         </h6>
                       </div>
-                      <div className="mt-10 flex flex-col md:flex-row justify-around items-center h-3/5 w-full">
+                      <div className="mt-10 flex flex-col md:flex-row justify-center items-center h-3/5 w-full">
                         <a
                           href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
                           target="_blank"
@@ -284,7 +284,7 @@ export default function Home(props: SearchPageLayoutProps) {
                           rel="noreferrer"
                         >
                           <Button
-                            className="ml-5 text-base mt-5 md:mt-0"
+                            className="lg:ml-5 text-base mt-5 md:mt-0"
                             nonce={undefined}
                             onResize={undefined}
                             onResizeCapture={undefined}
