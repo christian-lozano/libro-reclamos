@@ -167,7 +167,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       <Tab
                         key={value}
                         value={value}
-                        className="text-lg font-bold"
+                        className="text-lg font-bold mb-5"
                         nonce={undefined}
                         onResize={undefined}
                         onResizeCapture={undefined}

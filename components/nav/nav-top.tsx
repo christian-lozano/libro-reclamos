@@ -826,50 +826,6 @@ export const NavTop = memo(function NavTop() {
                   ))}
                 </div>
                 {/* footer */}
-                {/* <div className="w-full border-t-[2px]  flex justify-center">
-                    <ul className="grid grid-cols-5 w-5/6 justify-items-center container">
-                      <li className="px-5 py-2 font-semibold text-xs  ">
-                        <a
-                          className="border-b-[1px] border-transparent hover:border-b-[1px] hover:border-black transition ease-out"
-                          href="#"
-                        >
-                          Todos los Productos
-                        </a>
-                      </li>
-                      <li className="px-5 py-2 font-semibold text-xs  ">
-                        <a
-                          className="border-b-[1px] border-transparent hover:border-b-[1px] hover:border-black transition ease-out"
-                          href="#"
-                        >
-                          Todo el Calzado
-                        </a>
-                      </li>
-                      <li className="px-5 py-2 font-semibold text-xs  ">
-                        <a
-                          className="border-b-[1px] border-transparent hover:border-b-[1px] hover:border-black transition ease-out"
-                          href="#"
-                        >
-                          Toda la Ropa
-                        </a>
-                      </li>
-                      <li className="px-5 py-2 font-semibold text-xs  ">
-                        <a
-                          className="border-b-[1px] border-transparent hover:border-b-[1px] hover:border-black transition ease-out"
-                          href="#"
-                        >
-                          Todos los Accesorios
-                        </a>
-                      </li>
-                      <li className="px-5 py-2 font-semibold text-xs  ">
-                        <a
-                          className="border-b-[1px] border-transparent hover:border-b-[1px] hover:border-black transition ease-out"
-                          href="#"
-                        >
-                          Todos los Deportes
-                        </a>
-                      </li>
-                    </ul>
-                  </div> */}
               </Button>
             </div>
           </div>
@@ -886,19 +842,6 @@ export const NavTop = memo(function NavTop() {
 
           <div className="flex gap-48 xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
-              {/* <Link
-              href="/support"
-              title="Support"
-              className="can-hover:transition-colors can-hover:hover:text-neutral-dark"
-              onClick={(e) => e.preventDefault()}
-            >
-              <IconLabel
-                icon={HeadsetMicIcon}
-                label="Support"
-                labelPosition="right"
-                classNameLabel="label-regular"
-              />
-            </Link> */}
               <Link
                 href="/store-locator"
                 title="Ubicanos"
@@ -927,20 +870,7 @@ export const NavTop = memo(function NavTop() {
                   <span className="absolute left-1 text-center">Ubicanos</span>
                 </Button>
               </Tablet>
-              {/* <Laptop>
-              <Button title="Favorites">
-                <IconLabel icon={FavoriteIcon} />
-              </Button>
-            </Laptop> */}
 
-              {/* <Button title="Account">
-              <Tablet>
-                <IconLabel icon={PersonIcon} label="Account" />
-              </Tablet>
-              <Laptop>
-                <IconLabel icon={PersonIcon} />
-              </Laptop>
-            </Button> */}
               {domLoaded && (
                 <Button title="Cart" onClick={openDrawer}>
                   <Tablet>
@@ -1040,9 +970,6 @@ export const NavTop = memo(function NavTop() {
                             <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
                               {el.title}
                             </h2>
-                            {/* <p className="text-sm dark:text-gray-400">
-                              Classic
-                            </p> */}
                           </div>
                           <div className="text-right">
                             <p className="xl:text-lg text-base font-semibold">
