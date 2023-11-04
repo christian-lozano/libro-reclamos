@@ -97,7 +97,6 @@ ProductDetailProps) {
   //   [onCheckoutClick]
   // )
 
-
   return (
     <div className="flex flex-col gap-6 mb-12 laptop:my-8 laptop:flex-row">
       <div className="laptop:w-8/12 ">
@@ -192,39 +191,9 @@ ProductDetailProps) {
         )}
         {popular && (
           <div className="mt-2">
-            Hurry! This item is{' '}
-            <span className="text-brand-nebula font-bold">selling fast</span>
+            <span className="text-brand-nebula font-bold"></span>
           </div>
         )}
-        {/* <ul className="flex flex-col gap-3 mt-6">
-          <li>
-            <ProductFavorite
-              layout="icon-label"
-              isFavorite={isFavorite}
-              onClick={handleFavoriteClick}
-            />
-          </li>
-          <li>
-            <IconLabel
-              icon={SyncIcon}
-              label="90 days return policy"
-              labelPosition="right"
-              className="gap-2 text-neutral-dark"
-              classNameLabel=""
-              classNameIcon="w-4 h-4"
-            />
-          </li>
-          <li>
-            <IconLabel
-              icon={ShoppingBagIcon}
-              label="Free shipping for loyalty club members"
-              labelPosition="right"
-              className="gap-2 text-neutral-dark"
-              classNameLabel=""
-              classNameIcon="w-4 h-4"
-            />
-          </li>
-        </ul> */}
       </div>
     </div>
   )

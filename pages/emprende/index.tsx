@@ -109,6 +109,7 @@ export default function Home(props: SearchPageLayoutProps) {
       parrafo: 'Comparte tus catálogos y disfruta de tus ganancias.',
     },
   ]
+
   return (
     <SearchPageLayout {...props}>
       <div className=" pt-14 md:pt-16">
