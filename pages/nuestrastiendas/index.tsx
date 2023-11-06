@@ -10,7 +10,7 @@ import {
 
 const dataNuestrasEmpresas = [
   {
-    img: 'https://lh5.googleusercontent.com/p/AF1QipP00B6BVcTH365JsWbmsBhfDCcgETXzfvQnqxUj=s516-k-no',
+    img: 'https://lh5.googleusercontent.com/p/AF1QipNc0m8OUrP-oiueHkxwr2q8Rc2Hstqf9rM7uQl5=s450-k-no',
     title: 'Miguel Graú ',
     subtitle: 'Fritz Sport, Av. Miguel Grau 231, Lima 15001',
     dataHorarios: [
@@ -26,7 +26,7 @@ const dataNuestrasEmpresas = [
   },
 
   {
-    img: 'https://lh5.googleusercontent.com/p/AF1QipP00B6BVcTH365JsWbmsBhfDCcgETXzfvQnqxUj=s516-k-no',
+    img: 'https://lh5.googleusercontent.com/p/AF1QipMs6zTdg1C_xoBmP2gsXzpMT18dCkjEitH9EIfM=s450-k-no',
     title: 'Tumbes ',
     subtitle: 'Av. República del Perú 373, 24101',
     dataHorarios: [
@@ -51,15 +51,55 @@ export default function Home(props: SearchPageLayoutProps) {
         <section className="blog text-gray-700 body-font">
           <div className="container px-5  mx-auto">
             <div className="h-2/6 pb-20 bg-gray-50 flex items-center">
-              <section className="w-full bg-cover bg-center py-32 bg-[url('https://source.unsplash.com/random')]">
-                <div className="container mx-auto text-center text-white">
-                  <h1 className="text-5xl font-medium mb-6">
-                    {' '}
-                    Nuestras Tiendas
-                  </h1>
-                  <p className="text-xl mb-12">
-                    Conoce la Ubicación y Nuestros Horarios de Atención
-                  </p>
+              <section className="w-full bg-cover bg-center ">
+                <div className="relative w-full h-full flex justify-center items-center bg-blue-gray-50">
+                  <div className="container mx-auto text-center absolute text-white">
+                    <h1 className="text-5xl font-medium mb-6">
+                      {' '}
+                      Nuestras Tiendas
+                    </h1>
+                    <p className="text-xl mb-12">
+                      Conoce la Ubicación y Nuestros Horarios de Atención
+                    </p>
+                  </div>
+                  <video
+                    autoPlay={true}
+                    loop={true}
+                    className="w-[100vw] h-[500px] hidden xl:block"
+                  >
+                    <source src="/static/images/video/empresa.mp4 " />
+                    <track
+                      src="captions_en.vtt"
+                      kind="captions"
+                      srcLang="en"
+                      label="english_captions"
+                    />
+                    <track
+                      src="captions_es.vtt"
+                      kind="captions"
+                      srcLang="es"
+                      label="spanish_captions"
+                    />
+                  </video>
+                  <video
+                    autoPlay={true}
+                    loop={true}
+                    className="w-[100vw] h-[500px]  xl:hidden"
+                  >
+                    <source src="/static/images/video/empresaMobil.mp4 " />
+                    <track
+                      src="captions_en.vtt"
+                      kind="captions"
+                      srcLang="en"
+                      label="english_captions"
+                    />
+                    <track
+                      src="captions_es.vtt"
+                      kind="captions"
+                      srcLang="es"
+                      label="spanish_captions"
+                    />
+                  </video>
                 </div>
               </section>
             </div>
