@@ -54,7 +54,7 @@ export default function Home(props: SearchPageLayoutProps) {
               <section className="w-full bg-cover bg-center ">
                 <div className="relative w-full h-full flex justify-center items-center ">
                   <div className="container mx-auto text-center absolute text-white">
-                    <h1 className="xl:text-5xl sm:text-2xl text-2xl font-bold mb-6">
+                    <h1 className="xl:text-5xl sm:text-3xl text-3xl font-bold mb-6">
                       {' '}
                       Nuestras Tiendas
                     </h1>
