@@ -48,7 +48,7 @@ export default function Home(props: SearchPageLayoutProps) {
   return (
     <SearchPageLayout {...props}>
       <div className=" pt-14 md:pt-16">
-        <section className="blog text-gray-700 body-font">
+        <section className="blog text-gray-700 body-font mb-20">
           <div className="container px-5  mx-auto">
             <div className="h-2/6 pb-20 bg-gray-50 flex items-center">
               <section className="w-full bg-cover bg-center ">
@@ -65,7 +65,7 @@ export default function Home(props: SearchPageLayoutProps) {
                   <video
                     autoPlay={true}
                     loop={true}
-                    className="w-[100vw] h-[500px] hidden xl:block"
+                    className="w-[100vw] laptop:h-full  hidden xl:block"
                   >
                     <source src="/static/images/video/empresa.mp4 " />
                     <track
@@ -104,7 +104,7 @@ export default function Home(props: SearchPageLayoutProps) {
               </section>
             </div>
             {/*  */}
-            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 ">
               {dataNuestrasEmpresas.map((el, i) => (
                 <div
                   key={i}
