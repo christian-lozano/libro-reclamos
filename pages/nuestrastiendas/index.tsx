@@ -60,11 +60,14 @@ export default function Home(props: SearchPageLayoutProps) {
                     </h1>
                   </div>
                   <video
+                    webkit-playsinline={true}
+                    playsInline={true}
+                    preload="auto"
                     autoPlay={true}
                     loop={true}
                     className="w-[100vw] laptop:h-full  hidden xl:block"
                   >
-                    <source src="https://fritz-sport.vercel.app/static/images/video/empresa.mp4" />
+                    <source src="https://brand.assets.adidas.com/video/upload/if_w_gt_1920,w_1920/fw23_rivalry_launch_hp_mh_d_2c98ca2cf4.mp4" />
                     <track
                       src="captions_en.vtt"
                       kind="captions"
@@ -79,6 +82,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     />
                   </video>
                   <video
+                    webkit-playsinline={true}
+                    playsInline={true}
+                    preload="auto"
                     autoPlay={true}
                     loop={true}
                     className="w-[100vw] h-[500px]  xl:hidden"
