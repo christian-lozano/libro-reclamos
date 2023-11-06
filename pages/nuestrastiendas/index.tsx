@@ -64,7 +64,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     loop={true}
                     className="w-[100vw] laptop:h-full  hidden xl:block"
                   >
-                    <source src="/static/images/video/empresa.mp4 " />
+                    <source src="https://fritz-sport.vercel.app/static/images/video/empresa.mp4" />
                     <track
                       src="captions_en.vtt"
                       kind="captions"
@@ -83,7 +83,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     loop={true}
                     className="w-[100vw] h-[500px]  xl:hidden"
                   >
-                    <source src="/static/images/video/empresaMobil.mp4 " />
+                    <source src="https://fritz-sport.vercel.app/static/images/video/empresaMobil.mp4 " />
                     <track
                       src="captions_en.vtt"
                       kind="captions"
