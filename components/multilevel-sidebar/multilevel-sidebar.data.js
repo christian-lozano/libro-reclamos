@@ -1071,6 +1071,14 @@ let options = [
       disabled: false,
       to: "/emprende"
     },
+    {
+      id: 25,
+      title: "Nuestras Tiendas",
+      icon: <i className="fa fa-graduation-cap"></i>,
+      hideBorder: false,
+      disabled: false,
+      to: "/nuestrastiendas"
+    },
     // {
     //   id: 20,
     //   title: "Nuestras Empresas",

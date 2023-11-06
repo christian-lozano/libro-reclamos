@@ -1,6 +1,7 @@
-import { Button } from '@material-tailwind/react'
+import { Dialog, DialogHeader, DialogBody } from '@material-tailwind/react'
 import React from 'react'
 
+import { Button } from '@/components/@ui/button/button'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -12,27 +13,55 @@ const dataNuestrasEmpresas = [
     img: 'https://lh5.googleusercontent.com/p/AF1QipP00B6BVcTH365JsWbmsBhfDCcgETXzfvQnqxUj=s516-k-no',
     title: 'Miguel Graú ',
     subtitle: 'Fritz Sport, Av. Miguel Grau 231, Lima 15001',
+    dataHorarios: [
+      ' Lunes de 09:00 am a 09:00 pm',
+      ' Martes de 09:00 am a 09:00 pm',
+      ' Miércoles de 09:00 am a 09:00 pm',
+      ' Jueves de 09:00 am a 09:00 pm',
+      ' Viernes de 09:00 am a 09:00 pm',
+      ' Sábado de 09:00 am a 09:00 pm',
+      ' Domingo de 09:00 am a 09:00 pm',
+    ],
+    ubicacion: 'https://maps.app.goo.gl/h54ryBi9SqHQkQUW6',
+  },
+
+  {
+    img: 'https://lh5.googleusercontent.com/p/AF1QipP00B6BVcTH365JsWbmsBhfDCcgETXzfvQnqxUj=s516-k-no',
+    title: 'Tumbes ',
+    subtitle: 'Av. República del Perú 373, 24101',
+    dataHorarios: [
+      ' Lunes de 09:00 am a 07:00 pm',
+      ' Martes de 09:00 am a 07:00 pm',
+      ' Miércoles de 09:00 am a 07:00 pm',
+      ' Jueves de 09:00 am a 07:00 pm',
+      ' Viernes de 09:00 am a 07:00 pm',
+      ' Sábado de 09:00 am a 07:00 pm',
+      ' Domingo de 09:00 am a 07:00 pm',
+    ],
+    ubicacion: 'https://maps.app.goo.gl/iUxXwFKqF2BAEGhC7',
   },
 ]
-
 export default function Home(props: SearchPageLayoutProps) {
+  const [open, setOpen] = React.useState(false)
+
+  const handleOpen = () => setOpen(!open)
   return (
     <SearchPageLayout {...props}>
       <div className=" pt-14 md:pt-16">
         <section className="blog text-gray-700 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-                {' '}
-                Blog
-              </h1>
-              <p className="lg:w-1/2 w-full leading-relaxed text-base">
-                J'aime bien partager mes connaissances et des recherche
-                intéressantes, pour le faire j'ai mis en place un blog
-                personnel. Nous abordons plusieurs sujets intéressants et je
-                donne quelques astuces et conseils aux jeunes développeurs pour
-                mieux s'en sortir.{' '}
-              </p>
+          <div className="container px-5  mx-auto">
+            <div className="h-2/6 pb-20 bg-gray-50 flex items-center">
+              <section className="w-full bg-cover bg-center py-32 bg-[url('https://source.unsplash.com/random')]">
+                <div className="container mx-auto text-center text-white">
+                  <h1 className="text-5xl font-medium mb-6">
+                    {' '}
+                    Nuestras Tiendas
+                  </h1>
+                  <p className="text-xl mb-12">
+                    Conoce la Ubicación y Nuestros Horarios de Atención
+                  </p>
+                </div>
+              </section>
             </div>
             {/*  */}
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
@@ -56,19 +85,77 @@ export default function Home(props: SearchPageLayoutProps) {
                     <div className="flex items-center justify-between p-6">
                       <div className="w-full flex justify-around">
                         <Button
-                          nonce={undefined}
-                          onResize={undefined}
-                          onResizeCapture={undefined}
+                          className="bg-black text-white px-5 py-2 rounded-lg"
+                          onClick={handleOpen}
                         >
                           Ver Horarios
                         </Button>
-                        <Button
+                        <a
+                          href={el.ubicacion}
+                          className="bg-black text-white px-5 py-2 rounded-lg"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Ver Ubicación
+                        </a>
+
+                        <Dialog
+                          className="relative"
+                          open={open}
+                          handler={handleOpen}
                           nonce={undefined}
                           onResize={undefined}
                           onResizeCapture={undefined}
                         >
-                          Ubicación
-                        </Button>
+                          <Button
+                            className="absolute top-1 right-1"
+                            onClick={handleOpen}
+                          >
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="1.5"
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                            </span>
+                          </Button>
+                          <DialogHeader
+                            className="text-center  flex justify-center"
+                            nonce={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
+                          >
+                            <div>Horarios de Atención</div>
+                          </DialogHeader>
+
+                          <DialogBody
+                            className=""
+                            nonce={undefined}
+                            onResize={undefined}
+                            onResizeCapture={undefined}
+                          >
+                            {' '}
+                            <div className="w-full flex flex-col  items-center justify-center">
+                              {el.dataHorarios.map((elment, i) => (
+                                <div
+                                  key={i}
+                                  className="my-2 w-full  border-b-2 text-center"
+                                >
+                                  {elment}
+                                </div>
+                              ))}
+                            </div>
+                          </DialogBody>
+                        </Dialog>
                       </div>
                     </div>
                   </div>

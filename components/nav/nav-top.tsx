@@ -693,6 +693,18 @@ export const NavTop = memo(function NavTop() {
                             </span>
                           </div>
                         </Link>
+                        <Link
+                          href="/nuestrastiendas"
+                          className="h-full flex justify-center items-center "
+                        >
+                          <div className=" inline-flex items-center  justify-between  px-2  font-medium transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                            <span
+                              className={`flex-shrink-0 font-normal text-black xl:text-sm    2xl:text-lg hover:border-b-2 border-black `}
+                            >
+                              Nuestras Tiendas
+                            </span>
+                          </div>
+                        </Link>
                         {/* <Link
                           href="#"
                           className="h-full flex justify-center items-center "
