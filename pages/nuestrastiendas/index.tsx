@@ -115,7 +115,7 @@ export default function Home(props: SearchPageLayoutProps) {
               </section>
             </div>
             {/*  */}
-            <p className="xl:text-3xl text-xl sm:text-xl  font-semibold text-center my-5 sm:mt-16 xl:mt-20 xl:mb-32">
+            <p className="xl:text-3xl text-xl sm:text-xl  font-semibold text-center my-10 sm:mt-16 xl:mt-20 xl:mb-32">
               Conoce la Ubicación y <br /> Nuestros Horarios de Atención
             </p>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 px-1 sm:px-5">
