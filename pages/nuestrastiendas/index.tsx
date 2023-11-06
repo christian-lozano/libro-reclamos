@@ -52,13 +52,13 @@ export default function Home(props: SearchPageLayoutProps) {
           <div className="container px-5  mx-auto">
             <div className="h-2/6 pb-20 bg-gray-50 flex items-center">
               <section className="w-full bg-cover bg-center ">
-                <div className="relative w-full h-full flex justify-center items-center bg-blue-gray-50">
+                <div className="relative w-full h-full flex justify-center items-center ">
                   <div className="container mx-auto text-center absolute text-white">
-                    <h1 className="text-5xl font-medium mb-6">
+                    <h1 className="xl:text-5xl text-2xl font-bold mb-6">
                       {' '}
                       Nuestras Tiendas
                     </h1>
-                    <p className="text-xl mb-12">
+                    <p className="xl:text-xl text-md mb-12 font-semibold">
                       Conoce la Ubicación y Nuestros Horarios de Atención
                     </p>
                   </div>
@@ -104,7 +104,7 @@ export default function Home(props: SearchPageLayoutProps) {
               </section>
             </div>
             {/*  */}
-            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 ">
+            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 px-2">
               {dataNuestrasEmpresas.map((el, i) => (
                 <div
                   key={i}
