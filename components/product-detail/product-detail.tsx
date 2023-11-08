@@ -98,9 +98,9 @@ ProductDetailProps) {
   // )
 
   return (
-    <div className="flex flex-col gap-6 mb-12 laptop:my-8 laptop:flex-row">
-      <div className="laptop:w-8/12 ">
-        <div className="flex flex-col items-center laptop:min-h-[500px]">
+    <div className="flex flex-col  gap-6 mb-12 laptop:my-8 xl:flex-row laptop:flex-row">
+      <div className="laptop:w-8/12 flex justify-center ">
+        <div className="flex flex-col items-center  laptop:min-h-[500px] w-full ">
           {image && (
             <ProductDetails
               src={image}

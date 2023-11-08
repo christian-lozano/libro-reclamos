@@ -1,6 +1,8 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
+import ProductZoomImgDetail from './product-zoom-img-detail'
+
 export type ProductImageProps = {
   src: string[]
   alt?: string
@@ -25,16 +27,12 @@ export function ProductDetails({
   return (
     <div
       className={classNames(
-        'w-full cursor-pointer flex  justify-end mb-3',
+        'w-full cursor-pointer flex  justify-center mb-3',
         className
       )}
     >
-      <div className="flex flex-col justify-end w-full h-2/4">
-        <img
-          src={mainImg}
-          alt=""
-          className={classNames('rounded-t-xl w-3/3')}
-        />
+      <div className="flex flex-col items-center  w-full h-2/4">
+        <ProductZoomImgDetail mainimg={mainImg} />
         <div className="flex justify-start items-start  dark:bg-[var(--dark-mode)] py-1 bg-white">
           <div className="grid grid-flow-col gap-x-2 p-1">
             {src.map((el, i) => (

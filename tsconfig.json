@@ -20,6 +20,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js", "components/product/product-detail.tsx"],
   "exclude": ["node_modules"]
 }
