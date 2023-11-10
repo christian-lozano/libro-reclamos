@@ -1009,7 +1009,7 @@ export const NavTop = memo(function NavTop() {
                             <input
                               className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
                               type="number"
-                              value={el.quantity}
+                              defaultValue={el.quantity}
                             />
                             <Button
                               className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#ae946d] hover:text-blue-50"

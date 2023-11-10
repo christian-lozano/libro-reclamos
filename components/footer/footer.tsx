@@ -28,8 +28,12 @@ export const Footer = memo(function Footer() {
   const [apellido, setApellido] = useState('')
   const [documento, setDocumento] = useState('')
 
-  const [email, setEmail] = useState('')
   const [telefono, setTelf] = useState('')
+  const [direccion, setDireccion] = useState('')
+  const [quejaReclamo, setQuejaReclamo] = useState('')
+  const [detalleReclamo, setDetalleReclamo] = useState('')
+
+  const [email, setEmail] = useState('')
   const [desable, setDesable] = useState(false)
   const [mensajeEnviado, setMensajeEnviado] = useState(false)
 
@@ -48,16 +52,22 @@ export const Footer = memo(function Footer() {
         documento,
         email,
         telefono,
+        direccion,
+        quejaReclamo,
+        detalleReclamo,
       }),
     })
 
     setMensajeEnviado(false)
-    setDesable(false)
+    // setDesable(false)
     setNombre('')
     setEmail('')
     setTelf('')
     setApellido('')
     setDocumento('')
+    setDireccion('')
+    setQuejaReclamo('')
+    setDetalleReclamo('')
   }
   useEffect(() => {
     if (
@@ -65,13 +75,16 @@ export const Footer = memo(function Footer() {
       email.length <= 3 ||
       telefono.length <= 3 ||
       apellido.length <= 3 ||
-      documento.length <= 3
+      documento.length <= 3 ||
+      direccion.length <= 3 ||
+      quejaReclamo.length <= 3 ||
+      detalleReclamo.length <= 10
     ) {
       setDesable(false)
     } else {
       setDesable(true)
     }
-  }, [nombre, telefono, email, apellido, documento])
+  }, [nombre, telefono, email, apellido, documento, direccion, quejaReclamo, detalleReclamo])
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   })
@@ -400,11 +413,12 @@ export const Footer = memo(function Footer() {
               />{' '}
               <Input
                 // className="w-[80%]"
-
                 size="lg"
                 label="Dirección"
+                value={direccion}
                 nonce={undefined}
                 onResize={undefined}
+                onChange={(e) => setDireccion(e.target.value)}
                 onResizeCapture={undefined}
               />
               <Input
@@ -422,14 +436,19 @@ export const Footer = memo(function Footer() {
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
+                onChange={(e = 'Queja') => setQuejaReclamo(e)}
               >
-                <Option className="w-[80%]">Queja</Option>
-                <Option>Reclamo</Option>
+                <Option value="Queja" className="w-[80%]">
+                  Queja
+                </Option>
+                <Option value="Reclamo">Reclamo</Option>
               </Select>
               <Textarea
+                value={detalleReclamo}
                 size="md"
                 label="Detalle de Reclamo o Queja"
                 nonce={undefined}
+                onChange={(e) => setDetalleReclamo(e.target.value)}
                 onResize={undefined}
                 onResizeCapture={undefined}
               />

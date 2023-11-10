@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
-import { Button } from '@/components/@ui/button/button'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -181,7 +180,7 @@ export default function Home(props: SearchPageLayoutProps) {
                   id="radio_2"
                   type="radio"
                   name="radio"
-                  checked={true}
+                  defaultChecked={true}
                 />
                 <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
                 <label
@@ -465,9 +464,34 @@ export default function Home(props: SearchPageLayoutProps) {
                 </div>
               )}
             </div>
-            <Button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
-              Realizar pedido{' '}
-            </Button>
+
+            <form action="http://localhost:3000/api/checkout" method="POST">
+              <input type="hidden" name="nombre" value="nombre" />
+              <input type="hidden" name="apellido" value="apellido" />
+              <input type="hidden" name="typedocumento" value="documento" />
+
+              <input type="hidden" name="sede" value="sede" />
+              <input type="hidden" name="cede" value="La Victoria" />
+              <input type="hidden" name="transporte" value="transporte" />
+              <input type="hidden" name="vehiculo" value="vehiculo" />
+              <input type="hidden" name="placa" value="placa" />
+              <input type="hidden" name="monto" value={cartTotal} />
+              {/* <input
+                          type="hidden"
+                          name="fecha"
+                          value={dataPedidos.fecha}
+                        /> */}
+
+              <input
+                type="submit"
+                value="Realizar pedido"
+                className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
+              />
+            </form>
+
+            {/* <Button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
+           
+            </Button> */}
           </div>
         </div>
       </div>
