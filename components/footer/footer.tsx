@@ -31,24 +31,24 @@ export const Footer = memo(function Footer() {
   const [telefono, setTelf] = useState('')
   const [desable, setDesable] = useState(false)
   const [mensajeEnviado, setMensajeEnviado] = useState(false)
-  const sendMail = (e: { preventDefault: () => void }) => {
+  const sendMail = async (e) => {
     e.preventDefault()
     setDesable(true)
     setMensajeEnviado(true)
-    // const response = await fetch('http://127.0.0.1:3000/api/send', {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     nombre,
-    //     apellido,
-    //     documento,
-    //     email,
-    //     telefono,
-    //   }),
-    // })
-    // console.log(await response.json())
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        nombre,
+        apellido,
+        documento,
+        email,
+        telefono,
+      }),
+    })
+    console.log(await response.json())
 
     setMensajeEnviado(false)
     setDesable(false)
