@@ -31,11 +31,11 @@ export const Footer = memo(function Footer() {
   const [telefono, setTelf] = useState('')
   const [desable, setDesable] = useState(false)
   const [mensajeEnviado, setMensajeEnviado] = useState(false)
-  const sendMail = async (e) => {
+  const sendMail = async (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
     setDesable(true)
     setMensajeEnviado(true)
-    const response = await fetch('/api/send', {
+    await fetch('/api/send', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -48,7 +48,6 @@ export const Footer = memo(function Footer() {
         telefono,
       }),
     })
-    console.log(await response.json())
 
     setMensajeEnviado(false)
     setDesable(false)
