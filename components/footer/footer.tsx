@@ -6,6 +6,7 @@ import {
   Select,
   Option,
 } from '@material-tailwind/react'
+import type { FormEvent } from 'react'
 import { memo, useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
@@ -31,7 +32,8 @@ export const Footer = memo(function Footer() {
   const [telefono, setTelf] = useState('')
   const [desable, setDesable] = useState(false)
   const [mensajeEnviado, setMensajeEnviado] = useState(false)
-  const sendMail = async (e: React.FormEvent<HTMLInputElement>) => {
+
+  const sendMail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setDesable(true)
     setMensajeEnviado(true)
@@ -354,7 +356,7 @@ export const Footer = memo(function Footer() {
               Solicitud Enviada
             </div>
           </div>
-          <form className="mt-8 mb-2 w-[full]  " onSubmit={sendMail}>
+          <form className="mt-8 mb-2 w-[full]" onSubmit={(e) => sendMail(e)}>
             <div className=" flex flex-col  2xl:gap-3 laptop:gap-8 gap-x-6  gap-y-3">
               <h6 className="mb-3 text-black text-2xl font-semibold text-center">
                 Libro de Reclamaciones
