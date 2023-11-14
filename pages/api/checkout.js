@@ -6,7 +6,7 @@ mercadopago.configure({
 });
 
 export default function handler(req, res) {
-const data = JSON.stringify(req.body.productos)
+// const data = JSON.stringify(req.body.productos)
 // console.log(data);
 // console.log(req.body);
 
@@ -19,53 +19,76 @@ const data = JSON.stringify(req.body.productos)
 // }
 // console.log(datasinstring(data))
 // console.log(data);
-  const dataProducts = [
-    {
-      title: 'test1',
-      description: 'testdecrption',
-      picture_url: '../public/favicon.svg',
-      category_id: 'PEN',
-      quantity: 2,
-      unit_price: 20,
-    },
-    {
-      title: 'test2',
-      description: 'testdecrption2',
-      picture_url: '../public/favicon.svg',
-      category_id: 'PEN',
-      quantity: 2,
-      unit_price: 20,
-    },
-  ]
+  // const dataProducts = [
+  //   {
+  //     title: 'test1',
+  //     description: 'testdecrption',
+  //     picture_url: '../public/favicon.svg',
+  //     category_id: 'PEN',
+  //     quantity: 2,
+  //     unit_price: 20,
+  //   },
+  //   {
+  //     title: 'test2',
+  //     description: 'testdecrption2',
+  //     picture_url: '../public/favicon.svg',
+  //     category_id: 'PEN',
+  //     quantity: 2,
+  //     unit_price: 20,
+  //   },
+  // ]
 
-  const iterator = req.body.values()
-  const datos = (iterator) =>{
-    for(const value of iterator) {
-      return value
+  // const iterator = req.body.productos.values()
+  // const datos = (iterator) =>{
+  //   for(const value of iterator) {
+  //     return value
     
-    }
-  }
+  //   }
+  // }
+  // console.log(datos(iterator));
 //  req.body.forEach(element ,i=> {
 //     console.log(element[i])
 //   })
-// console.log(dataProducts);
+console.log(req.body);
   let preference = {
     items:[
-      datos(iterator)
+     {    title:req.body.productos,
+          description:'dni:75286858 nombre: christian lozano adrianzen',
+          picture_url: '../public/favicon.svg',
+          category_id: 'PEN',
+          quantity: 1,
+          unit_price:Number(req.body.monto)
+        }
     ],
     payer: {
-      phone: {
-        area_code: "51",
-        // number: Number(req.body.telefono),
+      first_name: 'christian lozano',
+      last_name: 'apellido',
+      email: 'christian.lozano@gmail.com',
+      // phone:   {
+      //   area_code: 51,
+      //   number: 987654321
+      // },
+     address: {},
+    },
+    identification: {
+      number: 19119119100,
+      type: "DNI"
+    },
+    shipments: {
+      receiver_address: {
+        zip_code: "12312-123",
+        state_name: "Rio de Janeiro",
+        city_name: "Buzios",
+        street_name: "Av das Nacoes Unidas",
+        street_number: 3003
       },
-      name: req.body.name,
-      surname: req.body.apellido,
     },
     back_urls: {
-      success: "fritz-sport.vercel.app",
+      success: `http://localhost:3000/exito?variable1=${req.body.stock}`,
       failure: "fritz-sport.vercel.app",
       pending: "fritz-sport.vercel.app",
     },
+
     // installments: 1,
     payment_methods: {
       excluded_payment_methods: [
@@ -80,16 +103,17 @@ const data = JSON.stringify(req.body.productos)
       ],
       installments: 1,
     },
+    auto_return: "approved",
   };
   mercadopago.preferences
     .create(preference)
     .then(function (response) {
-      console.log(response);
+
       res.redirect(response.body.init_point);
     })
     .catch(function (error) {
-      console.log(error.url);
-      console.log(error.post);
+      console.log(error);
+
 
     });
 }

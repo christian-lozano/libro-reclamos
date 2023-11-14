@@ -6,13 +6,6 @@ import { Button } from '../@ui/button/button'
 
 const sliderDesktop = [
   {
-    title: 'NUEVAS BAD BUNNY RESPONSE CL',
-    color: 'white',
-    desc: 'Recién llegadas.',
-    img: '/static/images/imgSliderHome/image1.jpg',
-    url: '#',
-  },
-  {
     title: 'MARINERUSH PACK',
     color: 'black',
     desc: 'Recién llegadas.',
@@ -26,23 +19,8 @@ const sliderDesktop = [
     img: '/static/images/imgSliderHome/image3.jpg',
     url: '#',
   },
-  {
-    title: 'NUEVAS BAD BUNNY RESPONSE CL',
-    color: 'white',
-    desc: 'Recién llegadas.',
-    img: '/static/images/imgSliderHome/EuDesktop.jpg',
-    url: '#',
-  },
 ]
 const sliderMobil = [
-  {
-    title: 'NUEVAS BAD BUNNY RESPONSE CL',
-    color: 'white',
-    desc: 'Recién llegadas.',
-    img: '/static/images/imgSliderHome/imageMobile1.jpg',
-    url: '#',
-  },
-
   {
     title: 'MARINERUSH PACK',
     desc: 'Recién llegadas.',
@@ -55,13 +33,6 @@ const sliderMobil = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: '/static/images/imgSliderHome/imageMobile3.jpg',
-    url: '#',
-  },
-  {
-    title: 'PACK CRAZYRUSH',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: '/static/images/imgSliderHome/EuMobile.jpg',
     url: '#',
   },
 ]

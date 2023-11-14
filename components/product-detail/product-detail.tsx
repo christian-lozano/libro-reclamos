@@ -71,8 +71,8 @@ ProductDetailProps) {
   //   () => setIsFavorite((favorite) => !favorite),
   //   []
   // )
-
-  const { addItem } = useCart()
+  const talla = 44
+  const { addItem, items } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
 
   useEffect(() => {
@@ -82,13 +82,35 @@ ProductDetailProps) {
   const onCheckoutClick = () => {
     const notify = () => toast(`Agregaste ${title} al Carrito `)
     notify()
-    addItem({
-      img: image,
-      title,
-      precio: price,
+    const filter = {
       id: String(objectID),
-      price: Number(price),
+      talla: 42,
+    }
+    const itemsCart = items.filter(function (item) {
+      for (const key in filter) {
+        if (item[key] === undefined || item[key]) return false
+      }
+      return true
     })
+    if (itemsCart) {
+      addItem({
+        img: image,
+        title,
+        precio: price,
+        id: String(`${objectID}_${talla}`),
+        price: Number(price),
+        talla,
+      })
+    } else {
+      addItem({
+        img: image,
+        title,
+        precio: price,
+        id: String(objectID),
+        price: Number(price),
+        talla,
+      })
+    }
   }
   //   [onCheckoutClick]
   // const handleCheckoutClick = useCallback(
