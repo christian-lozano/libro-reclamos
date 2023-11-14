@@ -5,9 +5,9 @@ import { Link } from '../@ui/link/link'
 
 const imgSection = {
   imgMd:
-    'https://cdn.sanity.io/images/qa41whrn/prod/ee9f2445f6812ee263c1972d8a03f37d1078ad9d-1536x1536.jpg?w=720&q=80&auto=format',
+    'https://br.puma.com/media/contentmanager/content/23AW_Ecom_TS_Football_Gear-Up-Pack_Q4_FullBleedHero_Large_TabMob_1536x1536_Combined-Player-Ultra-Future_2_1.jpg',
   imgXl:
-    'https://cdn.sanity.io/images/qa41whrn/prod/45b67822ba8ef9f1be6d5ed0c0937592fbbc2e0d-1440x500.jpg?w=2160&q=80&auto=format',
+    'https://br.puma.com/media/contentmanager/content/23AW_Ecom_TS_Football_Gear-Up-Pack_Q4_FullBleedHero_Large_Desktop_1440x500_Combined-Player-Ultra-Future.jpg',
 }
 
 export function BannerPromociones() {
@@ -38,14 +38,14 @@ export function BannerPromociones() {
 
           {isDesktopOrLaptop ? (
             <div className="absolute top-0 w-full h-full  ">
-              <div className="container h-full w-full flex-col  flex justify-center items-end pl-20">
-                <div className="w-3/5 md:w-3/5 2xl:w-full flex flex-col items-start ">
+              <div className=" h-full w-full flex-col  flex justify-center items-end ">
+                <div className="w-full 2xl:w-full flex flex-col items-start ">
                   <div className="w-full ">
-                    <h1 className="xl:text-4xl md:text-3xl 2xl:text-6xl font-bold text-left py-5 ">
+                    <h1 className="xl:text-4xl md:text-3xl 2xl:text-6xl font-bold  py-5 w-full text-center ">
                       Nuevos Ingresos
                     </h1>
                   </div>
-                  <div className="w-full flex justify-start  ">
+                  <div className="w-full flex justify-center  ">
                     <div className="flex justify-around ">
                       <Link href="/mujer">
                         <span className="text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-base">
