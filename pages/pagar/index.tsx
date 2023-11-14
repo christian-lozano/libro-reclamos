@@ -41,7 +41,7 @@ export default function Home(props: SearchPageLayoutProps) {
   async function HandleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     try {
-      await axios.post('fritz-sport.vercel.app/api/checkout', dataProducts, {
+      await axios.post('/api/checkout', dataProducts, {
         headers: {
           // 'application/json' is the modern content-type for JSON, but some
           // older servers may use 'text/json'.
