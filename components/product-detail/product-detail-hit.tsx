@@ -24,8 +24,8 @@ export function ProductDetailHit({ hit }: ProductDetailHitProps) {
       symbol: hit.price.currency === 'USD' ? '$' : 'S/',
       position: hit.price.currency === 'EUR' ? 'suffix' : 'prefix',
     },
+    units_in_stock: hit.units_in_stock,
   }
-
 
   // On sales
   if (hit.price.on_sales) {

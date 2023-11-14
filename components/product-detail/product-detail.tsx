@@ -1,4 +1,5 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useCart } from 'react-use-cart'
@@ -8,7 +9,6 @@ import { ProductLabel } from '@/components/product/product-label'
 import type { ProductPriceCurrency } from '@/components/product/product-price'
 import { ProductPrice } from '@/components/product/product-price'
 import type { ProductSizeType } from '@/components/product/product-sizes'
-import { ProductSizes } from '@/components/product/product-sizes'
 import type { ProductTagType } from '@/components/product/product-tag'
 import { ProductTag } from '@/components/product/product-tag'
 import { ProductTitle } from '@/components/product/product-title'
@@ -31,6 +31,8 @@ export type ProductDetailProps = {
   available?: boolean
   sizes?: ProductSizeType[]
   price?: number
+  units_in_stock?: number
+
   originalPrice?: number
   currency?: ProductPriceCurrency
   popular?: boolean
@@ -64,6 +66,7 @@ export function ProductDetail({
   currency,
   popular,
   related,
+  units_in_stock,
 }: // onCheckoutClick,
 ProductDetailProps) {
   // const [isFavorite, setIsFavorite] = useState(false)
@@ -71,9 +74,16 @@ ProductDetailProps) {
   //   () => setIsFavorite((favorite) => !favorite),
   //   []
   // )
-  const talla = 44
+
   const { addItem, items } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
+  const [activeSize, setActiveSize] = useState(100)
+  const [talla, setTalla] = useState(String)
+
+  const handleActiveTalla = (i: number, size: string) => {
+    setActiveSize(i)
+    setTalla(size)
+  }
 
   useEffect(() => {
     setDomLoaded(true)
@@ -84,7 +94,7 @@ ProductDetailProps) {
     notify()
     const filter = {
       id: String(objectID),
-      talla: 42,
+      talla,
     }
     const itemsCart = items.filter(function (item) {
       for (const key in filter) {
@@ -140,7 +150,7 @@ ProductDetailProps) {
           ))}
         </div>
       </div>
-
+      <div className="hidden">{available}</div>
       <div className="laptop:w-4/12">
         {label && (
           <ProductLabel className="label-semibold">{label}</ProductLabel>
@@ -179,23 +189,63 @@ ProductDetailProps) {
             classNameOriginalPrice="text-xl"
           />
         )}
-        {sizes && sizes.length > 0 && <ProductSizes sizes={sizes} />}
+        {sizes && sizes.length > 0 && (
+          <>
+            <ul className="grid grid-cols-4 gap-3 mt-6">
+              {sizes.map((el, i) => (
+                <div key={i}>
+                  <Button
+                    disabled={units_in_stock === 0}
+                    className={`w-full h-10 ${
+                      activeSize === i
+                        ? 'bg-black text-white border-2'
+                        : 'bg-white  text-black border-2'
+                    }`}
+                    nonce={undefined}
+                    onClick={() => handleActiveTalla(i, el.size)}
+                  >
+                    {el.size}
+                  </Button>
+                </div>
+              ))}
+            </ul>
+          </>
+        )}
+        {units_in_stock === 0 ? (
+          <div className="flex flex-col justify-around items-center w-full">
+            <span className=" tex-center bg-red-900 text-white px-3 py-1 mt-5 rounded-lg">
+              {units_in_stock === 0 && 'Sin Stock'}
+            </span>
+            <Link href="/catalog">
+              <Button type="primary" size="large" className="w-full mt-6">
+                <IconLabel
+                  icon={ShoppingBagIcon}
+                  label="Ver Mas"
+                  labelPosition="right"
+                  className="gap-3"
+                  classNameLabel="btn-bold"
+                />
+              </Button>
+            </Link>
+          </div>
+        ) : (
+          <Button
+            type="primary"
+            size="large"
+            className="w-full mt-6"
+            disabled={units_in_stock === 0 || !talla}
+            onClick={() => onCheckoutClick()}
+          >
+            <IconLabel
+              icon={ShoppingBagIcon}
+              label="Agregar al Carrito"
+              labelPosition="right"
+              className="gap-3"
+              classNameLabel="btn-bold"
+            />
+          </Button>
+        )}
 
-        <Button
-          type="primary"
-          size="large"
-          className="w-full mt-6"
-          disabled={available}
-          onClick={() => onCheckoutClick()}
-        >
-          <IconLabel
-            icon={ShoppingBagIcon}
-            label="Agregar al Carrito"
-            labelPosition="right"
-            className="gap-3"
-            classNameLabel="btn-bold"
-          />
-        </Button>
         {domLoaded && (
           <Toaster
             toastOptions={{

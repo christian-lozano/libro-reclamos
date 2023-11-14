@@ -32,7 +32,6 @@ export type ProductCardProps = {
   currency?: ProductPriceCurrency
   rating?: number
   reviews?: number
-  available?: boolean
   view?: ViewMode
   onLinkClick?: MouseEventHandler<HTMLElement>
 }
