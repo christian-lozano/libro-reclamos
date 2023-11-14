@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
@@ -11,10 +12,49 @@ export default function Home(props: SearchPageLayoutProps) {
   const { items, cartTotal } = useCart()
 
   const [domLoaded, setDomLoaded] = useState(false)
+  const dataProducts = [
+    {
+      title: 'test1',
+      description: 'testdecrption',
+      picture_url: '../public/favicon.svg',
+      category_id: 'PEN',
+      quantity: 2,
+      unit_price: 20,
+    },
+    {
+      title: 'test2',
+      description: 'testdecrption2',
+      picture_url: '../public/favicon.svg',
+      category_id: 'PEN',
+      quantity: 2,
+      unit_price: 20,
+    },
+  ]
 
+  // const iterator = dataProducts.values()
+  // for (const value of iterator) {
+  //   console.log(value)
+  // }
   useEffect(() => {
     setDomLoaded(true)
   }, [])
+  async function HandleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    try {
+      await axios.post('fritz-sport.vercel.app/api/checkout', dataProducts, {
+        headers: {
+          // 'application/json' is the modern content-type for JSON, but some
+          // older servers may use 'text/json'.
+          // See: http://bit.ly/text-json
+          'Access-Control-Allow-Origin': ' *',
+          'Access-Control-Allow-Methods': ' *',
+          'Access-Control-Allow-Headers': ' *',
+        },
+      })
+    } catch (error) {
+      // console.error(error.post)
+    }
+  }
   return (
     <SearchPageLayout {...props}>
       <div className="  py-16">
@@ -465,8 +505,9 @@ export default function Home(props: SearchPageLayoutProps) {
               )}
             </div>
 
-            <form action="http://localhost:3000/api/checkout" method="POST">
+            <form onSubmit={(e) => HandleSubmit(e)}>
               <input type="hidden" name="nombre" value="nombre" />
+
               <input type="hidden" name="apellido" value="apellido" />
               <input type="hidden" name="typedocumento" value="documento" />
 

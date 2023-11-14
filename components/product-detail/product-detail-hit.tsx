@@ -19,11 +19,13 @@ export function ProductDetailHit({ hit }: ProductDetailHitProps) {
     rating: hit.reviews.rating,
     reviews: hit.reviews.count,
     price: hit.price.value,
+    objectID: hit.objectID,
     currency: {
       symbol: hit.price.currency === 'USD' ? '$' : 'S/',
       position: hit.price.currency === 'EUR' ? 'suffix' : 'prefix',
     },
   }
+
 
   // On sales
   if (hit.price.on_sales) {

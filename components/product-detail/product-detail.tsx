@@ -23,6 +23,7 @@ export type ProductDetailProps = {
   image?: string[]
   label?: string
   title?: string
+  objectID?: string
   description?: string
   tags?: ProductTagType[]
   rating?: number
@@ -48,7 +49,7 @@ export type ProductDetailProps = {
 // }
 
 export function ProductDetail({
-  id,
+  objectID,
   image,
   label,
   title,
@@ -85,7 +86,7 @@ ProductDetailProps) {
       img: image,
       title,
       precio: price,
-      id: String(id),
+      id: String(objectID),
       price: Number(price),
     })
   }
