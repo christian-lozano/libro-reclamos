@@ -551,7 +551,7 @@ export default function Home(props: SearchPageLayoutProps) {
                 mejorar tu experiencia en esta web y otros propósitos descritos
                 en nuestra
                 <Link
-                  href="#"
+                  href="/pyp"
                   target="_blank"
                   className="focus:outline-none underline mr-1 text-gray-400 "
                 >
