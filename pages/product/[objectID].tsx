@@ -18,7 +18,7 @@ export type ProductPageProps = SearchPageLayoutProps & {
 export default function Product({ objectID, ...props }: ProductPageProps) {
   return (
     <SearchPageLayout {...props}>
-      <Container className="mt-12 xl:mt-20">
+      <Container className="mt-12 xl:mt-20 overflow-x-hidden">
         <Configure filters={`objectID:${objectID?.toUpperCase()}`} />
         <Hits hitComponent={ProductDetailHit} />
       </Container>

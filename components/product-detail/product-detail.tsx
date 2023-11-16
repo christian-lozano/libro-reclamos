@@ -90,7 +90,34 @@ ProductDetailProps) {
   }, [])
   // const handleCheckoutClick = useCallback(
   const onCheckoutClick = () => {
-    const notify = () => toast(`Agregaste ${title} al Carrito `)
+    const notify = () =>
+      toast((t) => (
+        <div className="relative flex">
+          <span className="px-5"> {`Agregaste ${title} al Carrito `} </span>
+          <Button
+            className="absolute right-0"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </Button>
+        </div>
+      ))
+
+    // toast(`Agregaste ${title} al Carrito `)
+
     notify()
     const filter = {
       id: String(objectID),
@@ -133,7 +160,7 @@ ProductDetailProps) {
   // )
 
   return (
-    <div className="flex flex-col  gap-6 mb-12 laptop:my-8 xl:flex-row laptop:flex-row">
+    <div className="flex flex-col  gap-6 mb-12 laptop:my-8 xl:flex-row laptop:flex-row ">
       <div className="laptop:w-8/12 flex justify-center ">
         <div className="flex flex-col items-center  laptop:min-h-[500px] w-full ">
           {image && (

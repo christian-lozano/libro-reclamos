@@ -978,21 +978,21 @@ export const NavTop = memo(function NavTop() {
                     <div className="flex justify-center items-center w-full h-full">
                       <div className="flex flex-col justify-between w-full">
                         <div className="flex justify-between w-full pb-2 space-x-2">
-                          <div className="space-y-1">
-                            <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
+                          <div className="space-y-1 flex items-end">
+                            <h2 className="xl:text-lg text-xs sm:text-xs font-bold  sm:pr-8">
                               {el.title}
                             </h2>
                           </div>
                           <div className="text-right">
-                            <p className="xl:text-lg text-base font-semibold">
+                            <p className="xl:text-lg text-base sm:text-xs font-semibold">
                               S/{el.price}
                             </p>
-                            <p className="text-sm line-through dark:text-gray-600">
+                            <p className="text-base sm:text-xs line-through dark:text-gray-600">
                               S/75.50
                             </p>
                           </div>
                         </div>
-                        <p className="text-sm mb-2  dark:text-gray-600">
+                        <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
                           Talla: {el.talla}
                         </p>
 

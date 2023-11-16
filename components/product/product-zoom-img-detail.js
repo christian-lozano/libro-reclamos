@@ -40,9 +40,9 @@ export default function ProductZoomImgDetail({mainimg}) {
         hoverFunction(mainimg)
       }, [mainimg])
   return (
-    <div id="img-zoomer-box">
+    <div id="img-zoomer-box" >
     <img src={mainimg} id="img-1" alt="Zoom Image on Mouseover" />
-    <div id="img-2"></div>
+    <div id="img-2" className='laptop:block hidden'></div>
   </div>
   )
 }
