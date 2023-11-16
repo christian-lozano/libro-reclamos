@@ -4,7 +4,7 @@ export default function index() {
   return (
     <>
       <main>
-        <div className="xl:px-[20vw] text-justify mt-5 px-2">
+        <div className="xl:px-[20vw] text-justify mt-8 px-2">
           <h1 className="text-center text-3xl my-16">Política de Privacidad</h1>
           <div>
             <div className="my-3 laptop:text-xl  text-sm">

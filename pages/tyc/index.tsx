@@ -2,7 +2,7 @@ export default function index() {
   return (
     <>
       <main>
-        <div className="xl:px-[20vw] text-justify mt-5 px-2">
+        <div className="xl:px-[20vw] text-justify mt-20 px-2">
           <h2 className="text-center text-2xl">
             <strong>TÉRMINOS Y CONDICIONES</strong>
           </h2>
