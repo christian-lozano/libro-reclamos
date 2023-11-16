@@ -573,6 +573,9 @@ export default function Home(props: SearchPageLayoutProps) {
               <div className=" xl:flex items-center hidden  z-10 justify-center">
                 <Checkbox
                   className="z-10"
+                  nonce={undefined}
+                  onResize={undefined}
+                  onResizeCapture={undefined}
                   onClick={(e) => setCheckoutPago(e.target.checked)}
                 />
                 <span className="text-gray-400 text-sm  "> Acepto los</span>{' '}

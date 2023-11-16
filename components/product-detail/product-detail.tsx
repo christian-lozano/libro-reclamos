@@ -160,6 +160,7 @@ ProductDetailProps) {
         {title && (
           <ProductTitle className="heading-4 mt-1">{title}</ProductTitle>
         )}
+
         {/* {typeof rating !== 'undefined' && (
           <ProductRating
             rating={rating}
