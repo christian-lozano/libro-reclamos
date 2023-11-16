@@ -92,10 +92,10 @@ ProductDetailProps) {
   const onCheckoutClick = () => {
     const notify = () =>
       toast((t) => (
-        <div className="relative flex">
-          <span className="px-5"> {`Agregaste ${title} al Carrito `} </span>
+        <div className="relative flex w-full">
+          <span className="px-3"> {`Agregaste ${title} al Carrito `} </span>
           <Button
-            className="absolute right-0"
+            className="absolute right-0 ml-5"
             onClick={() => toast.dismiss(t.id)}
           >
             <svg

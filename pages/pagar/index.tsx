@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
+import { Button } from '@/components/@ui/button/button'
 import { Link } from '@/components/@ui/link/link'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
@@ -37,6 +38,19 @@ export default function Home(props: SearchPageLayoutProps) {
   // for (const value of iterator) {
   //   console.log(value)
   // }
+  // const notify = () =>
+  //   toast((t) => (
+  //     <span>
+  //       Custom and <b>bold</b>
+  //       <Button onClick={() => toast.dismiss(t.id)}>Dismiss</Button>
+  //     </span>
+  //   ))
+  // const HandleDisableCheckout = (e) => {
+  //   // e.preventDefault()
+
+  //   // notify()
+  // }
+
   useEffect(() => {
     setDomLoaded(true)
   }, [])
@@ -162,7 +176,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         <div className="flex flex-col justify-between w-full">
                           <div className="flex justify-between w-full pb-2 space-x-2">
                             <div className="space-y-1">
-                              <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
+                              <h2 className="xl:text-lg laptop:text-base font-bold text-xs   sm:pr-8">
                                 {el.title}
                               </h2>
                               <p className="text-sm dark:text-gray-400">
@@ -614,7 +628,7 @@ export default function Home(props: SearchPageLayoutProps) {
               </div>
               {/* ---- */}
 
-              {checkoutPago ? (
+              {checkoutPago && items.length > 0 ? (
                 <input
                   // disabled={checkoutPago}
                   type="submit"
@@ -622,12 +636,14 @@ export default function Home(props: SearchPageLayoutProps) {
                   className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
                 />
               ) : (
-                <input
-                  type="submit"
-                  disabled={true}
-                  value="Realizar pedido"
+                <Button
+                  // disabled={true}
+
                   className="mt-4 mb-8 w-full rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
-                />
+                  // onClick={(e) => HandleDisableCheckout(e)}
+                >
+                  Realizar pedido
+                </Button>
               )}
             </form>
 
