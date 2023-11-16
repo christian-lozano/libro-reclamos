@@ -485,8 +485,8 @@ export default function Home(props: SearchPageLayoutProps) {
 
               {/* <!-- Total --> */}
               {domLoaded && (
-                <div>
-                  <div className="mt-6 border-t border-b py-2">
+                <div className="border-b-2 pb-2">
+                  <div className="mt-6 border-t border-b py-2 ">
                     <div className="flex items-center justify-between">
                       <p className="text-sm font-medium text-gray-900">
                         Subtotal
@@ -500,7 +500,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       <p className="font-semibold text-gray-900">S/8.00</p>
                     </div>
                   </div>
-                  <div className="mt-6 flex items-center justify-between">
+                  <div className="mt-6 flex items-center justify-between ">
                     <p className="text-sm font-medium text-gray-900">Total</p>
                     <p className="text-2xl font-semibold text-gray-900">
                       S/{cartTotal}
@@ -546,7 +546,7 @@ export default function Home(props: SearchPageLayoutProps) {
                           value={dataPedidos.fecha}
                         /> */}
               {/* terminos y condiciones */}
-              <div className="text-center xl:block hidden text-gray-400 text-xs mb-3">
+              <div className="text-center xl:block hidden text-gray-400 text-xs mb-3 mt-3">
                 Tus datos personales se utilizarán para procesar tu pedido,
                 mejorar tu experiencia en esta web y otros propósitos descritos
                 en nuestra
@@ -569,7 +569,7 @@ export default function Home(props: SearchPageLayoutProps) {
                 </Link>
               </div>
 
-              <div className=" xl:flex items-center hidden  z-10 justify-center">
+              <div className=" xl:flex items-center  flex z-10 justify-center mt-3 laptop:mt-0">
                 <div className="inline-flex items-center">
                   <label
                     className="relative flex cursor-pointer items-center rounded-full p-3"
