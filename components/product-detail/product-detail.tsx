@@ -110,6 +110,7 @@ ProductDetailProps) {
         id: String(`${objectID}_${talla}`),
         price: Number(price),
         talla,
+        units_in_stock,
       })
     } else {
       addItem({
@@ -119,6 +120,7 @@ ProductDetailProps) {
         id: String(objectID),
         price: Number(price),
         talla,
+        units_in_stock,
       })
     }
   }

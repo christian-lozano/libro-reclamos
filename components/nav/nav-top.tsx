@@ -992,6 +992,10 @@ export const NavTop = memo(function NavTop() {
                             </p>
                           </div>
                         </div>
+                        <p className="text-sm mb-2  dark:text-gray-600">
+                          Talla: {el.talla}
+                        </p>
+
                         <div className="flex text-sm divide-x">
                           <div className="flex items-center border-gray-100">
                             <Button

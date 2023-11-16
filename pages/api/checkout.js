@@ -79,7 +79,7 @@ console.log(req.body);
         zip_code: "12312-123",
         state_name: "Rio de Janeiro",
         city_name: "Buzios",
-        street_name: "Av das Nacoes Unidas",
+        street_name: "Av las Naciones Unidas",
         street_number: 3003
       },
     },

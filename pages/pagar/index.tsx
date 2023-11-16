@@ -1,6 +1,8 @@
+import { Checkbox } from '@material-tailwind/react'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
+import { Link } from '@/components/@ui/link/link'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -12,6 +14,7 @@ export default function Home(props: SearchPageLayoutProps) {
   // console.log(items)
 
   const [domLoaded, setDomLoaded] = useState(false)
+  const [checkoutPago, setCheckoutPago] = useState(false)
   // const dataProducts = [
   //   {
   //     title: 'test1',
@@ -166,6 +169,9 @@ export default function Home(props: SearchPageLayoutProps) {
                               <p className="text-sm dark:text-gray-400">
                                 <p className="text-sm font-bold">
                                   Cantidad : ({el.quantity})
+                                </p>
+                                <p className="text-sm font-bold">
+                                  Talla : {el.talla}
                                 </p>
                               </p>
                             </div>
@@ -520,10 +526,9 @@ export default function Home(props: SearchPageLayoutProps) {
                 name="stock"
                 value={items.map(
                   (el) =>
-                    `${String(el.id)}` +
-                    ':' +
                     `${String(el.quantity)}_` +
-                    `${String(el.talla)}`
+                    `${String(el.id)}_` +
+                    `${String(el.units_in_stock)}`
                 )}
               />
 
@@ -541,12 +546,63 @@ export default function Home(props: SearchPageLayoutProps) {
                           name="fecha"
                           value={dataPedidos.fecha}
                         /> */}
+              {/* terminos y condiciones */}
+              <div className="text-center xl:block hidden text-gray-400 text-xs mb-3">
+                Tus datos personales se utilizarán para procesar tu pedido,
+                mejorar tu experiencia en esta web y otros propósitos descritos
+                en nuestra
+                <Link
+                  href="#"
+                  target="_blank"
+                  className="focus:outline-none underline mr-1 text-gray-400 "
+                >
+                  <i className="mdi mdi-beer-outline mr-1 "></i>
+                  política de privacidad
+                </Link>
+                y nuestros
+                <Link
+                  href="/tyc"
+                  target="_blank"
+                  className="focus:outline-none underline mr-1 text-gray-400 "
+                >
+                  <i className="mdi mdi-beer-outline mr-1 "></i>términos y
+                  condiciones.
+                </Link>
+              </div>
 
-              <input
-                type="submit"
-                value="Realizar pedido"
-                className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
-              />
+              <div className=" xl:flex items-center hidden  z-10 justify-center">
+                <Checkbox
+                  className="z-10"
+                  onClick={(e) => setCheckoutPago(e.target.checked)}
+                />
+                <span className="text-gray-400 text-sm  "> Acepto los</span>{' '}
+                <Link
+                  href="/tyc"
+                  target="_blank"
+                  className="focus:outline-none underline mr-1 text-sm  text-gray-400 "
+                  rel="noreferrer"
+                >
+                  <i className="mdi mdi-beer-outline mr-1 "></i>Términos &
+                  Condiciones.
+                </Link>
+              </div>
+              {/* ---- */}
+
+              {checkoutPago ? (
+                <input
+                  disabled={checkoutPago}
+                  type="submit"
+                  value="Realizar pedido"
+                  className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
+                />
+              ) : (
+                <input
+                  type="submit"
+                  disabled={true}
+                  value="Realizar pedido"
+                  className="mt-4 mb-8 w-full rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
+                />
+              )}
             </form>
 
             {/* <Button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
