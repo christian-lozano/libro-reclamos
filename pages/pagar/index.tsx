@@ -616,7 +616,7 @@ export default function Home(props: SearchPageLayoutProps) {
 
               {checkoutPago ? (
                 <input
-                  disabled={checkoutPago}
+                  // disabled={checkoutPago}
                   type="submit"
                   value="Realizar pedido"
                   className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
