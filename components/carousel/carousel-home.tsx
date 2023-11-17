@@ -273,7 +273,6 @@ export default function CarouselHome() {
               </div>
             ))}
           </Carousel>
-
           <div className="flex w-full mt-0">
             {sliderMobil.map((el, i) => (
               <div

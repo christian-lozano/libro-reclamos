@@ -1,13 +1,37 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import algoliasearch from 'algoliasearch';
 import { useCart } from 'react-use-cart';
+     
+let objetos=[];
 
-const client = algoliasearch(process.env.CLI_APP_ID,process.env.CLI_ADMIN_API_KEY);
+const testFunction =   ({items}) => {
+    const client = algoliasearch(process.env.CLI_APP_ID,process.env.CLI_ADMIN_API_KEY);
 const index = client.initIndex(process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME);
+  const [domLoaded, setDomLoaded] = useState(false)
+
+  useEffect(() => {
+    setDomLoaded(true)
+  }, [])
+
+ 
+   
+items.map( ( el ) => {
+
+    let indexProduct = el.id.substring(0,6);
+    let stock = el.units_in_stock - el.quantity;
+    objetos.push({objectID:indexProduct,units_in_stock:stock})
+  })    
+
+  index.partialUpdateObjects([objetos[0]]).then(({ objectIDs }) => {
+    console.log(objectIDs);
+    console.log(objectIDs,"test");
+  }).catch((error)=>{
+      console.log(error.message);
+  })
+
+
+}
 // let data = []
-
-
-
 // const reducirStock = (indexProduct,stockActual,UnidadesComprado)=>{
 //   const stock = Number(stockActual)
 //   const UnidadesComp = Number(UnidadesComprado)
@@ -27,16 +51,21 @@ const index = client.initIndex(process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME)
 // }
 
 
-
-
-export default  function Home() {
+export default  function ReduceStock() {
   const {
 
     items,
 
   } = useCart()
 
-  const objects = [];
+
+  testFunction({items})
+
+
+
+ 
+
+
 
 
 //     if (indiceProducto) {
@@ -124,26 +153,6 @@ export default  function Home() {
   //  });
   
 
-  const bucle = items.forEach( function( dato ){
-    let indexProduct = dato.id.substring(0,6);
-    let stock = dato.units_in_stock - dato.quantity;
-
-
-    objects.push({objectID:"GY7429",units_in_stock:2},{objectID:"IB7432",units_in_stock:4})
-
-  });
-
-useCallback(
-  () => {
-
-    index.partialUpdateObjects(objects).then(({ objectIDs }) => {
-      console.log(objectIDs,"test");
-    }).catch((error)=>{
-        console.log(error.message);
-    })
-  },
-  [bucle],
-)
 
 
 
@@ -156,6 +165,10 @@ useCallback(
 
 
   return (
-    <div>index</div>
+    <div>
+    testFunction
+    {/* <TestFunction></TestFunction> */}
+    
+    </div>
   )
 }
