@@ -17,9 +17,6 @@ export default function Home(props: SearchPageLayoutProps) {
   const [checkoutPago, setCheckoutPago] = useState(false)
   const [validate, setValidate] = useState(false)
 
-  const [provincia, setProvincia] = useState('')
-  const [distrito, setDistrito] = useState('')
-
   useEffect(() => {
     setDomLoaded(true)
   }, [])
@@ -35,7 +32,7 @@ export default function Home(props: SearchPageLayoutProps) {
     adicional: '',
   })
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
       allValues.nombre.length >= 5 &&
@@ -153,9 +150,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="NOMBRES"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      changeHandler(e)
-                    }
+                    onChange={(e) => changeHandler(e)}
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -184,9 +179,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="APELLIDOS"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    changeHandler(e)
-                  }
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
               {/*  */}
@@ -207,9 +200,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="tu.email@gmail.com"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    changeHandler(e)
-                  }
+                  onChange={(e) => changeHandler(e)}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -247,9 +238,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="Documento de Identidad"
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      changeHandler(e)
-                    }
+                    onChange={(e) => changeHandler(e)}
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -274,9 +263,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Teléfono"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    changeHandler(e)
-                  }
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
               {/*  */}
@@ -323,7 +310,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onBlur={undefined}
-                    onChange={changeHandler}
+                    onChange={(e) => changeHandler(e)}
                   >
                     <option defaultValue="State">Provincia</option>
                     <option value="Amazonas">Amazonas</option>
@@ -367,7 +354,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                     onBlur={undefined}
-                    onChange={changeHandler}
+                    onChange={(e) => changeHandler(e)}
                   >
                     <option defaultValue="State">Distrito</option>
                     <option value="ANCON">ANCON</option>
@@ -443,9 +430,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200 '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Información Adicional de Envio"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    changeHandler(e.target.value)
-                  }
+                  onChange={(e) => setCheckoutPago(e.target.value)}
                 />
               </div>
 
