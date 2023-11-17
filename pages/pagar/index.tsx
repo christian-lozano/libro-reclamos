@@ -31,7 +31,7 @@ export default function Home(props: SearchPageLayoutProps) {
     adicional: '',
   })
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
       allValues.nombre.length >= 5 &&
@@ -40,8 +40,8 @@ export default function Home(props: SearchPageLayoutProps) {
       allValues.documento.length >= 5 &&
       allValues.telefono.length >= 5 &&
       allValues.direccion.length >= 5 &&
-      allValues.provincia.length >= 1 &&
-      allValues.distrito.length >= 1 &&
+      allValues.provincia.length >= 2 &&
+      allValues.distrito.length >= 2 &&
       allValues.adicional.length >= 3
     ) {
       setValidate(true)
@@ -149,7 +149,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="NOMBRES"
-                    onChange={(e) => changeHandler(e)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      changeHandler(e)
+                    }
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -176,9 +178,11 @@ export default function Home(props: SearchPageLayoutProps) {
                     allValues.apellido.length === 0
                       ? 'border-red-200 focus:border-red-200 focus:border-red-200'
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                  }w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
+                  } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="APELLIDOS"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    changeHandler(e)
+                  }
                 />
               </div>
               {/*  */}
@@ -199,7 +203,9 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="tu.email@gmail.com"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    changeHandler(e)
+                  }
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -237,7 +243,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="Documento de Identidad"
-                    onChange={(e) => changeHandler(e)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      changeHandler(e)
+                    }
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -262,7 +270,9 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Teléfono"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    changeHandler(e)
+                  }
                 />
               </div>
               {/*  */}
@@ -308,7 +318,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         ? 'border-red-200 focus:border-red-200 focus:border-red-200'
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
-                    onBlur={changeHandler}
+                    onBlur={(e: React.FocusEvent<HTMLSelectElement>) =>
+                      changeHandler(e)
+                    }
                   >
                     <option defaultValue="State">Provincia</option>
                     <option value="Amazonas">Amazonas</option>
@@ -350,7 +362,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         ? 'border-red-200 focus:border-red-200 focus:border-red-200'
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
-                    onBlur={changeHandler}
+                    onBlur={(e: React.FocusEvent<HTMLSelectElement>) =>
+                      changeHandler(e)
+                    }
                   >
                     <option defaultValue="State">Distrito</option>
                     <option value="ANCON">ANCON</option>
@@ -426,7 +440,9 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200 '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Información Adicional de Envio"
-                  onChange={(e) => changeHandler(e)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    changeHandler(e)
+                  }
                 />
               </div>
 
