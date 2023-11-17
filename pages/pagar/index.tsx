@@ -16,6 +16,10 @@ export default function Home(props: SearchPageLayoutProps) {
   const [domLoaded, setDomLoaded] = useState(false)
   const [checkoutPago, setCheckoutPago] = useState(false)
   const [validate, setValidate] = useState(false)
+
+  const [provincia, setProvincia] = useState('')
+  const [distrito, setDistrito] = useState('')
+
   useEffect(() => {
     setDomLoaded(true)
   }, [])
@@ -31,7 +35,24 @@ export default function Home(props: SearchPageLayoutProps) {
     adicional: '',
   })
 
-  const changeHandler = (e) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAllValues({ ...allValues, [e.target.name]: e.target.value })
+    if (
+      allValues.nombre.length >= 5 &&
+      allValues.apellido.length >= 5 &&
+      allValues.email.length >= 5 &&
+      allValues.documento.length >= 5 &&
+      allValues.telefono.length >= 5 &&
+      allValues.direccion.length >= 5 &&
+      allValues.provincia.length >= 2 &&
+      allValues.distrito.length >= 2 &&
+      allValues.adicional.length >= 3
+    ) {
+      setValidate(true)
+    }
+  }
+
+  const changeHandlerSelect = (e: React.FocusEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
       allValues.nombre.length >= 5 &&
@@ -318,9 +339,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         ? 'border-red-200 focus:border-red-200 focus:border-red-200'
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
-                    onBlur={(e: React.FocusEvent<HTMLSelectElement>) =>
-                      changeHandler(e)
-                    }
+                    onBlur={(e) => changeHandlerSelect(e)}
                   >
                     <option defaultValue="State">Provincia</option>
                     <option value="Amazonas">Amazonas</option>
@@ -362,9 +381,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         ? 'border-red-200 focus:border-red-200 focus:border-red-200'
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
-                    onBlur={(e: React.FocusEvent<HTMLSelectElement>) =>
-                      changeHandler(e)
-                    }
+                    onBlur={(e) => changeHandlerSelect(e)}
                   >
                     <option defaultValue="State">Distrito</option>
                     <option value="ANCON">ANCON</option>
