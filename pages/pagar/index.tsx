@@ -323,7 +323,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onBlur={undefined}
-                    onChange={(e) => changeHandler(e)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      changeHandler(e)
+                    }
                   >
                     <option defaultValue="State">Provincia</option>
                     <option value="Amazonas">Amazonas</option>
@@ -367,7 +369,9 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                     onBlur={undefined}
-                    onChange={(e) => changeHandler(e)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      changeHandler(e)
+                    }
                   >
                     <option defaultValue="State">Distrito</option>
                     <option value="ANCON">ANCON</option>
