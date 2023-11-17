@@ -149,7 +149,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="NOMBRES"
-                    onChange={changeHandler}
+                    onChange={(e) => changeHandler(e)}
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -178,7 +178,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   }w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="APELLIDOS"
-                  onChange={changeHandler}
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
               {/*  */}
@@ -199,7 +199,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="tu.email@gmail.com"
-                  onChange={changeHandler}
+                  onChange={(e) => changeHandler(e)}
                 />
                 <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                   <svg
@@ -237,7 +237,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="Documento de Identidad"
-                    onChange={changeHandler}
+                    onChange={(e) => changeHandler(e)}
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <svg
@@ -262,7 +262,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Teléfono"
-                  onChange={changeHandler}
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
               {/*  */}
@@ -426,7 +426,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200 '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Información Adicional de Envio"
-                  onChange={changeHandler}
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
 
