@@ -334,7 +334,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     onResize={undefined}
                     onResizeCapture={undefined}
                     onChange={(e = '') =>
-                      changeHandlerSelect(e, (nombre = 'provincia'))
+                      changeHandlerSelect(e.nativeEvent, (nombre = 'provincia'))
                     }
                   >
                     <Option value="Amazonas">Amazonas</Option>
