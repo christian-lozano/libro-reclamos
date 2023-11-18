@@ -1,3 +1,4 @@
+import { Option, Select } from '@material-tailwind/react'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
@@ -31,6 +32,23 @@ export default function Home(props: SearchPageLayoutProps) {
     distrito: '',
     adicional: '',
   })
+
+  const changeHandlerSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAllValues({ ...allValues, [e.name]: e.value })
+    if (
+      allValues.nombre.length >= 5 &&
+      allValues.apellido.length >= 5 &&
+      allValues.email.length >= 5 &&
+      allValues.documento.length >= 5 &&
+      allValues.telefono.length >= 5 &&
+      allValues.direccion.length >= 5 &&
+      allValues.provincia.length >= 2 &&
+      allValues.distrito.length >= 2 &&
+      allValues.adicional.length >= 3
+    ) {
+      setValidate(true)
+    }
+  }
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
@@ -116,7 +134,7 @@ export default function Home(props: SearchPageLayoutProps) {
                 />
                 <span className="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
                 <label
-                  className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+                  className="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer Select-none rounded-lg border border-gray-300 p-4"
                   htmlFor="radio_2"
                 >
                   <div className="ml-5">
@@ -146,7 +164,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     name="nombre"
                     className={`w-full rounded-md border ${
                       allValues.nombre.length === 0
-                        ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                        ? 'border-red-200 focus:border-red-200 '
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="NOMBRES"
@@ -175,9 +193,9 @@ export default function Home(props: SearchPageLayoutProps) {
                   name="apellido"
                   className={`w-full rounded-md border ${
                     allValues.apellido.length === 0
-                      ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                      ? 'border-red-200 focus:border-red-200'
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                  } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
+                  } px-2 py-3 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="APELLIDOS"
                   onChange={(e) => changeHandler(e)}
                 />
@@ -196,7 +214,7 @@ export default function Home(props: SearchPageLayoutProps) {
                   name="email"
                   className={`w-full rounded-md border ${
                     allValues.email.length === 0
-                      ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                      ? 'border-red-200 focus:border-red-200 '
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                   } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="tu.email@gmail.com"
@@ -234,7 +252,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     name="documento"
                     className={`w-full rounded-md border ${
                       allValues.documento.length === 0
-                        ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                        ? 'border-red-200 focus:border-red-200 '
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="Documento de Identidad"
@@ -259,9 +277,9 @@ export default function Home(props: SearchPageLayoutProps) {
                   name="telefono"
                   className={`w-full rounded-md border ${
                     allValues.telefono.length === 0
-                      ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                      ? 'border-red-200 focus:border-red-200 '
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                  } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
+                  } px-2 py-3 text-sm shadow-sm outline-none focus:z-10  `}
                   placeholder="Teléfono"
                   onChange={(e) => changeHandler(e)}
                 />
@@ -301,116 +319,119 @@ export default function Home(props: SearchPageLayoutProps) {
                   htmlFor="card-holder"
                   className="mt-4 mb-2 block text-sm font-medium w-full"
                 >
-                  Provincia
-                  <select
+                  <Select
+                    nonce={undefined}
                     name="provincia"
+                    label="Provincia"
                     className={`w-full rounded-md border ${
                       allValues.provincia.length === 0
-                        ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                        ? 'border-red-200 focus:border-red-200 '
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
                     onBlur={undefined}
-                    onChange={(e) => changeHandler(e)}
+                    onChange={(e = 'Lima') => changeHandlerSelect(e)}
                   >
-                    <option defaultValue="State">Provincia</option>
-                    <option value="Amazonas">Amazonas</option>
-                    <option value="Ancash">Ancash</option>
-                    <option value="Apurímac">Apurímac</option>
-                    <option value="Arequipa">Arequipa</option>
-                    <option value="Ayacucho">Ayacucho</option>
-                    <option value="Cajamarca">Cajamarca</option>
-                    <option value="Callao">Callao</option>
-                    <option value="Cuzco">Cuzco </option>
-                    <option value="Huancavelica">Huancavelica</option>
-                    <option value="Huánuco">Huánuco</option>
-                    <option value="Ica">Ica</option>
-                    <option value="Junín">Junín</option>
-                    <option value="La_Libertad">La Libertad</option>
-                    <option value="Lambayeque">Lambayeque</option>
-                    <option value="Lima">Lima</option>
-                    <option value="Loreto">Loreto</option>
-                    <option value="Madre_de_Dios">Madre de Dios</option>
-                    <option value="Moquegua">Moquegua</option>
-                    <option value="Pasco">Pasco</option>
-                    <option value="Piura">Piura</option>
-                    <option value="Puno">Puno</option>
-                    <option value="San_Martín">San Martín</option>
-                    <option value="Tacna">Tacna</option>
-                    <option value="Tumbes">Tumbes</option>
-                    <option value="Ucayali">Ucayali</option>
-                  </select>
+                    <Option value="Amazonas">Amazonas</Option>
+                    <Option value="Ancash">Ancash</Option>
+                    <Option value="Apurímac">Apurímac</Option>
+                    <Option value="Arequipa">Arequipa</Option>
+                    <Option value="Ayacucho">Ayacucho</Option>
+                    <Option value="Cajamarca">Cajamarca</Option>
+                    <Option value="Callao">Callao</Option>
+                    <Option value="Cuzco">Cuzco </Option>
+                    <Option value="Huancavelica">Huancavelica</Option>
+                    <Option value="Huánuco">Huánuco</Option>
+                    <Option value="Ica">Ica</Option>
+                    <Option value="Junín">Junín</Option>
+                    <Option value="La_Libertad">La Libertad</Option>
+                    <Option value="Lambayeque">Lambayeque</Option>
+                    <Option value="Lima">Lima</Option>
+                    <Option value="Loreto">Loreto</Option>
+                    <Option value="Madre_de_Dios">Madre de Dios</Option>
+                    <Option value="Moquegua">Moquegua</Option>
+                    <Option value="Pasco">Pasco</Option>
+                    <Option value="Piura">Piura</Option>
+                    <Option value="Puno">Puno</Option>
+                    <Option value="San_Martín">San Martín</Option>
+                    <Option value="Tacna">Tacna</Option>
+                    <Option value="Tumbes">Tumbes</Option>
+                    <Option value="Ucayali">Ucayali</Option>
+                  </Select>
                 </label>
                 <label
                   htmlFor="card-holder"
                   className="mt-4 mb-2 block text-sm font-medium w-full ml-1"
                 >
-                  Distrito
-                  <select
+                  <Select
+                    label="Distrito"
                     id="sadas"
                     name="distrito"
                     className={`w-full rounded-md border ${
                       allValues.distrito.length === 0
-                        ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                        ? 'border-red-200 focus:border-red-200'
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
-                    onBlur={undefined}
-                    onChange={(e) => changeHandler(e)}
+                    nonce={undefined}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
+                    onChange={(e = 'Grau') => changeHandlerSelect(e)}
                   >
-                    <option defaultValue="State">Distrito</option>
-                    <option value="ANCON">ANCON</option>
-                    <option value="ATE">ATE</option>
-                    <option value="BARRANCO">BARRANCO</option>
-                    <option value="BREÑA">BREÑA</option>
-                    <option value="CARABAYLLO">CARABAYLLO</option>
-                    <option value="CHACLACAYO">CHACLACAYO</option>
-                    <option value="CHORRILLOS">CHORRILLOS</option>
-                    <option value="CIENEGUILLA">CIENEGUILLA</option>
-                    <option value="COMAS">COMAS</option>
-                    <option value="EL AGUSTINO">EL AGUSTINO</option>
-                    <option value="INDEPENDENCIA">INDEPENDENCIA</option>
-                    <option value="JESUS MARIA">JESUS MARIA</option>
-                    <option value="LA MOLINA">LA MOLINA</option>
-                    <option value="LA VICTORIA">LA VICTORIA</option>
-                    <option value="LIMA">LIMA</option>
-                    <option value="LINCE">LINCE</option>
-                    <option value="LOS OLIVOS">LOS OLIVOS</option>
-                    <option value="LURIGANCHO">LURIGANCHO</option>
-                    <option value="LURIN">LURIN</option>
-                    <option value="MAGDALENA DEL MAR">MAGDALENA DEL MAR</option>
-                    <option value="MIRAFLORES">MIRAFLORES</option>
-                    <option value="PACHACAMAC">PACHACAMAC</option>
-                    <option value="PUCUSANA">PUCUSANA</option>
-                    <option value="PUEBLO LIBRE">PUEBLO LIBRE</option>
-                    <option value="PUENTE PIEDRA">PUENTE PIEDRA</option>
-                    <option value="PUNTA HERMOSA">PUNTA HERMOSA</option>
-                    <option value="PUNTA NEGRA">PUNTA NEGRA</option>
-                    <option value="RIMAC">RIMAC</option>
-                    <option value="SAN BARTOLO">SAN BARTOLO</option>
-                    <option value="SAN BORJA">SAN BORJA</option>
-                    <option value="SAN ISIDRO">SAN ISIDRO</option>
-                    <option value="SAN JUAN DE LURIGANCHO">
+                    <Option value="ANCON">ANCON</Option>
+                    <Option value="ATE">ATE</Option>
+                    <Option value="BARRANCO">BARRANCO</Option>
+                    <Option value="BREÑA">BREÑA</Option>
+                    <Option value="CARABAYLLO">CARABAYLLO</Option>
+                    <Option value="CHACLACAYO">CHACLACAYO</Option>
+                    <Option value="CHORRILLOS">CHORRILLOS</Option>
+                    <Option value="CIENEGUILLA">CIENEGUILLA</Option>
+                    <Option value="COMAS">COMAS</Option>
+                    <Option value="EL AGUSTINO">EL AGUSTINO</Option>
+                    <Option value="INDEPENDENCIA">INDEPENDENCIA</Option>
+                    <Option value="JESUS MARIA">JESUS MARIA</Option>
+                    <Option value="LA MOLINA">LA MOLINA</Option>
+                    <Option value="LA VICTORIA">LA VICTORIA</Option>
+                    <Option value="LIMA">LIMA</Option>
+                    <Option value="LINCE">LINCE</Option>
+                    <Option value="LOS OLIVOS">LOS OLIVOS</Option>
+                    <Option value="LURIGANCHO">LURIGANCHO</Option>
+                    <Option value="LURIN">LURIN</Option>
+                    <Option value="MAGDALENA DEL MAR">MAGDALENA DEL MAR</Option>
+                    <Option value="MIRAFLORES">MIRAFLORES</Option>
+                    <Option value="PACHACAMAC">PACHACAMAC</Option>
+                    <Option value="PUCUSANA">PUCUSANA</Option>
+                    <Option value="PUEBLO LIBRE">PUEBLO LIBRE</Option>
+                    <Option value="PUENTE PIEDRA">PUENTE PIEDRA</Option>
+                    <Option value="PUNTA HERMOSA">PUNTA HERMOSA</Option>
+                    <Option value="PUNTA NEGRA">PUNTA NEGRA</Option>
+                    <Option value="RIMAC">RIMAC</Option>
+                    <Option value="SAN BARTOLO">SAN BARTOLO</Option>
+                    <Option value="SAN BORJA">SAN BORJA</Option>
+                    <Option value="SAN ISIDRO">SAN ISIDRO</Option>
+                    <Option value="SAN JUAN DE LURIGANCHO">
                       SAN JUAN DE LURIGANCHO
-                    </option>
-                    <option value="SAN JUAN DE MIRAFLORES">
+                    </Option>
+                    <Option value="SAN JUAN DE MIRAFLORES">
                       SAN JUAN DE MIRAFLORES
-                    </option>
-                    <option value="SAN LUIS">SAN LUIS</option>
-                    <option value="SAN MARTIN DE PORRES">
+                    </Option>
+                    <Option value="SAN LUIS">SAN LUIS</Option>
+                    <Option value="SAN MARTIN DE PORRES">
                       SAN MARTIN DE PORRES
-                    </option>
-                    <option value="SAN MIGUEL">SAN MIGUEL</option>
-                    <option value="SANTA ANITA">SANTA ANITA</option>
-                    <option value="SANTA MARIA DEL MAR">
+                    </Option>
+                    <Option value="SAN MIGUEL">SAN MIGUEL</Option>
+                    <Option value="SANTA ANITA">SANTA ANITA</Option>
+                    <Option value="SANTA MARIA DEL MAR">
                       SANTA MARIA DEL MAR
-                    </option>
-                    <option value="SANTA ROSA">SANTA ROSA</option>
-                    <option value="SANTIAGO DE SURCO">SANTIAGO DE SURCO</option>
-                    <option value="SURQUILLO">SURQUILLO</option>
-                    <option value="VILLA EL SALVADOR">VILLA EL SALVADOR</option>
-                    <option value="VILLA MARIA DEL TRIUNFO">
+                    </Option>
+                    <Option value="SANTA ROSA">SANTA ROSA</Option>
+                    <Option value="SANTIAGO DE SURCO">SANTIAGO DE SURCO</Option>
+                    <Option value="SURQUILLO">SURQUILLO</Option>
+                    <Option value="VILLA EL SALVADOR">VILLA EL SALVADOR</Option>
+                    <Option value="VILLA MARIA DEL TRIUNFO">
                       VILLA MARIA DEL TRIUNFO
-                    </option>
-                  </select>
+                    </Option>
+                  </Select>
                 </label>
               </div>
               <label
