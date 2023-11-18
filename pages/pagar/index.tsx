@@ -18,8 +18,8 @@ export default function Home(props: SearchPageLayoutProps) {
   const [checkoutPago, setCheckoutPago] = useState(false)
   const [validate, setValidate] = useState(false)
 
-  const [provincia, setProvincia] = useState()
-  const [distrito, setDistrito] = useState()
+  const [provincia, setProvincia] = useState(String)
+  const [distrito, setDistrito] = useState(String)
 
   useEffect(() => {
     setDomLoaded(true)
