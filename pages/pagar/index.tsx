@@ -18,6 +18,9 @@ export default function Home(props: SearchPageLayoutProps) {
   const [checkoutPago, setCheckoutPago] = useState(false)
   const [validate, setValidate] = useState(false)
 
+  const [provincia, setProvincia] = useState()
+  const [distrito, setDistrito] = useState()
+
   useEffect(() => {
     setDomLoaded(true)
   }, [])
@@ -33,26 +36,6 @@ export default function Home(props: SearchPageLayoutProps) {
     adicional: '',
   })
 
-  const changeHandlerSelect = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    nombre: string
-  ) => {
-    setAllValues({ ...allValues, [nombre]: e })
-    if (
-      allValues.nombre.length >= 5 &&
-      allValues.apellido.length >= 5 &&
-      allValues.email.length >= 5 &&
-      allValues.documento.length >= 5 &&
-      allValues.telefono.length >= 5 &&
-      allValues.direccion.length >= 5 &&
-      allValues.provincia.length >= 2 &&
-      allValues.distrito.length >= 2 &&
-      allValues.adicional.length >= 3
-    ) {
-      setValidate(true)
-    }
-  }
-
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
@@ -62,8 +45,8 @@ export default function Home(props: SearchPageLayoutProps) {
       allValues.documento.length >= 5 &&
       allValues.telefono.length >= 5 &&
       allValues.direccion.length >= 5 &&
-      allValues.provincia.length >= 2 &&
-      allValues.distrito.length >= 2 &&
+      provincia.length >= 2 &&
+      distrito.length >= 2 &&
       allValues.adicional.length >= 3
     ) {
       setValidate(true)
@@ -333,9 +316,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e = '') =>
-                      changeHandlerSelect(e.nativeEvent, (nombre = 'provincia'))
-                    }
+                    onChange={(e) => setProvincia(e)}
                   >
                     <Option value="Amazonas">Amazonas</Option>
                     <Option value="Ancash">Ancash</Option>
@@ -380,9 +361,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(
-                      e: React.ChangeEvent<HTMLInputElement> = 'cercado de lima'
-                    ) => changeHandlerSelect(e, (nombre = 'distrito'))}
+                    onChange={(e) => setDistrito(e)}
                   >
                     <Option value="ANCON">ANCON</Option>
                     <Option value="ATE">ATE</Option>
