@@ -34,7 +34,7 @@ export default function Home(props: SearchPageLayoutProps) {
   })
 
   const changeHandlerSelect = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: ChangeEvent<HTMLInputElement>,
     nombre: string
   ) => {
     setAllValues({ ...allValues, [nombre]: e })
@@ -53,7 +53,7 @@ export default function Home(props: SearchPageLayoutProps) {
     }
   }
 
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
       allValues.nombre.length >= 5 &&
@@ -333,7 +333,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e = 'lima') =>
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       changeHandlerSelect(e, (nombre = 'provincia'))
                     }
                   >
@@ -380,7 +380,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e = 'cercado de lima') =>
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
                       changeHandlerSelect(e, (nombre = 'distrito'))
                     }
                   >
