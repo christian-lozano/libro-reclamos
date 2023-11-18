@@ -33,8 +33,11 @@ export default function Home(props: SearchPageLayoutProps) {
     adicional: '',
   })
 
-  const changeHandlerSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAllValues({ ...allValues, [e.name]: e.value })
+  const changeHandlerSelect = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    nombre: string
+  ) => {
+    setAllValues({ ...allValues, [nombre]: e })
     if (
       allValues.nombre.length >= 5 &&
       allValues.apellido.length >= 5 &&
@@ -330,8 +333,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onBlur={undefined}
-                    onChange={(e = 'Lima') => changeHandlerSelect(e)}
+                    onChange={(e) =>
+                      changeHandlerSelect(e, (nombre = 'provincia'))
+                    }
                   >
                     <Option value="Amazonas">Amazonas</Option>
                     <Option value="Ancash">Ancash</Option>
@@ -376,7 +380,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e = 'Grau') => changeHandlerSelect(e)}
+                    onChange={(e = 'Grau') =>
+                      changeHandlerSelect(e, (nombre = 'distrito'))
+                    }
                   >
                     <Option value="ANCON">ANCON</Option>
                     <Option value="ATE">ATE</Option>
