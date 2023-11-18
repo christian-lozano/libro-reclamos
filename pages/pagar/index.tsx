@@ -34,7 +34,7 @@ export default function Home(props: SearchPageLayoutProps) {
   })
 
   const changeHandlerSelect = (
-    e: ChangeEvent<HTMLInputElement>,
+    e: React.ChangeEvent<HTMLInputElement>,
     nombre: string
   ) => {
     setAllValues({ ...allValues, [nombre]: e })
@@ -53,7 +53,7 @@ export default function Home(props: SearchPageLayoutProps) {
     }
   }
 
-  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
       allValues.nombre.length >= 5 &&
