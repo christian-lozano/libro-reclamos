@@ -322,7 +322,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
                     } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                     placeholder="Dirección"
-                    onChange={changeHandler}
+                    onChange={(e) => changeHandler(e)}
                   />
                   <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
                     <img
@@ -465,13 +465,11 @@ export default function Home(props: SearchPageLayoutProps) {
                   name="adicional"
                   className={`w-full rounded-md border ${
                     allValues.adicional.length === 0
-                      ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                      ? 'border-red-200 focus:border-red-200 '
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200 '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Información Adicional de Envio"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setCheckoutPago(e.target.value)
-                  }
+                  onChange={(e) => changeHandler(e)}
                 />
               </div>
 
