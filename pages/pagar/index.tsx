@@ -35,7 +35,40 @@ export default function Home(props: SearchPageLayoutProps) {
     distrito: '',
     adicional: '',
   })
-
+  const changeHandlerSelectProvincia = (e: string) => {
+    setProvincia(e)
+    setAllValues({ ...allValues, provincia: e })
+    if (
+      allValues.nombre.length >= 5 &&
+      allValues.apellido.length >= 5 &&
+      allValues.email.length >= 5 &&
+      allValues.documento.length >= 5 &&
+      allValues.telefono.length >= 5 &&
+      allValues.direccion.length >= 5 &&
+      provincia.length >= 2 &&
+      distrito.length >= 2 &&
+      allValues.adicional.length >= 3
+    ) {
+      setValidate(true)
+    }
+  }
+  const changeHandlerSelectDistrito = (e: string) => {
+    setDistrito(e)
+    setAllValues({ ...allValues, provincia: e })
+    if (
+      allValues.nombre.length >= 5 &&
+      allValues.apellido.length >= 5 &&
+      allValues.email.length >= 5 &&
+      allValues.documento.length >= 5 &&
+      allValues.telefono.length >= 5 &&
+      allValues.direccion.length >= 5 &&
+      provincia.length >= 2 &&
+      distrito.length >= 2 &&
+      allValues.adicional.length >= 3
+    ) {
+      setValidate(true)
+    }
+  }
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAllValues({ ...allValues, [e.target.name]: e.target.value })
     if (
@@ -316,7 +349,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e) => setProvincia(e)}
+                    onChange={(e: string) => changeHandlerSelectProvincia(e)}
                   >
                     <Option value="Amazonas">Amazonas</Option>
                     <Option value="Ancash">Ancash</Option>
@@ -361,7 +394,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e) => setDistrito(e)}
+                    onChange={(e: string) => changeHandlerSelectDistrito(e)}
                   >
                     <Option value="ANCON">ANCON</Option>
                     <Option value="ATE">ATE</Option>
