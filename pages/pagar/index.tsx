@@ -349,7 +349,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e: string) => changeHandlerSelectProvincia(e)}
+                    onChange={(e) => changeHandlerSelectProvincia(e)}
                   >
                     <Option value="Amazonas">Amazonas</Option>
                     <Option value="Ancash">Ancash</Option>
@@ -394,7 +394,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e: string) => changeHandlerSelectDistrito(e)}
+                    onChange={(e) => changeHandlerSelectDistrito(e)}
                   >
                     <Option value="ANCON">ANCON</Option>
                     <Option value="ATE">ATE</Option>
