@@ -333,9 +333,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      changeHandlerSelect(e, (nombre = 'provincia'))
-                    }
+                    onChange={(
+                      e: React.ChangeEvent<HTMLInputElement> = 'Lima'
+                    ) => changeHandlerSelect(e, (nombre = 'provincia'))}
                   >
                     <Option value="Amazonas">Amazonas</Option>
                     <Option value="Ancash">Ancash</Option>
@@ -380,9 +380,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      changeHandlerSelect(e, (nombre = 'distrito'))
-                    }
+                    onChange={(
+                      e: React.ChangeEvent<HTMLInputElement> = 'cercado de lima'
+                    ) => changeHandlerSelect(e, (nombre = 'distrito'))}
                   >
                     <Option value="ANCON">ANCON</Option>
                     <Option value="ATE">ATE</Option>
