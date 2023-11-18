@@ -333,7 +333,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e) =>
+                    onChange={(e = 'lima') =>
                       changeHandlerSelect(e, (nombre = 'provincia'))
                     }
                   >
@@ -380,7 +380,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
-                    onChange={(e = 'Grau') =>
+                    onChange={(e = 'cercado de lima') =>
                       changeHandlerSelect(e, (nombre = 'distrito'))
                     }
                   >
@@ -457,7 +457,9 @@ export default function Home(props: SearchPageLayoutProps) {
                       : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200 '
                   } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
                   placeholder="Información Adicional de Envio"
-                  onChange={(e) => setCheckoutPago(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setCheckoutPago(e.target.value)
+                  }
                 />
               </div>
 
