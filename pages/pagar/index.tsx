@@ -50,6 +50,8 @@ export default function Home(props: SearchPageLayoutProps) {
       allValues.adicional.length >= 3
     ) {
       setValidate(true)
+    } else {
+      setValidate(false)
     }
   }
   const changeHandlerSelectDistrito = (e: string) => {
@@ -67,6 +69,8 @@ export default function Home(props: SearchPageLayoutProps) {
       allValues.adicional.length >= 3
     ) {
       setValidate(true)
+    } else {
+      setValidate(false)
     }
   }
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,8 +87,28 @@ export default function Home(props: SearchPageLayoutProps) {
       allValues.adicional.length >= 3
     ) {
       setValidate(true)
+    } else {
+      setValidate(false)
     }
   }
+
+  useEffect(() => {
+    if (
+      allValues.nombre.length >= 5 &&
+      allValues.apellido.length >= 5 &&
+      allValues.email.length >= 5 &&
+      allValues.documento.length >= 5 &&
+      allValues.telefono.length >= 5 &&
+      allValues.direccion.length >= 5 &&
+      provincia.length >= 2 &&
+      distrito.length >= 2 &&
+      allValues.adicional.length >= 3
+    ) {
+      setValidate(true)
+    } else {
+      setValidate(false)
+    }
+  }, [allValues, provincia, distrito])
 
   return (
     <SearchPageLayout {...props}>
@@ -342,11 +366,10 @@ export default function Home(props: SearchPageLayoutProps) {
                     nonce={undefined}
                     name="provincia"
                     label="Provincia"
-                    className={`w-full rounded-md border ${
-                      allValues.provincia.length === 0
-                        ? 'border-red-200 focus:border-red-200 '
-                        : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                    } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 mr-1 `}
+                    className={` ${
+                      provincia.length === 0 &&
+                      'border-red-200 focus:border-red-200 '
+                    }`}
                     onResize={undefined}
                     onResizeCapture={undefined}
                     onChange={(e) => changeHandlerSelectProvincia(String(e))}
@@ -386,11 +409,10 @@ export default function Home(props: SearchPageLayoutProps) {
                     label="Distrito"
                     id="sadas"
                     name="distrito"
-                    className={`w-full rounded-md border ${
-                      allValues.distrito.length === 0
-                        ? 'border-red-200 focus:border-red-200'
-                        : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                    } w-full rounded-md border border-gray-200 px-4 py-3  text-sm uppercase shadow-sm outline-none focus:z-10 `}
+                    className={` ${
+                      distrito.length === 0 &&
+                      'border-red-200 focus:border-red-200 '
+                    }`}
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
