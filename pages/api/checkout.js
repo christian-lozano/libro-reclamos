@@ -108,7 +108,7 @@ console.log(req.body);
   mercadopago.preferences
     .create(preference)
     .then(function (response) {
-console.log(response);
+
       res.redirect(response.body.init_point);
     })
     .catch(function (error) {
