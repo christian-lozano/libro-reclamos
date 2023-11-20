@@ -1,4 +1,5 @@
 import { Option, Select } from '@material-tailwind/react'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
@@ -13,6 +14,34 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   const { items, cartTotal } = useCart()
   // console.log(items)
+
+  const sendMail = async () => {
+    axios
+      .post('https://fritz-sport.vercel.app/api/checkout2', {
+        firstName: 'Fred',
+        lastName: 'Flintstone',
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+
+    // await fetch('http://127.0.0.1:3000/api/checkout2', {
+    //   mode: 'no-cors',
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Methods': 'POST, PUT, GET, OPTIONS',
+    //     'Access-Control-Allow-Headers':
+    //       'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+    //   },
+    //   body: JSON.stringify({
+    //     products: items,
+    //   }),
+    // })
+  }
 
   const [domLoaded, setDomLoaded] = useState(false)
   const [checkoutPago, setCheckoutPago] = useState(false)
@@ -112,7 +141,7 @@ export default function Home(props: SearchPageLayoutProps) {
 
   return (
     <SearchPageLayout {...props}>
-      <div className="  py-16">
+      <div className="py-16">
         <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
           <div className="px-4 pt-8">
             <p className="text-xl font-medium">Resumen del pedido</p>
@@ -521,15 +550,19 @@ export default function Home(props: SearchPageLayoutProps) {
                 </div>
               )}
             </div>
-
             <form action="/api/checkout" method="POST">
               <input type="hidden" name="nombre" value="nombre" />
-
+              <Button
+                className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
+                onClick={sendMail}
+              >
+                enviar
+              </Button>
               <input
                 type="hidden"
                 name="productos"
                 value={items.map(
-                  (el) => ` ${el.id}_${el.quantity}_${String(el.talla)}`
+                  (el) => `${el.id}_${el.quantity}_${String(el.talla)}`
                 )}
               />
               <input
@@ -644,10 +677,6 @@ export default function Home(props: SearchPageLayoutProps) {
                 </Button>
               )}
             </form>
-
-            {/* <Button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
-           
-            </Button> */}
           </div>
         </div>
       </div>

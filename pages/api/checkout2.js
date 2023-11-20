@@ -50,14 +50,20 @@ export default function handler(req, res) {
 //     console.log(element[i])
 //   })
 console.log(req.body);
+// req.body.products.map(el=>{
+        
+//   console.log(el);
+  
+//   })
   let preference = {
     items:[
-     {    title:req.body.productos,
+   
+     {    title:"titulo",
           description:'dni:75286858 nombre: christian lozano adrianzen',
           picture_url: '../public/favicon.svg',
           category_id: 'PEN',
           quantity: 1,
-          unit_price:Number(req.body.monto)
+          unit_price:5
         }
     ],
     payer: {
@@ -84,9 +90,9 @@ console.log(req.body);
       },
     },
     back_urls: {
-      success: `http://localhost:3000/exito?variable1=${req.body.stock}`,
-      failure: "fritz-sport.vercel.app",
-      pending: "fritz-sport.vercel.app",
+      success: `http://127.0.0.1:3000`,
+      failure: "http://127.0.0.1:3000",
+      pending: "http://127.0.0.1:3000",
     },
 
     // installments: 1,
@@ -108,7 +114,7 @@ console.log(req.body);
   mercadopago.preferences
     .create(preference)
     .then(function (response) {
-console.log(response);
+
       res.redirect(response.body.init_point);
     })
     .catch(function (error) {
