@@ -1,5 +1,4 @@
 import { Option, Select } from '@material-tailwind/react'
-import { doc, setDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
@@ -10,272 +9,7 @@ import {
   SearchPageLayout,
   getStaticPropsPage,
 } from '@/layouts/search-page-layout'
-import { db } from '@/utils/firebase'
-// Add a new document with a generated id.
-const enviarDatos = async () => {
-  const docData = {
-    sku: 'GY7429',
-    parentID: 'GY7429',
-    name: 'X CRAZYFAST.3 FG FUSSBALLSCHUh',
-    description: '',
-    slug: 'x-crazyfast.3-fg-fussballschuh',
-    brand: 'adidas',
-    gender: 'hombre',
-    hierarchical_categories: {
-      lvl0: 'hombre',
-      lvl1: 'hombre > calzado',
-      lvl2: 'hombre > calzado > zapatillas',
-    },
-    list_categories: ['hombre', 'calzado', 'zapatillas', 'chimpunes', 'futbol'],
-    category_page_id: ['mujer > calzado', 'mujer > calzado > zapatillas'],
-    image_urls: [
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9ac60604ef9d4646acd8133802b03e6c_9366/X_Crazyfast.3_FG_Fussballschuh_Schwarz_GY7429_01_standard_hover.jpg',
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/db97d8293ca540fe976f5a13afde94d3_9366/X_Crazyfast.3_FG_Fussballschuh_Schwarz_GY7429_02_standard.jpg',
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4a3d72736ccb46f4ae787319f4aed5d1_9366/X_Crazyfast.3_FG_Fussballschuh_Schwarz_GY7429_03_standard.jpg',
-      'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fd9cb0c8e8ea4177be5f8e934a4f6db5_9366/X_Crazyfast.3_FG_Fussballschuh_Schwarz_GY7429_04_standard.jpg',
-    ],
-    image_blurred: 'L_Mjp@js~qj[%2WBR-oK%gofNGWV',
-    reviews: {
-      rating: 4,
-      count: 99,
-      bayesian_avg: 3.96,
-    },
-    color: {
-      filter_group: 'negro;#000',
-      original_name: 'negro',
-    },
-    available_sizes: [
-      '37.5',
-      '38',
-      '38.5',
-      '39',
-      '39.5',
-      '40',
-      '40.5',
-      '41',
-      '41.5',
-      '42',
-      '42.5',
-      '43',
-      '43.5',
-      '44',
-      '44.5',
-      '45',
-      '45.5',
-    ],
-    variants: [
-      {
-        sku: 'M0E20000000E1HV',
-        abbreviated_size: '36',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1HW',
-        abbreviated_size: '38',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1HX',
-        abbreviated_size: '40',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1HY',
-        abbreviated_size: '42',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1HZ',
-        abbreviated_size: '44',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I0',
-        abbreviated_size: '46',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I1',
-        abbreviated_size: '48',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I2',
-        abbreviated_size: '50',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I3',
-        abbreviated_size: '52',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I4',
-        abbreviated_size: '54',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I5',
-        abbreviated_size: '56',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1I6',
-        abbreviated_size: '58',
-        in_stock: false,
-      },
-      {
-        sku: 'M0E20000000E1HU',
-        abbreviated_size: '34',
-        in_stock: false,
-      },
-    ],
-    price: {
-      currency: 'EUR',
-      value: 172.5,
-      discounted_value: 0,
-      discount_level: -100,
-      on_sales: false,
-    },
-    created_at: 0,
-    updated_at: 0,
-    related_products: [
-      {
-        objectID: 'M0E20000000E1HH',
-        sku: 'M0E20000000E1HH',
-        parentID: 'TO29',
-        name: 'T-Shirt Ki 6? Who are you? cream',
-        description: '',
-        slug: 'ki6-whoareyou-tshirt-TO299299-cream',
-        url: '',
-        i18n: null,
-        brand: 'Who are you?',
-        gender: 'women',
-        hierarchical_categories: {
-          lvl0: 'Women',
-          lvl1: 'Women > Clothing',
-          lvl2: 'Women > Clothing > T-shirts',
-        },
-        list_categories: ['Women', 'Clothing', 'T-shirts'],
-        category_page_id: ['Women > Clothing', 'Women > Clothing > T-shirts'],
-        image_urls: [
-          'https://res.cloudinary.com/hilnmyskv/image/upload/v1638373954/flagship_sunrise/M0E20000000E1HH_0.jpg',
-          'https://res.cloudinary.com/hilnmyskv/image/upload/v1638373955/flagship_sunrise/M0E20000000E1HH_1.jpg',
-          'https://res.cloudinary.com/hilnmyskv/image/upload/v1638373955/flagship_sunrise/M0E20000000E1HH_2.jpg',
-        ],
-        image_blurred: 'LfQvUTn$?wWC?HRjIqoLI]t7%LWB',
-        reviews: {
-          rating: 2,
-          count: 17,
-          bayesian_avg: 1.888888888888889,
-        },
-        color: {
-          filter_group: 'beige;#EFDBB2',
-          original_name: 'cream',
-        },
-        available_sizes: [
-          '34',
-          '36',
-          '38',
-          '40',
-          '42',
-          '44',
-          '46',
-          '48',
-          '50',
-          '52',
-          '54',
-          '56',
-          '58',
-        ],
-        variants: [
-          {
-            sku: 'M0E20000000E1HI',
-            abbreviated_size: '36',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HJ',
-            abbreviated_size: '38',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HK',
-            abbreviated_size: '40',
-            in_stock: true,
-          },
-          {
-            sku: 'M0E20000000E1HL',
-            abbreviated_size: '42',
-            in_stock: true,
-          },
-          {
-            sku: 'M0E20000000E1HM',
-            abbreviated_size: '44',
-            in_stock: true,
-          },
-          {
-            sku: 'M0E20000000E1HN',
-            abbreviated_size: '46',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HO',
-            abbreviated_size: '48',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HP',
-            abbreviated_size: '50',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HQ',
-            abbreviated_size: '52',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HR',
-            abbreviated_size: '54',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HS',
-            abbreviated_size: '56',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HT',
-            abbreviated_size: '58',
-            in_stock: false,
-          },
-          {
-            sku: 'M0E20000000E1HH',
-            abbreviated_size: '34',
-            in_stock: false,
-          },
-        ],
-        price: {
-          currency: 'EUR',
-          value: 172.5,
-          discounted_value: 0,
-          discount_level: -100,
-          on_sales: false,
-        },
-        units_in_stock: 5,
-        created_at: 0,
-        updated_at: 0,
-        related_products: null,
-      },
-    ],
-    product_type: 'zapatillas',
-    units_in_stock: 4,
-    objectID: 'GY7429',
-  }
-  await setDoc(doc(db, 'products', 'GY7429'), docData)
-}
 
-enviarDatos()
 export default function Home(props: SearchPageLayoutProps) {
   const { items, cartTotal } = useCart()
   // console.log(items)
@@ -375,6 +109,16 @@ export default function Home(props: SearchPageLayoutProps) {
       setValidate(false)
     }
   }, [allValues, provincia, distrito])
+
+  const dataProducts = []
+  items.map((el) => {
+    dataProducts.push({
+      objectID: el.id,
+      units_in_stock: el.units_in_stock - el.quantity,
+    })
+  })
+  const dataStock = JSON.stringify(dataProducts)
+  console.log(dataStock)
 
   return (
     <SearchPageLayout {...props}>
@@ -802,10 +546,17 @@ export default function Home(props: SearchPageLayoutProps) {
                 name="stock"
                 value={items.map(
                   (el) =>
-                    `${String(el.quantity)}_` +
-                    `${String(el.id)}_` +
-                    `${String(el.units_in_stock)}`
+                    `objectID:${String(el.id)},units_in_stock:${String(
+                      el.units_in_stock - el.quantity
+                    )}`
                 )}
+                // value={items.map(
+                //   (el) =>
+                //     `${String(el.quantity)}_` +
+                //     `${String(el.id)}_` +
+                //     `${String(el.units_in_stock)}`
+                // )}
+                // value={String(dataStock)}
               />
 
               <input type="hidden" name="apellido" value="apellido" />
