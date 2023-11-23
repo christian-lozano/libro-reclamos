@@ -110,15 +110,15 @@ export default function Home(props: SearchPageLayoutProps) {
     }
   }, [allValues, provincia, distrito])
 
-  const dataProducts = []
-  items.map((el) => {
-    dataProducts.push({
-      objectID: el.id,
-      units_in_stock: el.units_in_stock - el.quantity,
-    })
-  })
-  const dataStock = JSON.stringify(dataProducts)
-  console.log(dataStock)
+  // const dataProducts = []
+  // items.map((el) => {
+  //   dataProducts.push({
+  //     objectID: el.id,
+  //     units_in_stock: el.units_in_stock - el.quantity,
+  //   })
+  // })
+  // const dataStock = JSON.stringify(dataProducts)
+  // console.log(dataStock)
 
   return (
     <SearchPageLayout {...props}>
