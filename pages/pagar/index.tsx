@@ -1,8 +1,7 @@
-import { Option, Select } from '@material-tailwind/react'
+import { Button, Option, Select, Spinner } from '@material-tailwind/react'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
-import { Button } from '@/components/@ui/button/button'
 import { Link } from '@/components/@ui/link/link'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
@@ -13,7 +12,18 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   const { items, cartTotal } = useCart()
   // console.log(items)
-
+  function Loading({ disableLoadAddProduct = true }) {
+    return (
+      <Spinner
+        // color="black"
+        className={`h-7 w-7 z-dev left-7 top-6 absolute ${
+          !disableLoadAddProduct ? 'hidden' : 'block'
+        }`}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      />
+    )
+  }
   const [domLoaded, setDomLoaded] = useState(false)
   const [checkoutPago, setCheckoutPago] = useState(false)
   const [validate, setValidate] = useState(false)
@@ -119,7 +129,7 @@ export default function Home(props: SearchPageLayoutProps) {
   // })
   // const dataStock = JSON.stringify(dataProducts)
   // console.log(dataStock)
-
+  const [loadingMercadoPago, setLoadingMercadoPago] = useState(false)
   return (
     <SearchPageLayout {...props}>
       <div className="py-16">
@@ -647,18 +657,23 @@ export default function Home(props: SearchPageLayoutProps) {
               {/* ---- */}
 
               {checkoutPago && items.length > 0 && validate ? (
-                <input
-                  // disabled={checkoutPago}
-                  type="submit"
-                  value="Realizar pedido"
-                  className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white cursor-pointer"
-                />
+                <div className="w-full flex flex-col justify-center items-center relative ">
+                  <input
+                    // disabled={loadingMercadoPago}
+                    type="submit"
+                    value="Realizar pedido"
+                    className={`mt-4 mb-8 z-dropdown w-full  rounded-md bg-gray-900 ${
+                      loadingMercadoPago ? 'bg-gray-600 ' : 'bg-gray-900 '
+                    } px-6 py-3 font-medium text-white cursor-pointer`}
+                    onClick={() => setLoadingMercadoPago(true)}
+                  />
+                  <Loading disableLoadAddProduct={loadingMercadoPago} />
+                </div>
               ) : (
                 <Button
                   // disabled={true}
 
-                  className="mt-4 mb-8 w-full rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
-                  // onClick={(e) => HandleDisableCheckout(e)}
+                  className="mt-4 mb-8 w-full  rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
                 >
                   Realizar pedido
                 </Button>
