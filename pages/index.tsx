@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { Configure } from 'react-instantsearch-dom'
+import { useCart } from 'react-use-cart'
 
 import { BannerPromociones } from '@/components/body-home/banner-promociones'
 import { CategoriasGenero } from '@/components/body-home/categorias-genero'
@@ -13,6 +15,14 @@ import {
 } from '@/layouts/search-page-layout'
 
 export default function Home(props: SearchPageLayoutProps) {
+  const { emptyCart } = useCart()
+
+  useEffect(() => {
+    if (window.location.href === 'https://fritz-sport.vercel.app?clear=true') {
+      emptyCart()
+    }
+  })
+
   return (
     <SearchPageLayout {...props}>
       <Configure
