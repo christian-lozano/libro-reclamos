@@ -29,13 +29,6 @@ const sliderDesktop = [
 ]
 const sliderMobil = [
   {
-    title: 'MARINERUSH PACK',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: '/static/images/imgSliderHome/imageMobile2.jpg',
-    url: '#',
-  },
-  {
     title: '',
     desc: '',
     color: 'black',
@@ -61,6 +54,13 @@ const sliderMobil = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: '/static/images/imgSliderHome/imageMobile3.jpg',
+    url: '#',
+  },
+  {
+    title: 'MARINERUSH PACK',
+    desc: 'Recién llegadas.',
+    color: 'black',
+    img: '/static/images/imgSliderHome/imageMobile2.jpg',
     url: '#',
   },
 ]
