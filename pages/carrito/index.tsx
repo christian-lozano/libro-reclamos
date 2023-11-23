@@ -55,7 +55,11 @@ export default function Home(props: SearchPageLayoutProps) {
                           </div>
                         </div>
                         <div className="flex text-sm divide-x">
-                          <div className="flex items-center border-gray-100">
+                          <div>
+                            <span className="mr-1">Talla:</span>
+                            {el.talla}.5
+                          </div>
+                          {/* <div className="flex items-center border-gray-100">
                             <Button
                               className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
                               onClick={() =>
@@ -85,7 +89,7 @@ export default function Home(props: SearchPageLayoutProps) {
                               {' '}
                               +{' '}
                             </Button>
-                          </div>
+                          </div> */}
                           <div className=" flex justify-end w-full items-center ">
                             <Button
                               className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
@@ -150,7 +154,7 @@ export default function Home(props: SearchPageLayoutProps) {
               </div>
               <div className="fixed md:relative bottom-4 w-full flex justify-center left-0">
                 <Link href={'/pagar'} className="w-full">
-                  <span className="mt-6 w-full text-center text-lg  bg-[#ae946d] py-3  font-bold text-white hover:bg-[#b99d73]">
+                  <span className="mt-6 cursor-pointer w-full text-center text-lg  bg-[#ae946d] py-3  font-bold text-white hover:bg-[#b99d73]">
                     PAGAR
                   </span>
                 </Link>

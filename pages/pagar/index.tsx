@@ -671,8 +671,7 @@ export default function Home(props: SearchPageLayoutProps) {
                 </div>
               ) : (
                 <button
-                  // disabled={true}
-
+                  disabled={true}
                   className="mt-4 mb-8 w-full  rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
                 >
                   Realizar pedido
