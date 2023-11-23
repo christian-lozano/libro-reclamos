@@ -43,6 +43,20 @@ const sliderMobil = [
     url: '#',
   },
   {
+    title: '',
+    desc: '',
+    color: 'black',
+    img: '/static/images/imgSliderHome/black-mobil-2.png',
+    url: '#',
+  },
+  {
+    title: '',
+    desc: '',
+    color: 'black',
+    img: '/static/images/imgSliderHome/black-mobil-3.png',
+    url: '#',
+  },
+  {
     title: 'PACK CRAZYRUSH',
     desc: 'Recién llegadas.',
     color: 'black',
