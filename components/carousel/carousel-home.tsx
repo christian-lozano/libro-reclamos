@@ -9,7 +9,7 @@ const sliderDesktop = [
     title: '',
     color: 'black',
     desc: '',
-    img: '/static/images/imgSliderHome/Desktop.png',
+    img: '/static/images/imgSliderHome/black-desktop.png',
     url: '#',
   },
   {
@@ -33,6 +33,13 @@ const sliderMobil = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: '/static/images/imgSliderHome/imageMobile2.jpg',
+    url: '#',
+  },
+  {
+    title: '',
+    desc: '',
+    color: 'black',
+    img: '/static/images/imgSliderHome/black-mobil.png',
     url: '#',
   },
   {
