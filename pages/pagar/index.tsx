@@ -534,30 +534,34 @@ export default function Home(props: SearchPageLayoutProps) {
             <form action="/api/checkout" method="POST">
               <input type="hidden" name="nombre" value="nombre" />
 
-              <input
-                type="hidden"
-                name="productos"
-                value={items.map(
-                  (el) => `${el.id}_${el.quantity}_${String(el.talla)}`
-                )}
-              />
-              <input
-                type="hidden"
-                name="stock"
-                value={items.map(
-                  (el) =>
-                    `objectID:${String(el.id)}units_in_stock+${String(
-                      el.units_in_stock - el.quantity
-                    )}`
-                )}
-                // value={items.map(
-                //   (el) =>
-                //     `${String(el.quantity)}_` +
-                //     `${String(el.id)}_` +
-                //     `${String(el.units_in_stock)}`
-                // )}
-                // value={String(dataStock)}
-              />
+              {items && (
+                <>
+                  <input
+                    type="hidden"
+                    name="productos"
+                    value={items.map(
+                      (el) => `${el.id}_${el.quantity}_${String(el.talla)}`
+                    )}
+                  />
+                  <input
+                    type="hidden"
+                    name="stock"
+                    value={items.map(
+                      (el) =>
+                        `objectID:${String(el.id)}units_in_stock+${String(
+                          el.units_in_stock - el.quantity
+                        )}`
+                    )}
+                    // value={items.map(
+                    //   (el) =>
+                    //     `${String(el.quantity)}_` +
+                    //     `${String(el.id)}_` +
+                    //     `${String(el.units_in_stock)}`
+                    // )}
+                    // value={String(dataStock)}
+                  />
+                </>
+              )}
 
               <input type="hidden" name="apellido" value="apellido" />
               <input type="hidden" name="typedocumento" value="documento" />
