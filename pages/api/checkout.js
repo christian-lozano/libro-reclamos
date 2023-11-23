@@ -84,7 +84,7 @@ console.log(req.body);
       },
     },
     back_urls: {
-      success: "https://fritz-sport.vercel.app/api/exito",
+      success: "/api/exito",
       failure: "fritz-sport.vercel.app",
       pending: "fritz-sport.vercel.app",
     },
