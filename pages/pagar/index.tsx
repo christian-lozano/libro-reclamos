@@ -548,9 +548,9 @@ export default function Home(props: SearchPageLayoutProps) {
                     name="stock"
                     value={items.map(
                       (el) =>
-                        `objectID:${String(el.id)}units_in_stock+${
-                          el.units_in_stock - el.quantity
-                        }`
+                        `objectID:${String(el.id)}units_in_stock+${String(
+                          el.units_in_stock - Number(el.quantity)
+                        )}`
                     )}
                     // value={items.map(
                     //   (el) =>
