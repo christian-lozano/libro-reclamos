@@ -8,23 +8,6 @@ export default function handler(req, res) {
 // Search-only version
 // import algoliasearch from 'algoliasearch/lite';
 
-// const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429');
-// const index = client.initIndex('pwa_ecom_ui_template_products');
-//     const objects = [{
-//         units_in_stock: 20,
-//         objectID: '3495560001'
-//       }];
-      
-//       objects.push({
-//         units_in_stock: 50,
-//         objectID: 'IB7432'
-//       })
-
-
-
-//       index.partialUpdateObjects(objects).then(({ objectIDs }) => {
-//         res.redirect("http://localhost:3000");
-//       });
 
 
 
@@ -35,7 +18,7 @@ let array = req.query.variable1;
 // console.log(valor);
 console.log(array);
 
-let test = "objectID:3495560001_41-units_in_stock:19,objectID:3495560001_37-units_in_stock:19"
+
 // let test2 = test.replace(/^\{|\}$/g,'').split(',');
 
 function malformedJSON2Array (tar) {
@@ -51,7 +34,47 @@ function malformedJSON2Array (tar) {
   
 
 let arregloSeparado = malformedJSON2Array(array)
-console.log(arregloSeparado);
+// console.log(arregloSeparado);
+// console.log(arregloSeparado);
+let arrayData =[]
+arregloSeparado.map(el=>{
+    let indiceStrock = el.objectID.indexOf(" ");
+    let extraida = el.objectID.substring(indiceStrock); 
+    let extraida2 = extraida.substring(1); 
+
+
+
+
+    let indiceId = el.objectID.indexOf("_");
+    let extraidaObjetId = el.objectID.substring(0,indiceId); 
+
+
+arrayData.push({objectID:extraidaObjetId,units_in_stock:Number(extraida2)});
+
+})
+
+console.log(arrayData);
+
+const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429');
+const index = client.initIndex('pwa_ecom_ui_template_products');
+    // const objects = [];
+      
+    //   objects.push({
+    //     units_in_stock: 50,
+    //     objectID: 'IB7432'
+    //   })
+
+
+
+      index.partialUpdateObjects(arrayData).then(({ objectIDs }) => {
+        console.log(objectIDs);
+        res.redirect("http://localhost:3000" || process.env.URL_DOMINIO);
+      });
+
+
+// let indice = test.indexOf("+");
+// let extraida = test.substring(indice);
+// console.log("Extraída: ", extraida);
 // let test1 = [ ]
 // for (let index = 0; index < arregloSeparado.length; index++) {
 //     const element = arregloSeparado[index];
@@ -65,7 +88,7 @@ console.log(arregloSeparado);
 // function string_exp(sCmd) {
 //     return Function(`'use strict'; return (${sCmd})`)();
 // }
-console.log(test1);
+// console.log(test1);
 // console.log(string_exp(test));
 // const obj2 = [
 //     { objectID: '3495560001_41' },

@@ -1,4 +1,6 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
+import { Spinner } from '@material-tailwind/react'
+import algoliasearch from 'algoliasearch'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
@@ -13,6 +15,7 @@ import type { ProductTagType } from '@/components/product/product-tag'
 import { ProductTag } from '@/components/product/product-tag'
 import { ProductTitle } from '@/components/product/product-title'
 import type { ProductHit } from '@/typings/hits'
+import { solicitudAlgoliaStock } from '@/utils/solicitud-stock'
 import { Button } from '@ui/button/button'
 import { IconLabel } from '@ui/icon-label/icon-label'
 
@@ -32,7 +35,6 @@ export type ProductDetailProps = {
   sizes?: ProductSizeType[]
   price?: number
   units_in_stock?: number
-
   originalPrice?: number
   currency?: ProductPriceCurrency
   popular?: boolean
@@ -79,17 +81,64 @@ ProductDetailProps) {
   const [domLoaded, setDomLoaded] = useState(false)
   const [activeSize, setActiveSize] = useState(100)
   const [talla, setTalla] = useState(String)
-
+  const [executing, setExecuting] = useState(false)
   const handleActiveTalla = (i: number, size: string) => {
     setActiveSize(i)
     setTalla(size)
   }
+  function Loading({ disableLoadAddProduct = true }) {
+    return (
+      <Spinner
+        className={`h-4 w-4 ${!disableLoadAddProduct ? 'hidden' : 'block'}`}
+        onResize={undefined}
+        onResizeCapture={undefined}
+      />
+    )
+  }
+  useEffect(() => {
+    const itemsStock = items.find(function (item) {
+      const objetID = item.id
+      const indiceId = objetID.indexOf('_')
+      const extraidaObjetId = objetID.substring(0, indiceId)
+
+      return extraidaObjetId === objectID
+    })
+    solicitudAlgoliaStock(itemsStock, setExecuting, objectID)
+  }, [items])
+
+  const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429')
+  const index = client.initIndex('pwa_ecom_ui_template_products')
+  const [disableLoadAddProduct, setDisableLoadAddProduct] = useState(
+    Boolean(true)
+  )
 
   useEffect(() => {
     setDomLoaded(true)
   }, [])
   // const handleCheckoutClick = useCallback(
-  const onCheckoutClick = () => {
+
+  function sleep(ms: number) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+  }
+
+  const onCheckoutClick = async () => {
+    setDisableLoadAddProduct(false)
+    await sleep(1000)
+    const itemsStk = items.find(function (item) {
+      const objetID = item.id
+      const indiceId = objetID.indexOf('_')
+      const extraidaObjetId = objetID.substring(0, indiceId)
+
+      return extraidaObjetId === objectID
+    })
+    if (itemsStk) {
+      solicitudAlgoliaStock(itemsStk, setExecuting, objectID)
+    } else {
+      setDisableLoadAddProduct(false)
+      setExecuting(true)
+    }
     const notify = () =>
       toast((t) => (
         <div className="relative flex w-full">
@@ -134,6 +183,7 @@ ProductDetailProps) {
         img: image,
         title,
         precio: price,
+        // id: String(`${objectID}_${talla}`),
         id: String(`${objectID}_${talla}`),
         price: Number(price),
         talla,
@@ -150,6 +200,7 @@ ProductDetailProps) {
         units_in_stock,
       })
     }
+    setDisableLoadAddProduct(true)
   }
   //   [onCheckoutClick]
   // const handleCheckoutClick = useCallback(
@@ -158,6 +209,10 @@ ProductDetailProps) {
   //   },
   //   [onCheckoutClick]
   // )
+  useEffect(() => {
+    setDisableLoadAddProduct(true)
+    setExecuting(false)
+  }, [items])
 
   return (
     <div className="flex flex-col  gap-6 mb-12 laptop:my-8 xl:flex-row laptop:flex-row ">
@@ -187,7 +242,6 @@ ProductDetailProps) {
         {title && (
           <ProductTitle className="heading-4 mt-1">{title}</ProductTitle>
         )}
-
         {/* {typeof rating !== 'undefined' && (
           <ProductRating
             rating={rating}
@@ -241,6 +295,16 @@ ProductDetailProps) {
             </ul>
           </>
         )}
+
+        {/* <CalmButton
+          units_in_stock={units_in_stock}
+          talla={talla}
+          executing={executing}
+          setExecuting={setExecuting}
+          onClick={onCheckoutClick}
+        >
+          Agregar Productos
+        </CalmButton> */}
         {units_in_stock === 0 ? (
           <div className="flex flex-col justify-around items-center w-full">
             <span className=" tex-center bg-red-900 text-white px-3 py-1 mt-5 rounded-lg">
@@ -263,9 +327,15 @@ ProductDetailProps) {
             type="primary"
             size="large"
             className="w-full mt-6"
-            disabled={units_in_stock === 0 || !talla}
+            disabled={
+              units_in_stock === 0 ||
+              !talla ||
+              executing ||
+              !disableLoadAddProduct
+            }
             onClick={() => onCheckoutClick()}
           >
+            <Loading disableLoadAddProduct={!disableLoadAddProduct} />
             <IconLabel
               icon={ShoppingBagIcon}
               label="Agregar al Carrito"
@@ -275,7 +345,7 @@ ProductDetailProps) {
             />
           </Button>
         )}
-
+        {/* <ButtonGetStrockProducts /> */}
         {domLoaded && (
           <Toaster
             toastOptions={{
