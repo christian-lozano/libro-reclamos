@@ -84,7 +84,7 @@ console.log(req.body);
       },
     },
     back_urls: {
-      success: `http://localhost:3000/api/exito?variable1=${req.body.stock}`,
+      success: `fritz-sport.vercel.app/api/exito`,
       failure: "fritz-sport.vercel.app",
       pending: "fritz-sport.vercel.app",
     },
