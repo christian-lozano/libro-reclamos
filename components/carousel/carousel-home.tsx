@@ -6,17 +6,17 @@ import { Button } from '../@ui/button/button'
 
 const sliderDesktop = [
   {
-    title: 'MARINERUSH PACK',
-    color: 'black',
-    desc: 'Recién llegadas.',
-    img: '/static/images/imgSliderHome/image2.jpg',
-    url: '#',
-  },
-  {
     title: '',
     color: 'black',
     desc: '',
     img: '/static/images/imgSliderHome/Desktop.png',
+    url: '#',
+  },
+  {
+    title: 'MARINERUSH PACK',
+    color: 'black',
+    desc: 'Recién llegadas.',
+    img: '/static/images/imgSliderHome/image2.jpg',
     url: '#',
   },
   {
