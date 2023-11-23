@@ -1,4 +1,4 @@
-import { Button, Option, Select, Spinner } from '@material-tailwind/react'
+import { Option, Select, Spinner } from '@material-tailwind/react'
 import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
@@ -670,13 +670,13 @@ export default function Home(props: SearchPageLayoutProps) {
                   <Loading disableLoadAddProduct={loadingMercadoPago} />
                 </div>
               ) : (
-                <Button
+                <button
                   // disabled={true}
 
                   className="mt-4 mb-8 w-full  rounded-md bg-red-900 px-6 py-3 font-medium text-white cursor-pointer"
                 >
                   Realizar pedido
-                </Button>
+                </button>
               )}
             </form>
           </div>
