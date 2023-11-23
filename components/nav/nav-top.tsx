@@ -997,7 +997,7 @@ export const NavTop = memo(function NavTop() {
                         </p>
 
                         <div className="flex text-sm divide-x">
-                          <div className="flex items-center border-gray-100">
+                          {/* <div className="flex items-center border-gray-100">
                             <Button
                               className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
                               onClick={() =>
@@ -1027,7 +1027,7 @@ export const NavTop = memo(function NavTop() {
                               {' '}
                               +{' '}
                             </Button>
-                          </div>
+                          </div> */}
                           <div className=" flex justify-end w-full items-center ">
                             <Button
                               className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
