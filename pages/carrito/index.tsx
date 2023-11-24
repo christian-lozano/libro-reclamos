@@ -36,7 +36,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     />
                     <div className="flex justify-center items-center w-full h-full">
                       <div className="flex flex-col justify-between w-full">
-                        <div className="flex justify-between w-full pb-2 space-x-2">
+                        <div className="flex justify-between w-full  space-x-2">
                           <div className="space-y-1">
                             <h2 className="xl:text-lg text-base font-bold  sm:pr-8">
                               {el.title}
@@ -55,9 +55,16 @@ export default function Home(props: SearchPageLayoutProps) {
                           </div>
                         </div>
                         <div className="flex text-sm divide-x">
-                          <div>
-                            <span className="mr-1">Talla:</span>
-                            {el.talla}.5
+                          <div className="">
+                            <p className="text-sm dark:text-gray-400">
+                              <p className="text-sm flex  font-bold">
+                                <span className="mr-1">Cantidad: </span>
+                                <span>({el.quantity})</span>
+                              </p>
+                              <p className="text-sm font-bold">
+                                Talla : {el.talla}
+                              </p>
+                            </p>
                           </div>
                           {/* <div className="flex items-center border-gray-100">
                             <Button

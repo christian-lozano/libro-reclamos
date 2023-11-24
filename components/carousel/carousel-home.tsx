@@ -9,7 +9,7 @@ const sliderDesktop = [
     title: '',
     color: 'black',
     desc: '',
-    img: '/static/images/imgSliderHome/black-desktop.png',
+    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/black-desktop_nfyqgw.png',
     url: '#',
   },
   {
@@ -32,23 +32,23 @@ const sliderMobil = [
     title: '',
     desc: '',
     color: 'black',
-    img: '/static/images/imgSliderHome/black-mobil-3.png',
+    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839898/ecommerce-fritz-sport/slider-home/black-mobil-3_p2diza.png',
     url: '#',
   },
-  {
-    title: 'PACK CRAZYRUSH',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: '/static/images/imgSliderHome/imageMobile3.jpg',
-    url: '#',
-  },
-  {
-    title: 'MARINERUSH PACK',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: '/static/images/imgSliderHome/imageMobile2.jpg',
-    url: '#',
-  },
+  // {
+  //   title: 'PACK CRAZYRUSH',
+  //   desc: 'Recién llegadas.',
+  //   color: 'black',
+  //   img: '/static/images/imgSliderHome/imageMobile3.jpg',
+  //   url: '#',
+  // },
+  // {
+  //   title: 'MARINERUSH PACK',
+  //   desc: 'Recién llegadas.',
+  //   color: 'black',
+  //   img: '/static/images/imgSliderHome/imageMobile2.jpg',
+  //   url: '#',
+  // },
 ]
 
 const sliderTablet = [
@@ -66,7 +66,6 @@ export default function CarouselHome() {
   useEffect(() => {}, [indiceSlider])
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 950 })
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
-  // const isMobile = useMediaQuery({ maxWidth: 600 })
 
   return (
     <>
