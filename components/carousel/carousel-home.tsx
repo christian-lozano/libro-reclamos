@@ -35,30 +35,6 @@ const sliderMobil = [
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839898/ecommerce-fritz-sport/slider-home/black-mobil-3_p2diza.png',
     url: '#',
   },
-  // {
-  //   title: 'PACK CRAZYRUSH',
-  //   desc: 'Recién llegadas.',
-  //   color: 'black',
-  //   img: '/static/images/imgSliderHome/imageMobile3.jpg',
-  //   url: '#',
-  // },
-  // {
-  //   title: 'MARINERUSH PACK',
-  //   desc: 'Recién llegadas.',
-  //   color: 'black',
-  //   img: '/static/images/imgSliderHome/imageMobile2.jpg',
-  //   url: '#',
-  // },
-]
-
-const sliderTablet = [
-  {
-    title: 'MARINERUSH PACK',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/EuTablets_b7rrql.jpg',
-    url: '#',
-  },
   {
     title: 'MARINERUSH PACK',
     desc: 'Recién llegadas.',
@@ -71,6 +47,16 @@ const sliderTablet = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/imageMobile2_mkwldp.jpg',
+    url: '#',
+  },
+]
+
+const sliderTablet = [
+  {
+    title: 'MARINERUSH PACK',
+    desc: 'Recién llegadas.',
+    color: 'black',
+    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/EuTablets_b7rrql.jpg',
     url: '#',
   },
 ]
