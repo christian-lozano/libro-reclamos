@@ -21,27 +21,29 @@ export function ProductFavorite({
   className,
 }: ProductFavoriteProps) {
   const cn = classNames(
-    'flex',
-    { 'bg-white rounded-sm w-7 h-7 shadow': layout === 'icon' },
+    'flex hidden',
+    { 'bg-white rounded-sm w-7 h-7  shadow': layout === 'icon' },
     className
   )
   const icon = isFavorite ? FavoriteFillIcon : FavoriteOutlineIcon
   const text = isFavorite ? 'Remove from favorite' : 'Add to favorite'
 
   return (
-    <Button className={cn} title={text} onClick={onClick}>
-      {layout === 'icon' ? (
-        <Icon icon={icon} className="w-4 h-4 m-auto" />
-      ) : (
-        <IconLabel
-          icon={icon}
-          label={text}
-          labelPosition="right"
-          className="gap-2"
-          classNameLabel=""
-          classNameIcon="w-4 h-4"
-        />
-      )}
-    </Button>
+    <div className="hidden">
+      <Button className={cn} title={text} onClick={onClick}>
+        {layout === 'icon' ? (
+          <Icon icon={icon} className="w-4 h-4 m-auto" />
+        ) : (
+          <IconLabel
+            icon={icon}
+            label={text}
+            labelPosition="right"
+            className="gap-2"
+            classNameLabel=""
+            classNameIcon="w-4 h-4"
+          />
+        )}
+      </Button>
+    </div>
   )
 }
