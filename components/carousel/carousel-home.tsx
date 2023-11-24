@@ -19,13 +19,13 @@ const sliderDesktop = [
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/image3_cicsdw.jpg',
     url: '#',
   },
-  {
-    title: 'PACK CRAZYRUSH',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/imageMobile3_bmvzka.jpg',
-    url: '#',
-  },
+  // {
+  //   title: 'PACK CRAZYRUSH',
+  //   desc: 'Recién llegadas.',
+  //   color: 'black',
+  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/imageMobile3_bmvzka.jpg',
+  //   url: '#',
+  // },
 ]
 const sliderMobil = [
   {

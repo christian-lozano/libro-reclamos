@@ -21,6 +21,47 @@ const DataCardBg = [
     button: 'Niños',
     imgCategory: 'static/images/categoria-home/ninos.jpg',
   },
+  {
+    url: '/mujer',
+    button: 'Mujer',
+    imgCategory:
+      'https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOPs%7EAW23%7ESEASONAL%7ECATEGORIES+SEPT%7EHOMEPAGE%7EEEA_woman-Nov-621691_66_mod04.png/fmt/png',
+  },
+
+  {
+    url: '/hombre',
+    button: 'Hombre',
+    imgCategory:
+      'https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOPs%7EAW23%7ESEASONAL%7ECATEGORIES+SEPT%7EHOMEPAGE%7EEEA_Man_Nov-625227_93_mod02.png/fmt/png',
+  },
+
+  {
+    url: '/ninos',
+    button: 'Niños',
+    imgCategory:
+      'https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOPs%7EAW23%7ETEST%7EEEA_Kids_category.png/fmt/png',
+  },
+
+  {
+    url: '/mujer',
+    button: 'Mujer',
+    imgCategory:
+      'https://images.unsplash.com/photo-1588117260148-b47818741c74?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+
+  {
+    url: '/hombre',
+    button: 'Hombre',
+    imgCategory:
+      'https://images.unsplash.com/photo-1588882077358-3553d45a57dd?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+
+  {
+    url: '/ninos',
+    button: 'Niños',
+    imgCategory:
+      ' https://images.unsplash.com/photo-1604935380273-ca72c2af12cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
 ]
 
 export function CategoriasGenero() {
