@@ -104,8 +104,8 @@ export default function Home(props: SearchPageLayoutProps) {
 
   useEffect(() => {
     if (
-      allValues.nombre.length >= 5 &&
-      allValues.apellido.length >= 5 &&
+      allValues.nombre.length >= 2 &&
+      allValues.apellido.length >= 3 &&
       allValues.email.length >= 5 &&
       allValues.documento.length >= 5 &&
       allValues.telefono.length >= 5 &&
