@@ -15,11 +15,10 @@ import {
 
 export type ProductPageProps = SearchPageLayoutProps & {
   objectID: string
-  // test: string
 }
 
 export default function Product({ objectID, ...props }: ProductPageProps) {
-  const [posts, setPosts] = useState(String)
+  const [posts, setPosts] = useState(Object)
 
   function fetchPosts() {
     const client = algoliasearch(
@@ -32,8 +31,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
         attributesToRetrieve: ['gender', 'brand', 'product_type'],
       })
       .then((object) => {
-        const { brand, gender } = object
-        return setPosts(`${String(brand)} ${String(gender)}`)
+        return setPosts(Object(object))
       })
   }
 
@@ -61,8 +59,8 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
           <ProductsShowcase
             // indexId="recommended"
             title="Recomendado para ti"
-            query={posts}
-            ruleContexts={posts}
+            query={`${posts.brand} ${posts.gender}`}
+            ruleContexts={`${posts.brand} ${posts.gender}`}
             hitComponent={ProductCardHitShowcase}
           />
         </div>
