@@ -3,9 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { Configure } from 'react-instantsearch-dom'
 
 import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
-import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
-import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
-import RecomendacionProduct from '@/components/recomendacion-product/recomendacion-product'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   getStaticPropsPage,
@@ -278,7 +275,6 @@ export default function Home(props: SearchPageLayoutProps) {
         hitComponent={ProductCardHitShowcase}
       /> */}
       <CarouselMarcasHome />
-      <RecomendacionProduct />
     </SearchPageLayout>
   )
 }
