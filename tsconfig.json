@@ -20,6 +20,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js", "components/product/product-detail.tsx", "components/email-template-send/EmailTemplate.tsx", "pages/exito/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js", "components/product/product-detail.tsx", "components/email-template-send/EmailTemplate.tsx", "pages/exito/index.tsx", "components/recomendacion-product/recomendacion-product.js"],
   "exclude": ["node_modules"]
 }

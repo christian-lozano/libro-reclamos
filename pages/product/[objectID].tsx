@@ -1,4 +1,6 @@
+import algoliasearch from 'algoliasearch'
 import type { GetServerSidePropsContext } from 'next'
+import { useEffect, useState } from 'react'
 import { Hits, Configure } from 'react-instantsearch-dom'
 
 import { Container } from '@/components/container/container'
@@ -13,35 +15,65 @@ import {
 
 export type ProductPageProps = SearchPageLayoutProps & {
   objectID: string
+  // test: string
 }
 
 export default function Product({ objectID, ...props }: ProductPageProps) {
-  return (
-    <SearchPageLayout {...props}>
-      <Container className="mt-12 xl:mt-20 overflow-x-hidden overflow-y-hidden">
-        <Configure filters={`objectID:${objectID?.toUpperCase()}`} />
-        <Hits hitComponent={ProductDetailHit} />
-      </Container>
-      <Configure
-        hitsPerPage={6}
-        // We cannot retrieve the user token at build time, so we disable perso
-        // feature to avoid an additional call to retrieve Algolia results at load time
-        enablePersonalization={false}
-        userToken={undefined}
-      />
+  const [posts, setPosts] = useState(String)
 
-      <ProductsShowcase
-        title="Recomendado Para ti"
-        indexId="spring-summer-2021"
-        ruleContexts={['home-spring-summer-2021']}
-        className="laptop:bg-gray-50"
-        hitComponent={ProductCardHitShowcase}
-      />
-    </SearchPageLayout>
+  function fetchPosts() {
+    const client = algoliasearch(
+      'E142ZWDVM4',
+      'cef8bca32bcdcb1a169b2ec00e1f8429'
+    )
+    const index = client.initIndex('pwa_ecom_ui_template_products')
+    index
+      .getObject(objectID, {
+        attributesToRetrieve: ['gender', 'brand', 'product_type'],
+      })
+      .then((object) => {
+        const { brand, gender } = object
+        return setPosts(`${String(brand)} ${String(gender)}`)
+      })
+  }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [objectID])
+
+  return (
+    <>
+      <SearchPageLayout {...props}>
+        <Container className="mt-12 xl:mt-20 overflow-x-hidden overflow-y-hidden">
+          <Configure filters={`objectID:${objectID?.toUpperCase()}`} />
+          <Hits hitComponent={ProductDetailHit} />
+          {/* <ProductsShowcase
+            title="Recomendado Para ti"
+            indexId="spring-summer-2021"
+            ruleContexts={['home-spring-summer-2021']}
+            className="laptop:bg-gray-50"
+            hitComponent={ProductCardHitShowcase}
+          /> */}
+        </Container>
+      </SearchPageLayout>
+      <SearchPageLayout {...props}>
+        <div>
+          <ProductsShowcase
+            // indexId="recommended"
+            title="Recomendado para ti"
+            query={posts}
+            ruleContexts={posts}
+            hitComponent={ProductCardHitShowcase}
+          />
+        </div>
+      </SearchPageLayout>
+    </>
   )
 }
 
 export const getServerSideProps = (context: GetServerSidePropsContext) =>
   getServerSidePropsPage(Product, context, {
-    props: { objectID: context.params?.objectID },
+    props: {
+      objectID: context.params?.objectID,
+    },
   })

@@ -9,6 +9,7 @@ import {
   Drawer,
   IconButton,
 } from '@material-tailwind/react'
+import algoliasearch from 'algoliasearch'
 import dynamic from 'next/dynamic'
 import { memo, useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
@@ -564,16 +565,24 @@ const dataHeader = [
 export const NavTop = memo(function NavTop() {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
-  const {
-    items,
-    removeItem,
-    cartTotal,
-    totalItems,
-    updateItemQuantity,
-    emptyCart,
-  } = useCart()
+  const { items, removeItem, cartTotal, totalItems, emptyCart } = useCart()
 
+  // const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429')
+  // const index = client.initIndex('pwa_ecom_ui_template_products')
+  // const arry = []
   useEffect(() => {
+    // items.forEach((el) => {
+    //   arry.push(el.id)
+    // })
+    // console.log(arry)
+
+    // index
+    //   .getObjects(arry, {
+    //     attributesToRetrieve: ['objectID'],
+    //   })
+    //   .then(({ results }) => {
+    //     console.log(results)
+    //   })
     setDomLoaded(true)
   }, [])
   // ubicanos
@@ -994,6 +1003,9 @@ export const NavTop = memo(function NavTop() {
                         </div>
                         <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
                           Talla: {el.talla}
+                        </p>
+                        <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
+                          Cantidad: {el.quantity}
                         </p>
 
                         <div className="flex text-sm divide-x">

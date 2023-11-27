@@ -51,7 +51,7 @@ slider desaparece porque voy a carrito
       <CarouselHome />
       <CategoriasGenero />
       <ProductsShowcase
-        title="Primavera / Verano 2023"
+        title="Lo mas Nuevo"
         indexId="spring-summer-2021"
         ruleContexts={['home-spring-summer-2021']}
         className="laptop:bg-gray-50"
@@ -66,12 +66,12 @@ slider desaparece porque voy a carrito
         className="laptop:bg-gray-50"
         hitComponent={ProductCardHitShowcase}
       />
-      <ProductsShowcase
+      {/* <ProductsShowcase
         title="Lo Nuevo en Zapatillas"
         indexId="Men"
         query="nike"
         hitComponent={ProductCardHitShowcase}
-      />
+      /> */}
       <CarouselMarcasHome />
     </SearchPageLayout>
   )
