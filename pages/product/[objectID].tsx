@@ -59,8 +59,8 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
           <ProductsShowcase
             // indexId="recommended"
             title="Recomendado para ti"
-            query={`${posts.brand} ${posts.gender}`}
-            ruleContexts={`${posts.brand} ${posts.gender}`}
+            query={`${posts.brand} ${posts.gender} ${posts.product_type}`}
+            ruleContexts={`${posts.brand} ${posts.gender} ${posts.product_type}`}
             hitComponent={ProductCardHitShowcase}
           />
         </div>
