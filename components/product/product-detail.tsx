@@ -37,7 +37,7 @@ export function ProductDetails({
           <div className="grid grid-flow-col gap-x-2 p-1">
             {src.map((el, i) => (
               // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-              <div key={i} onMouseEnter={() => setMainImg(src[i])}>
+              <div key={i} onClick={() => setMainImg(src[i])}>
                 <img
                   className={classNames(
                     'rounded-md w-[4rem] hover:translate-y-1 delay-100 ease-in-out'
