@@ -46,7 +46,7 @@ export function ProductDetails({
               {src.map((el, i) => (
                 // eslint-disable-next-line jsx-a11y/no-static-element-interactions
                 <div
-                  className="z-50"
+                  className="z-50 w-auto"
                   key={i}
                   onClick={() => setMainImg(src[i])}
                 >
