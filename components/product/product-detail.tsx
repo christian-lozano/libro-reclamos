@@ -32,7 +32,16 @@ export function ProductDetails({
       )}
     >
       <div className="flex flex-col items-center  w-full h-2/4">
-        <ProductZoomImgDetail mainimg={mainImg} />
+        <div className="hidden xl:block">
+          <ProductZoomImgDetail mainimg={mainImg} />
+        </div>
+        <img
+          className={classNames(
+            'rounded-md w-full hover:translate-y-1 delay-100 ease-in-out xl:hidden block'
+          )}
+          src={mainImg}
+          // alt={alt}
+        />
         <div className="flex justify-start items-start  dark:bg-[var(--dark-mode)] py-1 bg-white">
           <div className="grid grid-flow-col gap-x-2 p-1">
             {src.map((el, i) => (
