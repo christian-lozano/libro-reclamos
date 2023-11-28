@@ -164,7 +164,7 @@ ProductDetailProps) {
     //   const extraidaObjetId = objetID.substring(0, indiceId)
 
     // return  item.objectID === objectID
-    // })
+    //// })
     // console.log(itemsStk)
 
     if (items) {
