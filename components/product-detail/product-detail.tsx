@@ -163,7 +163,7 @@ ProductDetailProps) {
     //   const indiceId = objetID.indexOf('_')
     //   const extraidaObjetId = objetID.substring(0, indiceId)
 
-    //   return item.objectID === objectID
+    ///   return  item.objectID === objectID
     // })
     // console.log(itemsStk)
 
