@@ -53,7 +53,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
             ruleContexts={['home-spring-summer-2021']}
             className="laptop:bg-gray-50"
             hitComponent={ProductCardHitShowcase}
-          /> */}
+          />   */}
         </Container>
       </SearchPageLayout>
       <SearchPageLayout {...props}>
