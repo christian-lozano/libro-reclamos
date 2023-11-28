@@ -157,7 +157,7 @@ ProductDetailProps) {
 
   const onCheckoutClick = async () => {
     setDisableLoadAddProduct(false)
-    await sleep(1000)
+    await sleep(2000)
     // const itemsStk = items.find(function (item) {
     //   const objetID = item.id
     //   const indiceId = objetID.indexOf('_')
