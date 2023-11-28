@@ -110,7 +110,7 @@ ProductDetailProps) {
   // }, [])
   // console.log(posts)
 
-  const { addItem, items } = useCart()
+  const { addItem, items, removeItem } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
   const [activeSize, setActiveSize] = useState(100)
   const [talla, setTalla] = useState(String)
@@ -129,14 +129,15 @@ ProductDetailProps) {
     )
   }
   useEffect(() => {
-    const itemsStock = items.find(function (item) {
-      const objetID = item.id
-      const indiceId = objetID.indexOf('_')
-      const extraidaObjetId = objetID.substring(0, indiceId)
+    // const itemsStock = items.find(function (item) {
+    //   // const objetID = item.id
+    //   // const indiceId = objetID.indexOf('_')
+    //   // const extraidaObjetId = objetID.substring(0, indiceId)
 
-      return extraidaObjetId === objectID
-    })
-    solicitudAlgoliaStock(itemsStock, setExecuting, objectID)
+    //   return item.objectID === objectID
+    // })
+
+    solicitudAlgoliaStock(items, setExecuting, removeItem)
   }, [items])
 
   const [disableLoadAddProduct, setDisableLoadAddProduct] = useState(
@@ -157,25 +158,32 @@ ProductDetailProps) {
   const onCheckoutClick = async () => {
     setDisableLoadAddProduct(false)
     await sleep(1000)
-    const itemsStk = items.find(function (item) {
-      const objetID = item.id
-      const indiceId = objetID.indexOf('_')
-      const extraidaObjetId = objetID.substring(0, indiceId)
+    // const itemsStk = items.find(function (item) {
+    //   const objetID = item.id
+    //   const indiceId = objetID.indexOf('_')
+    //   const extraidaObjetId = objetID.substring(0, indiceId)
 
-      return extraidaObjetId === objectID
-    })
-    if (itemsStk) {
-      solicitudAlgoliaStock(itemsStk, setExecuting, objectID)
+    //   return item.objectID === objectID
+    // })
+    // console.log(itemsStk)
+
+    if (items) {
+      solicitudAlgoliaStock(items, setExecuting, removeItem)
     } else {
       setDisableLoadAddProduct(false)
       setExecuting(true)
     }
     const notify = () =>
       toast((t) => (
-        <div className="relative flex w-full">
-          <span className="px-3"> {`Agregaste ${title} al Carrito `} </span>
+        <div className="relative   w-full">
+          <span className="px-1 2xl:text-sm laptop:text-lg w-full">
+            {`Agregaste:`} <br />
+            <span className="font-extrabold px-1">{`${title}`}</span>
+            <span>al Carrito </span>
+            {``}
+          </span>
           <Button
-            className="absolute right-0 ml-5"
+            className="absolute right-0 top-0 ml-5"
             onClick={() => toast.dismiss(t.id)}
           >
             <svg
@@ -184,7 +192,7 @@ ProductDetailProps) {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="w-6 h-6"
+              className="laptop:w-6 laptop:h-6 2xl:w-4 2xl:h-4 w-3 h-3"
             >
               <path
                 strokeLinecap="round"
@@ -214,6 +222,7 @@ ProductDetailProps) {
         img: image,
         title,
         precio: price,
+        objectID,
         // id: String(`${objectID}_${talla}`),
         id: String(`${objectID}_${talla}`),
         price: Number(price),

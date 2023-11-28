@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
 
 import { Link } from '@/components/@ui/link/link'
+import RemoveProductCartStock from '@/components/remove-product-cart-stock/remove-product-cart-stock'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -133,6 +134,7 @@ export default function Home(props: SearchPageLayoutProps) {
   return (
     <SearchPageLayout {...props}>
       <div className="py-16">
+        <RemoveProductCartStock />
         <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
           <div className="px-4 pt-8">
             <p className="text-xl font-medium">Resumen del pedido</p>

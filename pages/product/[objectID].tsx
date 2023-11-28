@@ -57,7 +57,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
       <SearchPageLayout {...props}>
         <div>
           <ProductsShowcase
-            // indexId="recommended"
+            indexId="recommended"
             title="Recomendado para ti"
             query={`${posts.brand} ${posts.gender} ${posts.product_type}`}
             ruleContexts={`${posts.brand} ${posts.gender} ${posts.product_type}`}

@@ -9,7 +9,6 @@ import {
   Drawer,
   IconButton,
 } from '@material-tailwind/react'
-import algoliasearch from 'algoliasearch'
 import dynamic from 'next/dynamic'
 import { memo, useEffect, useState } from 'react'
 import { useCart } from 'react-use-cart'
@@ -1004,12 +1003,10 @@ export const NavTop = memo(function NavTop() {
                         <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
                           Talla: {el.talla}
                         </p>
-                        <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
+                        <p className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
                           Cantidad: {el.quantity}
-                        </p>
-
-                        <div className="flex text-sm divide-x">
-                          {/* <div className="flex items-center border-gray-100">
+                          <div className="flex text-sm divide-x">
+                            {/* <div className="flex items-center border-gray-100">
                             <Button
                               className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
                               onClick={() =>
@@ -1040,41 +1037,42 @@ export const NavTop = memo(function NavTop() {
                               +{' '}
                             </Button>
                           </div> */}
-                          <div className=" flex justify-end w-full items-center ">
-                            <Button
-                              className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
-                              onClick={() => removeItem(el.id)}
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 512 512"
-                                className="w-4 h-4 fill-current ml-3"
+                            <div className=" flex justify-end w-full items-center">
+                              <Button
+                                className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
+                                onClick={() => removeItem(el.id)}
                               >
-                                <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
-                                <rect
-                                  width="32"
-                                  height="200"
-                                  x="168"
-                                  y="216"
-                                ></rect>
-                                <rect
-                                  width="32"
-                                  height="200"
-                                  x="240"
-                                  y="216"
-                                ></rect>
-                                <rect
-                                  width="32"
-                                  height="200"
-                                  x="312"
-                                  y="216"
-                                ></rect>
-                                <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
-                              </svg>
-                              {/* <span>Remover</span> */}
-                            </Button>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 512 512"
+                                  className="w-4 h-4 fill-current ml-3"
+                                >
+                                  <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
+                                  <rect
+                                    width="32"
+                                    height="200"
+                                    x="168"
+                                    y="216"
+                                  ></rect>
+                                  <rect
+                                    width="32"
+                                    height="200"
+                                    x="240"
+                                    y="216"
+                                  ></rect>
+                                  <rect
+                                    width="32"
+                                    height="200"
+                                    x="312"
+                                    y="216"
+                                  ></rect>
+                                  <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
+                                </svg>
+                                {/* <span>Remover</span> */}
+                              </Button>
+                            </div>
                           </div>
-                        </div>
+                        </p>
                       </div>
                     </div>
                   </div>

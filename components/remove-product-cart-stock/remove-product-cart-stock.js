@@ -1,16 +1,19 @@
-import algoliasearch from "algoliasearch"
+import algoliasearch from 'algoliasearch'
+import { useEffect, useState } from 'react'
+import { useCart } from 'react-use-cart'
+
+export default function RemoveProductCartStock() {
+const {  items, removeItem } = useCart()
 
 
-export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem) {
-
-
+function fetchPosts() {
   const results = []
     const client = algoliasearch(
         'E142ZWDVM4',
         'cef8bca32bcdcb1a169b2ec00e1f8429'
       )
       const index = client.initIndex('pwa_ecom_ui_template_products')
-      const miCarritoSinDuplicados = itemsStock.reduce((acumulador, valorActual) => {
+      const miCarritoSinDuplicados = items.reduce((acumulador, valorActual) => {
         const elementoYaExiste = acumulador.find(elemento => elemento.objectID === valorActual.objectID);
         if (elementoYaExiste) {
           return acumulador.map((elemento) => {
@@ -27,7 +30,7 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem) {
 
         return [...acumulador, valorActual];
       }, []);
-      if (itemsStock) {
+      if (items) {
         miCarritoSinDuplicados.map((el) => results.push(el.objectID))
         index
         .getObjects(results, {
@@ -38,20 +41,12 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem) {
           for (let indice = 0; indice < results.length; indice++) {
             for (let i = 0; i < miCarritoSinDuplicados.length; i++) {
               // console.log(miCarritoSinDuplicados);
-              // console.log(miCarritoSinDuplicados[i].quantity ,results[indice].units_in_stock)
-       
-              if (miCarritoSinDuplicados[i].quantity === results[indice].units_in_stock) {
-                return setExecuting(true)
-              } else if (miCarritoSinDuplicados[i].quantity > results[indice].units_in_stock){
-                // console.log(miCarritoSinDuplicados[i].id);
-                removeItem(miCarritoSinDuplicados[i].objectID)
-              }else {
-                // console.log(miCarritoSinDuplicados[indice].id, 'repetido')
-    
-                return setExecuting(false)
+              if (miCarritoSinDuplicados[i].quantity !== results[indice].units_in_stock){
+               
+                removeItem(miCarritoSinDuplicados[i].id)
+                // console.log(miCarritoSinDuplicados[i].objectID)
               }
-              
-
+            
             }
           }
         })
@@ -59,4 +54,15 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem) {
 
 
       }
+}
+useEffect(() => {
+  fetchPosts()
+}, [])
+
+
+
+
+  return (
+    <div></div>
+  )
 }

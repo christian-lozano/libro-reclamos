@@ -78,7 +78,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <AnimatePresence exitBeforeEnter={true} onExitComplete={scrollToTop}>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
-
+        {/* <RemoveProductCartStock /> */}
+        {/* <RemoveProductCartStock /> */}
         <Footer />
 
         <Loader layout={isCatalogPage ? 'bar' : 'overlay'} />
