@@ -5,11 +5,13 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem) {
 
 
   const results = []
-    const client = algoliasearch(
-        'E142ZWDVM4',
-        'cef8bca32bcdcb1a169b2ec00e1f8429'
-      )
-      const index = client.initIndex('pwa_ecom_ui_template_products')
+  const client = algoliasearch(
+    `${process.env.CLI_APP_ID}`,
+    `${process.env.CLI_ADMIN_API_KEY}`
+  )
+  const index = client.initIndex(
+    `${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`
+  )
       const miCarritoSinDuplicados = itemsStock.reduce((acumulador, valorActual) => {
         const elementoYaExiste = acumulador.find(elemento => elemento.objectID === valorActual.objectID);
         if (elementoYaExiste) {

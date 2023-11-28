@@ -55,8 +55,13 @@ arrayData.push({objectID:extraidaObjetId,units_in_stock:Number(extraida2)});
 
 console.log(arrayData);
 
-const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429');
-const index = client.initIndex('pwa_ecom_ui_template_products');
+const client = algoliasearch(
+    `${process.env.CLI_APP_ID}`,
+    `${process.env.CLI_ADMIN_API_KEY}`
+  )
+  const index = client.initIndex(
+    `${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`
+  )
     // const objects = [];
       
     //   objects.push({
