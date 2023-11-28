@@ -44,7 +44,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
   return (
     <>
       <SearchPageLayout {...props}>
-        <Container className="mt-12 xl:mt-20 overflow-x-hidden overflow-y-hidden">
+        <Container className="mt-11 xl:mt-20 overflow-x-hidden overflow-y-hidden">
           <Configure filters={`objectID:${objectID?.toUpperCase()}`} />
           <Hits hitComponent={ProductDetailHit} />
           {/* <ProductsShowcase
