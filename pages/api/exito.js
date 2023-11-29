@@ -68,7 +68,7 @@ const index = client.initIndex('pwa_ecom_ui_template_products')
 
       index.partialUpdateObjects(arrayData).then(({ objectIDs }) => {
         console.log(objectIDs);
-        res.redirect("https://fritz-sport.vercel.app/?clear=true" || process.env.URL_DOMINIO);
+        res.redirect("https://fritz-sport.vercel.app/?clear=true" );
       });
 
 
