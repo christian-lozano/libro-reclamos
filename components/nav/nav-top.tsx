@@ -566,7 +566,7 @@ export const NavTop = memo(function NavTop() {
   const [domLoaded, setDomLoaded] = useState(false)
   const { items, removeItem, cartTotal, totalItems, emptyCart } = useCart()
 
-  // const client = algoliasearch('E142ZWDVM4', 'cef8bca32bcdcb1a169b2ec00e1f8429')
+  // const client = algoliasearch('235XIUIEK1', '7309d3ebceea2513cf95956563059ac8')
   // const index = client.initIndex('pwa_ecom_ui_template_products')
   // const arry = []
   useEffect(() => {
