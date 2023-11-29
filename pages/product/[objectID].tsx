@@ -19,7 +19,7 @@ export type ProductPageProps = SearchPageLayoutProps & {
 
 export default function Product({ objectID, ...props }: ProductPageProps) {
   const [posts, setPosts] = useState(Object)
-
+  // test
   function fetchPosts() {
     const client = algoliasearch(
       '235XIUIEK1',
