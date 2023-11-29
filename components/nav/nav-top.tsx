@@ -11,13 +11,18 @@ import {
 } from '@material-tailwind/react'
 import dynamic from 'next/dynamic'
 import { memo, useEffect, useState } from 'react'
+import { Configure } from 'react-instantsearch-core'
 import { useCart } from 'react-use-cart'
 
 import type { LogoProps } from '@/components/logo/logo'
+import { SearchPageLayout } from '@/layouts/search-page-layout'
 import { Tablet, Laptop } from '@/lib/media'
 import { Button } from '@ui/button/button'
 import { IconLabel } from '@ui/icon-label/icon-label'
 import { Link } from '@ui/link/link'
+
+import { ProductCardHitShowcase } from '../product-card/product-card-hit'
+import { ProductsShowcase } from '../products-showcase/products-showcase'
 
 const Logo = dynamic<LogoProps>(() =>
   import(/* webpackChunkName: 'common' */ '@/components/logo/logo').then(
@@ -970,157 +975,189 @@ export const NavTop = memo(function NavTop() {
               {/* <span>Remover</span> */}
             </Button>
           </div>
-          <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
-            {domLoaded &&
-              items.map((el) => (
-                <li
-                  key={el.id}
-                  className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
+          {items.length === 0 ? (
+            <div>
+              <SearchPageLayout>
+                <Configure
+                  hitsPerPage={1}
+                  // We cannot retrieve the user token at build time, so we disable perso
+                  // feature to avoid an additional call to retrieve Algolia results at load time
+                  enablePersonalization={false}
+                  userToken={undefined}
+                />
+                <div className="w-full flex justify-center items-end ">
+                  <h4 className="text-center">Tu Carrito Esta Vació</h4>
+                </div>
+                <Button
+                  className="w-[100vw] absolute flex justify-center"
+                  onClick={() => setOpen(!openCart)}
                 >
-                  <div className="flex w-full space-x-2 sm:space-x-4 items-center">
-                    <img
-                      className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
-                      src={el.img[0]}
-                      alt="Polaroid camera"
-                    />
-                    <div className="flex justify-center items-center w-full h-full">
-                      <div className="flex flex-col justify-between w-full">
-                        <div className="flex justify-between w-full pb-2 space-x-2">
-                          <div className="space-y-1 flex items-end">
-                            <h2 className="xl:text-lg text-xs sm:text-xs font-bold  sm:pr-8">
-                              {el.title}
-                            </h2>
-                          </div>
-                          <div className="text-right">
-                            <p className="xl:text-lg text-base sm:text-xs font-semibold">
-                              S/{el.price}
-                            </p>
-                            <p className="text-base sm:text-xs line-through dark:text-gray-600">
-                              S/75.50
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
-                          Talla: {el.talla}
-                        </p>
-                        <p className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
-                          Cantidad: {el.quantity}
-                          <div className="flex text-sm divide-x">
-                            {/* <div className="flex items-center border-gray-100">
-                            <Button
-                              className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
-                              onClick={() =>
-                                updateItemQuantity(
-                                  el.id,
-                                  Number(el.quantity) - 1
-                                )
-                              }
-                            >
-                              {' '}
-                              -{' '}
-                            </Button>
-                            <input
-                              className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
-                              type="number"
-                              value={el.quantity}
-                            />
-                            <Button
-                              className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
-                              onClick={() =>
-                                updateItemQuantity(
-                                  el.id,
-                                  Number(el.quantity) + 1
-                                )
-                              }
-                            >
-                              {' '}
-                              +{' '}
-                            </Button>
-                          </div> */}
-                            <div className=" flex justify-end w-full items-center">
-                              <Button
-                                className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
-                                onClick={() => removeItem(el.id)}
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 512 512"
-                                  className="w-4 h-4 fill-current ml-3"
-                                >
-                                  <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
-                                  <rect
-                                    width="32"
-                                    height="200"
-                                    x="168"
-                                    y="216"
-                                  ></rect>
-                                  <rect
-                                    width="32"
-                                    height="200"
-                                    x="240"
-                                    y="216"
-                                  ></rect>
-                                  <rect
-                                    width="32"
-                                    height="200"
-                                    x="312"
-                                    y="216"
-                                  ></rect>
-                                  <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
-                                </svg>
-                                {/* <span>Remover</span> */}
-                              </Button>
+                  <ProductsShowcase
+                    className="p-0"
+                    indexId="recommended"
+                    query={`adidas`}
+                    ruleContexts={`Mujer`}
+                    hitComponent={ProductCardHitShowcase}
+                  />
+                </Button>
+              </SearchPageLayout>
+            </div>
+          ) : (
+            <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
+              {domLoaded &&
+                items.map((el) => (
+                  <li
+                    key={el.id}
+                    className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
+                  >
+                    <div className="flex w-full space-x-2 sm:space-x-4 items-center">
+                      <img
+                        className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+                        src={el.img[0]}
+                        alt="Polaroid camera"
+                      />
+                      <div className="flex justify-center items-center w-full h-full">
+                        <div className="flex flex-col justify-between w-full">
+                          <div className="flex justify-between w-full pb-2 space-x-2">
+                            <div className="space-y-1 flex items-end">
+                              <h2 className="xl:text-lg text-xs sm:text-xs font-bold  sm:pr-8">
+                                {el.title}
+                              </h2>
+                            </div>
+                            <div className="text-right">
+                              <p className="xl:text-lg text-base sm:text-xs font-semibold">
+                                S/{el.price}
+                              </p>
+                              <p className="text-base sm:text-xs line-through dark:text-gray-600">
+                                S/75.50
+                              </p>
                             </div>
                           </div>
-                        </p>
+                          <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
+                            Talla: {el.talla}
+                          </p>
+                          <p className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
+                            Cantidad: {el.quantity}
+                            <div className="flex text-sm divide-x">
+                              {/* <div className="flex items-center border-gray-100">
+                          <Button
+                            className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
+                            onClick={() =>
+                              updateItemQuantity(
+                                el.id,
+                                Number(el.quantity) - 1
+                              )
+                            }
+                          >
+                            {' '}
+                            -{' '}
+                          </Button>
+                          <input
+                            className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
+                            type="number"
+                            value={el.quantity}
+                          />
+                          <Button
+                            className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
+                            onClick={() =>
+                              updateItemQuantity(
+                                el.id,
+                                Number(el.quantity) + 1
+                              )
+                            }
+                          >
+                            {' '}
+                            +{' '}
+                          </Button>
+                        </div> */}
+                              <div className=" flex justify-end w-full items-center">
+                                <Button
+                                  className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
+                                  onClick={() => removeItem(el.id)}
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                    className="w-4 h-4 fill-current ml-3"
+                                  >
+                                    <path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
+                                    <rect
+                                      width="32"
+                                      height="200"
+                                      x="168"
+                                      y="216"
+                                    ></rect>
+                                    <rect
+                                      width="32"
+                                      height="200"
+                                      x="240"
+                                      y="216"
+                                    ></rect>
+                                    <rect
+                                      width="32"
+                                      height="200"
+                                      x="312"
+                                      y="216"
+                                    ></rect>
+                                    <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
+                                  </svg>
+                                  {/* <span>Remover</span> */}
+                                </Button>
+                              </div>
+                            </div>
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
-              ))}
-          </ul>
+                  </li>
+                ))}
+            </ul>
+          )}
+
           {/* <!-- Sub total --> */}
           {domLoaded && (
-            <div className=" w-full rounded-lg border  bottom-0 bg-white px-6 py-3 shadow-md md:mt-0 ">
-              <div className="mb-2 flex justify-between">
-                <p className="text-gray-700">Subtotal</p>
-                <p className="text-gray-700">S/{cartTotal}</p>
-              </div>
-              <div className="flex justify-between">
-                <p className="text-gray-700">Delivery</p>
-                <p className="text-gray-700">S/4.99</p>
-              </div>
-              <hr className="my-4" />
-              <div className="flex justify-between">
-                <p className="text-lg font-bold dark:text-[var(--dark-mode)]">
-                  Total
-                </p>
-                <div className="">
-                  <p className="mb-1 text-lg font-bold dark:text-[var(--dark-mode)]">
-                    S/{cartTotal}
-                  </p>
-                  {/* <p className="text-sm text-gray-700 uppercase">Incluye igv</p> */}
+            <div className="flex justify-center p-5">
+              <div className="w-full absolute  rounded-lg border  bottom-0 bg-white px-6 py-3 shadow-md md:mt-0 ">
+                <div className="mb-2 flex justify-between">
+                  <p className="text-gray-700">Subtotal</p>
+                  <p className="text-gray-700">S/{cartTotal}</p>
                 </div>
-              </div>
+                <div className="flex justify-between">
+                  <p className="text-gray-700">Delivery</p>
+                  <p className="text-gray-700">S/4.99</p>
+                </div>
+                <hr className="my-4" />
+                <div className="flex justify-between">
+                  <p className="text-lg font-bold dark:text-[var(--dark-mode)]">
+                    Total
+                  </p>
+                  <div className="">
+                    <p className="mb-1 text-lg font-bold dark:text-[var(--dark-mode)]">
+                      S/{cartTotal}
+                    </p>
+                    {/* <p className="text-sm text-gray-700 uppercase">Incluye igv</p> */}
+                  </div>
+                </div>
 
-              <Link
-                href={'/carrito'}
-                className="flex w-full justify-center"
-                onClick={() => setOpen(!openCart)}
-              >
-                <span className="mt-6 w-full uppercase rounded-md text-center bg-[#ae946d] py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
-                  ver carrito
-                </span>
-              </Link>
-              <Link
-                href={'/pagar'}
-                className="flex w-full justify-center"
-                onClick={() => setOpen(!openCart)}
-              >
-                <span className="mt-2 w-full uppercase rounded-md text-center bg-[#ae946d] py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
-                  Pagar
-                </span>
-              </Link>
+                <Link
+                  href={'/carrito'}
+                  className="flex w-full justify-center"
+                  onClick={() => setOpen(!openCart)}
+                >
+                  <span className="mt-6 w-full uppercase rounded-md text-center bg-[#ae946d] py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                    ver carrito
+                  </span>
+                </Link>
+                <Link
+                  href={'/pagar'}
+                  className="flex w-full justify-center"
+                  onClick={() => setOpen(!openCart)}
+                >
+                  <span className="mt-2 w-full uppercase rounded-md text-center bg-[#ae946d] py-1.5  text-blue-50 hover:bg-blue-gray-900 font-semibold">
+                    Pagar
+                  </span>
+                </Link>
+              </div>
             </div>
           )}
         </div>
