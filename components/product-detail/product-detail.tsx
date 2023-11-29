@@ -137,7 +137,7 @@ ProductDetailProps) {
     //   return item.objectID === objectID
     // })
 
-    solicitudAlgoliaStock(items, setExecuting, removeItem)
+    solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
   }, [items])
 
   const [disableLoadAddProduct, setDisableLoadAddProduct] = useState(
@@ -157,14 +157,14 @@ ProductDetailProps) {
 
   const onCheckoutClick = async () => {
     setDisableLoadAddProduct(false)
-    await sleep(2000)
+    await sleep(1000)
     // const itemsStk = items.find(function (item) {
     //   const objetID = item.id
     //   const indiceId = objetID.indexOf('_')
     //   const extraidaObjetId = objetID.substring(0, indiceId)
 
     // return  item.objectID === objectID
-    //// })
+    /// / })
     // console.log(itemsStk)
 
     if (items) {

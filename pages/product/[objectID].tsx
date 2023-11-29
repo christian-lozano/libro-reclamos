@@ -22,18 +22,19 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
 
   function fetchPosts() {
     const client = algoliasearch(
-      `${process.env.CLI_APP_ID}`,
-      `${process.env.CLI_ADMIN_API_KEY}`
+      '235XIUIEK1',
+      '32f92a7d31a7320106285b5b7466e336'
     )
-    const index = client.initIndex(
-      `${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`
-    )
+    const index = client.initIndex('pwa_ecom_ui_template_products')
     index
       .getObject(objectID, {
         attributesToRetrieve: ['gender', 'brand', 'product_type'],
       })
       .then((object) => {
         return setPosts(Object(object))
+      })
+      .catch((error) => {
+        console.log(error.message)
       })
   }
 
