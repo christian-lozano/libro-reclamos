@@ -5,7 +5,7 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectI
 
 
   const results = []
-  const client = algoliasearch('235XIUIEK1','7309d3ebceea2513cf95956563059ac8')
+  const client = algoliasearch('235XIUIEK1','32f92a7d31a7320106285b5b7466e336')
   const index = client.initIndex('pwa_ecom_ui_template_products')
       const miCarritoSinDuplicados = itemsStock.reduce((acumulador, valorActual) => {
         const elementoYaExiste = acumulador.find(elemento => elemento.objectID === valorActual.objectID);

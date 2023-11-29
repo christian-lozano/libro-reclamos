@@ -88,7 +88,7 @@ ProductDetailProps) {
   // function fetchPosts() {
   //   const client = algoliasearch(
   //     '235XIUIEK1',
-  //     '7309d3ebceea2513cf95956563059ac8'
+  //     '32f92a7d31a7320106285b5b7466e336'
   //   )
   //   const index = client.initIndex('pwa_ecom_ui_template_products')
   //   index
