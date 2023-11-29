@@ -762,15 +762,15 @@ export const NavTop = memo(function NavTop() {
                       <Button title="Cart" onClick={openDrawer}>
                         <Tablet>
                           <IconLabel icon={ShoppingBagIcon} />
-                          <div className="absolute bg-black text-white rounded-full w-5">
+                          <span className="absolute bg-black text-white rounded-full w-5">
                             {totalItems}
-                          </div>
+                          </span>
                         </Tablet>
                         <Laptop>
                           <IconLabel icon={ShoppingBagIcon} />
-                          <div className="absolute bg-black text-white rounded-full w-5">
+                          <span className="absolute bg-black text-white rounded-full w-5">
                             {totalItems}
-                          </div>
+                          </span>
                         </Laptop>
                       </Button>
                     )}
