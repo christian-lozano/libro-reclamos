@@ -6,6 +6,13 @@ mercadopago.configure({
 });
 
 export default function handler(req, res) {
+
+
+  //number mercado pago 922532392
+
+
+
+  
 // const data = JSON.stringify(req.body.productos)
 // console.log(data);
 // console.log(req.body);

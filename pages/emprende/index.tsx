@@ -27,7 +27,7 @@ export default function Home(props: SearchPageLayoutProps) {
     {
       id: 'as12321d213',
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/a8092058-5eae-4d09-9df9-4f066ee0a966___ec5fe3c96a0dec59974be71a435545f2.png',
-      title: ' Gana hasta un 25% por tus ventas',
+      title: ' Gana hasta un 35% por tus ventas',
     },
     {
       id: 'a3sdsa1234112321d213',
@@ -44,64 +44,63 @@ export default function Home(props: SearchPageLayoutProps) {
       id: 'a1s123213df12e12321d213',
 
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/0b7b64c3-d16b-46f3-8020-3bfafbd444c0___53675cfa8bfb06aae8dc4798b959b067.png',
-      title: 'Cambios y garantías',
+      title: 'Garantía de compra',
     },
     {
       id: 'aass1232asd12351d213',
 
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/23fefe16-7dba-4b6b-a6b6-3c0a489d170b___a463340b403ca93a3c4803137ffd84e6.png',
-      title: 'Eventos y muchos premios',
+      title: 'Promociones exclusivas',
     },
   ]
 
   const dataSocios = [
     {
-      label: 'Directores',
-      value: 'Directores',
+      label: 'Emprendedores',
+      value: 'Emprendedores',
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/ce6123a7-34ba-45bb-81c3-721dcbf7e5b5___4577b42cb77fd7bae2aadb2da3bfffa6.png',
       title: `Beneficios`,
       arr: [
-        'Gana descuentos de hasta 25% en tus compras.',
-        'Gana premios increíbles por Compras Personales acumuladas del mes',
+        'Gana descuentos de hasta 35% en tus compras.',
+        'Productos seleccionados',
         'Construye tu red de afiliados y Gana Bonos por Afiliación.',
-        'Participa en las reuniones anuales para los mejores socios.',
+        'Catálogos personalizados',
         'Participa en sorteos y gana muchos premios.',
       ],
       subTitle: 'Requisitos:',
       arrSub: [
-        'Realiza tu primera compra de S/. 299.00 a precio Socio y empieza a ganar.',
+        'Cualquier cliente compras mayores a 3 productos',
+        'Tener espíritu emprendedor y voluntad de progreso',
       ],
     },
     {
-      label: 'Socios',
-      value: 'Socios',
+      label: 'Mayoristas',
+      value: 'Mayoristas',
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/8610d923-a622-426c-95b6-785ce52a2ac3___313d275379cc31011295beb958aa049a.png',
       title: `Beneficios`,
       arr: [
-        'Gana comisiones de hasta 10% por las ventas de tu red de Socios',
-        'Flete gratis para tus pedidos, si superas monto mínimo',
+        'Gana descuentos de mas de 35% en tus compras.',
+        'Sin limite de compras',
         'Apoyo publicitario para hacer crecer tu red',
-        'Participación en evento exclusivos: Convención Directores y Capacitaciones',
+        'Guía de tallas y catálogos',
         'Participa en sorteos y gana muchos premios.',
       ],
       subTitle: 'Requisitos :',
       arrSub: [
-        'Tener una red de Socios',
-        'Tener espíritu emprendedor y voluntad de progreso',
-        'Enviar su postulación por Whatsapp al (936121553 opción 2)',
+        'Tener una empresa online o física(ruc)',
+        'Volúmenes de compra a partir de una caja sellada',
+        'Tener voluntad de progreso',
       ],
     },
   ]
   const data3pasos = [
     {
-      title: '1. Regístrate',
-      parrafo:
-        ' Ingresa tus datos en el botón Inscríbete aquí o contáctate con un asesor. ',
+      title: '1. Contacta a uno de nuestros asesores',
+      parrafo: 'Presiona el Botón de: Contactar a un Asesor',
     },
     {
-      title: '2. Tu primera compra',
-      parrafo:
-        'Realiza tu primera compra de s/299.00 para comenzar tu negocio.',
+      title: '2. Solicita tu catalogo',
+      parrafo: 'Realiza tu primera cotización por WhatsApp',
     },
 
     {
@@ -268,7 +267,7 @@ export default function Home(props: SearchPageLayoutProps) {
                         </h6>
                       </div>
                       <div className="mt-10 flex flex-col md:flex-row justify-center items-center h-3/5 w-full">
-                        <a
+                        {/* <a
                           href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
                           target="_blank"
                           rel="noreferrer"
@@ -281,7 +280,7 @@ export default function Home(props: SearchPageLayoutProps) {
                           >
                             Regístrate por WhatsApp
                           </Button>
-                        </a>
+                        </a> */}
 
                         <a
                           href="https://api.whatsapp.com/send/?phone=51983478551&text&type=phone_number&app_absent=0"
@@ -294,7 +293,7 @@ export default function Home(props: SearchPageLayoutProps) {
                             onResize={undefined}
                             onResizeCapture={undefined}
                           >
-                            llama a un Asesor
+                            Contactar a un Asesor
                           </Button>
                         </a>
                       </div>
