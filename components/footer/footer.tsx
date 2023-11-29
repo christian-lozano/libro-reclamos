@@ -126,7 +126,7 @@ export const Footer = memo(function Footer() {
                   <path d="M154.17 933.41C154.17 926.95 154.17 920.98 154.17 914.76C201.27 914.76 248.19 914.76 295.29 914.76C295.29 921.05 295.29 927.14 295.29 933.41C248.19 933.41 201.36 933.41 154.17 933.41Z" />
                 </svg>
               </div>
-              <h1 className="max-w-lg xl:max-w-none text-xl font-semibold tracking-tight  text-black xl:text-white xl:text-2xl dark:text-black">
+              {/* <h1 className="max-w-lg xl:max-w-none text-xl font-semibold tracking-tight  text-black xl:text-white xl:text-2xl dark:text-black">
                 Suscríbase para recibir nuestras promociones.
               </h1>
 
@@ -141,7 +141,7 @@ export const Footer = memo(function Footer() {
                 <span className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transForm md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                   Suscribir
                 </span>
-              </div>
+              </div> */}
             </div>
 
             <div>
