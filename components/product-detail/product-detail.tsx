@@ -156,8 +156,8 @@ ProductDetailProps) {
   }
 
   const onCheckoutClick = async () => {
+    await sleep(2)
     setDisableLoadAddProduct(false)
-    await sleep(1000)
     // const itemsStk = items.find(function (item) {
     //   const objetID = item.id
     //   const indiceId = objetID.indexOf('_')
@@ -166,12 +166,13 @@ ProductDetailProps) {
     // return  item.objectID === objectID
     /// / })
     // console.log(itemsStk)
-
+    solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
     if (items) {
-      solicitudAlgoliaStock(items, setExecuting, removeItem)
+      // setDisableLoadAddProduct(false)
+      // setExecuting(true)
     } else {
-      setDisableLoadAddProduct(false)
-      setExecuting(true)
+      // setDisableLoadAddProduct(false)
+      // setExecuting(true)
     }
     const notify = () =>
       toast((t) => (
