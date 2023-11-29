@@ -72,7 +72,7 @@ const AngleRight = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
-    <title>Icon</title>
+    <title>Icono</title>
     <desc>Created with Sketch.</desc>
     <g
       id="Symbols"
