@@ -166,7 +166,7 @@ ProductDetailProps) {
     // return  item.objectID === objectID
     /// / })
     // console.log(itemsStk)
-    solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
+    // solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
     if (items) {
       // setDisableLoadAddProduct(false)
       // setExecuting(true)
