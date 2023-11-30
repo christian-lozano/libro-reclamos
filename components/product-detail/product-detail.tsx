@@ -155,9 +155,9 @@ ProductDetailProps) {
     })
   }
 
-  const onCheckoutClick = async () => {
-    await sleep(2)
-    setDisableLoadAddProduct(false)
+  const onCheckoutClick = () => {
+    // await sleep(5500)
+    // setDisableLoadAddProduct(false)
     // const itemsStk = items.find(function (item) {
     //   const objetID = item.id
     //   const indiceId = objetID.indexOf('_')

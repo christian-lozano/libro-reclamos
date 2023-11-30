@@ -39,6 +39,8 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectI
    
               
               if (miCarritoSinDuplicados[i].quantity === results[indice].units_in_stock ) {
+                 setExecuting(true)
+                
                 if (miCarritoSinDuplicados[i].objectID === objectID) {
                   return setExecuting(true)
                 }
