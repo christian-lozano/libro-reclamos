@@ -3,8 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { Configure } from 'react-instantsearch-dom'
 
 import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
-import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
-import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   getStaticPropsPage,
@@ -279,26 +277,6 @@ export default function Home(props: SearchPageLayoutProps) {
         </section>
       </main>
 
-      <ProductsShowcase
-        title="Lo Nuevo en Zapatillas"
-        indexId="Sneakers"
-        query="Sneakers"
-        hitComponent={ProductCardHitShowcase}
-      />
-      {/* <BannerPromociones /> */}
-      {/* <ProductsShowcase
-        title="Primavera / Verano 2023"
-        indexId="spring-summer-2021"
-        ruleContexts={['home-spring-summer-2021']}
-        className="laptop:bg-gray-50"
-        hitComponent={ProductCardHitShowcase}
-      /> */}
-      {/* <ProductsShowcase
-        title="Recomendado Para ti"
-        indexId="recommended"
-        query="jacket"
-        hitComponent={ProductCardHitShowcase}
-      /> */}
       <CarouselMarcasHome />
     </SearchPageLayout>
   )

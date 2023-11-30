@@ -58,7 +58,7 @@ export default function Home(props: SearchPageLayoutProps) {
     {
       label: 'Emprendedores',
       value: 'Emprendedores',
-      img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/ce6123a7-34ba-45bb-81c3-721dcbf7e5b5___4577b42cb77fd7bae2aadb2da3bfffa6.png',
+      img: 'https://res.cloudinary.com/da868wsih/image/upload/v1701370310/fritz-ecommerce/emprende/senor-uno_phqt3s.jpg',
       title: `Beneficios`,
       arr: [
         'Gana descuentos de hasta 35% en tus compras.',
@@ -76,7 +76,7 @@ export default function Home(props: SearchPageLayoutProps) {
     {
       label: 'Mayoristas',
       value: 'Mayoristas',
-      img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/8610d923-a622-426c-95b6-785ce52a2ac3___313d275379cc31011295beb958aa049a.png',
+      img: 'https://res.cloudinary.com/da868wsih/image/upload/v1701370311/fritz-ecommerce/emprende/senor-dos_fhq6pr.jpg',
       title: `Beneficios`,
       arr: [
         'Gana descuentos de mas de 35% en tus compras.',
@@ -114,12 +114,12 @@ export default function Home(props: SearchPageLayoutProps) {
       <div className=" pt-14 md:pt-16">
         <div className="">
           <img
-            src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/87e2b249-950c-4fc0-a060-6c769f732812___be97d770f6dca434a84e79c1f491ba5c.png"
+            src="https://res.cloudinary.com/da868wsih/image/upload/v1701370311/fritz-ecommerce/emprende/portada-fritz_c7ncub.jpg"
             alt=""
             className="hidden md:block"
           />
           <img
-            src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/b7ca8649-5884-4e95-a25d-07ae91224897___be2aa7b36484dbb9b8c3811cc9004bab.png"
+            src="https://res.cloudinary.com/da868wsih/image/upload/v1701370311/fritz-ecommerce/emprende/celular-pt-fritz_z6fpcs.jpg"
             alt=""
             className="block md:hidden"
           />
@@ -241,7 +241,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     <div className="md:flex flex-col xl:flex-row w-5/6">
                       <img
                         className="md:w-5/12 xl:w-6/12"
-                        src="https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/383d673e-4393-4c04-a0c6-418627b4903b___ff7dcb03be130144b141d54b8335719e.png"
+                        src="https://res.cloudinary.com/da868wsih/image/upload/v1701370312/fritz-ecommerce/emprende/fritz_fpssom.jpg"
                         alt=""
                       />
 
