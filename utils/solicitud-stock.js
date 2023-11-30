@@ -1,9 +1,10 @@
 import algoliasearch from "algoliasearch"
 
 
-export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectID) {
+export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectID,setTalla,setActiveSize) {
 
-
+  setTalla(null)
+  setActiveSize(null)
   const results = []
   const client = algoliasearch('235XIUIEK1','32f92a7d31a7320106285b5b7466e336')
   const index = client.initIndex('pwa_ecom_ui_template_products')
@@ -45,8 +46,10 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectI
                   return setExecuting(true)
                 }
                
-              } else if (miCarritoSinDuplicados[i].quantity > results[indice].units_in_stock){
+              } if (miCarritoSinDuplicados[i].quantity > results[indice].units_in_stock){
+                console.log("se cumple");
                 // console.log(miCarritoSinDuplicados[i].id);
+                  removeItem(miCarritoSinDuplicados[i].id)
 
                 // console.log("entro");
                 // for (let indice = 0;  results[indice].units_in_stock < miCarritoSinDuplicados[i].quantity; indice++) {
@@ -55,10 +58,6 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectI
                 // }
             
               
-              }else {
-                // console.log(miCarritoSinDuplicados[indice].id, 'repetido')
-    
-                return setExecuting(false)
               }
               
 

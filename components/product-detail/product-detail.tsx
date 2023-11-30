@@ -112,7 +112,7 @@ ProductDetailProps) {
 
   const { addItem, items, removeItem } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
-  const [activeSize, setActiveSize] = useState(100)
+  const [activeSize, setActiveSize] = useState(null)
   const [talla, setTalla] = useState(String)
   const [executing, setExecuting] = useState(false)
   const handleActiveTalla = (i: number, size: string) => {
@@ -137,7 +137,14 @@ ProductDetailProps) {
     //   return item.objectID === objectID
     // })
 
-    solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
+    solicitudAlgoliaStock(
+      items,
+      setExecuting,
+      removeItem,
+      objectID,
+      setTalla,
+      setActiveSize
+    )
   }, [items])
 
   const [disableLoadAddProduct, setDisableLoadAddProduct] = useState(
@@ -329,7 +336,11 @@ ProductDetailProps) {
                   {sizes.map((el, i) => (
                     <div key={i}>
                       <Button
-                        disabled={units_in_stock === 0}
+                        disabled={
+                          units_in_stock === 0 ||
+                          executing ||
+                          !disableLoadAddProduct
+                        }
                         className={`w-full h-10 ${
                           activeSize === i
                             ? 'bg-black text-white border-2'
