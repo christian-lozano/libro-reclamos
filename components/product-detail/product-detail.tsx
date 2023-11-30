@@ -112,7 +112,7 @@ ProductDetailProps) {
 
   const { addItem, items, removeItem } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
-  const [activeSize, setActiveSize] = useState(null)
+  const [activeSize, setActiveSize] = useState(100)
   const [talla, setTalla] = useState(String)
   const [executing, setExecuting] = useState(false)
   const handleActiveTalla = (i: number, size: string) => {
