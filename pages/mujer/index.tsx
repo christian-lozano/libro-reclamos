@@ -127,7 +127,7 @@ export default function Home(props: SearchPageLayoutProps) {
     <SearchPageLayout {...props}>
       <Configure
         hitsPerPage={6}
-        // We cannot retrieve the user token at build time, so we disable perso
+        // We cannot retrieve the user token at build time, so we disable persona
         // feature to avoid an additional call to retrieve Algolia results at load time
         enablePersonalization={false}
         userToken={undefined}

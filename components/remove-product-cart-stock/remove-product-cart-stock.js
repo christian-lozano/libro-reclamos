@@ -39,7 +39,8 @@ function fetchPosts() {
             for (let i = 0; i < miCarritoSinDuplicados.length; i++) {
               // console.log( results[indice].units_in_stock, " |",miCarritoSinDuplicados[i].quantity);
              
-                if (miCarritoSinDuplicados[i].quantity !== results[indice].units_in_stock) {
+                if (miCarritoSinDuplicados[i].quantity > results[indice].units_in_stock) {
+                  console.log(miCarritoSinDuplicados[i].quantity ,"||",results[indice].units_in_stock);
                   emptyCart();
                   // removeItem(miCarritoSinDuplicados[inx].id);
                       //  removeItem(miCarritoSinDuplicados[i].objectID)
