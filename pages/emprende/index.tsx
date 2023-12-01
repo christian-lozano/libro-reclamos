@@ -151,7 +151,7 @@ export default function Home(props: SearchPageLayoutProps) {
                 /* ---------------------------------*/}
 
                 {/* ------------------------------ */}
-                <Tabs value="Directores" className="">
+                <Tabs value="Emprendedores" className="">
                   <h4 className="text-center   text-2xl py-7">
                     ¡Inicia a tu manera y gana!
                   </h4>
