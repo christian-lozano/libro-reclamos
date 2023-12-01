@@ -569,7 +569,8 @@ const dataHeader = [
 export const NavTop = memo(function NavTop() {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
-  const { items, removeItem, cartTotal, totalItems, emptyCart } = useCart()
+  const { items, removeItem, cartTotal, totalItems, emptyCart, isEmpty } =
+    useCart()
 
   // const client = algoliasearch('235XIUIEK1', '32f92a7d31a7320106285b5b7466e336')
   // const index = client.initIndex('pwa_ecom_ui_template_products')
@@ -975,38 +976,36 @@ export const NavTop = memo(function NavTop() {
               {/* <span>Remover</span> */}
             </Button>
           </div>
-          {items.length === 0 ? (
-            <div>
-              <SearchPageLayout>
-                <Configure
-                  hitsPerPage={1}
-                  // We cannot retrieve the user token at build time, so we disable perso
-                  // feature to avoid an additional call to retrieve Algolia results at load time
-                  enablePersonalization={false}
-                  userToken={undefined}
+          {domLoaded && isEmpty ? (
+            <SearchPageLayout>
+              <Configure
+                hitsPerPage={1}
+                // We cannot retrieve the user token at build time, so we disable perso
+                // feature to avoid an additional call to retrieve Algolia results at load time
+                enablePersonalization={false}
+                userToken={undefined}
+              />
+              <div className="w-full flex justify-center items-end ">
+                <h4 className="text-center">Tu Carrito Esta Vació</h4>
+              </div>
+              <Button
+                className="w-[100vw] absolute flex justify-center"
+                onClick={() => setOpen(!openCart)}
+              >
+                <ProductsShowcase
+                  className="p-0"
+                  indexId="recommended"
+                  query={`adidas`}
+                  ruleContexts={`Mujer`}
+                  hitComponent={ProductCardHitShowcase}
                 />
-                <div className="w-full flex justify-center items-end ">
-                  <h4 className="text-center">Tu Carrito Esta Vació</h4>
-                </div>
-                <Button
-                  className="w-[100vw] absolute flex justify-center"
-                  onClick={() => setOpen(!openCart)}
-                >
-                  <ProductsShowcase
-                    className="p-0"
-                    indexId="recommended"
-                    query={`adidas`}
-                    ruleContexts={`Mujer`}
-                    hitComponent={ProductCardHitShowcase}
-                  />
-                </Button>
-              </SearchPageLayout>
-            </div>
+              </Button>
+            </SearchPageLayout>
           ) : (
-            <ul className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
+            <div className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
               {domLoaded &&
                 items.map((el) => (
-                  <li
+                  <div
                     key={el.id}
                     className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
                   >
@@ -1036,40 +1035,9 @@ export const NavTop = memo(function NavTop() {
                           <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
                             Talla: {el.talla}
                           </p>
-                          <p className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
+                          <div className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
                             Cantidad: {el.quantity}
                             <div className="flex text-sm divide-x">
-                              {/* <div className="flex items-center border-gray-100">
-                          <Button
-                            className="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
-                            onClick={() =>
-                              updateItemQuantity(
-                                el.id,
-                                Number(el.quantity) - 1
-                              )
-                            }
-                          >
-                            {' '}
-                            -{' '}
-                          </Button>
-                          <input
-                            className="xl:h-8 xl:w-8 h-7 w-8 border bg-white text-center text-xs outline-none"
-                            type="number"
-                            value={el.quantity}
-                          />
-                          <Button
-                            className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-[#ae946d] hover:text-blue-50"
-                            onClick={() =>
-                              updateItemQuantity(
-                                el.id,
-                                Number(el.quantity) + 1
-                              )
-                            }
-                          >
-                            {' '}
-                            +{' '}
-                          </Button>
-                        </div> */}
                               <div className=" flex justify-end w-full items-center">
                                 <Button
                                   className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
@@ -1101,17 +1069,16 @@ export const NavTop = memo(function NavTop() {
                                     ></rect>
                                     <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                                   </svg>
-                                  {/* <span>Remover</span> */}
                                 </Button>
                               </div>
                             </div>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </div>
                 ))}
-            </ul>
+            </div>
           )}
 
           {/* <!-- Sub total --> */}

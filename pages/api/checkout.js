@@ -60,7 +60,7 @@ console.log(req.body);
   let preference = {
     items:[
      {    title:req.body.productos,
-          description:'dni:75286858 nombre: christian lozano adrianzen',
+          description:`Nombre: ${req.body.nombre} Apellido: ${req.body.apellido} Documento:${req.body.typedocumento} Direccion: ${req.body.direccion} Provincia: ${req.body.provincia} Distrito: ${req.body.distrito} InfoAdicional: ${req.body.adicional}`,
           picture_url: '../public/favicon.svg',
           category_id: 'PEN',
           quantity: 1,
@@ -68,9 +68,9 @@ console.log(req.body);
         }
     ],
     payer: {
-      first_name: 'christian lozano',
-      last_name: 'apellido',
-      email: 'christian.lozano@gmail.com',
+      first_name: req.body.nombre,
+      last_name: req.body.apellido,
+      email:req.body.apellido.email,
       // phone:   {
       //   area_code: 51,
       //   number: 987654321

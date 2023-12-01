@@ -203,7 +203,9 @@ export default function Home(props: SearchPageLayoutProps) {
                   htmlFor="radio_2"
                 >
                   <div className="ml-5">
-                    <span className="mt-2 font-semibold">Recojo en Tienda</span>
+                    <span className="mt-2 font-semibold">
+                      Recojo en Tienda Miguel Grau
+                    </span>
                   </div>
                 </label>
               </div>
@@ -544,8 +546,6 @@ export default function Home(props: SearchPageLayoutProps) {
               )}
             </div>
             <form action="/api/checkout" method="POST">
-              <input type="hidden" name="nombre" value="nombre" />
-
               {items && (
                 <>
                   <input
@@ -574,15 +574,27 @@ export default function Home(props: SearchPageLayoutProps) {
                   />
                 </>
               )}
+              <input type="hidden" name="nombre" value={allValues.nombre} />
+              <input type="hidden" name="apellido" value={allValues.apellido} />
+              <input
+                type="hidden"
+                name="typedocumento"
+                value={allValues.documento}
+              />
 
-              <input type="hidden" name="apellido" value="apellido" />
-              <input type="hidden" name="typedocumento" value="documento" />
-
-              <input type="hidden" name="sede" value="sede" />
-              <input type="hidden" name="cede" value="La Victoria" />
-              <input type="hidden" name="transporte" value="transporte" />
-              <input type="hidden" name="vehiculo" value="vehiculo" />
-              <input type="hidden" name="placa" value="placa" />
+              <input
+                type="hidden"
+                name="direccion"
+                value={allValues.direccion}
+              />
+              <input type="hidden" name="provincia" value={provincia} />
+              <input type="hidden" name="distrito" value={distrito} />
+              <input type="hidden" name="email" value={allValues.email} />
+              <input
+                type="hidden"
+                name="adicional"
+                value={allValues.adicional}
+              />
               <input type="hidden" name="monto" value={cartTotal} />
               {/* <input
                           type="hidden"
