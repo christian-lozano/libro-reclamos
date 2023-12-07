@@ -8,7 +8,7 @@ import { ControlledSearchBox } from './ControlledSearchBox'
 export type SearchBoxProps = ComponentProps<'div'> & UseSearchBoxProps
 
 export function SearchBox(props: SearchBoxProps) {
-  const { query, refine, isSearchStalled } = useSearchBox(props)
+  const { query, refine } = useSearchBox(props)
   const [value, setValue] = useState(query)
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -43,11 +43,11 @@ export function SearchBox(props: SearchBoxProps) {
     <ControlledSearchBox
       className={props.className}
       inputRef={inputRef}
-      isSearchStalled={isSearchStalled}
+      // isSearchStalled={isSearchStalled}
       placeholder={props.placeholder}
       value={value}
-      onChange={() => onChange}
-      onReset={() => onReset}
+      onChange={(e) => onChange(e)}
+      onReset={(e) => onReset(e)}
     />
   )
 }
