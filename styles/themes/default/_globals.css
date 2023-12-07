@@ -20,6 +20,70 @@
 @import "./utilities.css";
 
 
+
+
+/*---------------------------------*/
+/*media query filter catalog*/
+/*---------------------------------*/
+
+
+
+
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
+
+
+  .ais-Hits-list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+  }
+
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  .ais-Hits-list{
+  
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 5rem;
+    
+  }
+  .ais-Panel{
+    z-index: 10 !important;
+
+    padding: 0.5rem;
+    z-index: 10 !important;
+  }
+
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+
+
+  .ais-Hits-list{
+    z-index: 10 !important;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+  .ais-Panel{
+    z-index: 10 !important;
+
+    padding: 1rem;
+    z-index: 10 !important;
+  }
+
+}
+
+
+
+/*----------------------------*/
+
+
 #react-sidebar .sidebar-backdrop {
     cursor: pointer;
     position: fixed;

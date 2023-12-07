@@ -5,7 +5,7 @@ import { useCart } from 'react-use-cart';
 let objetos=[];
 
 const testFunction =   ({items}) => {
-  const client = algoliasearch('235XIUIEK1','32f92a7d31a7320106285b5b7466e336')
+  const client = algoliasearch('GXNXE1S5A4','890e7784e4e4e090caf2b3c4eab906c6')
   const index = client.initIndex('pwa_ecom_ui_template_products')
   const [domLoaded, setDomLoaded] = useState(false)
 

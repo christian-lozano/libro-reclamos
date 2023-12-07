@@ -62,6 +62,7 @@ export function ProductCard({
     () => setIsFavorite((favorite) => !favorite),
     []
   )
+  console.log(description)
 
   const handleLinkClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
@@ -73,7 +74,7 @@ export function ProductCard({
   return (
     <article
       className={classNames(
-        'w-full h-full relative border border-transparent transition-all laptop:p-3 group can-hover:laptop:hover:shadow-sm can-hover:laptop:hover:border-neutral-light',
+        'w-full h-full z-dropdown relative border border-transparent transition-all laptop:p-3 group can-hover:laptop:hover:shadow-sm can-hover:laptop:hover:border-neutral-light',
         { 'opacity-50': !available }
       )}
     >

@@ -119,7 +119,10 @@ export function NavBottom() {
         )}
       </Laptop>
 
-      <NavAutocomplete />
+      {/* <FilterSeach /> */}
+      <div className="hidden">
+        <NavAutocomplete />
+      </div>
     </div>
   )
 }

@@ -87,8 +87,8 @@ ProductDetailProps) {
 
   // function fetchPosts() {
   //   const client = algoliasearch(
-  //     '235XIUIEK1',
-  //     '32f92a7d31a7320106285b5b7466e336'
+  //     'GXNXE1S5A4',
+  //     '890e7784e4e4e090caf2b3c4eab906c6'
   //   )
   //   const index = client.initIndex('pwa_ecom_ui_template_products')
   //   index
@@ -156,31 +156,7 @@ ProductDetailProps) {
   }, [])
   // const handleCheckoutClick = useCallback(
 
-  function sleep(ms: number) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms)
-    })
-  }
-
   const onCheckoutClick = () => {
-    // await sleep(5500)
-    // setDisableLoadAddProduct(false)
-    // const itemsStk = items.find(function (item) {
-    //   const objetID = item.id
-    //   const indiceId = objetID.indexOf('_')
-    //   const extraidaObjetId = objetID.substring(0, indiceId)
-
-    // return  item.objectID === objectID
-    /// / })
-    // console.log(itemsStk)
-    // solicitudAlgoliaStock(items, setExecuting, removeItem, objectID)
-    if (items) {
-      // setDisableLoadAddProduct(false)
-      // setExecuting(true)
-    } else {
-      // setDisableLoadAddProduct(false)
-      // setExecuting(true)
-    }
     const notify = () =>
       toast((t) => (
         <div className="relative   w-full">
@@ -347,9 +323,9 @@ ProductDetailProps) {
                             : 'bg-white  text-black border-2'
                         }`}
                         nonce={undefined}
-                        onClick={() => handleActiveTalla(i, el.size)}
+                        onClick={() => handleActiveTalla(i, String(el))}
                       >
-                        {el.size}
+                        {String(el)}
                       </Button>
                     </div>
                   ))}

@@ -1,7 +1,5 @@
-import type { Hit as AlgoliaHit } from '@algolia/client-search'
 import algoliasearch from 'algoliasearch/lite'
 import { history } from 'instantsearch.js/es/lib/routers/index'
-import { useState, useCallback, useEffect } from 'react'
 // import { history } from 'instantsearchjs/es/lib/routers/index.js'
 import {
   InstantSearch,
@@ -12,45 +10,11 @@ import {
 import { Panel } from 'react-instantsearch-dom'
 import type { InstantSearchServerState } from 'react-instantsearch-hooks'
 
-import { Button } from '@/components/@ui/button/button'
-import { Hits } from '@/components/panel/Hits'
 import { SearchBox } from '@/components/panel/SearchBox'
-import { ProductCard } from '@/components/product-card/product-card'
 
 const client = algoliasearch('235XIUIEK1', 'c502207ec53e080f5223f93210e9f2be')
 
-type HitProps = {
-  hit: AlgoliaHit<{
-    name: string
-    __queryID: string
-    brand: string
-    image_urls: string[]
-    price: AlgoliaHit<{
-      value: string
-    }>
-  }>
-}
-
-function Hit({ hit }: HitProps) {
-  return (
-    <>
-      {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
-      <ProductCard
-        // title={hit.name}
-        // currency={hit.price.currency.symbol}
-        price={Number(hit.price.value)}
-        // colors={hit.color.original_name}
-        url={`/product/${hit.objectID}?queryID=${hit.__queryID}`}
-        // titleHighlighting={hit.brand}
-        label={hit.brand}
-        title={hit.name}
-        image={hit.image_urls[0]}
-      />
-    </>
-  )
-}
-
-export default function Home({
+export default function FilterSeach({
   serverState,
   url,
 }: {
@@ -61,20 +25,7 @@ export default function Home({
   //   document.querySelector('.ais-Panel:nth-child(1)').innerHTML = 'Genero'
   //   document.querySelector('.ais-Panel[2] ').innerHTML = 'Genero'
   // }, [])
-  const [first, setfirst] = useState(false)
-  const [altoScroll, setAltoScroll] = useState(0)
 
-  const handleNavigation = useCallback(
-    () => setAltoScroll(window.scrollY),
-    [altoScroll]
-  )
-  useEffect(() => {
-    window.addEventListener('scroll', handleNavigation)
-
-    return () => {
-      window.removeEventListener('scroll', handleNavigation)
-    }
-  }, [handleNavigation])
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
@@ -100,63 +51,10 @@ export default function Home({
           <SearchBox />
         </div>
         <div className="flex w-full ">
-          <div
-            className={`p-5 xl:sticky xl:overflow-y-hidden ${
-              first ? 'block' : 'hidden'
-            }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0 xl:z-dropdown z-overlay-full top-0 xl:pt-16`}
-          >
-            <h3 className="text-center mb-3 xl:hidden block">Filtros</h3>
-            <Button
-              className="absolute top-5 left-5 flex xl:hidden"
-              onClick={() => setfirst(false)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </Button>
-            <DynamicWidgets fallbackComponent={FallbackComponent} />
-          </div>
-
-          <div className="overflow-x-hidden relative  flex flex-col  ">
-            <div
-              className={`fixed flex justify-around items-center xl:hidden  border-b-[1px] border-[#eeeeee] ${
-                altoScroll > 10 ? 'top-[9.1rem]' : 'top-44'
-              }  z-dev h-10 bg-white w-full `}
-            >
-              <Button
-                className=" flex items-center justify-center "
-                onClick={() => setfirst(true)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-                  />
-                </svg>
-                <span className="ml-2"> Filtra por</span>
-              </Button>
+          <div className="static">
+            <div className=" p-5 sticky top-0 pt-16">
+              <DynamicWidgets fallbackComponent={FallbackComponent} />
             </div>
-
-            <Hits hitComponent={Hit} />
           </div>
         </div>
       </InstantSearch>
