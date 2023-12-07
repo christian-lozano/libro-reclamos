@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Carousel from 'nuka-carousel'
 import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -5,19 +6,19 @@ import { useMediaQuery } from 'react-responsive'
 import { Button } from '../@ui/button/button'
 
 const sliderDesktop = [
+  // {
+  //   title: '',
+  //   color: 'black',
+  //   desc: '',
+  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/black-desktop_nfyqgw.png',
+  //   url: '#',
+  // },
   {
-    title: '',
-    color: 'black',
-    desc: '',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/black-desktop_nfyqgw.png',
-    url: '#',
-  },
-  {
-    title: 'MARINERUSH PACK',
+    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     color: 'black',
     desc: 'Recién llegadas.',
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/image3_cicsdw.jpg',
-    url: '#',
+    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
   // {
   //   title: 'PACK CRAZYRUSH',
@@ -28,36 +29,36 @@ const sliderDesktop = [
   // },
 ]
 const sliderMobil = [
+  // {
+  //   title: '',
+  //   desc: '',
+  //   color: 'black',
+  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839898/ecommerce-fritz-sport/slider-home/black-mobil-3_p2diza.png',
+  //   url: '#',
+  // },
   {
-    title: '',
-    desc: '',
-    color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839898/ecommerce-fritz-sport/slider-home/black-mobil-3_p2diza.png',
-    url: '#',
-  },
-  {
-    title: 'MARINERUSH PACK',
+    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     desc: 'Recién llegadas.',
     color: 'black',
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/imageMobile3_bmvzka.jpg',
-    url: '#',
+    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
-  {
-    title: 'MARINERUSH PACK',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/imageMobile2_mkwldp.jpg',
-    url: '#',
-  },
+  // {
+  //   title: 'MARINERUSH PACK',
+  //   desc: 'Recién llegadas.',
+  //   color: 'black',
+  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/imageMobile2_mkwldp.jpg',
+  //   url: '#',
+  // },
 ]
 
 const sliderTablet = [
   {
-    title: 'MARINERUSH PACK',
+    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     desc: 'Recién llegadas.',
     color: 'black',
     img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/EuTablets_b7rrql.jpg',
-    url: '#',
+    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
 ]
 export default function CarouselHome() {
@@ -91,10 +92,10 @@ export default function CarouselHome() {
                   <div key={i}>
                     <div className="">
                       <img className="z-dev" src={el.img} alt="" />
-                      <div className="relative text-2xl text-black flex justify-start 2xl:ml-80 ml-20 items-center top-24 bottom-0 w-full h-full z-50">
-                        <div className="absolute flex flex-col items-center justify-start  text w-auto bottom-[calc(45vh)]">
+                      <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
+                        <div className="absolute flex flex-col items-start justify-start  text w-auto bottom-[calc(45vh)]">
                           <h6
-                            className={`text-center text-4xl font-black  text-${el.color}`}
+                            className={`text-center  xl:text-4xl  2xl:text-2xl font-black  text-${el.color}`}
                           >
                             {' '}
                             {el.title}
@@ -104,25 +105,27 @@ export default function CarouselHome() {
                           >
                             {el.desc}
                           </p>
-                          <Button
-                            className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
-                          >
-                            Comprar Ahora
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="w-6 h-6"
+                          <Link href={el.url}>
+                            <Button
+                              className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                              />
-                            </svg>
-                          </Button>
+                              Comprar Ahora
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                                />
+                              </svg>
+                            </Button>
+                          </Link>
                         </div>
                       </div>
                     </div>
