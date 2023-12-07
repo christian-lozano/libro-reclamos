@@ -1,10 +1,6 @@
 import React, { useState, useRef } from 'react'
-import type {
-  UseSearchBoxProps} from "react-instantsearch-hooks-web";
-import {
-  useInstantSearch,
-  useSearchBox
-} from 'react-instantsearch-hooks-web'
+import type { UseSearchBoxProps } from 'react-instantsearch-hooks-web'
+import { useInstantSearch, useSearchBox } from 'react-instantsearch-hooks-web'
 
 function CustomSearchBox(props: UseSearchBoxProps) {
   const { query, refine } = useSearchBox(props)
@@ -23,30 +19,29 @@ function CustomSearchBox(props: UseSearchBoxProps) {
   return (
     <div>
       <form
-        noValidate
+        noValidate={true}
         action=""
         role="search"
         onSubmit={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
+          event.preventDefault()
+          event.stopPropagation()
 
           if (inputRef.current) {
-            inputRef.current.blur();
+            inputRef.current.blur()
           }
         }}
         onReset={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
+          event.preventDefault()
+          event.stopPropagation()
 
-          setQuery("");
+          setQuery('')
 
           if (inputRef.current) {
-            inputRef.current.focus();
+            inputRef.current.focus()
           }
         }}
       >
         <input
-          autoFocus
           ref={inputRef}
           autoComplete="off"
           autoCorrect="off"
@@ -57,8 +52,8 @@ function CustomSearchBox(props: UseSearchBoxProps) {
           type="search"
           value={inputValue}
           onChange={(event) => {
-            setQuery(event.currentTarget.value);
-          }}={true}
+            setQuery(event.currentTarget.value)
+          }}
         />
         <button type="submit">Submit</button>
         <button
