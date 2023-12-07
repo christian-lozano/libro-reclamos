@@ -36,7 +36,6 @@ function Hit({ hit }: HitProps) {
     <>
       {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
       <ProductCard
-        // title={hit.name}
         // currency={hit.price.currency.symbol}
         price={Number(hit.price.value)}
         // colors={hit.color.original_name}
