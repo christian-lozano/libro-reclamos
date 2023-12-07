@@ -46,8 +46,8 @@ export function SearchBox(props: SearchBoxProps) {
       isSearchStalled={isSearchStalled}
       placeholder={props.placeholder}
       value={value}
-      onChange={onChange}
-      onReset={onReset}
+      onChange={() => onChange}
+      onReset={() => onReset}
     />
   )
 }
