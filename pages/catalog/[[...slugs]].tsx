@@ -95,14 +95,13 @@ export default function Home({
         //         routing={false}
         insights={true}
       >
-        <div>
-          <SearchBox />
-        </div>
-        <div className="flex w-full ">
+        <SearchBox />
+
+        <div className="flex w-full  ">
           <div
             className={`p-5 xl:sticky xl:overflow-y-hidden ${
               first ? 'block' : 'hidden'
-            }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0 xl:z-dropdown z-overlay-full top-0 xl:pt-16`}
+            }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0  z-overlay-full top-0 xl:pt-16`}
           >
             <h3 className="text-center mb-3 xl:hidden block">Filtros</h3>
             <Button
@@ -127,35 +126,34 @@ export default function Home({
             <DynamicWidgets fallbackComponent={FallbackComponent} />
           </div>
 
-          <div className="overflow-x-hidden relative  flex flex-col  ">
-            <div
-              className={`fixed flex justify-around items-center xl:hidden  border-b-[1px] border-[#eeeeee] ${
-                altoScroll > 10 ? 'top-[9.1rem]' : 'top-44'
-              }  z-dev h-10 bg-white w-full `}
-            >
-              <Button
-                className=" flex items-center justify-center "
-                onClick={() => setfirst(true)}
+          <Button
+            className={`fixed flex justify-end items-center  right-0 xl:hidden z-[10] pr-6  w-3/3 border-b-[1px] border-[#eeeeee] ${
+              altoScroll > 10 ? 'top-[9rem]' : 'top-[11rem]'
+            }   bg-white w-full `}
+            onClick={() => setfirst(true)}
+          >
+            <div className=" flex items-center justify-center py-[0.70rem]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
-                  />
-                </svg>
-                <span className="ml-2"> Filtra por</span>
-              </Button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                />
+              </svg>
             </div>
+          </Button>
 
-            <Hits hitComponent={Hit} />
+          <div className="overflow-x-hidden relative  flex flex-col  ">
+            <div className="mt-[10vh]">
+              <Hits hitComponent={Hit} />
+            </div>
           </div>
         </div>
       </InstantSearch>

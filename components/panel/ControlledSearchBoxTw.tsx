@@ -64,23 +64,20 @@ export function ControlledSearchBoxTw({
     }
   }, [handleNavigation])
   return (
-    <div
-      className="ais-SearchBoxa flex justify-end  z-refinements  "
-      {...props}
-    >
+    <div className="  " {...props}>
       <form
         noValidate={true}
         action=""
-        className={`ais-SearchBox-form  flex fixed  w-5/6 right-0 z-dev ${
+        className={`w-11/12 fixed z-[11]  xl:flex xl:justify-end   left-0 xl:right-0  ${
           altoScroll > 10
-            ? 'xl:top-[5rem] top-[6rem]'
-            : 'xl:top-32 top-[7.9rem] '
-        }  justify-end items-center`}
+            ? 'xl:top-[5rem] top-[9rem]'
+            : 'xl:top-32 top-[11rem] '
+        }   items-center`}
         onSubmit={() => handleSubmit}
       >
         <input
           ref={inputRef}
-          className="ais-SearchBox-input py-[0.79rem] xl:px-5 px-5 xl:w-2/5 w-3/6 border-[0.1px] border-black 	focus:outline-none	"
+          className=" py-[0.79rem]  xl:px-5 px-5 xl:w-2/5 w-11/12 border-[0.1px] 	focus:outline-none	"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
