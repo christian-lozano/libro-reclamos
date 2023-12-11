@@ -24,12 +24,12 @@ export function useSearchInsights({
       useCookie: true,
     })
 
-    if (typeof setUserToken === 'function') {
-      searchInsights('getUserToken', null, (_, generatedUserToken) => {
-        setUserToken(generatedUserToken, (userToken) => {
-          searchInsights('setUserToken', userToken)
-        })
-      })
-    }
+    // if (typeof setUserToken === 'function') {
+    //   searchInsights('getUserToken', null, (_, generatedUserToken) => {
+    //     setUserToken(generatedUserToken, (userToken) => {
+    //       searchInsights('setUserToken', userToken)
+    //     })
+    //   })
+    // }
   }, [appId, searchApiKey, setUserToken])
 }
