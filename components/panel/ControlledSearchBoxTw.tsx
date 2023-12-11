@@ -1,47 +1,55 @@
+import type { RefObject, ComponentProps, FormEvent } from 'react'
 import { useState, useCallback, useEffect } from 'react'
-import type { ChangeEvent, FormEvent, RefObject, ComponentProps } from 'react'
+import { useSearchBox } from 'react-instantsearch'
 
 export type ControlledSearchBoxProps = ComponentProps<'div'> & {
   inputRef: RefObject<HTMLInputElement>
-  onChange: (event: React.ChangeEvent<HTMLDivElement>) => void
-  onReset: (event: FormEvent) => void
-  onSubmit?: (event: FormEvent) => void
   placeholder?: string
-  value: string
+
+  pros: any
 }
 
-export function ControlledSearchBox({
+export function ControlledSearchBoxTw({
   inputRef,
-  onChange,
-  onReset,
   onSubmit,
   placeholder,
-  value,
+  pros,
   ...props
 }: ControlledSearchBoxProps) {
-  function handleSubmit(event: FormEvent) {
-    event.preventDefault()
-    event.stopPropagation()
+  function handleSubmit(e: FormEvent<HTMLDivElement>) {
+    e.preventDefault()
+    e.stopPropagation()
 
     if (onSubmit) {
-      onSubmit(event)
+      onSubmit(e)
     }
 
     if (inputRef.current) {
       inputRef.current.blur()
     }
   }
+  const { query, refine } = useSearchBox(pros)
+  const [value, setValue] = useState(query)
 
-  function handleReset(event: FormEvent) {
-    event.preventDefault()
-    event.stopPropagation()
-
-    onReset(event)
-
-    if (inputRef.current) {
-      inputRef.current.focus()
+  useEffect(() => {
+    if (query !== value) {
+      refine(value)
     }
-  }
+    // We want to track when the value coming from the React state changes
+    // to update the InstantSearch.js query, so we don't need to track the
+    // InstantSearch.js query.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [value, refine])
+
+  useEffect(() => {
+    if (query !== value) {
+      setValue(query)
+    }
+    // We want to track when the query coming from InstantSearch.js changes
+    // to update the React state, so we don't need to track the state value.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query])
+
   const [altoScroll, setAltoScroll] = useState(0)
 
   const handleNavigation = useCallback(
@@ -69,7 +77,6 @@ export function ControlledSearchBox({
             : 'xl:top-32 top-[7.9rem] '
         }  justify-end items-center`}
         onSubmit={() => handleSubmit}
-        onReset={() => handleReset}
       >
         <input
           ref={inputRef}
@@ -82,7 +89,7 @@ export function ControlledSearchBox({
           maxLength={512}
           type="search"
           value={value}
-          onChange={(e: React.ChangeEvent<HTMLDivElement>) => onChange(e)}
+          onChange={(e) => setValue(e.target.value)}
         />
         {/* <button
           className="ais-SearchBox-submit"

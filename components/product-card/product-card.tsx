@@ -62,7 +62,7 @@ export function ProductCard({
     () => setIsFavorite((favorite) => !favorite),
     []
   )
-  console.log(description)
+
 
   const handleLinkClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {

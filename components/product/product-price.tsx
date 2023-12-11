@@ -24,11 +24,15 @@ export function ProductPrice({
   classNamePrice,
   classNameOriginalPrice,
 }: ProductPriceProps) {
+  // const solesSimbol = currency.position
+  // console.log(currency.symbol)
+
   return (
     <div className={classNames('flex', className)}>
       <span className={classNames('text-venus-base font-bold', classNamePrice)}>
-        {currency?.position === 'prefix' ? currency.symbol : 'S/'}
-        {currency?.position === 'suffix' ? currency.symbol : null}
+        {currency === undefined ? 'S/' : 'S/'}
+        {/* {currency?.position === 'prefix' ? currency.symbol : null}
+        {currency?.position === 'suffix' ? currency.symbol : null} */}
         {price.toFixed(precision).toLocaleString()}
       </span>
       {originalPrice && (
@@ -38,9 +42,9 @@ export function ProductPrice({
             classNameOriginalPrice
           )}
         >
-          {currency?.position === 'prefix' ? currency.symbol : 'S/'}
+          {currency?.position === 'prefix' ? currency.symbol : null}
           {originalPrice.toFixed(precision).toLocaleString()}
-          {currency?.position === 'suffix' ? currency.symbol : 'S/'}
+          {currency?.position === 'suffix' ? currency.symbol : null}
         </span>
       )}
     </div>
