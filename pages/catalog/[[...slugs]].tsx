@@ -103,7 +103,7 @@ export default function Home({
               first ? 'block' : 'hidden'
             }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0  z-overlay-full top-0 xl:pt-16`}
           >
-            <h3 className="text-center mb-3 xl:hidden block">Filtros</h3>
+            <h3 className="text-center mb-3 xl:hidden block mt-10">Filtros</h3>
             <Button
               className="absolute top-5 left-5 flex xl:hidden"
               onClick={() => setfirst(false)}
@@ -123,7 +123,9 @@ export default function Home({
                 />
               </svg>
             </Button>
-            <DynamicWidgets fallbackComponent={FallbackComponent} />
+            <div className="mt-10">
+              <DynamicWidgets fallbackComponent={FallbackComponent} />
+            </div>
           </div>
 
           <Button

@@ -29,12 +29,15 @@
 
 
 @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ 
-
+  .ais-Panel {
+    padding-top: 1rem;
+}
 
   .ais-Hits-list{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr ;
+  
   }
 
 }
