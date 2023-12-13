@@ -99,31 +99,33 @@ export default function Home({
 
         <div className="flex w-full  ">
           <div
-            className={`p-5 xl:sticky xl:overflow-y-hidden max-w-[16vw] ${
+            className={`xl:p-5 p-3 xl:sticky   xl:overflow-y-hidden xl:max-w-[16vw] ${
               first ? 'block' : 'hidden'
             }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0  z-overlay-full top-0 xl:pt-16`}
           >
-            <h3 className="text-center mb-3 xl:hidden block mt-10">Filtros</h3>
-            <Button
-              className="absolute top-5 left-5 flex xl:hidden"
-              onClick={() => setfirst(false)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-5 h-5"
+            <div className="sticky top-0 flex flex-col justify-center items-center h-20 w-full  bg-white">
+              <h3 className="text-center mb-3 xl:hidden block ">Filtros</h3>
+              <Button
+                className="absolute top-3 left-5 flex xl:hidden"
+                onClick={() => setfirst(false)}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </Button>
-            <div className="mt-10">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </Button>
+            </div>
+            <div className=" px-5 ">
               <DynamicWidgets fallbackComponent={FallbackComponent} />
             </div>
           </div>
