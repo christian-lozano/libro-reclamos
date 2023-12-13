@@ -17,7 +17,7 @@ module.exports = withNextPlugins([withBundleAnalyzer, withPWA], {
     dirs: ['pages', 'components', 'config', 'layouts', 'lib', 'utils', 'hooks'],
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // formats: ['image/avif'|| 'image/jpg' , 'image/webp'],
     domains: ['res.cloudinary.com'],
     deviceSizes: [375, 425, 768, 828, 1024, 1440, 1920, 2560],
     minimumCacheTTL: 60 * 60 * 24,

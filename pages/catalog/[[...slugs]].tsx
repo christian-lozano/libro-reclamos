@@ -99,7 +99,7 @@ export default function Home({
 
         <div className="flex w-full  ">
           <div
-            className={`p-5 xl:sticky xl:overflow-y-hidden ${
+            className={`p-5 xl:sticky xl:overflow-y-hidden max-w-[16vw] ${
               first ? 'block' : 'hidden'
             }  xl:block  overflow-y-scroll  h-full fixed bg-white  w-3/5 right-0  z-overlay-full top-0 xl:pt-16`}
           >
