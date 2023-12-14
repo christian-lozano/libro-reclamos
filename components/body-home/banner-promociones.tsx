@@ -5,8 +5,9 @@ import { Link } from '../@ui/link/link'
 
 const imgSection = {
   imgMd:
-    'https://br.puma.com/media/contentmanager/content/23AW_Ecom_TS_Football_Gear-Up-Pack_Q4_FullBleedHero_Large_TabMob_1536x1536_Combined-Player-Ultra-Future_2_1.jpg',
-  imgXl: 'https://www.fritzsportsac.com/wp-content/uploads/2023/03/1.jpg',
+    'https://res.cloudinary.com/da868wsih/image/upload/v1702571772/fritz-ecommerce/banner-promociones-home/Group_24_1_luntk3.jpg',
+  imgXl:
+    'https://res.cloudinary.com/da868wsih/image/upload/v1702571626/fritz-ecommerce/banner-promociones-home/Group_24_v5mlsr.jpg',
 }
 
 export function BannerPromociones() {
@@ -36,27 +37,44 @@ export function BannerPromociones() {
           {/* desktop */}
 
           {isDesktopOrLaptop ? (
-            <div className="absolute top-0 w-full h-full  ">
-              <div className=" h-full w-full flex-col  flex justify-center items-end ">
+            <div className="absolute flex items-end py-10 top-0  w-full h-full  ">
+              <div className=" h-3/4 w-2/4 ml-48  flex-col  flex justify-end   items-end ">
                 <div className="w-full 2xl:w-full flex flex-col items-start ">
-                  <div className="w-full ">
+                  {/* <div className="w-full ">
                     <h1 className="xl:text-4xl md:text-3xl 2xl:text-6xl font-bold  py-5 w-full text-center text-black ">
                       Nuevos Ingresos
                     </h1>
-                  </div>
-                  <div className="w-full flex justify-center  ">
+                  </div> */}
+                  <div className="w-full flex justify-start items-end h-full ml-10  ">
                     <div className="flex justify-around ">
-                      <Link href="/mujer">
-                        <span className="text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-base">
-                          Tienda Hombre
+                      <Link href="/catalog">
+                        <span className="flex justify-center uppercase items-center text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-xl">
+                          Comprar
+                          <span className="ml-2">
+                            {' '}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="1.5"
+                              stroke="#000"
+                              className="w-4 h-4 laptop:w-5 laptop:h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                              ></path>
+                            </svg>
+                          </span>
                         </span>
                       </Link>
 
-                      <Link href="/hombre">
+                      {/* <Link href="/hombre">
                         <span className="text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-base">
                           Tienda Mujer
                         </span>
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </div>
@@ -73,14 +91,48 @@ export function BannerPromociones() {
                   </div>
                   <div className="w-full flex justify-center  ">
                     <div className="flex justify-around w-full">
-                      <Link href="#">
-                        <span className="text-white bg-black p-3 font-sans md:p-2 font-medium md:px-5 md:py-3   mr-6  text-sm 2xl:text-base">
-                          TIENDA HOMBRE
+                      <Link href="/hombre">
+                        <span className="flex justify-center items-center text-white bg-black p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-xl">
+                          HOMBRE
+                          <span className="ml-2">
+                            {' '}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="1.5"
+                              stroke="#fff"
+                              className="w-4 h-4 laptop:w-5 laptop:h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                              ></path>
+                            </svg>
+                          </span>
                         </span>
                       </Link>
-                      <Link href="#">
-                        <span className="text-white bg-black p-3 font-sans md:p-2 font-medium md:px-5 md:py-3   mr-6 text-sm 2xl:text-base ">
-                          TIENDA MUJER
+                      <Link href="/mujer">
+                        <span className="flex justify-center items-center text-white bg-black p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-xl">
+                          MUJER
+                          <span className="ml-2">
+                            {' '}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="1.5"
+                              stroke="#fff"
+                              className="w-4 h-4 laptop:w-5 laptop:h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                              ></path>
+                            </svg>
+                          </span>
                         </span>
                       </Link>
                     </div>

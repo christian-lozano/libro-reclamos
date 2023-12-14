@@ -22,7 +22,7 @@ const DataCardBg = [
     url: '/ninos',
     button: 'Niños',
     imgCategory:
-      'https://res.cloudinary.com/da868wsih/image/upload/v1702508721/fritz-ecommerce/home-body-genero/pexels-rdne-stock-project-6182666_1_1_1_srczwq.jpg',
+      'https://cdn.sanity.io/images/qa41whrn/prod/39c75b85700442a4b0b1b73d33468b5d99f3b221-1536x1536.jpg?w=2160&q=80&auto=format',
   },
 ]
 

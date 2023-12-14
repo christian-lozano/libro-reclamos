@@ -16,13 +16,19 @@ const data = {
     nav: [
       {
         title: 'Calzado',
-        url: '/catalog?q=zapatillas%20mujer&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
       },
-      { title: 'Ropa', url: '/catalog?q=ropa%20mujer&p=1' },
-      { title: 'Accesorios', url: '/catalog?q=accesorios%20mujer&p=1' },
+      {
+        title: 'Ropa',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
+      },
+      {
+        title: 'Accesorios',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20accesorios',
+      },
       {
         title: 'Descuento',
-        url: '/catalog/Mujer?sortBy=pwa_ecom_ui_template_products_price_asc&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
       },
     ],
     cardHeader: {
@@ -30,9 +36,9 @@ const data = {
         'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1253,c_limit/071dc223-dc22-4474-ae5d-17ce75940bbe/women-s-shoes-clothing-accessories.jpg',
       imgMobil:
         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BJKZ_STG/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw992bbf81/Landings/Mujeres/Imagenes/801134_SU23_Womens_Bras_OM_JustinePierre_00473%202.jpg',
-      titulo: 'POLAR TECNOLÓGICO NIKE',
-      desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/catalog?q=women',
+      titulo: 'LO MEJOR EN ROPA ADIDAS PARA MUJER',
+      desc: '',
+      url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
     },
     tituloRecienLlegados: 'Recien Llegados',
 
@@ -40,7 +46,7 @@ const data = {
       {
         titulo: 'Lo Mejor para Primavera',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/1fa8b2ab7873ca01c984d05e8d1b4e3cc24a037f-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/catalog?q=women',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
       },
 
       {
@@ -55,27 +61,27 @@ const data = {
         id: '01232as142',
         filtro: 'Ropa',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwe23082ad/Landings/Mujeres/Imagenes/ropadk@2x.jpg',
-        url: '/catalog/Women/Clothing',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
       },
 
       {
         id: '031afdg2321',
         filtro: 'Bras',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw3d481f3e/Landings/Mujeres/Imagenes/brasdk@2x.jpg',
-        url: '/catalog/Women',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
       },
 
       {
         id: '031af12dg2321',
         filtro: 'Calzado',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw80f95979/Landings/Mujeres/Imagenes/calzadodk@2x.jpg',
-        url: '/catalog/Women/Shoes',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
       },
       {
         id: '031af12dg2321',
         filtro: 'Accesorios',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dweb473897/Landings/Mujeres/Imagenes/accesoriosdk@2x.jpg',
-        url: '/catalog/Women/Clothing',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20accesorios',
       },
     ],
     footerCarousel: 'Más para explorar',

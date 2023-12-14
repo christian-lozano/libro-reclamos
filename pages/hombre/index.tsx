@@ -38,15 +38,15 @@ const data = {
 
     cardRecienLLegados: [
       {
-        titulo: 'Lo Mejor para Primavera',
+        titulo: 'Lo Mejor para Verano',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/6ddcdf38130d8665a51bf05eacd43fdffb79ef11-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/hombre',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias>',
       },
 
       {
-        titulo: 'Nike ACG',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/79431a35a9c077c4b29fa768450a9dcfb375c9dd-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/hombre',
+        titulo: '',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574711/fritz-ecommerce/slider-home/960-x-960_o3wvlk.jpg',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
       },
     ],
     caracteristicasTitle: 'Estilos Destacados',
@@ -55,13 +55,13 @@ const data = {
         id: '01232as142',
         filtro: 'Calzado',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwf4acafbc/Landings/Hombres/Imagenes/calzadodk@2x.jpg',
-        url: '/productos/hombre',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
       },
 
       {
         id: '031afdg2321',
         filtro: 'Accesorios',
-        url: '/productos/hombre',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
 
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwd68f3746/Landings/Hombres/Imagenes/accesoriosdk@2x.jpg',
       },
@@ -72,16 +72,21 @@ const data = {
       {
         id: '01231d121',
         filtro: 'Ropa',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+
         img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
       },
       {
         id: '01232as142',
         filtro: 'Calzado',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+
         img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
       },
       {
         id: '031afdg2321',
         filtro: 'Accesorios',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
 
         img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
       },
@@ -201,24 +206,26 @@ export default function Home(props: SearchPageLayoutProps) {
 
           <div className="grid gap-y-4 grid-cols-1 md:grid-cols-2 md:gap-x-5 2xl:container  ">
             {data.dataPageHombre.cardRecienLLegados.map((el, i) => (
-              <figure key={i}>
-                <div className="h-full w-full relative ">
-                  <div>
-                    <img src={el.img} alt="" className="w-[100%]" />
-                  </div>
-                  <figcaption className="absolute bottom-0 p-6 2xl:p-15">
+              <Link href={el.url} key={i} >
+                <figure>
+                  <div className="h-full cursor-pointer w-full relative ">
                     <div>
-                      <div className="my-7">
-                        {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                        <h3 className="text-white py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
-                          {el.titulo}
-                        </h3>
-                      </div>
-                      <span className="bg-white text-black" />
+                      <img src={el.img} alt="" className="w-[100%]" />
                     </div>
-                  </figcaption>
-                </div>
-              </figure>
+                    <figcaption className="absolute bottom-0 p-6 2xl:p-15">
+                      <div>
+                        <div className="my-7">
+                          {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
+                          <h3 className="text-white py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                            {el.titulo}
+                          </h3>
+                        </div>
+                        <span className="bg-white text-black" />
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+              </Link>
             ))}
           </div>
 
@@ -231,24 +238,26 @@ export default function Home(props: SearchPageLayoutProps) {
           </h2>
           <div className="grid  grid-cols-1 md:grid-cols-2   gap-2 h-full  container">
             {data.dataPageHombre.cartPopular.map((el, i) => (
-              <figure key={i} className="cursor-pointer">
-                <div className="h-full w-full relative ">
-                  <div>
-                    <img src={el.img} alt="" className="w-100%" />
-                  </div>
-                  <figcaption className="absolute bottom-0 p-6 2xl:p-15">
+              <Link href={el.url} key={i}>
+                <figure className="cursor-pointer">
+                  <div className="h-full w-full relative ">
                     <div>
-                      <div className="m-1">
-                        {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                        <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
-                          {el.filtro}
-                        </h3>
-                      </div>
-                      <span className="bg-white text-white" />
+                      <img src={el.img} alt="" className="w-100%" />
                     </div>
-                  </figcaption>
-                </div>
-              </figure>
+                    <figcaption className="absolute bottom-0 p-6 2xl:p-15">
+                      <div>
+                        <div className="m-1">
+                          {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
+                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                            {el.filtro}
+                          </h3>
+                        </div>
+                        <span className="bg-white text-white" />
+                      </div>
+                    </figcaption>
+                  </div>
+                </figure>
+              </Link>
             ))}
           </div>
         </section>

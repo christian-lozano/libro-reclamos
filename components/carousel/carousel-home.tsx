@@ -14,7 +14,7 @@ const sliderDesktop = [
   //   url: '#',
   // },
   {
-    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
+    title: 'ZAPATILLAS X_PLORBOOST',
     color: 'black',
     desc: 'Recién llegadas.',
     img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702510427/fritz-ecommerce/slider-home/1920-x-853_b5ty4m.jpg',
@@ -40,7 +40,7 @@ const sliderMobil = [
     title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     desc: 'Recién llegadas.',
     color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/imageMobile3_bmvzka.jpg',
+    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574737/fritz-ecommerce/slider-home/600-x-771_friwm4.jpg',
     url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
   // {
@@ -57,7 +57,7 @@ const sliderTablet = [
     title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     desc: 'Recién llegadas.',
     color: 'black',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/EuTablets_b7rrql.jpg',
+    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574711/fritz-ecommerce/slider-home/960-x-960_o3wvlk.jpg',
     url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
 ]
@@ -93,8 +93,8 @@ export default function CarouselHome() {
                     <div className="">
                       <img className="z-dev" src={el.img} alt="" />
                       <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
-                        <div className="absolute flex flex-col items-start justify-start  text w-auto bottom-[calc(45vh)]">
-                          <h6
+                        <div className="absolute flex flex-col items-start justify-start  text w-auto bottom-[calc(14vh)]">
+                          {/* <h6
                             className={`text-center  xl:text-4xl  2xl:text-2xl font-black  text-${el.color}`}
                           >
                             {' '}
@@ -104,7 +104,7 @@ export default function CarouselHome() {
                             className={`text-center mt-1  text-${el.color} text-lg`}
                           >
                             {el.desc}
-                          </p>
+                          </p> */}
                           <Link href={el.url}>
                             <Button
                               className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
@@ -176,8 +176,8 @@ export default function CarouselHome() {
                     <div className="">
                       <img className="z-dev" src={el.img} alt="" />
                       <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
-                        <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]">
-                          <h6
+                        <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(2vw)]">
+                          {/* <h6
                             className={`text-center text-xl font-black text-${el.color}`}
                           >
                             {' '}
@@ -187,7 +187,7 @@ export default function CarouselHome() {
                             className={`text-center text-${el.color} text-base`}
                           >
                             {el.desc}
-                          </p>
+                          </p> */}
                           <Button
                             className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
                           >
@@ -259,8 +259,8 @@ export default function CarouselHome() {
                   <div className="">
                     <img className="z-dev" src={el.img} alt="" />
                     <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
-                      <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(25vw)]">
-                        <h6
+                      <div className="absolute flex flex-col items-center justify-end  text w-auto bottom-[calc(7vw)]">
+                        {/* <h6
                           className={`text-center text-xl font-black text-${el.color}`}
                         >
                           {' '}
@@ -268,9 +268,9 @@ export default function CarouselHome() {
                         </h6>
                         <p className={`text-center text-${el.color} text-base`}>
                           {el.desc}
-                        </p>
+                        </p> */}
                         <Button
-                          className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
+                          className={`bg-white  flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black w-48 py-1 px-2 rounded-sm uppercase`}
                         >
                           Comprar Ahora
                           <svg
