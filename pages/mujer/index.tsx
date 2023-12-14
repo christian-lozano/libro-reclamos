@@ -44,15 +44,15 @@ const data = {
 
     cardRecienLLegados: [
       {
-        titulo: 'Lo Mejor para Primavera',
+        titulo: 'Lo Mejor para Verano',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/1fa8b2ab7873ca01c984d05e8d1b4e3cc24a037f-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20shorts',
       },
 
       {
-        titulo: 'Nike ACG',
+        titulo: 'Zapatillas para Verano',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/2f9d331e815de76fdca6838290a344d7730b46c5-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/product/M0E20000000EBK7?queryID=a65b8b1540582dfb486bc0c6c06c9c9c',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
       },
     ],
     caracteristicasTitle: 'Estilos Destacados',
@@ -65,7 +65,7 @@ const data = {
       },
 
       {
-        id: '031afdg2321',
+        id: '01afdg2321',
         filtro: 'Bras',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw3d481f3e/Landings/Mujeres/Imagenes/brasdk@2x.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',

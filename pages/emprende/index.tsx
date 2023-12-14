@@ -58,7 +58,7 @@ export default function Home(props: SearchPageLayoutProps) {
     {
       label: 'Emprendedores',
       value: 'Emprendedores',
-      img: 'https://res.cloudinary.com/da868wsih/image/upload/v1701370310/fritz-ecommerce/emprende/senor-uno_phqt3s.jpg',
+      img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702597771/fritz-ecommerce/emprende/web_f619vq.jpg',
       title: `Beneficios`,
       arr: [
         'Gana descuentos de hasta 35% en tus compras.',

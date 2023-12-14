@@ -13,15 +13,21 @@ const data = {
   dataPageHombre: {
     page: 'Hombre',
     nav: [
-      { title: 'Calzado', url: '/catalog?q=zapatillas%20hombre&p=1' },
-      { title: 'Ropa', url: '/catalog?q=ropa%20hombre&p=1' },
+      {
+        title: 'Calzado',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+      },
+      {
+        title: 'Ropa',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+      },
       {
         title: 'Accesorios',
-        url: '/catalog?q=accesorios%20hombre&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
       },
       {
         title: 'Descuento',
-        url: '/catalog/hombre?sortBy=pwa_ecom_ui_template_products_price_asc&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
       },
     ],
     cardHeader: {
@@ -29,9 +35,9 @@ const data = {
         'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/b759c6d4-9cea-4980-a66b-cb0763c67632/men-s-shoes-clothing-accessories.jpg',
       imgMobil:
         'https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_500,c_limit/de4714b2-e631-4e6a-89d9-afa2f16434cf/men-s-shoes-clothing-accessories.jpg',
-      titulo: 'POLAR TECNOLÓGICO NIKE',
+      titulo: 'LO MEJOR EN ROPA NIKE',
       desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/productos/hombre',
+      url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20nike',
     },
 
     tituloRecienLlegados: 'Recién Llegados',
@@ -40,7 +46,7 @@ const data = {
       {
         titulo: 'Lo Mejor para Verano',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/6ddcdf38130d8665a51bf05eacd43fdffb79ef11-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias>',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias',
       },
 
       {

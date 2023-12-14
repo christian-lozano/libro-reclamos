@@ -13,15 +13,21 @@ const data = {
   dataPageNinos: {
     page: 'Niños',
     nav: [
-      { title: 'Calzado', url: '/catalog?q=zapatillas%20niños&p=1' },
-      { title: 'Ropa', url: '/catalog?q=ropa%20niños&p=1' },
+      {
+        title: 'Calzado',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20zapatillas',
+      },
+      {
+        title: 'Ropa',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20ropa',
+      },
       {
         title: 'Accesorios',
-        url: '/catalog?q=accesorios%20niños&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20accesorias',
       },
       {
         title: 'Descuento',
-        url: '/catalog/niños?sortBy=pwa_ecom_ui_template_products_price_asc&p=1',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20descuento',
       },
     ],
     cardHeader: {
@@ -29,23 +35,23 @@ const data = {
         'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/3e88b7a0-cb45-4c8c-ac18-777e704e01cf/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
       imgMobil:
         'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/072ae522-a82a-4b9c-a66f-04980766ccd5/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
-      titulo: 'POLAR TECNOLÓGICO NIKE',
+      titulo: 'LO MEJOR NIKE PARA NIÑOS',
       desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/productos/ninos',
+      url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
     },
     tituloRecienLlegados: 'Recien Llegados',
 
     cardRecienLLegados: [
       {
-        titulo: 'Lo Mejor para Primavera',
+        titulo: 'Lo Mejor para verano',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/39c75b85700442a4b0b1b73d33468b5d99f3b221-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/ninos',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
 
       {
-        titulo: 'Nike ACG',
+        titulo: 'Las Mejores Marcas ',
         img: 'https://cdn.sanity.io/images/qa41whrn/prod/0218b2b5ebbfe1d26c927c78216879e1e09ff809-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/productos/ninos',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
     ],
     caracteristicasTitle: 'Estilos Destacados',
@@ -54,14 +60,14 @@ const data = {
         id: '01232as142',
         filtro: 'Niño',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw2eeef74f/Guias%20Nike/ninos-nike.jpg',
-        url: '/productos/ninos',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
       },
 
       {
         id: '031afdg2321',
         filtro: 'Niña',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw0c198359/Guias%20Nike/ninas-nike.jpg',
-        url: '/productos/ninos',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
       },
     ],
     footerCarousel: 'Más para explorar',
