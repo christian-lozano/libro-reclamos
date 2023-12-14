@@ -6,31 +6,31 @@ import { Link } from '../@ui/link/link'
 const marcas = [
   {
     id: '01',
-    url: 'https://fritz-sport.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Adidas&p=1',
+    url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=adidas',
 
     value:
       'https://upload.wikimedia.org/wikipedia/commons/d/d6/Adidas_isologo.svg',
   },
   {
     id: '02',
-    url: 'https://fritz-sport.vercel.app/catalog?refinementList%5Bbrand%5D%5B0%5D=Nike&p=1',
+    url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=nike',
 
     value:
       'https://www.brandemia.org/wp-content/uploads/2011/09/logo_nike_principal.jpg',
   },
   {
     id: '03',
-    url: '#',
+    url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=reebok',
     value: 'https://1000marcas.net/wp-content/uploads/2019/12/logo-Reebok.png',
   },
   {
     id: '04',
-    url: '#',
+    url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=fila',
     value: 'https://1000logos.net/wp-content/uploads/2018/12/Fila.jpg',
   },
   {
     id: '05',
-    url: '#',
+    url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=cat',
     value: 'https://m.media-amazon.com/images/I/314yTZYu1yL.jpg',
   },
 ]

@@ -22,7 +22,7 @@ const DataCardBg = [
     url: '/ninos',
     button: 'Niños',
     imgCategory:
-      'https://images.puma.com/image/upload/q_auto,f_auto,w_1440/regional/%7Eregional%7EEEA%7Eothers%7EKOPs%7EAW23%7ETEST%7EEEA_Kids_category.png/fmt/png',
+      'https://res.cloudinary.com/da868wsih/image/upload/v1702508721/fritz-ecommerce/home-body-genero/pexels-rdne-stock-project-6182666_1_1_1_srczwq.jpg',
   },
 ]
 

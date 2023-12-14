@@ -17,7 +17,7 @@ const sliderDesktop = [
     title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
     color: 'black',
     desc: 'Recién llegadas.',
-    img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/image3_cicsdw.jpg',
+    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702510427/fritz-ecommerce/slider-home/1920-x-853_b5ty4m.jpg',
     url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
   },
   // {

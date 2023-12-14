@@ -6,8 +6,7 @@ import { Link } from '../@ui/link/link'
 const imgSection = {
   imgMd:
     'https://br.puma.com/media/contentmanager/content/23AW_Ecom_TS_Football_Gear-Up-Pack_Q4_FullBleedHero_Large_TabMob_1536x1536_Combined-Player-Ultra-Future_2_1.jpg',
-  imgXl:
-    'https://br.puma.com/media/contentmanager/content/23AW_Ecom_TS_Football_Gear-Up-Pack_Q4_FullBleedHero_Large_Desktop_1440x500_Combined-Player-Ultra-Future.jpg',
+  imgXl: 'https://www.fritzsportsac.com/wp-content/uploads/2023/03/1.jpg',
 }
 
 export function BannerPromociones() {
@@ -41,7 +40,7 @@ export function BannerPromociones() {
               <div className=" h-full w-full flex-col  flex justify-center items-end ">
                 <div className="w-full 2xl:w-full flex flex-col items-start ">
                   <div className="w-full ">
-                    <h1 className="xl:text-4xl md:text-3xl 2xl:text-6xl font-bold  py-5 w-full text-center ">
+                    <h1 className="xl:text-4xl md:text-3xl 2xl:text-6xl font-bold  py-5 w-full text-center text-black ">
                       Nuevos Ingresos
                     </h1>
                   </div>
