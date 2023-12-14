@@ -17,7 +17,7 @@ import { Hits } from '@/components/panel/Hits'
 import { SearchBox } from '@/components/panel/SearchBox'
 import { ProductCard } from '@/components/product-card/product-card'
 
-const client = algoliasearch('235XIUIEK1', 'c502207ec53e080f5223f93210e9f2be')
+const client = algoliasearch('235XIUIEK1', '32f92a7d31a7320106285b5b7466e336')
 
 type HitProps = {
   hit: AlgoliaHit<{

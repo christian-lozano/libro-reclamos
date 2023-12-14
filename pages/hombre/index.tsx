@@ -206,7 +206,7 @@ export default function Home(props: SearchPageLayoutProps) {
 
           <div className="grid gap-y-4 grid-cols-1 md:grid-cols-2 md:gap-x-5 2xl:container  ">
             {data.dataPageHombre.cardRecienLLegados.map((el, i) => (
-              <Link href={el.url} key={i} >
+              <Link href={el.url} key={i}>
                 <figure>
                   <div className="h-full cursor-pointer w-full relative ">
                     <div>

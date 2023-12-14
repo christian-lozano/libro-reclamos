@@ -18,7 +18,7 @@ const sliderDesktop = [
     color: 'black',
     desc: 'Recién llegadas.',
     img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702510427/fritz-ecommerce/slider-home/1920-x-853_b5ty4m.jpg',
-    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
+    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
   },
   // {
   //   title: 'PACK CRAZYRUSH',
@@ -41,7 +41,7 @@ const sliderMobil = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574737/fritz-ecommerce/slider-home/600-x-771_friwm4.jpg',
-    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
+    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
   },
   // {
   //   title: 'MARINERUSH PACK',
@@ -58,7 +58,7 @@ const sliderTablet = [
     desc: 'Recién llegadas.',
     color: 'black',
     img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574711/fritz-ecommerce/slider-home/960-x-960_o3wvlk.jpg',
-    url: 'http://localhost:3001/product/GZ0004?queryID=1ddec9d11844dddc558bd6e8d5f0e68a',
+    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
   },
 ]
 export default function CarouselHome() {
