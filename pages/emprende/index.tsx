@@ -27,7 +27,7 @@ export default function Home(props: SearchPageLayoutProps) {
     {
       id: 'as12321d213',
       img: 'https://footloose.vtexassets.com/assets/vtex.file-manager-graphql/images/a8092058-5eae-4d09-9df9-4f066ee0a966___ec5fe3c96a0dec59974be71a435545f2.png',
-      title: ' Gana hasta un 35% por tus ventas',
+      title: 'Gana hasta un 35% por tus ventas',
     },
     {
       id: 'a3sdsa1234112321d213',

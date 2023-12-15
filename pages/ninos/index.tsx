@@ -44,7 +44,7 @@ const data = {
     cardRecienLLegados: [
       {
         titulo: 'Lo Mejor para verano',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/39c75b85700442a4b0b1b73d33468b5d99f3b221-1536x1536.jpg?w=2160&q=80&auto=format',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702661432/fritz-ecommerce/home-body-genero/adadasdasdsad_t2h7ns.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
 

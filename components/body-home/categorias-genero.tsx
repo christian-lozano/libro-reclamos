@@ -22,7 +22,7 @@ const DataCardBg = [
     url: '/ninos',
     button: 'Niños',
     imgCategory:
-      'https://cdn.sanity.io/images/qa41whrn/prod/39c75b85700442a4b0b1b73d33468b5d99f3b221-1536x1536.jpg?w=2160&q=80&auto=format',
+      'https://res.cloudinary.com/da868wsih/image/upload/v1702661432/fritz-ecommerce/home-body-genero/adadasdasdsad_t2h7ns.jpg',
   },
 ]
 
