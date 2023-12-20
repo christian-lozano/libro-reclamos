@@ -33,7 +33,7 @@ const data = {
     ],
     cardHeader: {
       imgDesktop:
-        'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1253,c_limit/071dc223-dc22-4474-ae5d-17ce75940bbe/women-s-shoes-clothing-accessories.jpg',
+        'https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/if_w_gt_1920,w_1920/lam_gift_guide_horizontal_fw23_launch_wglp_banner_d_20ad46d64c.jpg ',
       imgMobil:
         'https://edge.disstg.commercecloud.salesforce.com/dw/image/v2/BJKZ_STG/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw992bbf81/Landings/Mujeres/Imagenes/801134_SU23_Womens_Bras_OM_JustinePierre_00473%202.jpg',
       titulo: 'LO MEJOR EN ROPA ADIDAS PARA MUJER',
@@ -45,13 +45,13 @@ const data = {
     cardRecienLLegados: [
       {
         titulo: 'Lo Mejor para Verano',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/1fa8b2ab7873ca01c984d05e8d1b4e3cc24a037f-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20shorts',
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ec34b9ceea9e4210bafb179e62a69707_9366/Regata_Canelada_Essentials_Preto_IJ8251_25_model.jpg',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
       },
 
       {
-        titulo: 'Zapatillas para Verano',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/2f9d331e815de76fdca6838290a344d7730b46c5-1536x1536.jpg?w=2160&q=80&auto=format',
+        titulo: 'Zapatillas Cómodas',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702404497/fritz-ecommerce/products/zapatillas/IE1992/Tenis_Galaxy_6_Turquesa_IE1992_01_standard_uauwno.webp',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
       },
     ],
@@ -60,7 +60,7 @@ const data = {
       {
         id: '01232as142',
         filtro: 'Ropa',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwe23082ad/Landings/Mujeres/Imagenes/ropadk@2x.jpg',
+        img: 'https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/94cd37a4aa0946f29e59aef900a3be99_9366/polo-corto-aeroready-train-essentials-3-tiras-logo.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
       },
 
@@ -68,20 +68,20 @@ const data = {
         id: '01afdg2321',
         filtro: 'Bras',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw3d481f3e/Landings/Mujeres/Imagenes/brasdk@2x.jpg',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
+        url: '/catalog?',
       },
 
       {
         id: '031af12dg2321',
         filtro: 'Calzado',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw80f95979/Landings/Mujeres/Imagenes/calzadodk@2x.jpg',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702588622/fritz-ecommerce/products/zapatillas/IE9987/Zapatillas_adidas_Court_Plataforma_Blanco_IE9987_06_standard_ng2brq.webp',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
       },
       {
         id: '031af12dg2321',
         filtro: 'Accesorios',
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dweb473897/Landings/Mujeres/Imagenes/accesoriosdk@2x.jpg',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20accesorios',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
       },
     ],
     footerCarousel: 'Más para explorar',
@@ -236,7 +236,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       <div>
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                          <h3 className="text-white py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
                             {el.titulo}
                           </h3>
                         </div>

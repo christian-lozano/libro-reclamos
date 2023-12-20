@@ -23,20 +23,20 @@ const data = {
       },
       {
         title: 'Accesorios',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20accesorias',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
       {
         title: 'Descuento',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños%20descuento',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
     ],
     cardHeader: {
       imgDesktop:
-        'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/3e88b7a0-cb45-4c8c-ac18-777e704e01cf/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
+        'https://shop.adidas.jp/lp/kids/images/lpc-signup_2003-min.jpg',
       imgMobil:
         'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/072ae522-a82a-4b9c-a66f-04980766ccd5/nike-kids-shoes-clothing-and-accessories-nike-com.jpg',
-      titulo: 'LO MEJOR NIKE PARA NIÑOS',
-      desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
+      titulo: 'LO MEJOR PARA NIÑOS',
+      desc: '',
       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
     },
     tituloRecienLlegados: 'Recien Llegados',
@@ -50,7 +50,7 @@ const data = {
 
       {
         titulo: 'Las Mejores Marcas ',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/0218b2b5ebbfe1d26c927c78216879e1e09ff809-1536x1536.jpg?w=2160&q=80&auto=format',
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e940c71d31f74aea936f2b8a1b02997e_9366/Zapatillas_Tensaur_Sport_Training_Cierre_de_Cordones_Rosado_ID2301_01_standard.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños',
       },
     ],
@@ -59,14 +59,14 @@ const data = {
       {
         id: '01232as142',
         filtro: 'Niño',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw2eeef74f/Guias%20Nike/ninos-nike.jpg',
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/6744ec365b044c3c80175c14b5d566e9_9366/Blusa_Treino_Tiro_23_Club_Preto_IL9561_21_model.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
       },
 
       {
         id: '031afdg2321',
         filtro: 'Niña',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dw0c198359/Guias%20Nike/ninas-nike.jpg',
+        img: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1bebd55b6cac4cd9b900af62011abb2c_9366/Camiseta_Algodao_Essentials_Big_Logo_Preto_IC6855_21_model.jpg',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
       },
     ],
@@ -212,14 +212,20 @@ export default function Home(props: SearchPageLayoutProps) {
             {data.dataPageNinos.cardRecienLLegados.map((el, i) => (
               <figure key={i}>
                 <div className="h-full w-full relative ">
-                  <div>
-                    <img src={el.img} alt="" className="w-[100%]" />
+                  <div className="cursor-pointer">
+                    <Link
+                      href={
+                        '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños'
+                      }
+                    >
+                      <img src={el.img} alt="" className="w-[100%]" />
+                    </Link>
                   </div>
                   <figcaption className="absolute bottom-0 p-6 2xl:p-15">
                     <div>
                       <div className="my-7">
                         {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                        <h3 className="text-white py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                        <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
                           {el.titulo}
                         </h3>
                       </div>
@@ -243,7 +249,13 @@ export default function Home(props: SearchPageLayoutProps) {
               <figure key={i} className="cursor-pointer">
                 <div className="h-full w-full relative ">
                   <div>
-                    <img src={el.img} alt="" className="w-100%" />
+                    <Link
+                      href={
+                        '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niños'
+                      }
+                    >
+                      <img src={el.img} alt="" className="w-100%" />
+                    </Link>
                   </div>
                   <figcaption className="absolute bottom-0 p-6 2xl:p-15">
                     <div>

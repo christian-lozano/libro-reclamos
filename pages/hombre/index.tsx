@@ -23,11 +23,11 @@ const data = {
       },
       {
         title: 'Accesorios',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
+        url: '/catalog?',
       },
       {
         title: 'Descuento',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+        url: '/catalog?pwa_ecom_ui_template_products%5Brange%5D%5Bprice.value%5D=%3A200',
       },
     ],
     cardHeader: {
@@ -37,22 +37,22 @@ const data = {
         'https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_500,c_limit/de4714b2-e631-4e6a-89d9-afa2f16434cf/men-s-shoes-clothing-accessories.jpg',
       titulo: 'LO MEJOR EN ROPA NIKE',
       desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-      url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20nike',
+      url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
     },
 
     tituloRecienLlegados: 'Recién Llegados',
 
     cardRecienLLegados: [
       {
-        titulo: 'Lo Mejor para Verano',
-        img: 'https://cdn.sanity.io/images/qa41whrn/prod/6ddcdf38130d8665a51bf05eacd43fdffb79ef11-1536x1536.jpg?w=2160&q=80&auto=format',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias',
+        titulo: 'Casacas',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702675605/fritz-ecommerce/products/ropa/HS3617/Sudadera_entrenamiento_Tiro_23_Club_Negro_HS3617_21_model_kmsqiy.webp',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
       },
 
       {
         titulo: '',
         img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574711/fritz-ecommerce/slider-home/960-x-960_o3wvlk.jpg',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+        url: '/product/ID9596?queryID=02ae71bb3187d93289648f97243df479',
       },
     ],
     caracteristicasTitle: 'Estilos Destacados',
@@ -60,14 +60,14 @@ const data = {
       {
         id: '01232as142',
         filtro: 'Calzado',
-        img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwf4acafbc/Landings/Hombres/Imagenes/calzadodk@2x.jpg',
+        img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702406524/fritz-ecommerce/products/zapatillas/ID2264/Zapatillas_Runfalcon_3_TR_Negro_ID2264_06_standard_cs0qdw.webp',
         url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
       },
 
       {
         id: '031afdg2321',
         filtro: 'Accesorios',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
+        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
 
         img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwd68f3746/Landings/Hombres/Imagenes/accesoriosdk@2x.jpg',
       },
@@ -222,7 +222,7 @@ export default function Home(props: SearchPageLayoutProps) {
                       <div>
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                          <h3 className="text-white py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
                             {el.titulo}
                           </h3>
                         </div>
