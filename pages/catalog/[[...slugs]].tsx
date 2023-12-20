@@ -257,7 +257,7 @@ export default function Home() {
     >
       <Configure ruleContexts={[]} />
 
-      <div className="Container">
+      <div className="Container mt-5 xl:mt-0">
         <div className="Search">
           <SearchBox placeholder="Buscar" />
           <div className="Search-header">
@@ -294,35 +294,35 @@ export default function Home() {
       <div className="xl:flex  xl:w-full ">
         <div className="">
           <div
-            className={`xl:p-5 px-3 xl:sticky xl:top-0 xl:overflow-y-hidden  xl:overflow-x-hidden xl:max-w-[20vw] w-[52vw] ${
+            className={`xl:p-5 px-3 xl:sticky xl:top-0 xl:overflow-y-hidden  xl:overflow-x-hidden xl:max-w-[20vw] w-[80vw] ${
               first
                 ? 'transition translate-x-[0rem]  xl:translate-x-0 ease-linear delay-150'
                 : 'transition translate-x-[20rem] xl:translate-x-0  ease-linear delay-150'
             }  xl:block  overflow-y-scroll  fixed bg-white  w-3/5 right-0  z-overlay-full xl:z-[0] top-0 `}
           >
+            <Button
+              className="absolute top-3 right-5 flex xl:hidden"
+              onClick={() => setfirst(false)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </Button>
             <div className="sticky top-0 flex flex-col justify-center items-center h-20 w-[42vw]  bg-white">
               <h3 className="text-center mb-3 xl:hidden block ">Filtros</h3>
-              <Button
-                className="absolute top-3 left-5 flex xl:hidden"
-                onClick={() => setfirst(false)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </Button>
             </div>
-            <div className=" px-5 w-[100%]  xl:w-auto  overflow-y-scroll h-[90vh] xl:h-auto  xl:overflow-y-hidden ">
+            <div className=" px-5 w-[100%]  xl:w-auto  overflow-y-scroll h-[87vh] xl:h-auto  xl:overflow-y-hidden ">
               <DynamicWidgets>
                 <Panel header="Categoría">
                   <RefinementList
