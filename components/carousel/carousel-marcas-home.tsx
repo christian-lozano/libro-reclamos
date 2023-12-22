@@ -9,7 +9,7 @@ const marcas = [
     url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=adidas',
 
     value:
-      'https://upload.wikimedia.org/wikipedia/commons/d/d6/Adidas_isologo.svg',
+      'https://res.cloudinary.com/da868wsih/image/upload/v1703271868/fritz-ecommerce/slider-marcas/Adidas_Logo.svg_ik9n5j.png',
   },
   {
     id: '02',

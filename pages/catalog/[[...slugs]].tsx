@@ -340,6 +340,14 @@ export default function Home() {
                     showMore={true}
                   />
                 </Panel>
+                <Panel header="Marca">
+                  <RefinementList
+                    attribute="brand"
+                    searchable={true}
+                    searchablePlaceholder="Buscar Color"
+                    showMore={true}
+                  />
+                </Panel>
                 <Panel header="Tallas">
                   <RefinementList
                     attribute="Tallas"
@@ -356,6 +364,7 @@ export default function Home() {
                     showMore={true}
                   />
                 </Panel>
+
                 {/* <Panel header="Genero">
               <Menu attribute="Genero" showMore={true} />
             </Panel> */}
