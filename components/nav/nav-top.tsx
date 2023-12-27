@@ -1036,7 +1036,7 @@ const dataHeader = [
       },
       {
         titulo: 'Vístete como Jenna ',
-        img: 'https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/esPE/Images/Jenna_Big_Image_tcm202-1057246.jpg',
+        img: '',
       },
     ],
   },
@@ -1416,7 +1416,7 @@ const dataHeader = [
       // },
       {
         titulo: 'Ropa Comoda para ti',
-        img: 'https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/esPE/Images/Sportswear_Big_Image_tcm202-1057247.jpg',
+        img: '',
       },
     ],
   },
@@ -1926,7 +1926,7 @@ export const NavTop = memo(function NavTop() {
               >
                 <div className="w-full grid grid-flow-col   container">
                   {hoverMenu.map((menulist, index: number) => (
-                    <div key={index} className="p-5 min-h-[410px]">
+                    <div key={index} className="p-5 ">
                       {/* <Link
                         href="/mujer?grid=true"
                         className="border-b-[1px] text-black border-transparent hover:border-b-[1px]  hover:border-black transition ease-out font-semibold text-sm"
