@@ -32,6 +32,7 @@
     "instantsearch.js": "^4.61.0",
     "jotai": "^1.7.3",
     "mercadopago": "^1.5.15",
+    "mongoose": "^8.0.3",
     "next": "^12.2.0",
     "nuka-carousel": "^6.0.3",
     "qs": "^6.11.0",

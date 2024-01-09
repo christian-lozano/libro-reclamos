@@ -61,7 +61,26 @@ const sliderTablet = [
     url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
   },
 ]
+
+
+
+
 export default function CarouselHome() {
+
+  const [posts, setPosts] = useState([])
+
+  async function fetchPosts() {
+      const request = await fetch("/api/tasks")
+      const data = await request.json()
+      setPosts(data)
+  }
+
+useEffect(()=>{
+  fetchPosts()
+}, [])
+ console.log(posts);
+ 
+  
   // console.log(data.attributes.SliderDesktop.data);
   const [indiceSlider, setIndiceSlider] = useState(0)
   useEffect(() => {}, [indiceSlider])
@@ -88,10 +107,10 @@ export default function CarouselHome() {
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {sliderDesktop.map((el, i) => (
+                {posts.map((el, i) => (
                   <div key={i}>
                     <div className="">
-                      <img className="z-dev" src={el.img} alt="" />
+                      <img className="z-dev" src={el.secure_url} alt="" />
                       <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
                         <div className="absolute flex flex-col items-start justify-start  text w-auto bottom-[calc(14vh)]">
                           {/* <h6
@@ -105,7 +124,7 @@ export default function CarouselHome() {
                           >
                             {el.desc}
                           </p> */}
-                          <Link href={el.url}>
+                          <Link href={"#"}>
                             <Button
                               className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
                             >
@@ -317,3 +336,6 @@ export default function CarouselHome() {
     </>
   )
 }
+
+
+

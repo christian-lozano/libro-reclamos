@@ -14,6 +14,9 @@ import {
   SearchPageLayout,
 } from '@/layouts/search-page-layout'
 
+
+
+
 export default function Home(props: SearchPageLayoutProps) {
   const { emptyCart } = useCart()
 
@@ -77,4 +80,3 @@ slider desaparece porque voy a carrito
   )
 }
 
-export const getStaticProps = () => getStaticPropsPage(Home)
