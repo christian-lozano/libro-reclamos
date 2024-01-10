@@ -15,7 +15,7 @@ import { Configure } from 'react-instantsearch-core'
 import { useCart } from 'react-use-cart'
 
 import Logotipo from '@/components/Logotipo/Logo'
-import type { LogoProps } from '@/components/logo/logo'
+
 import { SearchPageLayout } from '@/layouts/search-page-layout'
 import { Tablet, Laptop } from '@/lib/media'
 import { Button } from '@ui/button/button'
@@ -25,11 +25,7 @@ import { Link } from '@ui/link/link'
 import { ProductCardHitShowcase } from '../product-card/product-card-hit'
 import { ProductsShowcase } from '../products-showcase/products-showcase'
 
-const Logo = dynamic<LogoProps>(() =>
-  import(/* webpackChunkName: 'common' */ '@/components/logo/logo').then(
-    (mod) => mod.Logo
-  )
-)
+
 
 // const dataHeader = [
 //   {
@@ -1724,9 +1720,7 @@ export const NavTop = memo(function NavTop() {
 
   //
   const [openCart, setOpen] = useState(false)
-  const [activeHoverNavDesktop, setActiveHoverNavDesktop] = useState<
-    any | null
-  >(null)
+  const [activeHoverNavDesktop, setActiveHoverNavDesktop] = useState()
 
   const openDrawer = () => setOpen(true)
   // desktop nav
@@ -1738,7 +1732,7 @@ export const NavTop = memo(function NavTop() {
     }
   }, [andler])
 
-  const handleHover = (index: number) => {
+  const handleHover = (index) => {
     // setActiveHoverMenuNav(index)
     setActiveHoverNavDesktop(index)
 
@@ -1764,7 +1758,7 @@ export const NavTop = memo(function NavTop() {
                     <Logotipo url={'/'} />
                     <div className=" lg:block h-full 2xl:ml-16">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                        {dataNav.map((el, index: number) => (
+                        {dataNav.map((el, index) => (
                           <Link
                             href={`/${el.secure_url}`}
                             className="h-full flex justify-center items-center "
@@ -1880,7 +1874,7 @@ export const NavTop = memo(function NavTop() {
               >
                 <div className="w-full grid grid-flow-col   container">
                   {hoverMenu &&
-                    hoverMenu.map((menulist, index: number) => (
+                    hoverMenu.map((menulist, index) => (
                       <div key={index} className="p-5 ">
                         {/* <Link
                         href="/mujer?grid=true"
@@ -1935,9 +1929,9 @@ export const NavTop = memo(function NavTop() {
       /* ---------------------------------*/}
       <div className="xl:hidden flex flex-col px-4 py-2 border-b border-neutral-light laptop:mx-20 laptop:px-0 laptop:pt-8 laptop:pb-0 laptop:mb-5">
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
-          <div className="flex items-center xl:hidden">
+          {/* <div className="flex items-center xl:hidden">
             <Logo />
-          </div>
+          </div> */}
 
           <div className="flex gap-48 xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
