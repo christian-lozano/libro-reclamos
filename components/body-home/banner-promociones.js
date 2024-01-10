@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Link } from '../@ui/link/link'
@@ -14,26 +14,72 @@ export function BannerPromociones() {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   })
+
+  const [dataPromoDesktop, setDataPromoDesktop] = useState([])
+  const [dataPromoMobil, setDataPromoMobil] = useState([])
+
+
+async function fetchDataPromoDesktop() {
+  const request = await fetch('/api/home/homePromoDesktop')
+  const data = await request.json()
+  setDataPromoDesktop(data)
+}
+
+
+async function fetchDataPromoMobil() {
+  const request = await fetch('/api/home/homePromoMobil')
+  const data = await request.json()
+  setDataPromoMobil(data)
+}
+useEffect(() => {
+  fetchDataPromoDesktop()
+  fetchDataPromoMobil()
+
+}, [])
+
+console.log(dataPromoDesktop);
+console.log(dataPromoMobil);
+
+
   return (
     <div className="flex items-center">
       <section
         className={`w-full bg-cover bg-center py-8 pb-14 2xl:py-40 xl:py-40 lg:py-30 md:py-20`}
       >
         <div className=" w-full text-center text-white relative">
-          {isDesktopOrLaptop ? (
-            <img
-              src={imgSection.imgXl}
-              className="w-full h-full hidden md:hidden  lg:block laptop:block 2xl:block"
-              alt=""
-            />
-          ) : (
-            <img
-              src={imgSection.imgMd}
-              className="w-full h-full block md:block laptop:hidden laptop:hidden laptop:hidden"
-              alt=""
-            />
-          )}
 
+          {isDesktopOrLaptop && 
+         <>
+                {dataPromoDesktop.map(el=>(
+
+                      <img
+                        src={el.secure_url}
+                        className="w-full h-full hidden md:hidden  lg:block laptop:block 2xl:block"
+                        alt=""
+                      />
+
+                ))}
+         </>
+          }
+
+          {
+
+            !isDesktopOrLaptop && 
+            <>
+            <>
+   
+                    {dataPromoMobil.map(el=>(
+
+                        <img
+                          src={el.secure_url}
+                          className="w-full h-full "
+                          alt=""
+                        />
+
+                      ))} 
+              </>
+            </>
+          }
           {/* desktop */}
 
           {isDesktopOrLaptop ? (
@@ -81,12 +127,17 @@ export function BannerPromociones() {
               </div>
             </div>
           ) : (
-            <div className=" top-0 w-full h-full ">
+
+       <>
+
+       {
+              dataPromoMobil.map(el=>(
+                <div className=" top-0 w-full h-full ">
               <div className=" h-full w-full flex-col  flex justify-center items-center ">
                 <div className="w-full flex flex-col items-center ">
                   <div className=" ">
                     <h1 className="xl:text-4xl text-black text-xl md:text-3xl 2xl:text-6xl font-bold text-left py-5 ">
-                      FOREVER. CLASSIC.
+                     {el.title_banner}
                     </h1>
                   </div>
                   <div className="w-full flex justify-center  ">
@@ -140,6 +191,11 @@ export function BannerPromociones() {
                 </div>
               </div>
             </div>
+              ))
+            }
+
+       </>
+           
           )}
           {/* mobil */}
         </div>

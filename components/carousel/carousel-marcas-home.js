@@ -1,5 +1,5 @@
 import Carousel from 'nuka-carousel'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Link } from '../@ui/link/link'
 
@@ -36,6 +36,15 @@ const marcas = [
 ]
 export function CarouselMarcasHome() {
   const [indiceSlider, setIndiceSlider] = useState(0)
+  const [dataSliderMarcas, setDataSliderMarcas] = useState([])
+  async function fetchDataPromoMobil() {
+    const request = await fetch('/api/home/homeSliderMarcas')
+    const data = await request.json()
+    setDataSliderMarcas(data)
+  }
+  useEffect(() => {
+    fetchDataPromoMobil()
+  }, [])
 
   return (
     <div className="my-8 ">
@@ -67,20 +76,20 @@ export function CarouselMarcasHome() {
           afterSlide={(i) => setIndiceSlider(i)}
           // slideCount={indiceSlider}
         >
-          {marcas.map((el, i) => (
+          {dataSliderMarcas.map((el) => (
             <Link
-              key={i}
-              href={el.url}
+              key={el._id}
+              href={el.button_url}
               className="border-indigo-600 flex justify-center"
             >
               <div className="h-24 w-24 flex items-center justify-center border ">
-                <img src={el.value} alt="" />
+                <img src={el.secure_url} alt="" />
               </div>
             </Link>
           ))}
         </Carousel>
         <div className="flex w-full mt-5 ">
-          {marcas.map((el, i) => (
+          {dataSliderMarcas.map((el, i) => (
             <div
               key={i}
               // onClick={() => setIndiceSlider(i)}

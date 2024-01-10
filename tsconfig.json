@@ -20,6 +20,6 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js", "components/product/product-detail.tsx", "components/email-template-send/EmailTemplate.tsx", "pages/exito/index.tsx", "components/recomendacion-product/recomendacion-product.js", "components/panel/SearchBox.tsx", "components/carousel/carousel-home.js", "components/body-home/categorias-genero.js", "components/nav/nav-top.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/nav/nav-home.tsx", "components/multilevel-sidebar/multilevel-sidebar.component.jsx", "components/dialog/dialog.js", "components/product/product-detail.tsx", "components/email-template-send/EmailTemplate.tsx", "pages/exito/index.tsx", "components/recomendacion-product/recomendacion-product.js", "components/panel/SearchBox.tsx", "components/carousel/carousel-home.js", "components/body-home/categorias-genero.js", "components/nav/nav-top.js", "components/body-home/banner-promociones.js", "components/carousel/carousel-marcas-home.js"],
   "exclude": ["node_modules"]
 }
