@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Button } from '../@ui/button/button'
+import Cargando from '../Cargando/Cargando'
 
 
 
@@ -105,7 +106,7 @@ useEffect(()=>{
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
 
 
-  if (carouselDesktop.length === 0 ) return  <div>Cargando..</div>
+  if (carouselDesktop.length === 0 ) return  <Cargando></Cargando>
   if (!carouselDesktop && !isTablet && carouselMobil.length === 0 ) return   <div>Cargando..</div>
   if ( isTablet && carouselTablet.length === 0 ) return   <div>Cargando..</div>
 
