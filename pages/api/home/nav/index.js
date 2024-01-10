@@ -1,5 +1,5 @@
-import { dbConnect } from '../../../utils/mongoose'
-import Taks from '../../../models/sliderDesktop'
+import { dbConnect } from '../../../../utils/mongoose'
+import Taks from '../../../../models/home/nav'
 dbConnect()
 export default async function handler(req, res) {
   const { method, body } = req

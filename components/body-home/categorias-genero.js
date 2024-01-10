@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Button } from '../@ui/button/button'
 import { Link } from '../@ui/link/link'
@@ -26,7 +26,21 @@ const DataCardBg = [
   },
 ]
 
+
+
 export function CategoriasGenero() {
+
+  const [dataCategorias, setDataCategorias] = useState([])
+
+async function fetchDataCategorias() {
+  const request = await fetch('/api/home/homeCategorias')
+  const data = await request.json()
+  setDataCategorias(data)
+}
+useEffect(() => {
+  fetchDataCategorias()
+}, [])
+console.log(dataCategorias);
   return (
     <div className=" flex justify-center w-full h-auto items-center z-20">
       <div className=" flex flex-col items-center justify-center w-full">
@@ -34,18 +48,18 @@ export function CategoriasGenero() {
           Nuestras Categorías
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-y-10 md:grid-cols-2 justify-items-center items-center gap-x-5 ">
-          {DataCardBg.map((el, index) => (
+          {dataCategorias.map((el) => (
             <Link
-              key={index}
-              href={el.url}
+              key={el._id}
+              href={el.button_url}
               className="laptop:rounded-xl  text-center"
             >
-              <img src={el.imgCategory} alt="" />
+              <img src={el.secure_url} alt="" />
               <div className="flex justify-center w-full">
                 <Button
                   className={`bg-black flex justify-around items-center laptop:text-lg  text-sm  font-medium border border-black shadow-lg text-black mt-5  py-1 px-3 rounded-sm uppercase`}
                 >
-                  <span className="mr-1 text-white"> {el.button}</span>
+                  <span className="mr-1 text-white"> {el.button_title}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

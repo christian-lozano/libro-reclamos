@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Button } from '../@ui/button/button'
+import  Loading  from '../loading/Loading'
+
 
 const sliderDesktop = [
   // {
@@ -67,25 +69,45 @@ const sliderTablet = [
 
 export default function CarouselHome() {
 
-  const [posts, setPosts] = useState([])
+  const [carouselDesktop, setCarouselDesktop] = useState([])
+  const [carouselMobil, setCarouselMobil] = useState([])
+  const [carouselTablet, setCarouselTablet] = useState([])
 
-  async function fetchPosts() {
-      const request = await fetch("/api/tasks")
+
+  async function fetchCarouselDesktop() {
+      const request = await fetch("/api/home/sliderDesktop")
       const data = await request.json()
-      setPosts(data)
+      setCarouselDesktop(data)
   }
 
+  async function fetchCarouselMobil() {
+    const request = await fetch("/api/home/sliderMobil")
+    const data = await request.json()
+    setCarouselMobil(data)
+}
+
+async function fetchCarouselTablet() {
+  const request = await fetch("/api/home/sliderTablet")
+  const data = await request.json()
+  setCarouselTablet(data)
+}
 useEffect(()=>{
-  fetchPosts()
+  fetchCarouselDesktop()
+  fetchCarouselMobil()
+  fetchCarouselTablet()
 }, [])
- console.log(posts);
- 
-  
+
+
   // console.log(data.attributes.SliderDesktop.data);
   const [indiceSlider, setIndiceSlider] = useState(0)
   useEffect(() => {}, [indiceSlider])
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 950 })
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
+
+
+  if (carouselDesktop.length === 0 ) return  <Loading/>
+  if (!carouselDesktop && !isTablet && carouselMobil.length === 0 ) return  <Loading/>
+  if ( isTablet && carouselTablet.length === 0 ) return  <Loading/>
 
   return (
     <>
@@ -107,8 +129,8 @@ useEffect(()=>{
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {posts.map((el, i) => (
-                  <div key={i}>
+                {carouselDesktop.map((el) => (
+                  <div key={el._id}>
                     <div className="">
                       <img className="z-dev" src={el.secure_url} alt="" />
                       <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
@@ -124,7 +146,7 @@ useEffect(()=>{
                           >
                             {el.desc}
                           </p> */}
-                          <Link href={"#"}>
+                          <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
                             <Button
                               className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
                             >
@@ -152,7 +174,7 @@ useEffect(()=>{
                 ))}
               </Carousel>
               <div className="flex w-full mt-5 ">
-                {sliderDesktop.map((el, i) => (
+                {carouselDesktop.map((el, i) => (
                   <div
                     key={i}
                     // onClick={() => setIndiceSlider(i)}
@@ -190,10 +212,10 @@ useEffect(()=>{
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {sliderTablet.map((el, i) => (
-                  <div key={i} className="mt-12">
+                {carouselTablet.map((el, i) => (
+                  <div key={el._id} className="mt-12">
                     <div className="">
-                      <img className="z-dev" src={el.img} alt="" />
+                      <img className="z-dev" src={el.secure_url} alt="" />
                       <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
                         <div className="absolute flex flex-col items-center justify-center  text w-auto bottom-[calc(2vw)]">
                           {/* <h6
@@ -207,25 +229,28 @@ useEffect(()=>{
                           >
                             {el.desc}
                           </p> */}
-                          <Button
-                            className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
-                          >
-                            Comprar Ahora
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="w-5 h-5"
+                          <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
+                            <Button
+                              className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                              />
-                            </svg>
-                          </Button>
+                              Comprar Ahora
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-5 h-5"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                                />
+                              </svg>
+                            </Button>
+
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -234,7 +259,7 @@ useEffect(()=>{
               </Carousel>
 
               <div className="flex w-full mt-0">
-                {sliderMobil.map((el, i) => (
+                {carouselTablet.map((el, i) => (
                   <div
                     key={i}
                     // onClick={() => setIndiceSlider(i)}
@@ -273,10 +298,10 @@ useEffect(()=>{
               afterSlide={(i) => setIndiceSlider(i)}
               // slideCount={indiceSlider}
             >
-              {sliderMobil.map((el, i) => (
-                <div key={i} className="mt-12">
+              {carouselMobil.map((el) => (
+                <div key={el._id} className="mt-12">
                   <div className="">
-                    <img className="z-dev" src={el.img} alt="" />
+                    <img className="z-dev" src={el.secure_url} alt="" />
                     <div className="relative text-2xl text-black flex justify-center top-0 bottom-0 w-full h-full z-50">
                       <div className="absolute flex flex-col items-center justify-end  text w-auto bottom-[calc(7vw)]">
                         {/* <h6
@@ -288,6 +313,7 @@ useEffect(()=>{
                         <p className={`text-center text-${el.color} text-base`}>
                           {el.desc}
                         </p> */}
+                        <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
                         <Button
                           className={`bg-white  flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black w-48 py-1 px-2 rounded-sm uppercase`}
                         >
@@ -307,6 +333,8 @@ useEffect(()=>{
                             />
                           </svg>
                         </Button>
+
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -314,7 +342,7 @@ useEffect(()=>{
               ))}
             </Carousel>
             <div className="flex w-full mt-0">
-              {sliderMobil.map((el, i) => (
+              {carouselMobil.map((el, i) => (
                 <div
                   key={i}
                   // onClick={() => setIndiceSlider(i)}
