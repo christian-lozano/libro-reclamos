@@ -106,7 +106,7 @@ useEffect(()=>{
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
 
 
-  if (carouselDesktop.length === 1 ) return  <Cargando></Cargando>
+  if (carouselDesktop.length === 0 ) return  <Cargando></Cargando>
   if (!carouselDesktop && !isTablet && carouselMobil.length === 0 ) return   <div>Cargando..</div>
   if ( isTablet && carouselTablet.length === 0 ) return   <div>Cargando..</div>
 
