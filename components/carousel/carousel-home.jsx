@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Button } from '../@ui/button/button'
-import  Loading  from '../loading/Loading'
+import  Loading  from '../loading/loading'
 
 
 const sliderDesktop = [
