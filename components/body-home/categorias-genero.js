@@ -40,7 +40,7 @@ async function fetchDataCategorias() {
 useEffect(() => {
   fetchDataCategorias()
 }, [])
-console.log(dataCategorias);
+
   return (
     <div className=" flex justify-center w-full h-auto items-center z-20">
       <div className=" flex flex-col items-center justify-center w-full">

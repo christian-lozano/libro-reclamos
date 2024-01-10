@@ -40,7 +40,7 @@ async function importAction(
     }
   }
 
-  console.log()
+
 
   // Read the data files
   const [
@@ -151,7 +151,7 @@ async function importAction(
     productsQuerySuggestionsFormatted
   )
 
-  console.log()
+
   console.info(bold().green('✔ Datasets imported successfully'))
 }
 

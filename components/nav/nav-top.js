@@ -1760,7 +1760,7 @@ export const NavTop = memo(function NavTop() {
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
                         {dataNav.map((el, index) => (
                           <Link
-                            href={`/${el.secure_url}`}
+                            href={`/${el.url}`}
                             className="h-full flex justify-center items-center "
                             key={el._id}
                             onClick={() => setAndler(false)}
@@ -1929,9 +1929,7 @@ export const NavTop = memo(function NavTop() {
       /* ---------------------------------*/}
       <div className="xl:hidden flex flex-col px-4 py-2 border-b border-neutral-light laptop:mx-20 laptop:px-0 laptop:pt-8 laptop:pb-0 laptop:mb-5">
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
-          {/* <div className="flex items-center xl:hidden">
-            <Logo />
-          </div> */}
+    
 
           <div className="flex gap-48 xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
