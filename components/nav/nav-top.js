@@ -1692,7 +1692,7 @@ const dataHeader = [
   // },
 ]
 
-export const NavTop = memo(function NavTop() {
+export const NavTop = memo(function NavTop({pageProps}) {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
   const { items, removeItem, cartTotal, totalItems, emptyCart, isEmpty } =
@@ -1702,16 +1702,7 @@ export const NavTop = memo(function NavTop() {
     setDomLoaded(true)
   }, [])
 
-  // data nav desktop
-  const [dataNav, setDataNav] = useState([])
-  async function fetchNav() {
-    const request = await fetch('/api/home/nav')
-    const data = await request.json()
-    setDataNav(data)
-  }
-  useEffect(() => {
-    fetchNav()
-  }, [])
+
 
   // ubicanos
   const [openUbi, setOpenUbicanos] = useState(false)
@@ -1755,10 +1746,10 @@ export const NavTop = memo(function NavTop() {
                 <div className="flex justify-around   w-full">
                   {/* logo nav */}
                   <div className="flex  items-center xl:justify-around 2xl:justify-between text-blue-gray-900 ">
-                    <Logotipo url={'/'} />
+                    <Logotipo pageProps={pageProps} url={'/'} />
                     <div className=" lg:block h-full 2xl:ml-16">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                        {dataNav.map((el, index) => (
+                        {pageProps.homeNav.map((el, index) => (
                           <Link
                             href={`/${el.url}`}
                             className="h-full flex justify-center items-center "
@@ -1949,7 +1940,7 @@ export const NavTop = memo(function NavTop() {
                 </Button>
               </Link>
             </div>
-            <Logotipo url={"/"}></Logotipo>
+            <Logotipo pageProps={pageProps} url={'/'} />
             <div className="flex items-center gap-6 laptop:gap-3 ">
            
               <Tablet>

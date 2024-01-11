@@ -48,7 +48,7 @@ slider desaparece porque voy a carrito
         overlay={true}
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       /> */}
-      <CarouselHome posts={props} />
+      <CarouselHome props={props} />
       <CategoriasGenero />
       <ProductsShowcase
         title="Lo mas Nuevo"
@@ -78,13 +78,19 @@ slider desaparece porque voy a carrito
 }
 
 export const getStaticProps = async () => {
-  const request = await fetch(
+  const resSliderDesktop = await fetch(
     'https://www.fritzsport.pe/api/home/sliderDesktop'
   )
-  const posts = await request.json()
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+
+  const homeSliderDesktop = await resSliderDesktop.json()
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
+
   getStaticPropsPage(Home)
   return {
-    props: { posts },
+    props: { homeSliderDesktop, homeNav, homeLogo },
     revalidate: 60, // In seconds
   }
 }

@@ -4,9 +4,11 @@ import { useState } from 'react'
 import { Nav } from '@/components/nav/nav'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
-export type HeaderProps = Record<string, unknown>
 
-export function Header() {
+
+export function Header({ pageProps }) {
+
+
   const [isSticky, setIsSticky] = useState(false)
 
   const { setObservedNode } = useIntersectionObserver({
@@ -24,7 +26,7 @@ export function Header() {
       )}
       ref={setObservedNode}
     >
-      <Nav />
+      <Nav pageProps={pageProps} />
     </header>
   )
 }
