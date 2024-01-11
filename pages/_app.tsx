@@ -21,7 +21,6 @@ import { gaTrackingId, isDev, isProd } from '@/utils/env'
 import { scrollToTop } from '@/utils/scrollToTop'
 import '@/styles/_index.css'
 import IconWhatapp from '@/components/icon-whatsapp/icon-whatapp'
-import { Nav } from '@/components/nav/nav'
 
 export const Header = dynamic<HeaderProps>(() =>
   import(/* webpackChunkName: 'common' */ '@/components/header/header').then(
@@ -74,8 +73,8 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Banner size="xs-large" className="z-header bg-black" fullWidth={true}>
           20% de Descuento! Solo por este mes*
         </Banner>
-        <Header className="hidden" />
-        <Nav pageProps={pageProps} />
+        <Header pageProps={pageProps} />
+        {/* <Nav pageProps={pageProps} /> */}
 
         <AnimatePresence exitBeforeEnter={true} onExitComplete={scrollToTop}>
           <Component {...pageProps} key={router.route} />
