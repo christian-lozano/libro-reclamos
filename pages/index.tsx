@@ -48,7 +48,7 @@ slider desaparece porque voy a carrito
         overlay={true}
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       /> */}
-      <CarouselHome />
+      <CarouselHome posts={props} />
       <CategoriasGenero />
       <ProductsShowcase
         title="Lo mas Nuevo"
@@ -76,4 +76,14 @@ slider desaparece porque voy a carrito
     </SearchPageLayout>
   )
 }
-export const getStaticProps = () => getStaticPropsPage(Home)
+
+export const getStaticProps = async () => {
+  const API_URL = 'http://localhost:3000/api/home/sliderDesktop'
+  const request = await fetch(API_URL)
+  const posts = await request.json()
+  getStaticPropsPage(Home)
+  return {
+    props: { posts },
+    revalidate: 60, // In seconds
+  }
+}

@@ -27,8 +27,8 @@ const DataCardBg = [
 ]
 
 
-
 export function CategoriasGenero() {
+  
 
   const [dataCategorias, setDataCategorias] = useState([])
 

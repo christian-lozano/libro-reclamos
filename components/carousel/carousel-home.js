@@ -68,7 +68,7 @@ const sliderTablet = [
 
 
 
-export default function CarouselHome() {
+export default function CarouselHome({posts}) {
 
   const [carouselDesktop, setCarouselDesktop] = useState([])
   const [carouselMobil, setCarouselMobil] = useState([])
@@ -106,7 +106,7 @@ useEffect(()=>{
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
 
 
-  if (carouselDesktop.length === 0 ) return  <Cargando></Cargando>
+  if (posts.length === 0 ) return  <Cargando></Cargando>
   if (!carouselDesktop && !isTablet && carouselMobil.length === 0 ) return   <div>Cargando..</div>
   if ( isTablet && carouselTablet.length === 0 ) return   <div>Cargando..</div>
 
@@ -130,7 +130,7 @@ useEffect(()=>{
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {carouselDesktop.map((el) => (
+                {posts.posts.map((el) => (
                   <div key={el._id}>
                     <div className="">
                       <img className="z-dev" src={el.secure_url} alt="" />
