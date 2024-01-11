@@ -78,8 +78,9 @@ slider desaparece porque voy a carrito
 }
 
 export const getStaticProps = async () => {
-  const API_URL = 'http://localhost:3000/api/home/sliderDesktop'
-  const request = await fetch(API_URL)
+  const request = await fetch(
+    'https://www.fritzsport.pe/api/home/sliderDesktop'
+  )
   const posts = await request.json()
   getStaticPropsPage(Home)
   return {
