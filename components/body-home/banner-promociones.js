@@ -37,8 +37,7 @@ useEffect(() => {
 
 }, [])
 
-console.log(dataPromoDesktop);
-console.log(dataPromoMobil);
+
 
 
   return (

@@ -1931,7 +1931,7 @@ export const NavTop = memo(function NavTop() {
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
     
 
-          <div className="flex gap-48 xl:hidden">
+          <div className="flex justify-around w-full gap-48 xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
               <Link
                 href="/store-locator"
@@ -1949,8 +1949,9 @@ export const NavTop = memo(function NavTop() {
                 </Button>
               </Link>
             </div>
-
+            <Logotipo url={"/"}></Logotipo>
             <div className="flex items-center gap-6 laptop:gap-3 ">
+           
               <Tablet>
                 <Button
                   title="Ubicanos"

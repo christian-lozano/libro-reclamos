@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
 
     try {
-        console.log(body)
+        // console.log(body)
         const newTask = new Taks(body)
         const saveTasks = await newTask.save()
         return res.status(201).json(saveTasks)
