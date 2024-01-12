@@ -73,7 +73,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Banner size="xs-large" className="z-header bg-black" fullWidth={true}>
           20% de Descuento! Solo por este mes*
         </Banner>
-        <Header pageProps={pageProps} />
+        <Header />
 
         <AnimatePresence exitBeforeEnter={true} onExitComplete={scrollToTop}>
           <Component {...pageProps} key={router.route} />
