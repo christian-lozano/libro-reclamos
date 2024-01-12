@@ -1,5 +1,5 @@
 import { dbConnect } from '../../../../utils/mongoose'
-import Taks from '../../../../models/home/homeCategorias'
+import Taks from '../../../../models/mujer/portadaMujerLoMasNuevo'
 dbConnect()
 export default async function handler(req, res) {
   const { method, body } = req
@@ -13,6 +13,8 @@ export default async function handler(req, res) {
       }
 
     case 'POST':
+
+
     try {
         // console.log(body)
         const newTask = new Taks(body)

@@ -43,15 +43,29 @@ export const getStaticProps = async () => {
   const resPortadaMobil = await fetch(
     'https://www.fritzsport.pe/api/mujer/MujerPortadaMobil'
   )
+  const resLoMasNuevo = await fetch(
+    'https://www.fritzsport.pe/api/mujer/mujerLoMasNuevo'
+  )
+  const resDestacado = await fetch(
+    'https://www.fritzsport.pe/api/mujer/mujerEstilosDestacados'
+  )
+  const resSliderMarcas = await fetch(
+    'https://www.fritzsport.pe/api/home/homeSliderMarcas'
+  )
 
   const MujerPortadaDesktop = await resPortadaDesktop.json()
   const MujerPortadaMobil = await resPortadaMobil.json()
-
+  const MujerLoMasNuevo = await resLoMasNuevo.json()
+  const MujerDestacado = await resDestacado.json()
+  const homeSliderMarcas = await resSliderMarcas.json()
   getStaticPropsPage(Home)
   return {
     props: {
       MujerPortadaDesktop,
       MujerPortadaMobil,
+      MujerLoMasNuevo,
+      MujerDestacado,
+      homeSliderMarcas,
     },
     // MujerPortadaDesktop,
     revalidate: 80, // In seconds

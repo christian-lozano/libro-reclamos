@@ -5,15 +5,15 @@ import { useMediaQuery } from 'react-responsive'
 
 const data = {
     dataPageHombre: {
-      page: 'Mujer',
+      page: 'Hombre',
       nav: [
         {
           title: 'Calzado',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas',
+          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
         },
         {
           title: 'Ropa',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20ropa',
+          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
         },
         {
           title: 'Accesorios',
@@ -161,7 +161,7 @@ export default function PaginaMujer({props}) {
 
             isDesktopOrLaptop  && (
                 <>
-                     { props.MujerPortadaDesktop.map(el=>(
+                     { props.HombrePortadaDesktop.map(el=>(
                                 <img
                                     src={el.secure_url}
                                     alt=""
@@ -179,7 +179,7 @@ export default function PaginaMujer({props}) {
 
             !isDesktopOrLaptop  && (
                 <>
-                    { props.MujerPortadaMobil.map(el=>(
+                    { props.HombrePortadaMobil.map(el=>(
                                 <img
                                     src={el.secure_url}
                                     alt=""
@@ -232,7 +232,7 @@ export default function PaginaMujer({props}) {
           {/* ------------ */}
 
           <div className="grid gap-y-4 grid-cols-1 md:grid-cols-2 md:gap-x-5 2xl:container  ">
-            {props.MujerLoMasNuevo.map((el, i) => (
+            {props.HombreLoMasNuevo.map((el, i) => (
               <Link href={el.button_url} key={i}>
                 <figure>
                   <div className="h-full cursor-pointer w-full relative ">
@@ -265,7 +265,7 @@ export default function PaginaMujer({props}) {
             {data.dataPageHombre.caracteristicasTitle}
           </h2>
           <div className="grid  grid-cols-1 md:grid-cols-2   gap-2 h-full  container">
-            {props.MujerDestacado.map((el, i) => (
+            {props.HombreDestacado.map((el, i) => (
               <Link href={el.button_url} key={i}>
                 <figure className="cursor-pointer">
                   <div className="h-full w-full relative ">
