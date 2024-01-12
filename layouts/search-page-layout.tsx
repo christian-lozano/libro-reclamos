@@ -24,6 +24,8 @@ export type SearchPageLayoutProps = BasicPageLayoutProps & {
   resultsState?: any
   searchState?: any
   userToken?: string
+  MujerPortadaDesktop?:any
+
 }
 
 function SearchPageLayoutComponent({

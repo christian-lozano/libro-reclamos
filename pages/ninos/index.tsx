@@ -4,7 +4,10 @@ import { Configure } from 'react-instantsearch-dom'
 
 import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
-import { SearchPageLayout } from '@/layouts/search-page-layout'
+import {
+  SearchPageLayout,
+  getStaticPropsPage,
+} from '@/layouts/search-page-layout'
 
 const data = {
   dataPageNinos: {
@@ -315,7 +318,7 @@ export const getStaticProps = async () => {
   const homePromoMobil = await resPromoMobil.json()
 
   const homeSliderMarcas = await resSliderMarcas.json()
-
+  getStaticPropsPage(Home)
   return {
     props: {
       homeSliderDesktop,

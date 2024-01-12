@@ -13,7 +13,7 @@ export function BannerPromociones({props}) {
 
 
 
-  if (!props.homePromoMobil || props.homePromoDesktop) return <div>Cargando</div>
+  if (!props.homePromoMobil || !props.homePromoDesktop) return <div>Cargando</div>
   return (
     <div className="flex items-center">
       <section
