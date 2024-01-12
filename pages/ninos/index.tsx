@@ -275,7 +275,7 @@ export default function Home(props: SearchPageLayoutProps) {
         </section>
       </main>
 
-      <CarouselMarcasHome />
+      <CarouselMarcasHome props={props} />
     </SearchPageLayout>
   )
 }
