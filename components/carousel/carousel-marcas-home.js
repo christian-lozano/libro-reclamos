@@ -10,6 +10,8 @@ export function CarouselMarcasHome({props}) {
   const [indiceSlider, setIndiceSlider] = useState(0)
 
 
+  if (!props.homeSliderMarcas) return <div>Cargando</div> 
+
   return (
     <div className="my-8 ">
       <h4 className=" my-5 text-center">Nuestras Marcas</h4>
