@@ -1,6 +1,7 @@
 import { Configure } from 'react-instantsearch-dom'
 
 import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
+import PaginaHombre from '@/components/pagina/paginaHombre'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -28,7 +29,7 @@ export default function Home(props: SearchPageLayoutProps) {
         overlay={true}
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       /> */}
-      {/* <PaginaHombre props={props} /> */}
+      <PaginaHombre props={props} />
 
       <CarouselMarcasHome props={props} />
     </SearchPageLayout>
@@ -36,34 +37,34 @@ export default function Home(props: SearchPageLayoutProps) {
 }
 export const getStaticProps = async () => {
   const resPortadaDesktop = await fetch(
-    'https://www.fritzsport.pe/api/mujer/mujerPortadaDesktop'
+    'https://www.fritzsport.pe/api/hombre/hombrePortadaDesktop'
   )
 
   const resPortadaMobil = await fetch(
-    'https://www.fritzsport.pe/api/mujer/MujerPortadaMobil'
+    'https://www.fritzsport.pe/api/hombre/hombrePortadaMobil'
   )
   const resLoMasNuevo = await fetch(
-    'https://www.fritzsport.pe/api/mujer/mujerLoMasNuevo'
+    'https://www.fritzsport.pe/api/hombre/hombreLoMasNuevo'
   )
   const resDestacado = await fetch(
-    'https://www.fritzsport.pe/api/mujer/mujerEstilosDestacados'
+    'https://www.fritzsport.pe/api/hombre/hombreEstilosDestacados'
   )
   const resSliderMarcas = await fetch(
     'https://www.fritzsport.pe/api/home/homeSliderMarcas'
   )
 
-  const MujerPortadaDesktop = await resPortadaDesktop.json()
-  const MujerPortadaMobil = await resPortadaMobil.json()
-  const MujerLoMasNuevo = await resLoMasNuevo.json()
-  const MujerDestacado = await resDestacado.json()
+  const HombrePortadaDesktop = await resPortadaDesktop.json()
+  const HombrePortadaMobil = await resPortadaMobil.json()
+  const HombreLoMasNuevo = await resLoMasNuevo.json()
+  const HombreDestacado = await resDestacado.json()
   const homeSliderMarcas = await resSliderMarcas.json()
   getStaticPropsPage(Home)
   return {
     props: {
-      MujerPortadaDesktop,
-      MujerPortadaMobil,
-      MujerLoMasNuevo,
-      MujerDestacado,
+      HombrePortadaDesktop,
+      HombrePortadaMobil,
+      HombreLoMasNuevo,
+      HombreDestacado,
       homeSliderMarcas,
     },
     // MujerPortadaDesktop,

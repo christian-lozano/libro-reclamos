@@ -34,5 +34,5 @@ const portadaMujerDesktopSchema = new Schema({
   timestamps:true
 })
 
-const PortadaMujerDesktop = models.mujer_portada_desktop || mongoose.model("hombre_portada_desktop", portadaMujerDesktopSchema)
+const PortadaMujerDesktop = models.hombre_portada_desktop || mongoose.model("hombre_portada_desktop", portadaMujerDesktopSchema)
 export default PortadaMujerDesktop

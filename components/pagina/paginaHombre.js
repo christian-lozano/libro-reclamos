@@ -96,8 +96,8 @@ const data = {
   }
 
 
-export default function PaginaMujer({props}) {
-
+export default function PaginaHombre({props}) {
+console.log(props);
     const isDesktopOrLaptop = useMediaQuery({ minWidth: 950 })
 
 
@@ -114,7 +114,7 @@ export default function PaginaMujer({props}) {
         window.removeEventListener('scroll', handleNavigation)
       }
     }, [handleNavigation])
-  if(!props.MujerPortadaDesktop || !props.MujerLoMasNuevo) return <div>Cargando..</div>
+  if(!props.HombrePortadaDesktop || !props.HombreLoMasNuevo) return <div>Cargando..</div>
 
   // MujerLoMasNuevo,
   // MujerDestacado,
@@ -233,7 +233,7 @@ export default function PaginaMujer({props}) {
 
           <div className="grid gap-y-4 grid-cols-1 md:grid-cols-2 md:gap-x-5 2xl:container  ">
             {props.HombreLoMasNuevo.map((el, i) => (
-              <Link href={el.button_url} key={i}>
+              <Link href={el.button_title} key={i}>
                 <figure>
                   <div className="h-full cursor-pointer w-full relative ">
                     <div>
@@ -244,7 +244,7 @@ export default function PaginaMujer({props}) {
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
                           <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
-                            {el.button_title}
+                            {el.button_url}
                           </h3>
                         </div>
                         <span className="bg-white text-black" />

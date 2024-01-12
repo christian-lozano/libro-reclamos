@@ -34,7 +34,7 @@ const portadaMujerMobilSchema = new Schema({
   timestamps:true
 })
 
-const PortadaMujerMobil = models.mujer_portada_mobil || mongoose.model("hombre_portada_mobil", portadaMujerMobilSchema)
+const PortadaMujerMobil = models.hombre_portada_mobil || mongoose.model("hombre_portada_mobil", portadaMujerMobilSchema)
 export default PortadaMujerMobil
 
 

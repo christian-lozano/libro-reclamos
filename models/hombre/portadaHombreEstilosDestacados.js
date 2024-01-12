@@ -13,5 +13,5 @@ const sliderMarcasSchema = new Schema({
   timestamps:true
 })
 
-const SliderMarcas = models.mujer_destacado || mongoose.model("hombre_destacado", sliderMarcasSchema)
+const SliderMarcas = models.hombre_destacado || mongoose.model("hombre_destacado", sliderMarcasSchema)
 export default SliderMarcas
