@@ -115,7 +115,7 @@ export default function PaginaMujer({props}) {
         window.removeEventListener('scroll', handleNavigation)
       }
     }, [handleNavigation])
-  if(!props) return <div>Cargando..</div>
+  if(!props.MujerPortadaDesktop) return <div>Cargando..</div>
   return (
     <div>
           <nav
