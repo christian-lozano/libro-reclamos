@@ -6,7 +6,7 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 
 
-export function Header({ pageProps }) {
+export function Header() {
 
 
   const [isSticky, setIsSticky] = useState(false)
@@ -26,7 +26,7 @@ export function Header({ pageProps }) {
       )}
       ref={setObservedNode}
     >
-      <Nav pageProps={pageProps} />
+      <Nav/>
     </header>
   )
 }

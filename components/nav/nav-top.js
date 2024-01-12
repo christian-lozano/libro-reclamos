@@ -1692,7 +1692,7 @@ const dataHeader = [
   // },
 ]
 
-export const NavTop = memo(function NavTop({pageProps}) {
+export const NavTop = memo(function NavTop() {
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
   const { items, removeItem, cartTotal, totalItems, emptyCart, isEmpty } =
@@ -1702,7 +1702,16 @@ export const NavTop = memo(function NavTop({pageProps}) {
     setDomLoaded(true)
   }, [])
 
-
+  // data nav desktop
+  const [dataNav, setDataNav] = useState([])
+  async function fetchNav() {
+    const request = await fetch('/api/home/nav')
+    const data = await request.json()
+    setDataNav(data)
+  }
+  useEffect(() => {
+    fetchNav()
+  }, [])
 
   // ubicanos
   const [openUbi, setOpenUbicanos] = useState(false)
@@ -1746,10 +1755,10 @@ export const NavTop = memo(function NavTop({pageProps}) {
                 <div className="flex justify-around   w-full">
                   {/* logo nav */}
                   <div className="flex  items-center xl:justify-around 2xl:justify-between text-blue-gray-900 ">
-                    <Logotipo pageProps={pageProps} url={'/'} />
+                    <Logotipo url={'/'} />
                     <div className=" lg:block h-full 2xl:ml-16">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                        {pageProps.homeNav.map((el, index) => (
+                        {dataNav.map((el, index) => (
                           <Link
                             href={`/${el.url}`}
                             className="h-full flex justify-center items-center "
@@ -1922,7 +1931,7 @@ export const NavTop = memo(function NavTop({pageProps}) {
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
     
 
-          <div className="flex justify-around w-full gap-48 xl:hidden">
+          <div className="flex justify-around gap-48 xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
               <Link
                 href="/store-locator"
@@ -1940,9 +1949,8 @@ export const NavTop = memo(function NavTop({pageProps}) {
                 </Button>
               </Link>
             </div>
-            <Logotipo pageProps={pageProps} url={'/'} />
+            <Logotipo url={'/'} />                      
             <div className="flex items-center gap-6 laptop:gap-3 ">
-           
               <Tablet>
                 <Button
                   title="Ubicanos"
