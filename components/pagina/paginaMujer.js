@@ -177,7 +177,7 @@ export default function PaginaMujer({props}) {
 
             !isDesktopOrLaptop  && (
                 <>
-                    { props.MujerPortadaDesktop.map(el=>(
+                    { props.MujerPortadaMobil.map(el=>(
                                 <img
                                     src={el.secure_url}
                                     alt=""
