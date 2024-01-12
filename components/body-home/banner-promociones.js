@@ -1,45 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Link } from '../@ui/link/link'
 
-const imgSection = {
-  imgMd:
-    'https://res.cloudinary.com/da868wsih/image/upload/v1702571772/fritz-ecommerce/banner-promociones-home/Group_24_1_luntk3.jpg',
-  imgXl:
-    'https://res.cloudinary.com/da868wsih/image/upload/v1702571626/fritz-ecommerce/banner-promociones-home/Group_24_v5mlsr.jpg',
-}
 
-export function BannerPromociones() {
+export function BannerPromociones({props}) {
+    
+
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   })
 
-  const [dataPromoDesktop, setDataPromoDesktop] = useState([])
-  const [dataPromoMobil, setDataPromoMobil] = useState([])
 
 
-async function fetchDataPromoDesktop() {
-  const request = await fetch('/api/home/homePromoDesktop')
-  const data = await request.json()
-  setDataPromoDesktop(data)
-}
-
-
-async function fetchDataPromoMobil() {
-  const request = await fetch('/api/home/homePromoMobil')
-  const data = await request.json()
-  setDataPromoMobil(data)
-}
-useEffect(() => {
-  fetchDataPromoDesktop()
-  fetchDataPromoMobil()
-
-}, [])
-
-
-
-
+  if (!props.homePromoMobil || props.homePromoDesktop) return <div>Cargando</div>
   return (
     <div className="flex items-center">
       <section
@@ -49,11 +23,11 @@ useEffect(() => {
 
           {isDesktopOrLaptop && 
          <>
-                {dataPromoDesktop.map(el=>(
+                {props.homePromoDesktop.map(el=>(
 
                       <img
                         src={el.secure_url}
-                        className="w-full h-full hidden md:hidden  lg:block laptop:block 2xl:block"
+                        className="w-full h-full"
                         alt=""
                       />
 
@@ -67,7 +41,7 @@ useEffect(() => {
             <>
             <>
    
-                    {dataPromoMobil.map(el=>(
+                    {props.homePromoMobil.map(el=>(
 
                         <img
                           src={el.secure_url}
@@ -81,7 +55,7 @@ useEffect(() => {
           }
           {/* desktop */}
 
-          {isDesktopOrLaptop ? (
+          {isDesktopOrLaptop && props.homePromoDesktop ? (
             <div className="absolute flex items-end py-10 top-0  w-full h-full  ">
               <div className=" h-3/4 w-2/4 ml-48  flex-col  flex justify-end   items-end ">
                 <div className="w-full 2xl:w-full flex flex-col items-start ">
@@ -129,8 +103,9 @@ useEffect(() => {
 
        <>
 
+
        {
-              dataPromoMobil.map(el=>(
+        props.homePromoMobil.map(el=>(
                 <div className=" top-0 w-full h-full ">
               <div className=" h-full w-full flex-col  flex justify-center items-center ">
                 <div className="w-full flex flex-col items-center ">
@@ -192,7 +167,6 @@ useEffect(() => {
             </div>
               ))
             }
-
        </>
            
           )}

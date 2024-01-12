@@ -1931,7 +1931,7 @@ export const NavTop = memo(function NavTop() {
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
     
 
-          <div className="flex justify-around gap-48 xl:hidden">
+          <div className="flex justify-between  w-full xl:hidden">
             <div className="hidden items-center gap-8 xl:flex">
               <Link
                 href="/store-locator"

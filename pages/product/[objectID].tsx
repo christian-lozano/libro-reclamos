@@ -1,5 +1,5 @@
 import algoliasearch from 'algoliasearch'
-import { useRouter } from 'next/router'
+import type { GetServerSidePropsContext } from 'next'
 import { useEffect, useState } from 'react'
 
 import { Container } from '@/components/container/container'
@@ -7,15 +7,20 @@ import ProductVista from '@/components/panel/ProductVista'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
-import { SearchPageLayout } from '@/layouts/search-page-layout'
+import {
+  SearchPageLayout,
+  getServerSidePropsPage,
+} from '@/layouts/search-page-layout'
 
 export type ProductPageProps = SearchPageLayoutProps & {
   objectID: string
 }
 
-export default function Product() {
-  const router = useRouter()
-  const { objectID } = router.query
+export default function Product({ objectID, ...props }: ProductPageProps) {
+
+
+  // const router = useRouter()
+  // const { objectID } = router.query
   // const [posts, setPosts] = useState(Object)
   const [product, setProduct] = useState(undefined)
 
@@ -54,7 +59,7 @@ export default function Product() {
   }, [objectID])
 
   return (
-    <>
+    <SearchPageLayout {...props}>
       <div>
         <Container className="mt-11 xl:mt-20 overflow-x-hidden overflow-y-hidden">
           {/* <div>{router.query.slug}</div> */}
@@ -62,24 +67,27 @@ export default function Product() {
           <ProductVista product={product} />
         </Container>
       </div>
-      <SearchPageLayout>
-        <div>
-          <ProductsShowcase
-            indexId="recommended"
-            title="Recomendado para ti"
-            query={`adidas`}
-            // ruleContexts={`${product.brand} ${product.gender} ${product.product_type}`}
-            hitComponent={ProductCardHitShowcase}
-          />
-        </div>
-      </SearchPageLayout>
-    </>
+
+      <div>
+        <ProductsShowcase
+          indexId="recommended"
+          title="Recomendado para ti"
+          query={`adidas`}
+          // ruleContexts={`${product.brand} ${product.gender} ${product.product_type}`}
+          hitComponent={ProductCardHitShowcase}
+        />
+      </div>
+    </SearchPageLayout>
   )
 }
-
 // export const getServerSideProps = (context: GetServerSidePropsContext) =>
 //   getServerSidePropsPage(Product, context, {
 //     props: {
 //       objectID: context.params?.objectID,
 //     },
 //   })
+
+export const getServerSideProps = (context: GetServerSidePropsContext) =>
+  getServerSidePropsPage(Product, context, {
+    props: { objectID: context.params?.objectID },
+  })

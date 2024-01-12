@@ -4,66 +4,6 @@ import { useState, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 import { Button } from '../@ui/button/button'
-import Cargando from '../Cargando/Cargando'
-
-
-
-const sliderDesktop = [
-  // {
-  //   title: '',
-  //   color: 'black',
-  //   desc: '',
-  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/black-desktop_nfyqgw.png',
-  //   url: '#',
-  // },
-  {
-    title: 'ZAPATILLAS X_PLORBOOST',
-    color: 'black',
-    desc: 'Recién llegadas.',
-    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702510427/fritz-ecommerce/slider-home/1920-x-853_b5ty4m.jpg',
-    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
-  },
-  // {
-  //   title: 'PACK CRAZYRUSH',
-  //   desc: 'Recién llegadas.',
-  //   color: 'black',
-  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839901/ecommerce-fritz-sport/slider-home/imageMobile3_bmvzka.jpg',
-  //   url: '#',
-  // },
-]
-const sliderMobil = [
-  // {
-  //   title: '',
-  //   desc: '',
-  //   color: 'black',
-  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839898/ecommerce-fritz-sport/slider-home/black-mobil-3_p2diza.png',
-  //   url: '#',
-  // },
-  {
-    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574737/fritz-ecommerce/slider-home/600-x-771_friwm4.jpg',
-    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
-  },
-  // {
-  //   title: 'MARINERUSH PACK',
-  //   desc: 'Recién llegadas.',
-  //   color: 'black',
-  //   img: 'https://res.cloudinary.com/dmtq82guq/image/upload/v1700839900/ecommerce-fritz-sport/slider-home/imageMobile2_mkwldp.jpg',
-  //   url: '#',
-  // },
-]
-
-const sliderTablet = [
-  {
-    title: 'CHIMPUNES ADIDAS PREDATOR ACCURACY.3',
-    desc: 'Recién llegadas.',
-    color: 'black',
-    img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702574711/fritz-ecommerce/slider-home/960-x-960_o3wvlk.jpg',
-    url: '/product/ID9596?queryID=3ee2971600e3c9efe6853d1e77236304',
-  },
-]
 
 
 
@@ -211,7 +151,7 @@ useEffect(()=>{
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {carouselTablet.map((el, i) => (
+                {props.homeSliderTablet.map((el, i) => (
                   <div key={el._id} className="mt-12">
                     <div className="">
                       <img className="z-dev" src={el.secure_url} alt="" />
@@ -258,7 +198,7 @@ useEffect(()=>{
               </Carousel>
 
               <div className="flex w-full mt-0">
-                {carouselTablet.map((el, i) => (
+                {props.homeSliderTablet.map((el, i) => (
                   <div
                     key={i}
                     // onClick={() => setIndiceSlider(i)}

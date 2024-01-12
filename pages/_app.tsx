@@ -36,7 +36,8 @@ export const Footer = dynamic<FooterProps>(() =>
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const isCatalogPage = useMemo(
-    () => router?.pathname === '/catalog/[[...slugs]]',
+    () =>
+      router?.pathname === '/catalog/[[...slugs]]' || router?.pathname === '/',
     [router?.pathname]
   )
 

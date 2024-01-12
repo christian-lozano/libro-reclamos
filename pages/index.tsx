@@ -9,10 +9,7 @@ import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
-import {
-  getStaticPropsPage,
-  SearchPageLayout,
-} from '@/layouts/search-page-layout'
+import { SearchPageLayout } from '@/layouts/search-page-layout'
 
 export default function Home(props: SearchPageLayoutProps) {
   const { emptyCart } = useCart()
@@ -49,7 +46,7 @@ slider desaparece porque voy a carrito
         classNameTitle="text-3xl font-normal tracking-wider leading-tight laptop:text-7xl"
       /> */}
       <CarouselHome props={props} />
-      <CategoriasGenero />
+      <CategoriasGenero props={props} />
       <ProductsShowcase
         title="Lo mas Nuevo"
         indexId="spring-summer-2021"
@@ -58,7 +55,7 @@ slider desaparece porque voy a carrito
         hitComponent={ProductCardHitShowcase}
       />
 
-      <BannerPromociones />
+      <BannerPromociones props={props} />
       <ProductsShowcase
         title="Primavera / Verano 2023"
         indexId="spring-summer-2021"
@@ -72,7 +69,7 @@ slider desaparece porque voy a carrito
         query="nike"
         hitComponent={ProductCardHitShowcase}
       /> */}
-      <CarouselMarcasHome />
+      <CarouselMarcasHome props={props} />
     </SearchPageLayout>
   )
 }
@@ -81,16 +78,113 @@ export const getStaticProps = async () => {
   const resSliderDesktop = await fetch(
     'https://www.fritzsport.pe/api/home/sliderDesktop'
   )
+
+  const resSliderTablet = await fetch(
+    'https://www.fritzsport.pe/api/home/sliderTablet'
+  )
+  const resSliderMobil = await fetch(
+    'https://www.fritzsport.pe/api/home/sliderMobil'
+  )
   const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
   const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const resCategorias = await fetch(
+    'https://www.fritzsport.pe/api/home/homeCategorias'
+  )
+  const resPromoDesktop = await fetch(
+    'https://www.fritzsport.pe/api/home/homePromoDesktop'
+  )
+  const resPromoMobil = await fetch(
+    'https://www.fritzsport.pe/api/home/homePromoMobil'
+  )
 
+  const resSliderMarcas = await fetch(
+    'https://www.fritzsport.pe/api/home/homeSliderMarcas'
+  )
   const homeSliderDesktop = await resSliderDesktop.json()
+  const homeSliderTablet = await resSliderTablet.json()
+  const homeSliderMobil = await resSliderMobil.json()
+
   const homeNav = await resNav.json()
   const homeLogo = await resLogo.json()
+  const homeCategorias = await resCategorias.json()
 
-  getStaticPropsPage(Home)
+  const homePromoDesktop = await resPromoDesktop.json()
+  const homePromoMobil = await resPromoMobil.json()
+
+  const homeSliderMarcas = await resSliderMarcas.json()
+
   return {
-    props: { homeSliderDesktop, homeNav, homeLogo },
-    revalidate: 60, // In seconds
+    props: {
+      homeSliderDesktop,
+      homeSliderTablet,
+      homeSliderMobil,
+      homeNav,
+      homeLogo,
+      homeCategorias,
+      homePromoDesktop,
+      homePromoMobil,
+      homeSliderMarcas,
+    },
+    revalidate: 80, // In seconds
   }
 }
+
+// export const getServerSideProps = async (
+//   context: GetServerSidePropsContext
+// ) => {
+//   const resSliderDesktop = await fetch(
+//     'https://www.fritzsport.pe/api/home/sliderDesktop'
+//   )
+
+//   const resSliderTablet = await fetch(
+//     'https://www.fritzsport.pe/api/home/sliderTablet'
+//   )
+//   const resSliderMobil = await fetch(
+//     'https://www.fritzsport.pe/api/home/sliderMobil'
+//   )
+//   const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+//   const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+//   const resCategorias = await fetch(
+//     'https://www.fritzsport.pe/api/home/homeCategorias'
+//   )
+//   const resPromoDesktop = await fetch(
+//     'https://www.fritzsport.pe/api/home/homePromoDesktop'
+//   )
+//   const resPromoMobil = await fetch(
+//     'https://www.fritzsport.pe/api/home/homePromoMobil'
+//   )
+
+//   const resSliderMarcas = await fetch(
+//     'https://www.fritzsport.pe/api/home/homeSliderMarcas'
+//   )
+//   const homeSliderDesktop = await resSliderDesktop.json()
+//   const homeSliderTablet = await resSliderTablet.json()
+//   const homeSliderMobil = await resSliderMobil.json()
+
+//   const homeNav = await resNav.json()
+//   const homeLogo = await resLogo.json()
+//   const homeCategorias = await resCategorias.json()
+
+//   const homePromoDesktop = await resPromoDesktop.json()
+//   const homePromoMobil = await resPromoMobil.json()
+
+//   const homeSliderMarcas = await resSliderMarcas.json()
+
+//   getServerSidePropsPage(Home, context)
+//   return {
+//     // props: { objectID: context.params?.objectID },
+//     props: {
+//       homeSliderDesktop,
+
+//       homeSliderTablet,
+//       homeSliderMobil,
+//       homeNav,
+//       homeLogo,
+//       homeCategorias,
+//       homePromoDesktop,
+//       homePromoMobil,
+//       homeSliderMarcas,
+//     },
+//     // revalidate: 60, // In seconds
+//   }
+// }

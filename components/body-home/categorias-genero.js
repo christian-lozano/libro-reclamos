@@ -27,8 +27,7 @@ const DataCardBg = [
 ]
 
 
-export function CategoriasGenero() {
-  
+export function CategoriasGenero({props}) {
 
   const [dataCategorias, setDataCategorias] = useState([])
 
@@ -40,7 +39,7 @@ async function fetchDataCategorias() {
 useEffect(() => {
   fetchDataCategorias()
 }, [])
-
+if (!props.homeCategorias) return <div>Cargando</div>
   return (
     <div className=" flex justify-center w-full h-auto items-center z-20">
       <div className=" flex flex-col items-center justify-center w-full">
@@ -48,7 +47,7 @@ useEffect(() => {
           Nuestras Categorías
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-y-10 md:grid-cols-2 justify-items-center items-center gap-x-5 ">
-          {dataCategorias.map((el) => (
+          {props.homeCategorias.map((el) => (
             <Link
               key={el._id}
               href={el.button_url}
