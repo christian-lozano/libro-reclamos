@@ -8,6 +8,8 @@ import {
     TabsHeader,
   } from '@material-tailwind/react'
 export default function ContentEmprende({props}) {
+
+    console.log(props);
     if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
 
   return (
@@ -78,72 +80,148 @@ export default function ContentEmprende({props}) {
                 onResize={undefined}
                 onResizeCapture={undefined}
               >
-                {/* {dataSocios.map(({ label, value }) => (
+           
                   <Tab
-                    key={value}
-                    value={value}
+        
+                    key="Emprendedores"
+                    value="Emprendedores"
                     className="text-lg font-bold mb-5"
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
                   >
-                    {label}
+                    Emprendedores
                   </Tab>
-                ))} */}
+                  <Tab
+                    key="Mayoristas"
+                    value="Mayoristas"
+                    className="text-lg font-bold mb-5"
+                    nonce={undefined}
+                    onResize={undefined}
+                    onResizeCapture={undefined}
+                  >
+                    Mayoristas
+                  </Tab>
+        
               </TabsHeader>
-{/*     
+    
               <TabsBody
+       
                 nonce={undefined}
                 onResize={undefined}
                 onResizeCapture={undefined}
               >
-                {dataSocios.map(
-                  ({ value, title, img, arr, arrSub, subTitle }) => (
+      
                     <TabPanel
-                      key={value}
-                      value={value}
+                             key= {"Emprendedor"}
+                      value={"Emprendedores"}
                       className="text-black"
                     >
                       <div className="flex flex-col laptop:flex-row xl:flex-row">
                         <div>
-                          <img src={img} alt="" />
+                        {props.EmprendedorCard.map(el=>(
+                          <img src={el.secure_url} alt="" />
+
+                        ))}
                         </div>
+                        
                         <div className="xl:px-5">
                           <div className="text-center text-3xl font-bold my-7">
-                            {title}
+                              Beneficios
                           </div>
                           <ul className="flex flex-col">
-                            {arr.map((el, i) => (
+                          {props.listTipoEmprendedorBeneficios.map(el=>(
                               <li
-                                key={i}
+                                
                                 className="my-3 mx-3 font-semibold"
                               >
-                                - {el}
+                               {el.page}
                               </li>
-                            ))}
+
+
+                          ))}
+                        
                           </ul>
                      
                           <div className="xl:px-5">
                             <div className="text-center text-3xl font-bold my-7">
-                              {subTitle}
+                              Requisitos
                             </div>
                             <ul className="flex flex-col">
-                              {arrSub.map((el, i) => (
-                                <li
-                                  key={i}
-                                  className="my-3 mx-3 font-semibold"
-                                >
-                                  - {el}
-                                </li>
-                              ))}
+                            
+                            {props.listTipoEmprendedorRequisitos.map(el=>(
+                              <li
+                                
+                                className="my-3 mx-3 font-semibold"
+                              >
+                               {el.page}
+                              </li>
+
+
+                          ))}
+                           
                             </ul>
                           </div>
                         </div>
                       </div>
                     </TabPanel>
-                  )
-                )}
-              </TabsBody> */}
+
+
+                    <TabPanel
+                  key={"Mayoristas"}
+                 value={"Mayoristas"}
+                 className="text-black"
+               >
+                 <div className="flex flex-col laptop:flex-row xl:flex-row">
+                   <div>
+                   {props.MayoristaCard.map(el=>(
+                     <img src={el.secure_url} alt="" />
+
+                   ))}
+                   </div>
+                   
+                   <div className="xl:px-5">
+                     <div className="text-center text-3xl font-bold my-7">
+                         Beneficios
+                     </div>
+                     <ul className="flex flex-col">
+                     {props.listTipoMayoristaBeneficios.map(el=>(
+                         <li
+                           
+                           className="my-3 mx-3 font-semibold"
+                         >
+                          {el.page}
+                         </li>
+
+
+                     ))}
+                   
+                     </ul>
+                
+                     <div className="xl:px-5">
+                       <div className="text-center text-3xl font-bold my-7">
+                         Requisitos
+                       </div>
+                       <ul className="flex flex-col">
+                       
+                       {props.listTipoMayoristaRequisitos.map(el=>(
+                         <li
+                           
+                           className="my-3 mx-3 font-semibold"
+                         >
+                          {el.page}
+                         </li>
+
+
+                     ))}
+                      
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+                      </TabPanel>
+              
+              </TabsBody>
 
               {/* ---------------------------------------------------------------- */}
 
@@ -165,14 +243,14 @@ export default function ContentEmprende({props}) {
                 }
 
                   <div className="px-10 flex flex-col items-start justify-center">
-                    {/* {props.PasosList.map((el, i) => (
+                    {props.PasosList.map((el, i) => (
                       <div key={i} className=" flex flex-col mt-3">
-                        <p className="text-lg font-bold my-3">{el.title}</p>
+                        <p className="text-lg font-bold my-3">{el.page}</p>
                         <p className="text-base text-start xl:text-start ">
-                          {el.parrafo}
+                          {el.url}
                         </p>
                       </div>
-                    ))} */}
+                    ))}
                   </div>
                 </div>
               </div>

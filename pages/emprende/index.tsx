@@ -36,15 +36,51 @@ export const getStaticProps = async () => {
   const resImageCardPasos = await fetch(
     'https://www.fritzsport.pe/api/emprende/imageCardPasos'
   )
-  // const resPasosList = await fetch(
-  //   'https://www.fritzsport.pe/api/emprende/PasosList'
-  // )
-
+  const resPasosList = await fetch(
+    'https://www.fritzsport.pe/api/emprende/pasosList'
+  )
+  // emprendedor
+  const resEmprendedorCard = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/emprendedor/imageCardEmprendedor'
+  )
+  const reslistTipoEmprendedorBeneficios = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/emprendedor/listTipoEmprendedorBeneficios'
+  )
+  const reslistTipoEmprendedorRequisitos = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/emprendedor/listTipoEmprendedorRequisitos'
+  )
+  // Mayorista
+  const resMayoristaCard = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/mayorista/imageCardMayorista'
+  )
+  const reslistTipoMayoristaBeneficios = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/mayorista/listTipoMayoristaBeneficios'
+  )
+  const reslistTipoMayoristaRequisitos = await fetch(
+    'https://www.fritzsport.pe/api/emprende/iniciaEmprende/mayorista/listTipoMayoristaRequisitos'
+  )
   const PortadaDesktop = await resPortadaDesktop.json()
   const PortadaMobil = await resPortadaMobil.json()
   const BeneficiosGrid = await resBeneficiosGrid.json()
   const ImageCardPasos = await resImageCardPasos.json()
-  // const PasosList = await resPasosList.json()
+  const PasosList = await resPasosList.json()
+  // emprendedor
+  const EmprendedorCard = await resEmprendedorCard.json()
+
+  const listTipoEmprendedorBeneficios =
+    await reslistTipoEmprendedorBeneficios.json()
+
+  const listTipoEmprendedorRequisitos =
+    await reslistTipoEmprendedorRequisitos.json()
+
+  // Mayorista
+  const MayoristaCard = await resMayoristaCard.json()
+
+  const listTipoMayoristaBeneficios =
+    await reslistTipoMayoristaBeneficios.json()
+
+  const listTipoMayoristaRequisitos =
+    await reslistTipoMayoristaRequisitos.json()
 
   getStaticPropsPage(Home)
   return {
@@ -53,7 +89,13 @@ export const getStaticProps = async () => {
       PortadaMobil,
       BeneficiosGrid,
       ImageCardPasos,
-      // PasosList,
+      PasosList,
+      EmprendedorCard,
+      listTipoEmprendedorBeneficios,
+      listTipoEmprendedorRequisitos,
+      MayoristaCard,
+      listTipoMayoristaBeneficios,
+      listTipoMayoristaRequisitos
     },
     // MujerPortadaDesktop,
     revalidate: 80, // In seconds
