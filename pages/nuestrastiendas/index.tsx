@@ -69,7 +69,7 @@ export default function Home(props: SearchPageLayoutProps) {
                     className="w-[100vw] laptop:h-full  hidden xl:block"
                   >
                     <source
-                      src="https://brand.assets.adidas.com/video/upload/if_w_gt_1920,w_1920/fw23_rivalry_launch_hp_mh_d_2c98ca2cf4.mp4"
+                      src="https://res.cloudinary.com/dmtq82guq/video/upload/v1705420976/ecommerce-fritz-sport/slider-home/fw23_rivalry_launch_hp_mh_d_2c98ca2cf4_1_t5xs5v.mp4"
                       type="video/mp4"
                     />
                     <track

@@ -309,4 +309,40 @@ export default function Home(props: SearchPageLayoutProps) {
   )
 }
 
-export const getStaticProps = () => getStaticPropsPage(Home)
+
+export const getStaticProps = async () => {
+  const resPortadaDesktop = await fetch(
+    'https://www.fritzsport.pe/api/emprende/portadaDesktop'
+  )
+
+  const resPortadaMobil = await fetch(
+    'https://www.fritzsport.pe/api/ninos/ninosPortadaMobil'
+  )
+  const resLoMasNuevo = await fetch(
+    'https://www.fritzsport.pe/api/ninos/ninosLoMasNuevo'
+  )
+  const resDestacado = await fetch(
+    'https://www.fritzsport.pe/api/ninos/ninosEstilosDestacados'
+  )
+  const resSliderMarcas = await fetch(
+    'https://www.fritzsport.pe/api/home/homeSliderMarcas'
+  )
+
+  const NinosPortadaDesktop = await resPortadaDesktop.json()
+  const NinosPortadaMobil = await resPortadaMobil.json()
+  const NinosLoMasNuevo = await resLoMasNuevo.json()
+  const NinosDestacado = await resDestacado.json()
+  const homeSliderMarcas = await resSliderMarcas.json()
+  getStaticPropsPage(Home)
+  return {
+    props: {
+      NinosPortadaDesktop,
+      NinosPortadaMobil,
+      NinosLoMasNuevo,
+      NinosDestacado,
+      homeSliderMarcas,
+    },
+    // MujerPortadaDesktop,
+    revalidate: 80, // In seconds
+  }
+}
