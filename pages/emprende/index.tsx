@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContentEmprende from '@/components/emprende/ContentEmprende'
+import PaginaEmprende from '@/components/pagina/PaginaEmprende'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
@@ -18,7 +18,7 @@ export default function Home(props: SearchPageLayoutProps) {
 
   return (
     <SearchPageLayout {...props}>
-      <ContentEmprende props={props} />
+      <PaginaEmprende props={props} />
     </SearchPageLayout>
   )
 }
@@ -95,7 +95,7 @@ export const getStaticProps = async () => {
       listTipoEmprendedorRequisitos,
       MayoristaCard,
       listTipoMayoristaBeneficios,
-      listTipoMayoristaRequisitos
+      listTipoMayoristaRequisitos,
     },
     // MujerPortadaDesktop,
     revalidate: 80, // In seconds

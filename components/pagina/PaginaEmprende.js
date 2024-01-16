@@ -7,9 +7,9 @@ import {
     TabsBody,
     TabsHeader,
   } from '@material-tailwind/react'
-export default function ContentEmprende({props}) {
+export default function PaginaEmprende({props}) {
 
-    console.log(props);
+
     if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
 
   return (
