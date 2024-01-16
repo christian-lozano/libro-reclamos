@@ -1,4 +1,5 @@
-import { dbConnect } from '../../../../utils/mongoose'
+import { dbConnect } from '../../../../../utils/mongoose'
+
 import Taks from '../../../../../models/nuestrasTiendas/Tumbes/horarios'
 dbConnect()
 export default async function handler(req, res) {

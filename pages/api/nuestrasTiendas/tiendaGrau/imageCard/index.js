@@ -1,4 +1,5 @@
-import { dbConnect } from '../../../../utils/mongoose'
+import { dbConnect } from '../../../../../utils/mongoose'
+
 import Taks from '../../../../../models/nuestrasTiendas/TiendaGrau/imageCard'
 
 dbConnect()
