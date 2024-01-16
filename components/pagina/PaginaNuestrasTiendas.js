@@ -40,6 +40,7 @@ export default function PaginaNuestrasTiendas({props}) {
 const [open, setOpen] = React.useState(false)
     
 const handleOpen = () => setOpen(!open)
+if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
   return (
     <div className=" pt-14 md:pt-16">
     <section className="blog text-black body-font mb-20">
