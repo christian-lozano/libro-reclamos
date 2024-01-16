@@ -15,8 +15,6 @@ export default async function handler(req, res) {
       }
 
     case 'POST':
-
-
     try {
         // console.log(body)
         const newTask = new Taks(body)
