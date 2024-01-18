@@ -1,6 +1,7 @@
 import { Configure } from 'react-instantsearch-dom'
 
 import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
+import { HeaderNew } from '@/components/header/header-new'
 import PaginaNinos from '@/components/pagina/paginaNinos'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
@@ -11,6 +12,7 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   return (
     <SearchPageLayout {...props}>
+      <HeaderNew props={props} />
       <Configure
         hitsPerPage={6}
         // We cannot retrieve the user token at build time, so we disable persona
@@ -52,6 +54,10 @@ export const getStaticProps = async () => {
   const resSliderMarcas = await fetch(
     'https://www.fritzsport.pe/api/home/homeSliderMarcas'
   )
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
 
   const NinosPortadaDesktop = await resPortadaDesktop.json()
   const NinosPortadaMobil = await resPortadaMobil.json()
@@ -61,6 +67,8 @@ export const getStaticProps = async () => {
   getStaticPropsPage(Home)
   return {
     props: {
+      homeNav,
+      homeLogo,
       NinosPortadaDesktop,
       NinosPortadaMobil,
       NinosLoMasNuevo,

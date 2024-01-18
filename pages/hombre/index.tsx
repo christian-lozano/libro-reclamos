@@ -52,15 +52,21 @@ export const getStaticProps = async () => {
   const resSliderMarcas = await fetch(
     'https://www.fritzsport.pe/api/home/homeSliderMarcas'
   )
-
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
   const HombrePortadaDesktop = await resPortadaDesktop.json()
   const HombrePortadaMobil = await resPortadaMobil.json()
   const HombreLoMasNuevo = await resLoMasNuevo.json()
   const HombreDestacado = await resDestacado.json()
   const homeSliderMarcas = await resSliderMarcas.json()
+
   getStaticPropsPage(Home)
   return {
     props: {
+      homeNav,
+      homeLogo,
       HombrePortadaDesktop,
       HombrePortadaMobil,
       HombreLoMasNuevo,

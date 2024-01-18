@@ -1692,7 +1692,8 @@ const dataHeader = [
   // },
 ]
 
-export const NavTop = memo(function NavTop() {
+export const NavTop = memo(function NavTop({props}) {
+
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)
   const { items, removeItem, cartTotal, totalItems, emptyCart, isEmpty } =
@@ -1739,6 +1740,7 @@ export const NavTop = memo(function NavTop() {
     setAndler(true)
     setHoverMenu(dataHeader[index].infoNav)
   }
+  if(!props.homeNav) return <div>Cargando..</div>
 
   return (
     <div>
@@ -1755,10 +1757,10 @@ export const NavTop = memo(function NavTop() {
                 <div className="flex justify-around   w-full">
                   {/* logo nav */}
                   <div className="flex  items-center xl:justify-around 2xl:justify-between text-blue-gray-900 ">
-                    <Logotipo url={'/'} />
+                  <Logotipo logo={props.homeLogo} url={"/"}/>
                     <div className=" lg:block h-full 2xl:ml-16">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                        {dataNav.map((el, index) => (
+                        {props.homeNav.map((el, index) => (
                           <Link
                             href={`/${el.url}`}
                             className="h-full flex justify-center items-center "
@@ -1855,9 +1857,9 @@ export const NavTop = memo(function NavTop() {
                     {/* menu Mobile */}
                   </div>
 
-                  {/* Buscador  */}
+    
 
-                  {/* <NavAutocomplete /> */}
+    
                 </div>
               </div>
 
@@ -1949,7 +1951,8 @@ export const NavTop = memo(function NavTop() {
                 </Button>
               </Link>
             </div>
-            <Logotipo url={'/'} />                      
+            <Logotipo logo={props.homeLogo} url={"/"}/>
+                 
             <div className="flex items-center gap-6 laptop:gap-3 ">
               <Tablet>
                 <Button

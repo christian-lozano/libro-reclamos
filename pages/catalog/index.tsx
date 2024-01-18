@@ -180,7 +180,6 @@
 
 import algoliasearch from 'algoliasearch/lite'
 import type { Hit as AlgoliaHit } from 'instantsearch.js'
-import type { GetServerSidePropsContext } from 'next'
 import { useCallback, useEffect, useState } from 'react'
 import {
   Configure,
@@ -194,14 +193,12 @@ import {
 } from 'react-instantsearch'
 
 import { Button } from '@/components/@ui/button/button'
+import { HeaderNew } from '@/components/header/header-new'
 import { SearchBox } from '@/components/panel/SearchBox'
 import { Panel } from '@/components/panel2/Panel'
 import { QueryRuleCustomData } from '@/components/panel2/QueryRuleCustomData'
 import { ProductCard } from '@/components/product-card/product-card'
-import {
-  SearchPageLayout,
-  getServerSidePropsPage,
-} from '@/layouts/search-page-layout'
+import { SearchPageLayout } from '@/layouts/search-page-layout'
 
 import type { ProductPageProps } from '../product/[objectID]'
 
@@ -257,6 +254,8 @@ export default function Home({ ...props }: ProductPageProps) {
 
   return (
     <SearchPageLayout {...props}>
+      <HeaderNew props={props} />
+
       <InstantSearch
         searchClient={searchClient}
         indexName="pwa_ecom_ui_template_products"
@@ -450,5 +449,18 @@ export default function Home({ ...props }: ProductPageProps) {
   )
 }
 
-export const getServerSideProps = (context: GetServerSidePropsContext) =>
-  getServerSidePropsPage(Home, context)
+export const getStaticProps = async () => {
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
+
+  return {
+    props: {
+      homeNav,
+      homeLogo,
+    },
+    revalidate: 80, // In seconds
+  }
+}

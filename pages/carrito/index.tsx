@@ -3,11 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { useCart } from 'react-use-cart'
 
 import { Button } from '@/components/@ui/button/button'
+import { HeaderNew } from '@/components/header/header-new'
 import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
-import {
-  SearchPageLayout,
-  getStaticPropsPage,
-} from '@/layouts/search-page-layout'
+import { SearchPageLayout } from '@/layouts/search-page-layout'
 
 export default function Home(props: SearchPageLayoutProps) {
   const [domLoaded, setDomLoaded] = useState(false)
@@ -15,9 +13,10 @@ export default function Home(props: SearchPageLayoutProps) {
   useEffect(() => {
     setDomLoaded(true)
   }, [])
-  const { items, removeItem, cartTotal, updateItemQuantity } = useCart()
+  const { items, removeItem, cartTotal } = useCart()
   return (
     <SearchPageLayout {...props}>
+      <HeaderNew props={props} />
       <div className="py-16">
         <h1 className="mb-10 text-center text-2xl font-bold">CARRITO</h1>
         <div className="mx-auto max-w-5xl 2xl:max-w-7xl justify-center px-1 md:flex md:space-x-6 xl:px-0">
@@ -174,4 +173,18 @@ export default function Home(props: SearchPageLayoutProps) {
   )
 }
 
-export const getStaticProps = () => getStaticPropsPage(Home)
+export const getStaticProps = async () => {
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
+
+  return {
+    props: {
+      homeNav,
+      homeLogo,
+    },
+    revalidate: 80, // In seconds
+  }
+}

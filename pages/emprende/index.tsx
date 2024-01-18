@@ -22,7 +22,17 @@ export default function Home(props: SearchPageLayoutProps) {
     </SearchPageLayout>
   )
 }
+
+
+
+
+
+
 export const getStaticProps = async () => {
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
   const resPortadaDesktop = await fetch(
     'https://www.fritzsport.pe/api/emprende/portadaDesktop'
   )
@@ -85,6 +95,8 @@ export const getStaticProps = async () => {
   getStaticPropsPage(Home)
   return {
     props: {
+      homeNav,
+      homeLogo,
       PortadaDesktop,
       PortadaMobil,
       BeneficiosGrid,

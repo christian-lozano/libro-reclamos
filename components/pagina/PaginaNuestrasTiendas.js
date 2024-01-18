@@ -2,6 +2,7 @@ import { Dialog, DialogHeader, DialogBody } from '@material-tailwind/react'
 import React from 'react'
 
 import { Button } from '@/components/@ui/button/button'
+import { HeaderNew } from '../header/header-new'
 const dataNuestrasEmpresas = [
     {
       img: 'https://lh5.googleusercontent.com/p/AF1QipNc0m8OUrP-oiueHkxwr2q8Rc2Hstqf9rM7uQl5=s450-k-no',
@@ -42,6 +43,9 @@ const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(!open)
 if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
   return (
+    <>
+      <HeaderNew props={props} />
+
     <div className=" pt-14 md:pt-16">
     <section className="blog text-black body-font mb-20">
       <div className="container px-5  mx-auto">
@@ -441,5 +445,7 @@ if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
       </div>
     </section>
   </div>
+
+    </>
   )
 }

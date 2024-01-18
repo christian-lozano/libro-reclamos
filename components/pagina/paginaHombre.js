@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useCallback, useEffect, useState } from 'react'
 
 import { useMediaQuery } from 'react-responsive'
+import { HeaderNew } from '../header/header-new'
 
 const data = {
     dataPageHombre: {
@@ -119,6 +120,8 @@ export default function PaginaHombre({props}) {
   // MujerDestacado,
   return (
     <div>
+    <HeaderNew props={props}/>
+
           <nav
         className={`w-full  bg-white xl:bg-black flex justify-center mt-14 xl:mt-0  ${
           altoScroll > 10

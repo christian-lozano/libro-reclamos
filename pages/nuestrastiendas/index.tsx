@@ -41,6 +41,10 @@ export const getStaticProps = async () => {
   const resTiendaTumbesUbicacion = await fetch(
     'https://www.fritzsport.pe/api/nuestrasTiendas/tiendaTumbes/ubicacion'
   )
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
   const PortadaDesktop = await resPortadaDesktop.json()
   const PortadaMobil = await resPortadaMobil.json()
 
@@ -55,6 +59,8 @@ export const getStaticProps = async () => {
   getStaticPropsPage(Home)
   return {
     props: {
+      homeNav,
+      homeLogo,
       PortadaDesktop,
       PortadaMobil,
       TiendaGrauHorarios,

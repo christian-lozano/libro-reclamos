@@ -3,6 +3,7 @@ import type { GetServerSidePropsContext } from 'next'
 import { useEffect, useState } from 'react'
 
 import { Container } from '@/components/container/container'
+import { HeaderNew } from '@/components/header/header-new'
 import ProductVista from '@/components/panel/ProductVista'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
@@ -17,8 +18,6 @@ export type ProductPageProps = SearchPageLayoutProps & {
 }
 
 export default function Product({ objectID, ...props }: ProductPageProps) {
-
-
   // const router = useRouter()
   // const { objectID } = router.query
   // const [posts, setPosts] = useState(Object)
@@ -60,6 +59,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
 
   return (
     <SearchPageLayout {...props}>
+      <HeaderNew props={props} />
       <div>
         <Container className="mt-11 xl:mt-20 overflow-x-hidden overflow-y-hidden">
           {/* <div>{router.query.slug}</div> */}
@@ -87,7 +87,14 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
 //     },
 //   })
 
-export const getServerSideProps = (context: GetServerSidePropsContext) =>
-  getServerSidePropsPage(Product, context, {
-    props: { objectID: context.params?.objectID },
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  const homeNav = await resNav.json()
+  const homeLogo = await resLogo.json()
+  return getServerSidePropsPage(Product, context, {
+    props: { objectID: context.params?.objectID, homeNav, homeLogo },
   })
+}

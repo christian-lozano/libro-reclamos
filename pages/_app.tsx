@@ -78,7 +78,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         >
           20% de Descuento! Solo por este mes*
         </Banner>
-        <Header />
+        {/* <Header  /> */}
 
         <AnimatePresence exitBeforeEnter={true} onExitComplete={scrollToTop}>
           <Component {...pageProps} key={router.route} />
