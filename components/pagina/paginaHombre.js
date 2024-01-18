@@ -97,7 +97,6 @@ const data = {
 
 
 export default function PaginaHombre({props}) {
-console.log(props);
     const isDesktopOrLaptop = useMediaQuery({ minWidth: 950 })
 
 
@@ -244,7 +243,7 @@ console.log(props);
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
                           <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
-                            {el.button_url}
+                            {/* {el.button_url} */}
                           </h3>
                         </div>
                         <span className="bg-white text-black" />

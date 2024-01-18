@@ -3,7 +3,8 @@ import mongoose, { Schema, models } from "mongoose";
 const sliderMarcasSchema = new Schema({
   
   public_id:String,
-  secure_url:String
+  secure_url:String,
+  grid_title:String
 
 },{
   timestamps:true

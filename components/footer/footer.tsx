@@ -242,7 +242,7 @@ export const Footer = memo(function Footer() {
                   ></g>
                   <g id="SVGRepo_iconCarrier">
                     {' '}
-                    <title>instagram [#167]</title>{' '}
+                    <title>Instagram [#167]</title>{' '}
                     <desc>Created with Sketch.</desc> <defs> </defs>{' '}
                     <g
                       id="Page-1"

@@ -44,20 +44,21 @@ export default function PaginaEmprende({props}) {
     <div className="bg-white">
       <div className="container flex flex-col mx-auto bg-white">
         <div className="w-full draggable">
-          <div className="container flex flex-col items-center gap-16 mx-auto mt-32">
+            <h3 className='text-center mt-20'>Nuestros Beneficios</h3>  
+          <div className="container flex flex-col items-center gap-16 mx-auto mt-20">
             <div className="grid w-full grid-cols-2 gap-5 md:grid-cols-2 lg:grid-cols-5">
-              {/*  */}
+              {/* Beneficios */}
               {props.BeneficiosGrid.map((el) => (
                 <div
                   key={el._id}
-                  className="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl shadow-main"
+                  className="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl shadow-main cursor-pointer"
                 >
                   <span>
                     <img src={el.secure_url} alt="" className="w-32" />
                   </span>
-                  {/* <p className="laptop:text-xl 2xl:text-lg font-extrabold text-center text-dark-grey-900">
-                    {el.title}
-                  </p> */}
+                  <p className="laptop:text-xl 2xl:text-lg font-extrabold text-center text-dark-grey-900">
+                    {el.grid_title}
+                  </p>
                 </div>
               ))}
             </div>
