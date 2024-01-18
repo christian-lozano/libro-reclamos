@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import { useState } from 'react'
 
-import { Nav } from '@/components/nav/nav'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 export type HeaderProps = Record<string, unknown>
@@ -24,7 +23,7 @@ export function Header() {
       )}
       ref={setObservedNode}
     >
-      <Nav />
+      {/* <Nav /> */}
     </header>
   )
 }
