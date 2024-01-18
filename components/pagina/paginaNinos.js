@@ -233,7 +233,7 @@ export default function PaginaNinos({props}) {
 
           <div className="grid gap-y-4 grid-cols-1 md:grid-cols-2 md:gap-x-5 2xl:container  ">
             {props.NinosLoMasNuevo.map((el, i) => (
-              <Link href={el.button_title} key={i}>
+              <Link href={el.button_url} key={i}>
                 <figure>
                   <div className="h-full cursor-pointer w-full relative ">
                     <div>
@@ -244,7 +244,7 @@ export default function PaginaNinos({props}) {
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
                           <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
-                            {el.button_url}
+                            {el.button_title}
                           </h3>
                         </div>
                         <span className="bg-white text-black" />

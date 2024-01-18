@@ -16,7 +16,7 @@ export default function Logo({logo,url}) {
   return (
     <>
         {logo.map(el=>(
-            <Link href={url} className=" px-10 ">
+            <Link href={url} className=" px-10 cursor-pointer ">
                 <img src={el.secure_url} className='w-32' alt="" />
             </Link>
         ))}
