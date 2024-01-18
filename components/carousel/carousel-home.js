@@ -45,9 +45,6 @@ useEffect(()=>{
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 950 })
   const isTablet = useMediaQuery({ maxWidth: 950, minWidth: 600 })
 
-
-
-
   return (
     <>
       {isDesktopOrLaptop || isTablet ? (
