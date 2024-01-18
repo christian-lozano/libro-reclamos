@@ -16,7 +16,7 @@ export function CarouselMarcasHome({props}) {
     <div className="my-8 ">
       <h4 className=" my-5 text-center">Nuestras Marcas</h4>
       <div className="hidden laptop:block">
-        <div className="grid grid-cols-5 w-full  my-10 justify-items-center">
+        <div className="grid grid-flow-col-dense w-full  my-10 justify-items-center">
           {props.homeSliderMarcas.map((el) => (
             <Link key={el._id} href={el.button_url} className="border-indigo-600">
               <div className="h-24 w-24 flex items-center  border ">
