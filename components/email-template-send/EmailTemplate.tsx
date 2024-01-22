@@ -24,7 +24,7 @@ export const emailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     <div>
       <img
         className="mx-auto h-11 w-11 rounded-xl object-cover"
-        src="https://fritz-sport.vercel.app/static/icons/icon-144x144.png"
+        src="https://fritzsport.pe/static/icons/icon-144x144.png"
         alt="milink Logo"
       />
     </div>

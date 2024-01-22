@@ -62,7 +62,9 @@ console.log(req.body);
   let preference = {
     items:[
      {    title:req.body.productos,
-          description:`Nombre: ${req.body.nombre} Apellido: ${req.body.apellido} Documento:${req.body.typedocumento} Direccion: ${req.body.direccion} Provincia: ${req.body.provincia} Distrito: ${req.body.distrito} InfoAdicional: ${req.body.adicional}`,
+      description:`Nombre: ${req.body.nombre} Apellido: ${req.body.apellido} Documento:${req.body.typedocumento} Distrito: ${req.body.distrito} `,
+
+          // description:`Nombre: ${req.body.nombre} Apellido: ${req.body.apellido} Documento:${req.body.typedocumento} Direccion: ${req.body.direccion} Provincia: ${req.body.provincia} Distrito: ${req.body.distrito} InfoAdicional: ${req.body.adicional}`,
           picture_url: '../public/favicon.svg',
           category_id: 'PEN',
           quantity: 1,
@@ -93,7 +95,8 @@ console.log(req.body);
       },
     },
     back_urls: {
-      success: `https://fritz-sport.vercel.app/api/exito?variable1=${req.body.stock}`,
+  
+      success: `https://fritzsport.pe/api/exito?variable1=${req.body.stock}`,
       failure: "fritz-sport.vercel.app",
       pending: "fritz-sport.vercel.app",
     },

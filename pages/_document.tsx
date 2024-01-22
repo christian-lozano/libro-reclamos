@@ -69,19 +69,19 @@ export default class MyDocument extends Document {
           ></meta>
           <meta
             property="og:image"
-            content="https://fritz-sport.vercel.app/static/images/socials/og.png"
+            content="https://fritzsport.pe/static/images/socials/og.png"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
 
           {/* Twitter meta */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://fritz-sport.vercel.app" />
+          <meta name="twitter:url" content="https://fritzsport.pe" />
           <meta name="twitter:title" content="Fritz Sport E-commerce" />
           <meta name="twitter:description" content="Fritz Sport E-commerce" />
           <meta
             name="twitter:image"
-            content="https://fritz-sport.vercel.app/static/images/socials/twitter.png"
+            content="https://fritzsport.pe/static/images/socials/twitter.png"
           />
 
           {/* Fonts */}

@@ -9,7 +9,7 @@ export default function Home(props: SearchPageLayoutProps) {
   const { emptyCart } = useCart()
 
   useEffect(() => {
-    if (window.location.href === 'https://fritz-sport.vercel.app/?clear=true') {
+    if (window.location.href === 'https://fritzsport.pe/?clear=true') {
       emptyCart()
     }
   })
