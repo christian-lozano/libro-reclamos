@@ -16,7 +16,7 @@ export type ProductPageProps = SearchPageLayoutProps & {
   objectID: string
 }
 
-export default function Product({ objectID, ...props }) {
+export default function Product({ objectID, ...props }: ProductPageProps) {
   // const router = useRouter()
   // const { objectID } = router.query
   // const [posts, setPosts] = useState(Object)
@@ -97,6 +97,7 @@ export const getServerSideProps = async (
   const homeLogo = await resLogo.json()
   return getServerSidePropsPage(Product, context, {
     props: {
+      objectID: context.params?.objectID,
       homeNav,
       homeLogo,
       data,
