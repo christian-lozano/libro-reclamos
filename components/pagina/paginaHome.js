@@ -48,7 +48,7 @@ slider desaparece porque voy a carrito
 
       <BannerPromociones props={props} />
       <ProductsShowcase
-        title="Primavera / Verano 2023"
+        title="Verano 2024"
         indexId="spring-summer-2021"
         ruleContexts={['home-spring-summer-2021']}
         className="laptop:bg-gray-50"
