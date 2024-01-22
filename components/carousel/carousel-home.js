@@ -53,7 +53,7 @@ useEffect(()=>{
             <div>
               <Carousel
                 autoplay={true}
-                autoplayInterval={8000}
+                autoplayInterval={5000}
                 wrapAround={true}
                 withoutControls={true}
                 adaptiveHeight={true}
