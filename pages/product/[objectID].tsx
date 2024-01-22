@@ -6,15 +6,21 @@ import { HeaderNew } from '@/components/header/header-new'
 import ProductVista from '@/components/panel/ProductVista'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
+import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
   getServerSidePropsPage,
 } from '@/layouts/search-page-layout'
 
-export default function Product({ ...props }) {
+export type ProductPageProps = SearchPageLayoutProps & {
+  objectID: string
+}
+
+export default function Product({ objectID, ...props }) {
   // const router = useRouter()
   // const { objectID } = router.query
   // const [posts, setPosts] = useState(Object)
+  console.log(objectID)
 
   // function fetchPosts() {
   //   const client = algoliasearch(
