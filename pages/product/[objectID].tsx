@@ -1,27 +1,20 @@
 import algoliasearch from 'algoliasearch'
 import type { GetServerSidePropsContext } from 'next'
-import { useEffect, useState } from 'react'
 
 import { Container } from '@/components/container/container'
 import { HeaderNew } from '@/components/header/header-new'
 import ProductVista from '@/components/panel/ProductVista'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
-import type { SearchPageLayoutProps } from '@/layouts/search-page-layout'
 import {
   SearchPageLayout,
   getServerSidePropsPage,
 } from '@/layouts/search-page-layout'
 
-export type ProductPageProps = SearchPageLayoutProps & {
-  objectID: string
-}
-
-export default function Product({ objectID, ...props }: ProductPageProps) {
+export default function Product({ ...props }) {
   // const router = useRouter()
   // const { objectID } = router.query
   // const [posts, setPosts] = useState(Object)
-  const [product, setProduct] = useState(undefined)
 
   // function fetchPosts() {
   //   const client = algoliasearch(
@@ -41,33 +34,19 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
   //     })
   // }
 
-  function getProduct() {
-    const client = algoliasearch(
-      '235XIUIEK1',
-      '32f92a7d31a7320106285b5b7466e336'
-    )
-    const index = client.initIndex('pwa_ecom_ui_template_products')
-    index.getObject(String(objectID)).then((object) => {
-      return setProduct(Object(object))
-    })
-  }
-
-  useEffect(() => {
-    // fetchPosts()
-    getProduct()
-  }, [objectID])
-
   return (
     <SearchPageLayout {...props}>
       <HeaderNew props={props} />
+
+      {/* <h1>Cool Page</h1>
+      <p>This is a cool page. It has lots of cool content!</p> */}
       <div>
         <Container className="mt-11 xl:mt-20 overflow-x-hidden overflow-y-hidden">
           {/* <div>{router.query.slug}</div> */}
           {/* <ProductDetailHit hit={product} /> */}
-          <ProductVista product={product} />
+          <ProductVista product={props} />
         </Container>
       </div>
-
       <div>
         <ProductsShowcase
           indexId="recommended"
@@ -90,11 +69,31 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
+  const client = algoliasearch('235XIUIEK1', '32f92a7d31a7320106285b5b7466e336')
+  const index = client.initIndex('pwa_ecom_ui_template_products')
+
+  const data = await index
+    .getObject(String(context.params?.objectID))
+    .then((object) => {
+      return object
+    })
+
+  // const getProduct = () => {
+
+  //   const index = client.initIndex('pwa_ecom_ui_template_products')
+  //   index.getObject(String(context.params?.objectID)).then((object) => {
+  //     return object
+  //   })
+  // }
   const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
   const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
   const homeNav = await resNav.json()
   const homeLogo = await resLogo.json()
   return getServerSidePropsPage(Product, context, {
-    props: { objectID: context.params?.objectID, homeNav, homeLogo },
+    props: {
+      homeNav,
+      homeLogo,
+      data,
+    },
   })
 }
