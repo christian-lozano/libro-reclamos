@@ -98,6 +98,7 @@ export const getServerSideProps = async (
   return getServerSidePropsPage(Product, context, {
     props: {
       objectID: context.params?.objectID,
+      queryID: context.query?.queryID,
       homeNav,
       homeLogo,
       data,
