@@ -58,7 +58,7 @@ export default function handler(req, res) {
 //  req.body.forEach(element ,i=> {
 //     console.log(element[i])
 //   })
-console.log(req.body);
+
   let preference = {
     items:[
      {    title:req.body.productos,
@@ -97,8 +97,8 @@ console.log(req.body);
     back_urls: {
   
       success: `https://fritzsport.pe/api/exito?variable1=${req.body.stock}`,
-      failure: "fritz-sport.vercel.app",
-      pending: "fritz-sport.vercel.app",
+      failure: "https://fritzsport.pe",
+      pending: "https://fritzsport.pe",
     },
 
     // installments: 1,
