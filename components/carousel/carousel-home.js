@@ -10,34 +10,6 @@ import { Button } from '../@ui/button/button'
 
 export default function CarouselHome({props}) {
 
-  const [carouselDesktop, setCarouselDesktop] = useState([])
-  const [carouselMobil, setCarouselMobil] = useState([])
-  const [carouselTablet, setCarouselTablet] = useState([])
-
-
-  async function fetchCarouselDesktop() {
-      const request = await fetch("/api/home/sliderDesktop")
-      const data = await request.json()
-      setCarouselDesktop(data)
-  }
-
-  async function fetchCarouselMobil() {
-    const request = await fetch("/api/home/sliderMobil")
-    const data = await request.json()
-    setCarouselMobil(data)
-}
-
-async function fetchCarouselTablet() {
-  const request = await fetch("/api/home/sliderTablet")
-  const data = await request.json()
-  setCarouselTablet(data)
-}
-useEffect(()=>{
-  fetchCarouselDesktop()
-  fetchCarouselMobil()
-  fetchCarouselTablet()
-}, [])
-
 
   // console.log(data.attributes.SliderDesktop.data);
   const [indiceSlider, setIndiceSlider] = useState(0)
@@ -82,7 +54,7 @@ useEffect(()=>{
                           >
                             {el.desc}
                           </p> */}
-                          <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
+                          <Link href={el.button_url}>
                             <Button
                               className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
                             >
@@ -165,7 +137,7 @@ useEffect(()=>{
                           >
                             {el.desc}
                           </p> */}
-                          <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
+                          <Link href={el.button_url}>
                             <Button
                               className={`bg-white flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black mt-5 w-48 py-1 px-2 rounded-sm uppercase`}
                             >
@@ -234,7 +206,7 @@ useEffect(()=>{
               afterSlide={(i) => setIndiceSlider(i)}
               // slideCount={indiceSlider}
             >
-              {carouselMobil.map((el) => (
+              {props.homeSliderMobil.map((el) => (
                 <div key={el._id} className="mt-12">
                   <div className="">
                     <img className="z-dev" src={el.secure_url} alt="" />
@@ -249,7 +221,7 @@ useEffect(()=>{
                         <p className={`text-center text-${el.color} text-base`}>
                           {el.desc}
                         </p> */}
-                        <Link href={"/product/ID9596?queryID=ac3ef93bfc89a92418eec2ab726a4420"}>
+                        <Link href={el.button_url}>
                         <Button
                           className={`bg-white  flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black w-48 py-1 px-2 rounded-sm uppercase`}
                         >
@@ -278,7 +250,7 @@ useEffect(()=>{
               ))}
             </Carousel>
             <div className="flex w-full mt-0">
-              {carouselMobil.map((el, i) => (
+              {props.homeSliderMobil.map((el, i) => (
                 <div
                   key={i}
                   // onClick={() => setIndiceSlider(i)}
