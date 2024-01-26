@@ -2096,7 +2096,7 @@ export const NavTop = memo(function NavTop({props}) {
                                 S/{el.price}
                               </p>
                               <p className="text-base sm:text-xs line-through dark:text-gray-600">
-                                S/75.50
+                               S/{el.price + 200}
                               </p>
                             </div>
                           </div>
@@ -2157,10 +2157,10 @@ export const NavTop = memo(function NavTop({props}) {
                   <p className="text-gray-700">Subtotal</p>
                   <p className="text-gray-700">S/{cartTotal}</p>
                 </div>
-                <div className="flex justify-between">
+                {/* <div className="flex justify-between">
                   <p className="text-gray-700">Delivery</p>
                   <p className="text-gray-700">S/4.99</p>
-                </div>
+                </div> */}
                 <hr className="my-4" />
                 <div className="flex justify-between">
                   <p className="text-lg font-bold dark:text-[var(--dark-mode)]">
