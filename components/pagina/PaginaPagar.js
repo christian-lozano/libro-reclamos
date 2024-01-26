@@ -4,6 +4,7 @@ import { useCart } from 'react-use-cart'
 
 import { Link } from '@/components/@ui/link/link'
 import RemoveProductCartStock from '@/components/remove-product-cart-stock/remove-product-cart-stock'
+import { useRouter } from 'next/router'
 
 export default function PaginaPagar() {
 
@@ -129,6 +130,50 @@ export default function PaginaPagar() {
     // const dataStock = JSON.stringify(dataProducts)
     // console.log(dataStock)
     const [loadingMercadoPago, setLoadingMercadoPago] = useState(false)
+
+    const router = useRouter()
+    const handlesubmit = async ()=>{
+
+  
+let dataPago = {
+  productos :items,
+  datosComprador:{
+    nombre: allValues.nombre,
+    apellido: allValues.apellido,
+    email:allValues.email,
+    documento:allValues.documento,
+    telefono:allValues.telefono,
+    distrito
+
+  }
+}
+
+      try {
+          const res = await fetch(`/api/checkout2`,{
+              method:"POST",
+              body: JSON.stringify(dataPago),
+              headers:{
+                  "Content-Type":"application/json",
+                  'Access-Control-Allow-Origin':'*',
+                  'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
+                  'Access-Control-Allow-Headers':"*"
+              }
+           })
+          const data = await res.json()
+          console.log(res.status);
+          if(res.status === 201){
+            
+              router.push(data.msg)
+              // router.refresh()
+              // alert(data.msg)
+     
+
+          }
+          // console.log(data);
+      } catch (error) {
+          console.log(error);
+      }
+}
   return (
     <div className="py-16">
     <RemoveProductCartStock />
@@ -378,6 +423,8 @@ export default function PaginaPagar() {
               </div>
             </div>
           </div>
+
+          {/* info */}
           <div className="flex flex-col sm:flex-row">
             {/* <label
               htmlFor="card-holder"
@@ -542,7 +589,7 @@ export default function PaginaPagar() {
             </div>
           )}
         </div>
-        <form action="/api/checkout" method="POST">
+        <form onSubmit={(e)=> e.preventDefault()}>
           {items && (
             <>
               <input
@@ -670,15 +717,13 @@ export default function PaginaPagar() {
 
           {checkoutPago && items.length > 0 && validate ? (
             <div className="w-full flex flex-col justify-center items-center relative ">
-              <input
-                // disabled={loadingMercadoPago}
-                type="submit"
-                value="Realizar pedido"
-                className={`mt-4 mb-8 z-dropdown w-full  rounded-md bg-gray-900 ${
-                  loadingMercadoPago ? 'bg-gray-600 ' : 'bg-gray-900 '
-                } px-6 py-3 font-medium text-white cursor-pointer`}
-                onClick={() => setLoadingMercadoPago(true)}
-              />
+            <button
+            onClick={handlesubmit}
+      
+              className="mt-4 mb-8 w-full  rounded-md bg-black px-6 py-3 font-medium text-white cursor-pointer"
+            >
+              Realizar pedido
+            </button>
               <Loading disableLoadAddProduct={loadingMercadoPago} />
             </div>
           ) : (
@@ -690,8 +735,11 @@ export default function PaginaPagar() {
             </button>
           )}
         </form>
+
+
       </div>
     </div>
+             
   </div>
   )
 }

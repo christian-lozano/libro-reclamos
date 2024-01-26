@@ -55,8 +55,11 @@ arrayData.push({objectID:extraidaObjetId,units_in_stock:Number(extraida2)});
 
 console.log(arrayData);
 
-const client = algoliasearch('235XIUIEK1','32f92a7d31a7320106285b5b7466e336')
-const index = client.initIndex('pwa_ecom_ui_template_products')
+const client = algoliasearch(
+    `${process.env.CLI_APP_ID}`,
+    `${process.env.CLI_ADMIN_API_KEY}`
+  )
+const index = client.initIndex(`${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`)
     // const objects = [];
       
     //   objects.push({
@@ -68,7 +71,7 @@ const index = client.initIndex('pwa_ecom_ui_template_products')
 
       index.partialUpdateObjects(arrayData).then(({ objectIDs }) => {
         console.log(objectIDs);
-        res.redirect("https://fritzsport.pe/?clear=true" );
+        res.redirect("http://localhost:3000/?clear=true" );
       });
 
 

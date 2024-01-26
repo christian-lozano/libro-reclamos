@@ -2,7 +2,17 @@
 const mercadopago = require("mercadopago");
 // import logo from "../public/favicon.svg";
 mercadopago.configure({
- access_token:"APP_USR-5646705083909579-113014-beda3d96bd5345123e0b000bd5440535-1571377809",
+  //credenciales de prueba
+   access_token:"APP_USR-1458144755191319-042511-bc0b96dc49d504d083e85727d5f8e50a-1360412804"
+
+
+
+
+  //credenciales de produccion
+ //access_token:"APP_USR-5646705083909579-113014-beda3d96bd5345123e0b000bd5440535-1571377809",
+
+
+
   // access_token:"APP_USR-1458144755191319-042511-bc0b96dc49d504d083e85727d5f8e50a-1360412804",
 
 });
@@ -96,9 +106,9 @@ export default function handler(req, res) {
     },
     back_urls: {
   
-      success: `https://fritzsport.pe/api/exito?variable1=${req.body.stock}`,
-      failure: "https://fritzsport.pe",
-      pending: "https://fritzsport.pe",
+      success: `http://localhost:3000/api/exito2?variable1=${req.body.stock}`,
+      failure: "http://localhost:3000",
+      pending: "http://localhost:3000",
     },
 
     // installments: 1,

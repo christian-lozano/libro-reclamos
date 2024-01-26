@@ -2,75 +2,45 @@
 const mercadopago = require("mercadopago");
 // import logo from "../public/favicon.svg";
 mercadopago.configure({
-  access_token:"APP_USR-5646705083909579-113014-beda3d96bd5345123e0b000bd5440535-1571377809",
+  access_token:`${process.env.ACCESS_TOKEN_MERCADO}`
 
 });
 
-export default function handler(req, res) {
-// const data = JSON.stringify(req.body.productos)
-// console.log(data);
-// console.log(req.body);
 
-// const datasinstring = (data)=>{
-//   for (let key in data) {
-//     if (Number(data[key])) delete data[key];
-//     return data
-//   }
 
-// }
-// console.log(datasinstring(data))
-// console.log(data);
-  // const dataProducts = [
-  //   {
-  //     title: 'test1',
-  //     description: 'testdecrption',
-  //     picture_url: '../public/favicon.svg',
-  //     category_id: 'PEN',
-  //     quantity: 2,
-  //     unit_price: 20,
-  //   },
-  //   {
-  //     title: 'test2',
-  //     description: 'testdecrption2',
-  //     picture_url: '../public/favicon.svg',
-  //     category_id: 'PEN',
-  //     quantity: 2,
-  //     unit_price: 20,
-  //   },
-  // ]
 
-  // const iterator = req.body.productos.values()
-  // const datos = (iterator) =>{
-  //   for(const value of iterator) {
-  //     return value
-    
-  //   }
-  // }
-  // console.log(datos(iterator));
-//  req.body.forEach(element ,i=> {
-//     console.log(element[i])
-//   })
-console.log(req.body);
-// req.body.products.map(el=>{
-        
-//   console.log(el);
-  
-//   })
+
+
+
+
+
+
+
+export default  async function  handler(req, res) {
+  const { method, body } = req
+console.log(body);
+
+  let productosCantidad =  body.productos.map(el=>{
+    let productos = {
+      id:el.objectID,
+      category_id:"zapatillas",
+      title: `${el.title} código de Producto: ${el.objectID} Talla: ${el.talla}`,
+      description:`Nombre de Producto ${el.title} código:${el.objectID}`,
+      picture_url: el.img[0],
+      category_id: 'PEN',
+      quantity: el.quantity,
+      unit_price: el.precio,
+    }
+
+    return productos
+  })
+
   let preference = {
-    items:[
-   
-     {    title:"titulo",
-          description:'dni:75286858 nombre: christian lozano adrianzen',
-          picture_url: '../public/favicon.svg',
-          category_id: 'PEN',
-          quantity: 1,
-          unit_price:5
-        }
-    ],
+    items:productosCantidad,
     payer: {
-      first_name: 'christian lozano',
-      last_name: 'apellido',
-      email: 'christian.lozano@gmail.com',
+      first_name: body.datosComprador.nombre,
+      last_name: body.datosComprador.apellido,
+      email: body.datosComprador.email,
       // phone:   {
       //   area_code: 51,
       //   number: 987654321
@@ -78,22 +48,23 @@ console.log(req.body);
      address: {},
     },
     identification: {
-      number: 19119119100,
+      number: body.datosComprador.documento,
       type: "DNI"
     },
     shipments: {
       receiver_address: {
-        zip_code: "12312-123",
-        state_name: "Rio de Janeiro",
-        city_name: "Buzios",
-        street_name: "Av las Naciones Unidas",
+        zip_code: "121212",
+        state_name: body.datosComprador.distrito,
+        city_name: "Lima",
+        street_name:  body.datosComprador.distrito,
         street_number: 3003
       },
     },
     back_urls: {
-      success: `http://127.0.0.1:3000`,
-      failure: "http://127.0.0.1:3000",
-      pending: "http://127.0.0.1:3000",
+  
+      success: `${process.env.URL_DOMINIO}/api/exito2`,
+      failure: `${process.env.URL_DOMINIO}`,
+      pending: `${process.env.URL_DOMINIO}`,
     },
 
     // installments: 1,
@@ -112,15 +83,30 @@ console.log(req.body);
     },
     auto_return: "approved",
   };
-  mercadopago.preferences
+
+
+
+  switch (method) {
+
+    case 'POST':
+
+    mercadopago.preferences
     .create(preference)
     .then(function (response) {
+        // console.log(response.body.sandbox_init_point);
 
-      res.redirect(response.body.init_point);
+         res.status(201).json({ msg: response.body.init_point })
+
+       
+
     })
     .catch(function (error) {
-      console.log(error.message);
-
+   
+        console.log(error);
 
     });
+
+    default:
+      // return res.status(201).json({ msg: 'this method not difined' })
+  }
 }

@@ -203,8 +203,8 @@ import { SearchPageLayout } from '@/layouts/search-page-layout'
 import type { ProductPageProps } from '../product/[objectID]'
 
 const searchClient = algoliasearch(
-  '235XIUIEK1',
-  'c502207ec53e080f5223f93210e9f2be'
+  `${process.env.CLI_APP_ID}`,
+  `${process.env.NEXT_PUBLIC_INSTANTSEARCH_SEARCH_API_KEY}`
 )
 
 type HitProps = {
