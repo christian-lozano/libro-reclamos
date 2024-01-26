@@ -12,10 +12,7 @@ import type { InstantSearchServerState } from 'react-instantsearch-hooks'
 
 import { SearchBox } from '@/components/panel/SearchBox'
 
-const client = algoliasearch(
-  `${process.env.CLI_APP_ID}`,
-  `${process.env.CLI_ADMIN_API_KEY}`
-)
+const client = algoliasearch('235XIUIEK1', '32f92a7d31a7320106285b5b7466e336')
 
 export default function FilterSeach({
   serverState,
@@ -33,7 +30,7 @@ export default function FilterSeach({
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
         searchClient={client}
-        indexName={`${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`}
+        indexName="pwa_ecom_ui_template_products"
         routing={{
           router: history({
             getLocation() {

@@ -35,11 +35,8 @@ export default async function handler(req, res) {
                         return productos
                       })
                       console.log(productosCantidad);
-           const client = algoliasearch(
-                              `${process.env.CLI_APP_ID}`,
-                              `${process.env.CLI_ADMIN_API_KEY}`
-                            )
-                          const index = client.initIndex(`${process.env.NEXT_PUBLIC_INSTANTSEARCH_INDEX_NAME}`)
+                        const client = algoliasearch('235XIUIEK1','32f92a7d31a7320106285b5b7466e336')
+                        const index = client.initIndex('pwa_ecom_ui_template_products')
                           index.partialUpdateObjects(productosCantidad)
                           .then(({ objectIDs }) => {
                             console.log(objectIDs);
