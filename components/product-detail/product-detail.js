@@ -1,49 +1,25 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
 import { Spinner } from '@material-tailwind/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useCart } from 'react-use-cart'
 
 import { ProductDescription } from '@/components/product/product-description'
 import { ProductLabel } from '@/components/product/product-label'
-import type { ProductPriceCurrency } from '@/components/product/product-price'
+
 import { ProductPrice } from '@/components/product/product-price'
-import type { ProductSizeType } from '@/components/product/product-sizes'
-import type { ProductTagType } from '@/components/product/product-tag'
+
 import { ProductTag } from '@/components/product/product-tag'
 import { ProductTitle } from '@/components/product/product-title'
-import type { ProductHit } from '@/typings/hits'
+
 import { solicitudAlgoliaStock } from '@/utils/solicitud-stock'
 import { Button } from '@ui/button/button'
 import { IconLabel } from '@ui/icon-label/icon-label'
 
 import { ProductDetails } from '../product/product-detail'
 
-export type ProductDetailProps = {
-  id?: string
-  image?: string[]
-  label?: string
-  title?: string
-  objectID?: string
-  description?: string
-  tags?: ProductTagType[]
-  rating?: number
-  reviews?: number
-  available?: boolean
-  sizes?: ProductSizeType[]
-  price?: number
-  units_in_stock?: number
-  originalPrice?: number
-  currency?: ProductPriceCurrency
-  popular?: boolean
-  related?: ProductHit[] | null
-  gender?: string
-  brand?: string
-  // product_type?: string
-
-  // onCheckoutClick?: MouseEventHandler<HTMLButtonElement>
-}
 
 // export type ProductDetailRatingProps = Pick<ProductDetailProps, 'reviews'>
 
@@ -74,9 +50,9 @@ export function ProductDetail({
   units_in_stock,
   gender,
   brand,
-}: // product_type,
+}// product_type,
 // onCheckoutClick,
-ProductDetailProps) {
+) {
   // const [isFavorite, setIsFavorite] = useState(false)
   // const handleFavoriteClick = useCallback(
   //   () => setIsFavorite((favorite) => !favorite),
@@ -113,11 +89,17 @@ ProductDetailProps) {
   const { addItem, items, removeItem } = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
   const [activeSize, setActiveSize] = useState(100)
-  const [talla, setTalla] = useState(String)
+  const [stockProduct, setStockProduct] = useState()
+  const [tallas, setTallas] = useState(String)
   const [executing, setExecuting] = useState(false)
-  const handleActiveTalla = (i: number, size: string) => {
+  const [talla, setTalla] = useState(String)
+
+  const [dataTallas, setDataTallas] = useState(sizes)
+  const handleActiveTalla = (i, size, stock, talla) => {
+    setStockProduct(stock)
     setActiveSize(i)
-    setTalla(size)
+    setTallas(size)
+    setTalla(talla)
   }
   function Loading({ disableLoadAddProduct = true }) {
     return (
@@ -133,10 +115,8 @@ ProductDetailProps) {
     //   // const objetID = item.id
     //   // const indiceId = objetID.indexOf('_')
     //   // const extraidaObjetId = objetID.substring(0, indiceId)
-
     //   return item.objectID === objectID
     // })
-
     solicitudAlgoliaStock(
       items,
       setExecuting,
@@ -147,16 +127,46 @@ ProductDetailProps) {
     )
   }, [items])
 
+
+const solicitudAlgoliaCarrito = (items,tallas) =>{
+
+  let newTallas = []
+
+  tallas.map(el=>{
+
+    newTallas.push(el)
+  })
+  items.map(itemsCarrito=>{
+    newTallas.map(tallasActuales=>{
+      if (itemsCarrito.id === tallasActuales.id) {
+              if (itemsCarrito.talla === tallasActuales.talla) {
+               
+
+                tallasActuales.stock = tallasActuales.stock- itemsCarrito.quantity
+                return tallasActuales
+              
+            
+            
+              }
+      }
+
+    })
+  })
+  console.log(newTallas);
+  setTallas(newTallas);
+}
+
+
   const [disableLoadAddProduct, setDisableLoadAddProduct] = useState(
     Boolean(true)
   )
-
   useEffect(() => {
     setDomLoaded(true)
   }, [])
   // const handleCheckoutClick = useCallback(
-
-  const onCheckoutClick = () => {
+  // console.log(sizes)
+  const router = useRouter()
+  const onCheckoutClick = async () => {
     const notify = () =>
       toast((t) => (
         <div className="relative   w-full">
@@ -189,42 +199,95 @@ ProductDetailProps) {
       ))
 
     // toast(`Agregaste ${title} al Carrito `)
+    const dataObjectStock = {
+      objectID,
+      tallas: dataTallas,
+      id: tallas,
+      tallasActuales: sizes,
+      units_in_stock,
+    }
+    try {
+      const res = await fetch(`/api/consultaStock`, {
+        method: 'POST',
+        body: JSON.stringify(dataObjectStock),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
+          'Access-Control-Allow-Headers': '*',
+        },
+      })
+      const data = await res.json()
+      console.log(res.status)
+      if (res.status === 201) {
+        // router.reload()
+        console.log(data.msg)
 
-    notify()
-    const filter = {
-      id: String(objectID),
-      talla,
-    }
-    const itemsCart = items.filter(function (item) {
-      for (const key in filter) {
-        if (item[key] === undefined || item[key]) return false
+        setDataTallas(data.msg.tallas)
+        addItem({
+          img: image,
+          title,
+          precio: price,
+          objectID,
+          // id: String(`${objectID}_${talla}`),
+          id: String(`${tallas}`),
+          price: Number(price),
+          tallas: data.msg.talla,
+          talla,
+          stockProductActual: stockProduct,
+        })
+        // setTallas('')
+        setTalla('')
+        setStockProduct('')
+        setActiveSize('')
+        // router.push(data.msg)
+        // router.refresh()
+        // alert(data.msg)
       }
-      return true
-    })
-    if (itemsCart) {
-      addItem({
-        img: image,
-        title,
-        precio: price,
-        objectID,
-        // id: String(`${objectID}_${talla}`),
-        id: String(`${objectID}_${talla}`),
-        price: Number(price),
-        talla,
-        units_in_stock,
-      })
-    } else {
-      addItem({
-        img: image,
-        title,
-        precio: price,
-        id: String(objectID),
-        price: Number(price),
-        talla,
-        units_in_stock,
-      })
+      if (res.status === 400) {
+        console.log(data.msg)
+        router.reload()
+      }
+      // console.log(data);
+    } catch (error) {
+      console.log(error)
     }
-    setDisableLoadAddProduct(true)
+
+    //   notify()
+    //   const filter = {
+    //     id: String(objectID),
+    //     talla,
+    //   }
+    //   const itemsCart = items.filter(function (item) {
+    //     for (const key in filter) {
+    //       if (item[key] === undefined || item[key]) return false
+    //     }
+    //     return true
+    //   })
+    //   if (itemsCart) {
+    //     addItem({
+    //       img: image,
+    //       title,
+    //       precio: price,
+    //       objectID,
+    //       // id: String(`${objectID}_${talla}`),
+    //       id: String(`${objectID}_${talla}`),
+    //       price: Number(price),
+    //       talla,
+    //       units_in_stock,
+    //     })
+    //   } else {
+    //     addItem({
+    //       img: image,
+    //       title,
+    //       precio: price,
+    //       id: String(objectID),
+    //       price: Number(price),
+    //       talla,
+    //       units_in_stock,
+    //     })
+    //   }
+    //   setDisableLoadAddProduct(true)
   }
   //   [onCheckoutClick]
   // const handleCheckoutClick = useCallback(
@@ -233,11 +296,13 @@ ProductDetailProps) {
   //   },
   //   [onCheckoutClick]
   // )
+
   useEffect(() => {
     setDisableLoadAddProduct(true)
     setExecuting(false)
+    solicitudAlgoliaCarrito(items,sizes)
   }, [items])
-
+  // console.log(tallas);
   return (
     <>
       <div className="hidden">
@@ -306,26 +371,31 @@ ProductDetailProps) {
                 classNameOriginalPrice="text-xl"
               />
             )}
-            {sizes && sizes.length > 0 && (
+            {dataTallas && dataTallas.length > 0 && (
               <>
                 <ul className="grid grid-cols-4 gap-3 mt-6">
-                  {sizes.map((el, i) => (
-                    <div key={i}>
+                  {dataTallas.map((el, i) => (
+                    <div key={el.id}>
                       <Button
                         disabled={
-                          units_in_stock === 0 ||
-                          executing ||
-                          !disableLoadAddProduct
+                          el.stock <= 0 || executing || !disableLoadAddProduct || units_in_stock === 0
                         }
                         className={`w-full h-10 ${
-                          activeSize === i
+                          activeSize === el.id
                             ? 'bg-black text-white border-2'
                             : 'bg-white  text-black border-2'
                         }`}
                         nonce={undefined}
-                        onClick={() => handleActiveTalla(i, String(el))}
+                        onClick={() =>
+                          handleActiveTalla(
+                            el.id,
+                            String(el.id),
+                            units_in_stock,
+                            el.talla
+                          )
+                        }
                       >
-                        {String(el)}
+                        {String(el.talla)}
                       </Button>
                     </div>
                   ))}

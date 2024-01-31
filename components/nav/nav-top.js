@@ -24,6 +24,7 @@ import { Link } from '@ui/link/link'
 
 import { ProductCardHitShowcase } from '../product-card/product-card-hit'
 import { ProductsShowcase } from '../products-showcase/products-showcase'
+import { useRouter } from 'next/router'
 
 
 
@@ -1742,6 +1743,26 @@ export const NavTop = memo(function NavTop({props}) {
   }
   if(!props.homeNav) return <div>Cargando..</div>
 
+
+
+  // remove items reload cart
+
+  const router = useRouter()
+  function reloadPage() {
+    router.reload()
+  }
+
+
+  const handlerRemoveItem = (id)=>{
+    removeItem(id)
+    reloadPage()
+  } 
+
+  const handlerRemoveItems = ()=>{
+    emptyCart()
+    reloadPage()
+  } 
+
   return (
     <div>
       {/* /*---------------------------------*/
@@ -2028,7 +2049,7 @@ export const NavTop = memo(function NavTop({props}) {
             <h2 className="text-2xl font-semibold ">Carrito</h2>
             <Button
               className="px-2 ml-5 py-1 pl-0 space-x-1 cursor-pointer"
-              onClick={() => emptyCart()}
+              onClick={handlerRemoveItems}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -2107,9 +2128,9 @@ export const NavTop = memo(function NavTop({props}) {
                             Cantidad: {el.quantity}
                             <div className="flex text-sm divide-x">
                               <div className=" flex justify-end w-full items-center">
-                                <Button
+                                {/* <Button
                                   className="px-2 py-1 pl-0 space-x-1 cursor-pointer"
-                                  onClick={() => removeItem(el.id)}
+                                  onClick={() => handlerRemoveItem(el.id)}
                                 >
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -2137,7 +2158,7 @@ export const NavTop = memo(function NavTop({props}) {
                                     ></rect>
                                     <path d="M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z"></path>
                                   </svg>
-                                </Button>
+                                </Button> */}
                               </div>
                             </div>
                           </div>

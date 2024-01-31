@@ -135,18 +135,18 @@ export default function PaginaPagar() {
     const handlesubmit = async ()=>{
 
   
-let dataPago = {
-  productos :items,
-  datosComprador:{
-    nombre: allValues.nombre,
-    apellido: allValues.apellido,
-    email:allValues.email,
-    documento:allValues.documento,
-    telefono:allValues.telefono,
-    distrito
+            let dataPago = {
+              productos :items,
+              datosComprador:{
+                nombre: allValues.nombre,
+                apellido: allValues.apellido,
+                email:allValues.email,
+                documento:allValues.documento,
+                telefono:allValues.telefono,
+                distrito
 
-  }
-}
+              }
+            }
 
       try {
           const res = await fetch(`/api/checkout2`,{

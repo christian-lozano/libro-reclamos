@@ -18,18 +18,19 @@ mercadopago.configure({
 
 export default  async function  handler(req, res) {
   const { method, body } = req
-console.log(body);
+console.log(body.productos);
 
   let productosCantidad =  body.productos.map(el=>{
+  
     let productos = {
       id:el.objectID,
-      category_id:"zapatillas",
+      category_id:el.talla,
       title: `${el.title} código de Producto: ${el.objectID} Talla: ${el.talla}`,
-      description:`Nombre de Producto ${el.title} código:${el.objectID}`,
+      description:el.id,
       picture_url: el.img[0],
-      category_id: 'PEN',
+      type:"test",
       quantity: el.quantity,
-      unit_price: el.precio,
+      unit_price: el.precio
     }
 
     return productos
@@ -64,7 +65,7 @@ console.log(body);
   
       success: `${process.env.URL_DOMINIO}/api/exito2`,
       failure: `${process.env.URL_DOMINIO}`,
-      pending: `${process.env.URL_DOMINIO}`,
+      pending: `${process.env.URL_DOMINIO}/noserealizoelpago`,
     },
 
     // installments: 1,

@@ -37,7 +37,7 @@ export default function ProductVista({product}) {
               price={product.data.price.value}
               units_in_stock={product.data.units_in_stock}
               description={product.data.description}
-              sizes={product.data.available_sizes}
+              sizes={product.data.tallas}
               objectID={product.data.objectID}
               image={product.data.image_urls}
               title={product.data.name}

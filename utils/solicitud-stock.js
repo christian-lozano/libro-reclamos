@@ -36,7 +36,7 @@ export function solicitudAlgoliaStock(itemsStock,setExecuting,removeItem,objectI
           for (let indice = 0; indice < results.length; indice++) {
             for (let i = 0; i < miCarritoSinDuplicados.length; i++) {
               // console.log(miCarritoSinDuplicados);
-              console.log(miCarritoSinDuplicados[i].quantity ,results[indice].units_in_stock)
+              // console.log(miCarritoSinDuplicados[i].quantity ,results[indice].units_in_stock)
    
               
               if (miCarritoSinDuplicados[i].quantity === results[indice].units_in_stock ) {
