@@ -1,33 +1,13 @@
-import type { ProductTagType } from '@/components/product/product-tag'
-import type { HitComponentProps, ProductHit } from '@/typings/hits'
+
+
 
 import { ProductDetail } from './product-detail'
-import type { ProductDetailProps } from './product-detail'
 
-export type ProductDetailHitProps = HitComponentProps<ProductHit>
 
-export function ProductDetailHit({ hit }: ProductDetailHitProps) {
-  const product: ProductDetailProps = {
-    id: hit.__queryID,
-    image: hit.image_urls,
-    label: hit.brand,
-    title: hit.name,
-    description: hit.description,
-    tags: [],
-    sizes: [],
-    related: hit.related_products,
-    rating: hit.reviews.rating,
-    reviews: hit.reviews.count,
-    price: hit.price.value,
-    objectID: hit.objectID,
-    brand: hit.brand,
-    currency: {
-      symbol: hit.price.currency === 'USD' ? '$' : 'S/',
-      position: hit.price.currency === 'EUR' ? 'suffix' : 'prefix',
-    },
-    units_in_stock: hit.units_in_stock,
-    gender: hit.gender,
-  }
+
+
+export function ProductDetailHit({ hit }) {
+
 
   // On sales
   if (hit.price.on_sales) {
@@ -37,7 +17,7 @@ export function ProductDetailHit({ hit }: ProductDetailHitProps) {
     product.tags?.push({
       label: `on sale ${hit.price.discount_level}%`,
       theme: 'on-sale',
-    } as ProductTagType)
+    } )
   }
 
   // Tags
@@ -46,7 +26,7 @@ export function ProductDetailHit({ hit }: ProductDetailHitProps) {
     product.tags?.push({
       label: 'popular',
       theme: 'popular',
-    } as ProductTagType)
+    } )
   }
 
   // Sizes
