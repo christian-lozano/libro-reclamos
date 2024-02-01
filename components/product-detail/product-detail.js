@@ -1,5 +1,5 @@
 import ShoppingBagIcon from '@material-design-icons/svg/outlined/shopping_bag.svg'
-import { Spinner } from '@material-tailwind/react'
+import { Dialog, DialogBody, DialogFooter, DialogHeader, Spinner } from '@material-tailwind/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -19,6 +19,7 @@ import { Button } from '@ui/button/button'
 import { IconLabel } from '@ui/icon-label/icon-label'
 
 import { ProductDetails } from '../product/product-detail'
+
 
 
 // export type ProductDetailRatingProps = Pick<ProductDetailProps, 'reviews'>
@@ -86,7 +87,7 @@ export function ProductDetail({
   // }, [])
   // console.log(posts)
 
-  const { addItem, items, removeItem } = useCart()
+  const { addItem, items, removeItem ,cartTotal} = useCart()
   const [domLoaded, setDomLoaded] = useState(false)
   const [activeSize, setActiveSize] = useState(100)
   const [stockProduct, setStockProduct] = useState()
@@ -94,6 +95,11 @@ export function ProductDetail({
   const [executing, setExecuting] = useState(false)
   const [talla, setTalla] = useState(String)
   const [loaderAddProduct, setLoaderAddProduct] = useState(false)
+
+
+
+// open modal add to cart
+const [open, setOpen] = useState(false);
 
   const [dataTallas, setDataTallas] = useState(sizes)
   const handleActiveTalla = (i, size, stock, talla) => {
@@ -164,6 +170,9 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
   useEffect(() => {
     setDomLoaded(true)
   }, [])
+
+
+
   // const handleCheckoutClick = useCallback(
   // console.log(sizes)
   const router = useRouter()
@@ -172,6 +181,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
     const notify = () =>
       toast((t) => (
         <div className="relative   w-full">
+        <div className='w-[100vw]'></div>
           <span className="px-1 2xl:text-sm laptop:text-lg w-full">
             {`Agregaste:`} <br />
             <span className="font-extrabold px-1">{`${title}`}</span>
@@ -255,8 +265,8 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
     } catch (error) {
       console.log(error)
     }
-
-    //   notify()
+    setOpen(!open)
+      // notify()
     //   const filter = {
     //     id: String(objectID),
     //     talla,
@@ -306,8 +316,121 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
     solicitudAlgoliaCarrito(items,sizes)
   }, [items])
   // console.log(tallas);
+
+
+
+
+
+ function BasicModal({items}) {
+
+ 
+
+    return (
+      <>
+
+      <Dialog open={open} handler={()=>setOpen(!open)}>
+      <div className='flex shadow-xl justify-between px-5 py-4 items-center'>
+
+        <div className='text-center uppercase text-black font-bold text-2xl'>Tu Carrito 
+        </div>
+        <Button
+            variant="text"
+            color="white"
+            
+            onClick={()=>setOpen(!open)}
+            className=" text-black  rounded-2xl"
+          >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+
+          </Button>
+        
+   
+      </div>
+        <div className='overflow-y-scroll h-[70vh] px-3 text-black'>
+          {
+            items.map(el=>(
+              <div
+                    key={el.id}
+                    className="flex flex-col py-6 sm:flex-row sm:justify-between justify-center items-center"
+                  >
+                    <div className="flex w-full space-x-2 sm:space-x-4 items-center">
+                      <img
+                        className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
+                        src={el.img[0]}
+                        alt="Polaroid camera"
+                      />
+                      <div className="flex justify-center items-center w-full h-full">
+                        <div className="flex flex-col justify-between w-full">
+                          <div className="flex justify-between w-full pb-2 space-x-2">
+                            <div className="space-y-1 flex items-end">
+                              <h2 className="xl:text-lg text-xs sm:text-xs font-bold  sm:pr-8">
+                                {el.title}
+                              </h2>
+                            </div>
+                        
+                          </div>
+                          <p className="text-xs sm:text-xs mb-2  dark:text-gray-600">
+                            Talla: {el.talla}
+                          </p>
+                          <div className="text-xs flex justify-between items-start sm:text-xs mb-2  dark:text-gray-600">
+                            Cantidad: {el.quantity}
+                            <div className="flex text-sm divide-x">
+                              <div className=" flex justify-end w-full items-center">
+                
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                              <p className="xl:text-lg text-base sm:text-xs font-semibold">
+                                S/{el.price}
+                              </p>
+                              <p className="text-base sm:text-xs line-through dark:text-gray-600">
+                               S/{el.price + 200}
+                              </p>
+                            </div>
+                    </div>
+                  </div>
+            ))
+          }
+        </div>
+        <DialogFooter className='text-black flex justify-around py-5'>
+          <div className='font-extrabold mb-5 text-lg'>Total<span className='font-bold ml-1'>S/{cartTotal}</span> </div>
+          <div className='flex justify-around w-full'>
+          <Link href={"/carrito"}>
+          <Button
+            variant="text"
+            color="white"
+            
+            onClick={()=>setOpen(!open)}
+            className=" bg-black text-white px-5 py-1 rounded-2xl"
+          >
+            <span className=' uppercase'>Ver Carrito</span>
+          </Button>
+          </Link>
+          <Link href={"/pagar"}>
+              <Button variant="gradient" className='mr-1 bg-black text-white px-5 py-1 rounded-2xl' color="green" onClick={()=>setOpen(!open)}>
+                <span className=' uppercase'>Pagar</span>
+              </Button>
+
+          </Link>
+
+          </div>
+        </DialogFooter>
+      </Dialog>
+    </>
+    );
+  }
+
+
+
+
   return (
     <>
+<BasicModal items={items}></BasicModal>
       <div className="hidden">
         {gender} {brand}
       </div>
