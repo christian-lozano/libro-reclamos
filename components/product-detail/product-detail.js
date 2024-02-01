@@ -510,7 +510,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
                           activeSize === el.id
                             ? 'bg-black text-white border-2'
                             : 'bg-white  text-black border-2'
-                        }`}
+                        } border-[0.5px] border-[#cdcdcd] disabled:border-[0.5px] disabled:text-[#666666] disabled:bg-[#cccccc] disabled:line-through `}
                         nonce={undefined}
                         onClick={() =>
                           handleActiveTalla(
@@ -524,7 +524,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
                         {
                           !loaderAddProduct ?
                           
-                          String(el.talla)
+                         <span className='disabled:line-through w-full'>{String(el.talla)}</span> 
                           
                           : (
                             <div role="status " className='flex justify-center'>
