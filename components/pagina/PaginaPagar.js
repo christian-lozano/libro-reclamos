@@ -86,14 +86,14 @@ export default function PaginaPagar() {
     const changeHandler = (e) => {
       setAllValues({ ...allValues, [e.target.name]: e.target.value })
       if (
-        allValues.nombre.length >= 5 &&
-        allValues.apellido.length >= 5 &&
+        allValues.nombre.length >= 1 &&
+        allValues.apellido.length >= 1 &&
         allValues.email.length >= 5 &&
-        allValues.documento.length >= 5 &&
+        allValues.documento.length >= 2 &&
         allValues.telefono.length >= 5 &&
         // allValues.direccion.length >= 5 &&
         // provincia.length >= 2 &&
-        distrito.length >= 2 
+        distrito.length >= 1 
         // allValues.adicional.length >= 3
       ) {
         setValidate(true)
@@ -104,14 +104,14 @@ export default function PaginaPagar() {
   
     useEffect(() => {
       if (
-        allValues.nombre.length >= 2 &&
-        allValues.apellido.length >= 3 &&
+        allValues.nombre.length >= 1 &&
+        allValues.apellido.length >= 1 &&
         allValues.email.length >= 5 &&
-        allValues.documento.length >= 5 &&
+        allValues.documento.length >= 2 &&
         allValues.telefono.length >= 5 &&
         // allValues.direccion.length >= 5 &&
         // provincia.length >= 2 &&
-        distrito.length >= 2 
+        distrito.length >= 1 
         // allValues.adicional.length >= 3
       ) {
         setValidate(true)
@@ -310,7 +310,7 @@ export default function PaginaPagar() {
             <input
               type="text"
               name="apellido"
-              className={`w-full rounded-md border ${
+              className={`w-full ml-1 rounded-md border ${
                 allValues.apellido.length === 0
                   ? 'border-red-200 focus:border-red-200'
                   : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
@@ -361,10 +361,11 @@ export default function PaginaPagar() {
             htmlFor="card-no"
             className="mt-4 mb-2 block text-sm font-medium"
           >
-            Detalles
+           
           </label>
           <div className="flex">
             <div className="relative w-7/12 flex-shrink-0">
+            Documento De Identidad
               <input
                 type="email"
                 id="card-no"
@@ -373,24 +374,14 @@ export default function PaginaPagar() {
                   allValues.documento.length === 0
                     ? 'border-red-200 focus:border-red-200 '
                     : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
-                } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
+                } px-2 py-3 pl-3 text-sm shadow-sm outline-none focus:z-10  `}
                 placeholder="Documento de Identidad"
                 onChange={(e) => changeHandler(e)}
               />
-              <div className="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
-                <svg
-                  className="h-4 w-4 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
-                  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z" />
-                </svg>
-              </div>
+         
             </div>
+            <div className="relative w-5/12 ml-1 flex-shrink-0">
+            Teléfono
             <input
               type="text"
               name="telefono"
@@ -402,6 +393,7 @@ export default function PaginaPagar() {
               placeholder="Teléfono"
               onChange={(e) => changeHandler(e)}
             />
+            </div>
           </div>
           {/*  */}
           <label
