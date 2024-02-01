@@ -51,6 +51,7 @@ export function ProductDetail({
   units_in_stock,
   gender,
   brand,
+  queryID
 }// product_type,
 // onCheckoutClick,
 ) {
@@ -247,6 +248,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
           tallas: data.msg.talla,
           talla,
           stockProductActual: stockProduct,
+          queryID:queryID
         })
         // setTallas('')
         setLoaderAddProduct(false)

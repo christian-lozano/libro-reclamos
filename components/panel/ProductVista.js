@@ -34,6 +34,7 @@ export default function ProductVista({product}) {
 <div>
       {product.data ? (
             <ProductDetail
+              queryID={product.queryID}
               price={product.data.price.value}
               units_in_stock={product.data.units_in_stock}
               description={product.data.description}

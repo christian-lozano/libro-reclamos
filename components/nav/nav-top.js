@@ -2094,6 +2094,7 @@ export const NavTop = memo(function NavTop({props}) {
             <div className="flex flex-col divide-y divide-gray-700   overflow-y-auto h-[calc(96vh-345px)]">
               {domLoaded &&
                 items.map((el) => (
+                  <a href={`/product/${el.objectID}?queryID=${el.queryID}`}>
                   <div
                     key={el.id}
                     className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
@@ -2166,6 +2167,8 @@ export const NavTop = memo(function NavTop({props}) {
                       </div>
                     </div>
                   </div>
+
+                  </a>
                 ))}
             </div>
           )}
