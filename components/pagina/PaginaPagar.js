@@ -30,7 +30,7 @@ export default function PaginaPagar() {
   
     const [provincia, setProvincia] = useState(String)
     const [distrito, setDistrito] = useState(String)
-  
+
     useEffect(() => {
       setDomLoaded(true)
     }, [])
@@ -134,7 +134,7 @@ export default function PaginaPagar() {
     const router = useRouter()
     const handlesubmit = async ()=>{
 
-  
+      setLoadingMercadoPago(true)
             let dataPago = {
               productos :items,
               datosComprador:{
@@ -160,18 +160,28 @@ export default function PaginaPagar() {
               }
            })
           const data = await res.json()
-          console.log(res.status);
+          // console.log(res.status);
           if(res.status === 201){
             
               router.push(data.msg)
+              setLoadingMercadoPago(false)
               // router.refresh()
               // alert(data.msg)
      
 
           }
+          if(res.status === 401){
+            alert("Ingresa un Email Valido")
+            setLoadingMercadoPago(false)
+      
+            // router.refresh()
+            // alert(data.msg)
+   
+
+        }
           // console.log(data);
       } catch (error) {
-          console.log(error);
+          console.log(error.message);
       }
 }
   return (
@@ -718,11 +728,14 @@ export default function PaginaPagar() {
           {checkoutPago && items.length > 0 && validate ? (
             <div className="w-full flex flex-col justify-center items-center relative ">
             <button
+            disabled={loadingMercadoPago}
             onClick={handlesubmit}
       
-              className="mt-4 mb-8 w-full  rounded-md bg-black px-6 py-3 font-medium text-white cursor-pointer"
+              className={`mt-4 mb-8 w-full relative rounded-md ${!loadingMercadoPago ? "bg-black" : "bg-blue-gray-300" }   px-6 py-3 font-medium text-white cursor-pointer`}
             >
               Realizar pedido
+
+     
             </button>
               <Loading disableLoadAddProduct={loadingMercadoPago} />
             </div>

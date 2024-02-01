@@ -18,7 +18,7 @@ mercadopago.configure({
 
 export default  async function  handler(req, res) {
   const { method, body } = req
-console.log(body.productos);
+// console.log(body.productos);
 
   let productosCantidad =  body.productos.map(el=>{
   
@@ -103,8 +103,8 @@ console.log(body.productos);
     })
     .catch(function (error) {
    
-        console.log(error);
-
+      res.status(401).json({ msg: "Introduzca un Correo Electrónico Valido"})
+    
     });
 
     default:
