@@ -184,6 +184,9 @@ export default function PaginaPagar() {
           console.log(error.message);
       }
 }
+
+
+
   return (
     <div className="py-16">
     <RemoveProductCartStock />

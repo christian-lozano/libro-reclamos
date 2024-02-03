@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 export default function ProductVista({product}) {
 
-
+console.log(product.data.gender);
   return (
   <>
      <Head>
@@ -34,6 +34,9 @@ export default function ProductVista({product}) {
 <div>
       {product.data ? (
             <ProductDetail
+              gender={product.data.gender}
+              brand={product.data.brand}
+
               queryID={product.queryID}
               price={product.data.price.value}
               units_in_stock={product.data.units_in_stock}

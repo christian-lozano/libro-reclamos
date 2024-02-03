@@ -329,7 +329,7 @@ export default function Home({ ...props }: ProductPageProps) {
               <div className="sticky top-0 flex flex-col justify-center items-center h-20 w-[42vw]  bg-white">
                 <h3 className="text-center mb-3 xl:hidden block ">Filtros</h3>
               </div>
-              <div className=" px-5 w-[100%]  xl:w-auto  overflow-y-scroll h-[87vh] xl:h-auto  xl:overflow-y-hidden ">
+              <div className=" px-5 w-[100%]  xl:w-auto  overflow-y-scroll h-[87vh]   xl:overflow-y-scroll ">
                 <DynamicWidgets>
                   <Panel header="Categoría">
                     <RefinementList
@@ -449,7 +449,7 @@ export default function Home({ ...props }: ProductPageProps) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
   const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
 
@@ -461,6 +461,5 @@ export const getStaticProps = async () => {
       homeNav,
       homeLogo,
     },
-    revalidate: 80, // In seconds
   }
 }

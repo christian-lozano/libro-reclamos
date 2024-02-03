@@ -433,9 +433,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
   return (
     <>
 <BasicModal items={items}></BasicModal>
-      <div className="hidden">
-        {gender} {brand}
-      </div>
+     
       <div className="flex flex-col xl:justify-center gap-1 mb-12 laptop:my-8 xl:flex-row laptop:flex-row ">
         <div className="laptop:w-12/12 flex justify-center ">
           <div className="flex flex-col items-center  laptop:min-h-[500px] w-full ">
@@ -457,13 +455,19 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
         </div>
         <div className="hidden">{available}</div>
         <div className="laptop:w-4/12 xl:w-5/12 flex flex-col items-center ">
-          <div className="w-full">
+          <div className="w-full ">
+    
             {label && (
               <ProductLabel className="label-semibold">{label}</ProductLabel>
             )}
             {title && (
               <ProductTitle className="heading-4 mt-1">{title}</ProductTitle>
             )}
+            <div className="text-xs mt-3 flex ">
+            <span className='mr-2'> Genero:  <span className='font-bold'>{gender}</span> </span>
+            <span > Marca:  <span className='font-bold'>{brand}</span> </span>
+
+            </div>
             {/* {typeof rating !== 'undefined' && (
           <ProductRating
             rating={rating}
