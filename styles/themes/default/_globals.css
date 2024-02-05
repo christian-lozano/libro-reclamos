@@ -495,3 +495,6 @@ input::-webkit-inner-spin-button {
 }
 
 
+button.ais-InfiniteHits-loadMore.ais-InfiniteHits-loadMore--disabled {
+  display: none;
+}

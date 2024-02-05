@@ -866,13 +866,13 @@ const dataHeader = [
           {
             id: '1',
             title: 'Ver Todas las Zapatillas',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas',
           },
-          {
-            id: '2',
-            title: 'Running',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-          },
+          // {
+          //   id: '2',
+          //   title: 'Running',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
           // {
           //   id: '3',
           //   title: 'Terrex',
@@ -901,7 +901,7 @@ const dataHeader = [
           {
             id: '8',
             title: 'Calzado Comodo',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo',
           },
         ],
       },
@@ -995,16 +995,16 @@ const dataHeader = [
       // },
       {
         categoria: [
-          {
-            id: '17',
-            title: ' Deportes',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer20%comodo',
-          },
-          {
-            id: '18',
-            title: ' Running',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20running',
-          },
+          // {
+          //   id: '17',
+          //   title: ' Deportes',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer20%comodo',
+          // },
+          // {
+          //   id: '18',
+          //   title: ' Running',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20running',
+          // },
           // {
           //   id: '19',
           //   title: ' Futbol',
@@ -1049,23 +1049,23 @@ const dataHeader = [
           {
             id: '1',
             title: 'Ver Todas las Zapatillas',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas',
           },
-          {
-            id: '2',
-            title: 'Running',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          },
+          // {
+          //   id: '2',
+          //   title: 'Running',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          // },
           // {
           //   id: '3',
           //   title: 'Terrex',
           //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
           // },
-          // {
-          //   id: '4',
-          //   title: 'Chimpunes',
-          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
+          {
+            id: '4',
+            title: 'Chimpunes',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Chimpunes',
+          },
           // {
           //   id: '5',
           //   title: 'Básquet',
@@ -1084,17 +1084,17 @@ const dataHeader = [
           {
             id: '8',
             title: 'Calzado Comodo',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Comodo',
           },
         ],
       },
       {
         categoria: [
-          {
-            id: '9',
-            title: ' Ropa',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
-          },
+          // {
+          //   id: '9',
+          //   title: ' Ropa',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+          // },
           // {
           //   id: '10',
           //   title: 'Polos',
@@ -1105,11 +1105,11 @@ const dataHeader = [
           //   title: 'Licras',
           //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
           // },
-          {
-            id: '12',
-            title: 'Casacas',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
-          },
+          // {
+          //   id: '12',
+          //   title: 'Casacas',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
+          // },
           // {
           //   id: '12',
           //   title: 'Poleras',
@@ -1120,16 +1120,16 @@ const dataHeader = [
           //   title: 'Pantalones',
           //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
           // },
-          {
-            id: '12',
-            title: 'Camisetas de Futbol',
-            url: '/catalog?q=camisetas&p=1',
-          },
-          {
-            id: '12',
-            title: 'Shorts',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20camisetas',
-          },
+          // {
+          //   id: '12',
+          //   title: 'Camisetas de Futbol',
+          //   url: '/catalog?q=camisetas&p=1',
+          // },
+          // {
+          //   id: '12',
+          //   title: 'Shorts',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20camisetas',
+          // },
           // {
           //   id: '12',
           //   title: 'Buzos',
@@ -1139,21 +1139,21 @@ const dataHeader = [
       },
       {
         categoria: [
-          {
-            id: '13',
-            title: 'Accesorios',
-            url: '/catalog?q=accesorios&p=1',
-          },
+          // {
+          //   id: '13',
+          //   title: 'Accesorios',
+          //   url: '/catalog?q=accesorios&p=1',
+          // },
           // {
           //   id: '14',
           //   title: 'Bolsos',
           //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
           // },
-          {
-            id: '15',
-            title: 'Mochilas',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20mochilas',
-          },
+          // {
+          //   id: '15',
+          //   title: 'Mochilas',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20mochilas',
+          // },
           // {
           //   id: '16',
           //   title: 'Guantes',
@@ -1178,20 +1178,20 @@ const dataHeader = [
       },
       {
         categoria: [
-          {
-            id: '17',
-            title: ' Deportes',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20futbol',
-          },
-          {
-            id: '18',
-            title: ' Running',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%running',
-          },
+          // {
+          //   id: '17',
+          //   title: ' Deportes',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20futbol',
+          // },
+          // {
+          //   id: '18',
+          //   title: ' Running',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%running',
+          // },
           {
             id: '19',
             title: ' Futbol',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20futbol',
+            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=futbol',
           },
           // {
           //   id: '20',
@@ -1227,42 +1227,42 @@ const dataHeader = [
     titulo: 'Niños',
     url: 'ninos',
     infoNav: [
-      // {
-      //   categoria: [
-      //     {
-      //       id: '35',
-      //       title: 'Calzado Niño',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-      //     },
-      //     {
-      //       id: '36',
-      //       title: 'Zapatillas',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-      //     },
-      //     {
-      //       id: '37',
-      //       title: 'Chimpunes',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-      //     },
-      //     {
-      //       id: '38',
-      //       title: 'Calzado Escolar Blanco',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-      //     },
-      //     {
-      //       id: '38',
-      //       title: 'Sandalias',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-      //     },
-      //   ],
-      // },
       {
         categoria: [
           {
-            id: '39',
-            title: 'Ropa Niño',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
+            id: '35',
+            title: 'Calzado Niño',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Niño',
           },
+          {
+            id: '36',
+            title: 'Zapatillas',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Niño',
+          },
+          // {
+          //   id: '37',
+          //   title: 'Chimpunes',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
+          // },
+          // {
+          //   id: '38',
+          //   title: 'Calzado Escolar Blanco',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
+          // },
+          // {
+          //   id: '38',
+          //   title: 'Sandalias',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
+          // },
+        ],
+      },
+      {
+        categoria: [
+          // {
+          //   id: '39',
+          //   title: 'Ropa Niño',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niño',
+          // },
           // {
           //   id: '40',
           //   title: 'Polos',
@@ -1300,42 +1300,42 @@ const dataHeader = [
           // },
         ],
       },
-      // {
-      //   categoria: [
-      //     {
-      //       id: '35',
-      //       title: 'Calzado Niña',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
-      //     },
-      //     {
-      //       id: '36',
-      //       title: 'Zapatillas',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
-      //     },
-      //     {
-      //       id: '37',
-      //       title: 'Chimpunes',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
-      //     },
-      //     {
-      //       id: '38',
-      //       title: 'Calzado Escolar Blanco',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
-      //     },
-      //     {
-      //       id: '38',
-      //       title: 'Sandalias',
-      //       url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
-      //     },
-      //   ],
-      // },
       {
         categoria: [
           {
-            id: '39',
-            title: 'Ropa Niña',
-            url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
+            id: '35',
+            title: 'Calzado Niña',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Niña&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Zapatillas',
           },
+          {
+            id: '36',
+            title: 'Zapatillas',
+            url: '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Niña&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Zapatillas',
+          },
+          // {
+          //   id: '37',
+          //   title: 'Chimpunes',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
+          // },
+          // {
+          //   id: '38',
+          //   title: 'Calzado Escolar Blanco',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
+          // },
+          // {
+          //   id: '38',
+          //   title: 'Sandalias',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
+          // },
+        ],
+      },
+      {
+        categoria: [
+          // {
+          //   id: '39',
+          //   title: 'Ropa Niña',
+          //   url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=niña',
+          // },
           // {
           //   id: '40',
           //   title: 'Polos',
@@ -1577,12 +1577,17 @@ const dataHeader = [
     ],
   },
   {
+    id: 'tienda',
+    titulo: 'Tienda',
+    url: '/catalog',
+  },
+  {
     id: 'outlet',
     titulo: 'Emprende',
     url: '/emprende',
   },
   {
-    id: 'outlet',
+    id: 'Ntiendas',
     titulo: 'Nuestras Tiendas',
     url: '/nuestrastiendas',
   },
@@ -1782,7 +1787,7 @@ export const NavTop = memo(function NavTop({props}) {
                     <div className=" lg:block h-full 2xl:ml-16">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
                         {props.homeNav.map((el, index) => (
-                          <Link
+                          <a
                             href={`/${el.url}`}
                             className="h-full flex justify-center items-center "
                             key={el._id}
@@ -1806,7 +1811,7 @@ export const NavTop = memo(function NavTop({props}) {
                                 {el.page}
                               </span>
                             </div>
-                          </Link>
+                          </a>
                         ))}
 
                         {/* <Link

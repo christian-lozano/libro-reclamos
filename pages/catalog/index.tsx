@@ -304,7 +304,7 @@ export default function Home({ ...props }: ProductPageProps) {
               className={`xl:p-5 px-3 xl:sticky xl:top-0 xl:overflow-y-hidden  xl:overflow-x-hidden xl:max-w-[20vw] w-[80vw] ${
                 first
                   ? 'transition translate-x-[0rem]  xl:translate-x-0 ease-linear delay-150'
-                  : 'transition translate-x-[20rem] xl:translate-x-0  ease-linear delay-150'
+                  : 'transition translate-x-[80vw] xl:translate-x-0  ease-linear delay-150'
               }  xl:block  overflow-y-scroll  fixed bg-white  w-3/5 right-0  z-overlay-full xl:z-[0] top-0 `}
             >
               <Button
@@ -397,7 +397,7 @@ export default function Home({ ...props }: ProductPageProps) {
 
           <Button
             className={`fixed flex justify-end items-center  right-0 xl:hidden z-[10] pr-6  w-3/3 border-b-[1px] border-[#eeeeee] ${
-              altoScroll > 10 ? 'top-[9rem]' : 'top-[11rem]'
+              altoScroll > 10 ? 'top-[9rem]' : 'top-[9rem]'
             }   bg-white w-full `}
             onClick={() => setfirst(true)}
           >
