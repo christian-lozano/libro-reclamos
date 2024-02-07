@@ -8,12 +8,14 @@ import { CarouselMarcasHome } from '@/components/carousel/carousel-marcas-home'
 import { ProductCardHitShowcase } from '@/components/product-card/product-card-hit'
 import { ProductsShowcase } from '@/components/products-showcase/products-showcase'
 import { HeaderNew } from '../header/header-new'
+import BuscadorHome from '../BuscadorHome/BuscadorHome'
 export default function PaginaHome({props}) {
   return (
     <div>
 
     <HeaderNew props={props}/>
-            <Configure
+    {/* <BuscadorHome /> */}
+        <Configure
         hitsPerPage={6}
         // We cannot retrieve the user token at build time, so we disable perso
         // feature to avoid an additional call to retrieve Algolia results at load time

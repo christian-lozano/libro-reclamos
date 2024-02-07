@@ -1698,7 +1698,7 @@ const dataHeader = [
   // },
 ]
 
-export const NavTop = memo(function NavTop({props}) {
+export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
 
   // carrito funciones necesarias
   const [domLoaded, setDomLoaded] = useState(false)

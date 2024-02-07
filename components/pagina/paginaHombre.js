@@ -120,7 +120,7 @@ export default function PaginaHombre({props}) {
   // MujerDestacado,
   return (
     <div>
-    <HeaderNew props={props}/>
+    <HeaderNew activeSearchGlobal={false} props={props}/>
 
           <nav
         className={`w-full  bg-white xl:bg-black flex justify-center mt-14 xl:mt-0  ${

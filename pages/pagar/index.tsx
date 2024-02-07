@@ -9,7 +9,7 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   return (
     <SearchPageLayout {...props}>
-      <HeaderNew props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
       <PaginaPagar />
     </SearchPageLayout>
   )

@@ -16,7 +16,7 @@ export default function PaginaEmprende({props}) {
   return (
     <>
 
-    <HeaderNew props={props}/>
+    <HeaderNew activeSearchGlobal={false} props={props}/>
     <div className=" pt-14 md:pt-16">
 
         <div className="">

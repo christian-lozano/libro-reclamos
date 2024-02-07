@@ -254,7 +254,7 @@ export default function Home({ ...props }: ProductPageProps) {
 
   return (
     <SearchPageLayout {...props}>
-      <HeaderNew props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
 
       <InstantSearch
         searchClient={searchClient}

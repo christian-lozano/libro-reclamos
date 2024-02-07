@@ -16,7 +16,7 @@ export default function Home(props: SearchPageLayoutProps) {
   const { items, removeItem, cartTotal } = useCart()
   return (
     <SearchPageLayout {...props}>
-      <HeaderNew props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
       <div className="py-16">
         <h1 className="mb-10 text-center text-2xl font-bold">CARRITO</h1>
         <div className="mx-auto max-w-5xl 2xl:max-w-7xl justify-center px-1 md:flex md:space-x-6 xl:px-0">

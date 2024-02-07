@@ -5,7 +5,7 @@ import { Nav } from '@/components/nav/nav'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 
-export function HeaderNew({props}) {
+export function HeaderNew({props,activeSearchGlobal}) {
   const [isSticky, setIsSticky] = useState(false)
 
   const { setObservedNode } = useIntersectionObserver({
@@ -23,7 +23,7 @@ export function HeaderNew({props}) {
       )}
       ref={setObservedNode}
     >
-      <Nav props={props} />
+      <Nav props={props} activeSearchGlobal={activeSearchGlobal}/>
     </header>
   )
 }

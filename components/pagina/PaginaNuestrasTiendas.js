@@ -44,7 +44,7 @@ const handleOpen = () => setOpen(!open)
 if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
   return (
     <>
-      <HeaderNew props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
 
     <div className=" pt-14 md:pt-16">
     <section className="blog text-black body-font mb-20">

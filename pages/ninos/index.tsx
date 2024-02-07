@@ -12,7 +12,7 @@ import {
 export default function Home(props: SearchPageLayoutProps) {
   return (
     <SearchPageLayout {...props}>
-      <HeaderNew props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
       <Configure
         hitsPerPage={6}
         // We cannot retrieve the user token at build time, so we disable persona
