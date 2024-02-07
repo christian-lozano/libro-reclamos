@@ -351,7 +351,7 @@ export default function Home({ ...props }: ProductPageProps) {
                     <RefinementList
                       attribute="brand"
                       searchable={true}
-                      searchablePlaceholder="Buscar Color"
+                      searchablePlaceholder="Buscar "
                       showMore={true}
                     />
                   </Panel>
