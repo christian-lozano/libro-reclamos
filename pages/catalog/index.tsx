@@ -334,41 +334,43 @@ export default function Home({ ...props }: ProductPageProps) {
                   <Panel header="Categoría">
                     <RefinementList
                       attribute="Categoria"
-                      searchable={true}
+                      searchable={false}
                       searchablePlaceholder="Buscar Categoría"
-                      showMore={true}
+                      showMore={false}
+                      limit={50}
                     />
                   </Panel>
                   <Panel header="Genero">
                     <RefinementList
                       attribute="Genero"
-                      searchable={true}
+                      searchable={false}
                       searchablePlaceholder="Buscar Genero"
-                      showMore={true}
+                      showMore={false}
                     />
                   </Panel>
                   <Panel header="Marca">
                     <RefinementList
                       attribute="brand"
-                      searchable={true}
-                      searchablePlaceholder="Buscar "
-                      showMore={true}
+                      searchable={false}
+                      searchablePlaceholder="Buscar Marca"
+                      showMore={false}
                     />
                   </Panel>
-                  <Panel header="Tallas">
+                  {/* <Panel header="Tallas">
                     <RefinementList
+                      sortBy={['count:desc', 'name:asc']}
                       attribute="Tallas"
-                      searchable={true}
+                      searchable={false}
                       searchablePlaceholder="Buscar Tallas"
-                      showMore={true}
+                      showMore={false}
                     />
-                  </Panel>
+                  </Panel> */}
                   <Panel header="Color">
                     <RefinementList
                       attribute="Color"
-                      searchable={true}
+                      searchable={false}
                       searchablePlaceholder="Buscar Color"
-                      showMore={true}
+                      showMore={false}
                     />
                   </Panel>
 
