@@ -42,7 +42,7 @@ export default function Product({ objectID, ...props }: ProductPageProps) {
 
   return (
     <SearchPageLayout {...props}>
-      <HeaderNew activeSearchGlobal={true} props={props} />
+      <HeaderNew activeSearchGlobal={false} props={props} />
 
       {/* <h1>Cool Page</h1>
       <p>This is a cool page. It has lots of cool content!</p> */}
