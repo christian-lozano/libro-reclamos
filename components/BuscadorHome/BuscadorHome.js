@@ -4,15 +4,14 @@ export default function BuscadorHome({activeSearchGlobal = true}) {
 
   const [search, setSearch] = useState("")
   const [dataSearch , setDataSearch  ] = useState([])
-  const client = algoliasearch('235XIUIEK1', 'c502207ec53e080f5223f93210e9f2be')  
-  const index = client.initIndex('pwa_ecom_ui_template_products')
-
-
-
-
- const HandleChangeSearch = (e) => {
+  
+  
+  
+  
+  const HandleChangeSearch = (e) => {
+   const client = algoliasearch('235XIUIEK1', 'c502207ec53e080f5223f93210e9f2be')  
+   const index = client.initIndex('pwa_ecom_ui_template_products')
   setSearch(e.target.value)
-  console.log(search);
   index.search(e.target.value, {
     // attributesToRetrieve: ['name', 'sku'],
     page: 1,
@@ -33,7 +32,7 @@ export default function BuscadorHome({activeSearchGlobal = true}) {
               
 
 
-              <form>   
+              <form onSubmit={(e)=>e.preventDefault()}>   
                 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                 <div class="relative">
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
