@@ -201,7 +201,7 @@ export default async function handler(req, res) {
                               area_code:result.payer.number  || "testAreaCode",
                             }
 
-                           fetch(`http://localhost:3000/api/pagoPendiente`,{
+                           fetch(`${process.env.URL_DOMINIO}/api/pagoPendiente`,{
                               method:"POST",
                               body: JSON.stringify(dataEnvioMongoUser),
                               headers:{
