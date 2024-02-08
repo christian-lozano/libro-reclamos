@@ -188,8 +188,39 @@ export default async function handler(req, res) {
                     
                           index.partialUpdateObjects(productosCantidad)
                           .then(({ objectIDs }) => {
-                            console.log(objectIDs);
+                        
+
+
+
+                            let dataEnvioMongoUser = {
+                              id_payer:result.payer.id || "testid",
+                              nombres: result.payer.first_name || "testNombre",
+                              email: result.payer.email || "testEmail",
+                              documento:result.payer.identification.number || "testTelefono",
+                              telefono: result.payer.number || "testTelefono",
+                              area_code:result.payer.number  || "testAreaCode",
+                            }
+
+                           fetch(`http://localhost:3000/api/pagoPendiente`,{
+                              method:"POST",
+                              body: JSON.stringify(dataEnvioMongoUser),
+                              headers:{
+                                  "Content-Type":"application/json",
+                                  'Access-Control-Allow-Origin':'*',
+                                  'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
+                                  'Access-Control-Allow-Headers':"*"
+                              }
+                           }).then(res=> res.json() ).then(resulta=>{
+                            console.log(resulta);
                             res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+                           }).catch((error) => {
+                            console.log(error)
+                          });
+                        
+                          
+
+                              
+                        
                           });
                   
 

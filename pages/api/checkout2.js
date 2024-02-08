@@ -42,10 +42,10 @@ export default  async function  handler(req, res) {
       first_name: body.datosComprador.nombre,
       last_name: body.datosComprador.apellido,
       email: body.datosComprador.email,
-      // phone:   {
-      //   area_code: 51,
-      //   number: 987654321
-      // },
+      phone:   {
+        area_code: "51",
+        number: 987654321
+      },
      address: {},
     },
     identification: {
@@ -98,7 +98,7 @@ export default  async function  handler(req, res) {
 
          res.status(201).json({ msg: response.body.init_point })
 
-       
+
 
     })
     .catch(function (error) {
