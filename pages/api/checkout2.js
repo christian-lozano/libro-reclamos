@@ -97,9 +97,9 @@ export default  async function  handler(req, res) {
     .create(preference)
     .then(function (response) {
         // console.log(response.body.sandbox_init_point);
-        console.log(response.body);
+ 
         let dataEnvioMongoUser = {
-          id_payer: response.body.collector_id,
+          id_payer: response.body.id,
           id_mercado_pago:"01",
           pedido: true,
           pedido_pagado: false,

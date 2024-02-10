@@ -184,13 +184,14 @@ export default async function handler(req, res) {
                     
                         return productos
                       })
-                      console.log(productosCantidad);
+                
 
 
                     
                           index.partialUpdateObjects(productosCantidad)
                           .then(async   ({ objectIDs }) => {
-                            const filter = { id_payer: result.collector_id };
+                       
+                            const filter = { id_payer:req.query.preference_id };
                             const update = { pedido_pagado:true, id_mercado_pago:req.query.collection_id };
                             let PedidoUpdate = await Pagos.findOneAndUpdate(filter,update)
 
@@ -198,10 +199,10 @@ export default async function handler(req, res) {
                    
                             
 
-                              console.log(result.collector_id);
+                            //   console.log(result.collector_id);
 
             
-                                  //  res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+                                   res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
                      
                         
                           
