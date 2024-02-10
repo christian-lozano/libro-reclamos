@@ -1,5 +1,7 @@
 import algoliasearch from 'algoliasearch';
 
+import Pagos from '../../models/pagosPendiente/pagoPendiente'
+import mongoose from 'mongoose';
 export default async function handler(req, res) {
     const { method } = req
     switch (method) {
@@ -187,35 +189,20 @@ export default async function handler(req, res) {
 
                     
                           index.partialUpdateObjects(productosCantidad)
-                          .then(({ objectIDs }) => {
-                        
+                          .then(async   ({ objectIDs }) => {
+                            const filter = { id_payer: result.collector_id };
+                            const update = { pedido_pagado:true, id_mercado_pago:req.query.collection_id };
+                            let PedidoUpdate = await Pagos.findOneAndUpdate(filter,update)
 
+                            console.log(PedidoUpdate);
+                   
+                            
 
+                              console.log(result.collector_id);
 
-                            let dataEnvioMongoUser = {
-                              id_payer:result.payer.id || "testid",
-                              nombres: result.payer.first_name || "testNombre",
-                              email: result.payer.email || "testEmail",
-                              documento:result.payer.identification.number || "testTelefono",
-                              telefono: result.payer.number || "testTelefono",
-                              area_code:result.payer.number  || "testAreaCode",
-                            }
-
-                           fetch(`${process.env.URL_DOMINIO}/api/pagoPendiente`,{
-                              method:"POST",
-                              body: JSON.stringify(dataEnvioMongoUser),
-                              headers:{
-                                  "Content-Type":"application/json",
-                                  'Access-Control-Allow-Origin':'*',
-                                  'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
-                                  'Access-Control-Allow-Headers':"*"
-                              }
-                           }).then(res=> res.json() ).then(resulta=>{
-                            console.log(resulta);
-                            res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
-                           }).catch((error) => {
-                            console.log(error)
-                          });
+            
+                                  //  res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+                     
                         
                           
 

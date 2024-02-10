@@ -143,7 +143,8 @@ export default function PaginaPagar() {
                 email:allValues.email,
                 documento:allValues.documento,
                 telefono:allValues.telefono,
-                distrito
+                distrito,
+                cartTotal
 
               }
             }

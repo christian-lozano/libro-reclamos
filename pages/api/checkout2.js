@@ -17,18 +17,18 @@ mercadopago.configure({
 
 
 export default  async function  handler(req, res) {
+  
   const { method, body } = req
-// console.log(body.productos);
+
 
   let productosCantidad =  body.productos.map(el=>{
   
     let productos = {
       id:el.objectID,
       category_id:el.talla,
-      title: `${el.title} código de Producto: ${el.objectID} Talla: ${el.talla}`,
+      title: el.title,
       description:el.id,
       picture_url: el.img[0],
-      type:"test",
       quantity: el.quantity,
       unit_price: el.precio
     }
@@ -65,7 +65,7 @@ export default  async function  handler(req, res) {
   
       success: `${process.env.URL_DOMINIO}/api/exito2`,
       failure: `${process.env.URL_DOMINIO}`,
-      pending: `${process.env.URL_DOMINIO}/noserealizoelpago`,
+      pending: `${process.env.URL_DOMINIO}/`,
     },
 
     // installments: 1,
@@ -88,6 +88,8 @@ export default  async function  handler(req, res) {
 
 
   switch (method) {
+    case 'GET':
+      console.log(req);
 
     case 'POST':
 
@@ -95,7 +97,40 @@ export default  async function  handler(req, res) {
     .create(preference)
     .then(function (response) {
         // console.log(response.body.sandbox_init_point);
+        console.log(response.body);
+        let dataEnvioMongoUser = {
+          id_payer: response.body.collector_id,
+          id_mercado_pago:"01",
+          pedido: true,
+          pedido_pagado: false,
+          pedido_devuelto: false,
+          pedido_por_entregar: false,
+          pedido_entregado: false,
+          nombres: body.datosComprador.nombre,
+          apellidos:body.datosComprador.apellido ,
+          email:body.datosComprador.email,
+          documento:body.datosComprador.documento,
+          cart_total:body.datosComprador.cartTotal,
+          telefono:body.datosComprador.telefono,
+          area_code:body.datosComprador.distrito,
+          productos:productosCantidad
+        }
 
+       fetch(`${process.env.URL_DOMINIO}/api/pagoPendiente`,{
+          method:"POST",
+          body: JSON.stringify(dataEnvioMongoUser),
+          headers:{
+              "Content-Type":"application/json",
+              'Access-Control-Allow-Origin':'*',
+              'Access-Control-Allow-Methods':'GET, POST, PUT, DELETE',
+              'Access-Control-Allow-Headers':"*"
+          }
+       }).then(res=> res.json() ).then(resulta=>{
+        console.log(resulta);
+        res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+       }).catch((error) => {
+        console.log(error)
+      });
          res.status(201).json({ msg: response.body.init_point })
 
 
