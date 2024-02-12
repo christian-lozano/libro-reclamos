@@ -10,7 +10,7 @@ export default function PaginaPagar() {
 
 
 
-    const { items, cartTotal } = useCart()
+  const { items, cartTotal } = useCart()
     // console.log(items)
     function Loading({ disableLoadAddProduct = true }) {
       return (
@@ -28,8 +28,11 @@ export default function PaginaPagar() {
     const [checkoutPago, setCheckoutPago] = useState(false)
     const [validate, setValidate] = useState(false)
   
+
     const [provincia, setProvincia] = useState(String)
     const [distrito, setDistrito] = useState(String)
+
+
 
     useEffect(() => {
       setDomLoaded(true)
@@ -41,29 +44,31 @@ export default function PaginaPagar() {
       documento: '',
       telefono: '',
       direccion: '',
+      comprobante:'Boleta',
+      ruc:'',
     //   provincia: '',
       distrito: '',
     //   adicional: '',
     })
-    const changeHandlerSelectProvincia = (e) => {
-      setProvincia(e)
-      setAllValues({ ...allValues, provincia: e })
-      if (
-        allValues.nombre.length >= 5 &&
-        allValues.apellido.length >= 5 &&
-        allValues.email.length >= 5 &&
-        allValues.documento.length >= 5 &&
-        allValues.telefono.length >= 5 &&
-        // allValues.direccion.length >= 5 &&
-        // provincia.length >= 2 &&
-        distrito.length >= 2 
-        // allValues.adicional.length >= 3
-      ) {
-        setValidate(true)
-      } else {
-        setValidate(false)
-      }
-    }
+    // const changeHandlerSelectProvincia = (e) => {
+    //   setProvincia(e)
+    //   setAllValues({ ...allValues, provincia: e })
+    //   if (
+    //     allValues.nombre.length >= 5 &&
+    //     allValues.apellido.length >= 5 &&
+    //     allValues.email.length >= 5 &&
+    //     allValues.documento.length >= 5 &&
+    //     allValues.telefono.length >= 5 &&
+    //     allValues.direccion.length >= 5 &&
+    //     // provincia.length >= 2 &&
+    //     distrito.length >= 2 
+    //     // allValues.adicional.length >= 3
+    //   ) {
+    //     setValidate(true)
+    //   } else {
+    //     setValidate(false)
+    //   }
+    // }
     const changeHandlerSelectDistrito = (e) => {
       setDistrito(e)
       setAllValues({ ...allValues, provincia: e })
@@ -73,7 +78,7 @@ export default function PaginaPagar() {
         allValues.email.length >= 5 &&
         allValues.documento.length >= 5 &&
         allValues.telefono.length >= 5 &&
-        // allValues.direccion.length >= 5 &&
+        allValues.direccion.length >= 5 &&
         // provincia.length >= 2 &&
         distrito.length >= 2 
         // allValues.adicional.length >= 3
@@ -85,21 +90,8 @@ export default function PaginaPagar() {
     }
     const changeHandler = (e) => {
       setAllValues({ ...allValues, [e.target.name]: e.target.value })
-      if (
-        allValues.nombre.length >= 1 &&
-        allValues.apellido.length >= 1 &&
-        allValues.email.length >= 5 &&
-        allValues.documento.length >= 2 &&
-        allValues.telefono.length >= 5 &&
-        // allValues.direccion.length >= 5 &&
-        // provincia.length >= 2 &&
-        distrito.length >= 1 
-        // allValues.adicional.length >= 3
-      ) {
-        setValidate(true)
-      } else {
-        setValidate(false)
-      }
+      
+     
     }
   
     useEffect(() => {
@@ -109,12 +101,18 @@ export default function PaginaPagar() {
         allValues.email.length >= 5 &&
         allValues.documento.length >= 2 &&
         allValues.telefono.length >= 5 &&
-        // allValues.direccion.length >= 5 &&
+        allValues.comprobante.length >= 2 &&
+        allValues.direccion.length >= 3 &&
         // provincia.length >= 2 &&
         distrito.length >= 1 
         // allValues.adicional.length >= 3
       ) {
-        setValidate(true)
+        if (allValues.comprobante === "Factura" && allValues.ruc.length === 0) {
+          setValidate(false)
+        }else{
+          setValidate(true)
+
+        }
       } else {
         setValidate(false)
       }
@@ -143,6 +141,9 @@ export default function PaginaPagar() {
                 email:allValues.email,
                 documento:allValues.documento,
                 telefono:allValues.telefono,
+                comprobante:allValues.comprobante,
+                direccion:allValues.direccion,
+                ruc:allValues.ruc,
                 distrito,
                 cartTotal
 
@@ -185,6 +186,8 @@ export default function PaginaPagar() {
           console.log(error.message);
       }
 }
+
+
 
 
 
@@ -288,7 +291,7 @@ export default function PaginaPagar() {
                 className={`w-full rounded-md border ${
                   allValues.nombre.length === 0
                     ? 'border-red-200 focus:border-red-200 '
-                    : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                    : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
                 } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                 placeholder="NOMBRES"
                 onChange={(e) => changeHandler(e)}
@@ -317,7 +320,7 @@ export default function PaginaPagar() {
               className={`w-full ml-1 rounded-md border ${
                 allValues.apellido.length === 0
                   ? 'border-red-200 focus:border-red-200'
-                  : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                  : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
               } px-2 py-3 text-sm shadow-sm outline-none focus:z-10  `}
               placeholder="APELLIDOS"
               onChange={(e) => changeHandler(e)}
@@ -338,7 +341,7 @@ export default function PaginaPagar() {
               className={`w-full rounded-md border ${
                 allValues.email.length === 0
                   ? 'border-red-200 focus:border-red-200 '
-                  : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                  : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
               } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
               placeholder="tu.email@gmail.com"
               onChange={(e) => changeHandler(e)}
@@ -377,7 +380,7 @@ export default function PaginaPagar() {
                 className={`w-full rounded-md border ${
                   allValues.documento.length === 0
                     ? 'border-red-200 focus:border-red-200 '
-                    : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                    : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
                 } px-2 py-3 pl-3 text-sm shadow-sm outline-none focus:z-10  `}
                 placeholder="Documento de Identidad"
                 onChange={(e) => changeHandler(e)}
@@ -392,21 +395,21 @@ export default function PaginaPagar() {
               className={`w-full rounded-md border ${
                 allValues.telefono.length === 0
                   ? 'border-red-200 focus:border-red-200 '
-                  : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                  : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
               } px-2 py-3 text-sm shadow-sm outline-none focus:z-10  `}
               placeholder="Teléfono"
               onChange={(e) => changeHandler(e)}
             />
             </div>
           </div>
-          {/*  */}
+          {/* Dirección */}
           <label
             htmlFor="billing-address"
             className="mt-4 mb-2 block text-sm font-medium"
           >
-            Distrito
+            Dirección
           </label>
-          <div className="flex flex-col sm:flex-row mb-3 hidden">
+          <div className="flex flex-col sm:flex-row mb-3 ">
             <div className="relative flex-shrink-0 sm:w-full">
               <input
                 type="text"
@@ -415,7 +418,7 @@ export default function PaginaPagar() {
                 className={`w-full rounded-md border ${
                   allValues.direccion.length === 0
                     ? 'border-red-200 focus:border-red-200 focus:border-red-200'
-                    : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                    : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
                 } px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10  `}
                 placeholder="Dirección"
                 onChange={(e) => changeHandler(e)}
@@ -429,6 +432,73 @@ export default function PaginaPagar() {
               </div>
             </div>
           </div>
+          {/* boleta factura */}
+          <div className='flex justify-center'>
+              <div class="flex gap-10">
+              <div class="inline-flex items-center">
+                  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="react">
+                    <input onChange={(e) => changeHandler(e)} name="comprobante" checked={allValues.comprobante === "Boleta"} value="Boleta" type="radio"  
+                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                      id="react"  />
+                    <span
+                      class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
+                        <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                      </svg>
+                    </span>
+                  </label>
+                  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="react">
+                    Boleta
+                  </label>
+                </div>
+                <div class="inline-flex items-center">
+                  <label class="relative flex items-center p-3 rounded-full cursor-pointer" htmlFor="react">
+                    <input onChange={(e) => changeHandler(e)} name="comprobante" checked={allValues.comprobante === "Factura"} value="Factura" type="radio" 
+                      class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-blue-gray-200 text-gray-900 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+                      id="factura"  />
+                    <span
+                      class="absolute text-gray-900 transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
+                        <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
+                      </svg>
+                    </span>
+                  </label>
+                  <label class="mt-px font-light text-gray-700 cursor-pointer select-none" htmlFor="react">
+                    Factura
+                  </label>
+                </div>
+              </div> 
+
+          </div>
+          {allValues.comprobante === "Factura" && (
+            <>
+            <label
+            htmlFor="billing-address"
+            className="mt-4 mb-2 block text-sm font-medium"
+          >
+            RUC
+          </label>
+          <div className="flex flex-col sm:flex-row mb-3 ">
+            <div className="relative flex-shrink-0 sm:w-full">
+              <input
+                type="text"
+                id="billing-address"
+                name="ruc"
+                className={`w-full rounded-md border ${
+                  allValues.ruc.length === 0
+                    ? 'border-red-200 focus:border-red-200 focus:border-red-200'
+                    : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
+                } px-2 py-3 pl-3 text-sm shadow-sm outline-none focus:z-10  `}
+                placeholder="RUC"
+                onChange={(e) => changeHandler(e)}
+              />
+           
+            </div>
+          </div>
+
+            </>
+            
+          )}
 
           {/* info */}
           <div className="flex flex-col sm:flex-row">
@@ -477,7 +547,7 @@ export default function PaginaPagar() {
             </label> */}
             <label
               htmlFor="card-holder"
-              className="mt-4 mb-2 block text-sm font-medium w-full ml-1"
+              className="mt-5  mb-2 block text-sm font-medium w-full"
             >
               <Select
                 label="Distrito"
@@ -562,7 +632,7 @@ export default function PaginaPagar() {
               className={`w-full rounded-md border  ${
                 allValues.adicional.length === 0
                   ? 'border-red-200 focus:border-red-200 '
-                  : 'border-gray-200 focus:border-gray-200 focus:ring-gray-200  '
+                  : 'border-gray-400 focus:border-gray-400  focus:ring-gray-600  '
               } px-2 py-3 text-sm shadow-sm outline-none focus:z-10  `}
               placeholder="Información Adicional de Envio"
               onChange={(e) => changeHandler(e)}
@@ -721,7 +791,7 @@ export default function PaginaPagar() {
           </div>
           {/* ---- */}
 
-          {checkoutPago && items.length > 0 && validate ? (
+          {checkoutPago && items.length > 0 && validate  ? (
             <div className="w-full flex flex-col justify-center items-center relative ">
             <button
             disabled={loadingMercadoPago}

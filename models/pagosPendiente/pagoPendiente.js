@@ -1,6 +1,7 @@
 import mongoose, { Schema, models } from "mongoose";
 
 const PagoCompletadoSchema = new Schema(
+  
   {
     id_payer: {
       type: String,
@@ -14,6 +15,7 @@ const PagoCompletadoSchema = new Schema(
       trim:true
 
     },
+    
     pedido: {
       type: Boolean,
       required: [true,"tipo pedido es necesaria"],
@@ -77,6 +79,24 @@ const PagoCompletadoSchema = new Schema(
     area_code: {
       type: String,
       required: [true,"tipo necesaria area_code"],
+      trim:true
+
+    },
+    direccion: {
+      type: String,
+      required: [true,"tipo direccion es necesaria"],
+      trim:true
+
+    },
+    comprobante: {
+      type: String,
+      required: [true,"tipo comprobante es necesaria"],
+      trim:true
+
+    },
+    ruc: {
+      type: String,
+      required: [true,"tipo ruc es necesaria"],
       trim:true
 
     },

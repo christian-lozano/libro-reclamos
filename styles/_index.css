@@ -12,3 +12,6 @@
     display: none;
 } */
 
+input[type="checkbox"]:focus{
+    outline:0;
+}

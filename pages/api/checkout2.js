@@ -30,7 +30,8 @@ export default  async function  handler(req, res) {
       description:el.id,
       picture_url: el.img[0],
       quantity: el.quantity,
-      unit_price: el.precio
+      unit_price: el.precio,
+      
     }
 
     return productos
@@ -113,6 +114,9 @@ export default  async function  handler(req, res) {
           cart_total:body.datosComprador.cartTotal,
           telefono:body.datosComprador.telefono,
           area_code:body.datosComprador.distrito,
+          direccion:body.datosComprador.direccion,
+          comprobante:body.datosComprador.comprobante,
+          ruc:body.datosComprador.ruc,
           productos:productosCantidad
         }
 
