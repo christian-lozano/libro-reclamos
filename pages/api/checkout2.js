@@ -127,11 +127,12 @@ export default  async function  handler(req, res) {
           }
        }).then(res=> res.json() ).then(resulta=>{
         console.log(resulta);
-        res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+          res.status(201).json({ msg: response.body.init_point })
+       // res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
        }).catch((error) => {
         console.log(error)
       });
-         res.status(201).json({ msg: response.body.init_point })
+        
 
 
 
