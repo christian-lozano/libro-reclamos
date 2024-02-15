@@ -35,7 +35,7 @@ export default function CarouselHome({props}) {
                 // slideIndex={indiceSlider}
                 // dragThreshold={1}
                 afterSlide={(i) => setIndiceSlider(i)}
-                // slideCount={indiceSlider}
+                // slideCount={0}
               >
                 {props.homeSliderDesktop.map((el) => (
                   <div key={el._id}>

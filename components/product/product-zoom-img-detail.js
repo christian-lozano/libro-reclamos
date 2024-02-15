@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { PhotoProvider, PhotoView } from 'react-photo-view'
 
 export default function ProductZoomImgDetail({mainimg}) {
     
@@ -40,9 +41,10 @@ export default function ProductZoomImgDetail({mainimg}) {
         hoverFunction(mainimg)
       }, [mainimg])
   return (
-    <div id="img-zoomer-box" >
-    <img src={mainimg} id="img-1" alt="Zoom Image on Mouseover" />
-    <div id="img-2" className='laptop:block hidden'></div>
+    <div>
+ 
+    {/* <img src={mainimg} id="img-1" alt="" /> */}
+    {/* <div id="img-2" className='laptop:block hidden'></div> */}
   </div>
   )
 }

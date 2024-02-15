@@ -1,7 +1,7 @@
 import classNames from 'classnames'
+import 'react-photo-view/dist/react-photo-view.css'
 import { useState } from 'react'
-
-import ProductZoomImgDetail from './product-zoom-img-detail'
+import { PhotoProvider, PhotoView } from 'react-photo-view'
 
 export type ProductImageProps = {
   src: string[]
@@ -37,9 +37,14 @@ export function ProductDetails({
           className
         )}
       >
-        <div className="flex flex-col items-center  w-full h-2/4">
+        <div className="flex flex-col items-center  w-full">
           <div className="hidden xl:block">
-            <ProductZoomImgDetail mainimg={mainImg} />
+            <PhotoProvider>
+              <PhotoView src={mainImg}>
+                <img src={mainImg} className="w-full" alt="" />
+              </PhotoView>
+              <PhotoView />
+            </PhotoProvider>
           </div>
           <div className="flex justify-start items-start  dark:bg-[var(--dark-mode)] py-1 bg-white">
             <div className="grid grid-flow-col gap-x-2 p-1">
