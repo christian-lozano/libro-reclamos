@@ -130,7 +130,7 @@ function FallbackComponent({ attribute }: { attribute: string }) {
 //   const [agreement, setAgreement] = useState(false)
 //   // if (agreement) {
 //   //   router.push(
-//   //     '/catalog?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bavailable_sizes%5D%5B0%5D=34'
+//   //     '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bavailable_sizes%5D%5B0%5D=34'
 //   //   )
 //   // }
 //   const [configureValues, setConfigureValue] = useState({

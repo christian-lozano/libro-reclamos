@@ -70,7 +70,7 @@ export function NavAutocomplete() {
 
   const handleSelect = useCallback(
     (query: string = '') => {
-      router.push(`/catalog?q=${query}`)
+      router.push(`/tienda?q=${query}`)
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []

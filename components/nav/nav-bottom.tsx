@@ -18,7 +18,7 @@ export function NavBottom() {
   const router = useRouter()
   const currentCategory = useMemo(() => {
     const { pathname } = parseUrl(router?.asPath)
-    return pathname.match(/\/catalog\/(.[^/]*)\/?/)?.[1]
+    return pathname.match(/\/tienda\/(.[^/]*)\/?/)?.[1]
   }, [router?.asPath])
 
   // menu useState
@@ -26,17 +26,17 @@ export function NavBottom() {
   const genderSubCategories = (
     <>
       {currentCategory === 'Women' && (
-        <NavItem label="Bags" href={`/catalog/${currentCategory}/Bags`} />
+        <NavItem label="Bags" href={`/tienda/${currentCategory}/Bags`} />
       )}
-      <NavItem label="Clothing" href={`/catalog/${currentCategory}/Clothing`} />
-      <NavItem label="Shoes" href={`/catalog/${currentCategory}/Shoes`} />
+      <NavItem label="Clothing" href={`/tienda/${currentCategory}/Clothing`} />
+      <NavItem label="Shoes" href={`/tienda/${currentCategory}/Shoes`} />
     </>
   )
 
   const accessoriesSubCategories = (
     <>
-      <NavItem label="Clothing" href={`/catalog/${currentCategory}/Men`} />
-      <NavItem label="Shoes" href={`/catalog/${currentCategory}/Women`} />
+      <NavItem label="Clothing" href={`/tienda/${currentCategory}/Men`} />
+      <NavItem label="Shoes" href={`/tienda/${currentCategory}/Women`} />
     </>
   )
   const [open, setOpen] = useState(false)
@@ -54,7 +54,7 @@ export function NavBottom() {
         </Button>
       </Tablet>
       <Tablet>
-        <Link href={'/catalog'}>
+        <Link href={'/tienda'}>
           <Button
             className="p-3 pl-2 2xl:hidden xl:hidden flex justify-end w-full"
             // onClick={() => handleSidebarToggle(true)}

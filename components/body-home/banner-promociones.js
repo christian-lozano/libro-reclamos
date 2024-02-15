@@ -66,7 +66,7 @@ export function BannerPromociones({props}) {
                   </div> */}
                   <div className="w-full flex justify-start items-end h-full ml-10  ">
                     <div className="flex justify-around ">
-                      <Link href="/catalog">
+                      <Link href="/tienda">
                         <span className="flex justify-center uppercase items-center text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-xl">
                           Comprar
                           <span className="ml-2">

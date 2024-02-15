@@ -9,19 +9,19 @@ const data = {
       nav: [
         {
           title: 'Calzado',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
         },
         {
           title: 'Ropa',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
         },
         {
           title: 'Accesorios',
-          url: '/catalog?',
+          url: '/tienda?',
         },
         {
           title: 'Descuento',
-          url: '/catalog?pwa_ecom_ui_template_products%5Brange%5D%5Bprice.value%5D=%3A200',
+          url: '/tienda?pwa_ecom_ui_template_products%5Brange%5D%5Bprice.value%5D=%3A200',
         },
       ],
       cardHeader: {
@@ -31,7 +31,7 @@ const data = {
           'https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_500,c_limit/de4714b2-e631-4e6a-89d9-afa2f16434cf/men-s-shoes-clothing-accessories.jpg',
         titulo: 'LO MEJOR EN ROPA NIKE',
         desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-        url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+        url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
       },
   
       tituloRecienLlegados: 'Recién Llegados',
@@ -40,7 +40,7 @@ const data = {
         {
           titulo: 'Casacas',
           img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702675605/fritz-ecommerce/products/ropa/HS3617/Sudadera_entrenamiento_Tiro_23_Club_Negro_HS3617_21_model_kmsqiy.webp',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
         },
   
         {
@@ -56,13 +56,13 @@ const data = {
           id: '01232as142',
           filtro: 'Calzado',
           img: 'https://res.cloudinary.com/da868wsih/image/upload/v1702406524/fritz-ecommerce/products/zapatillas/ID2264/Zapatillas_Runfalcon_3_TR_Negro_ID2264_06_standard_cs0qdw.webp',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
         },
   
         {
           id: '031afdg2321',
           filtro: 'Accesorios',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
   
           img: 'https://www.nike.com.pe/dw/image/v2/BJKZ_PRD/on/demandware.static/-/Library-Sites-NikePeruSharedLibrary/default/dwd68f3746/Landings/Hombres/Imagenes/accesoriosdk@2x.jpg',
         },
@@ -73,21 +73,21 @@ const data = {
         {
           id: '01231d121',
           filtro: 'Ropa',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
   
           img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
         },
         {
           id: '01232as142',
           filtro: 'Calzado',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
   
           img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
         },
         {
           id: '031afdg2321',
           filtro: 'Accesorios',
-          url: '/catalog?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
+          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20accesorios',
   
           img: 'https://images.puma.com/image/upload/q_auto,f_auto,w_600/regional/~global~product~agency~65~6585~658522~658522_06~658522_06_mod01.png/fmt/jpg/fmt/png',
         },

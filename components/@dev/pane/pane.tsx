@@ -36,7 +36,7 @@ export function Pane() {
         label: 'Current route',
         options: {
           index: '/',
-          catalog: '/catalog',
+          catalog: '/tienda',
           'kit/buttons': '/kit/buttons',
           'kit/chips': '/kit/chips',
           'kit/banners': '/kit/banners',

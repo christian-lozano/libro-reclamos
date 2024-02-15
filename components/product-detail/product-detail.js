@@ -561,7 +561,7 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
                 <span className=" tex-center bg-red-900 text-white px-3 py-1 mt-5 rounded-lg">
                   {units_in_stock === 0 && 'Sin Stock'}
                 </span>
-                <Link href="/catalog">
+                <Link href="/tienda">
                   <Button type="primary" size="large" className="w-full mt-6">
                     <IconLabel
                       icon={ShoppingBagIcon}
