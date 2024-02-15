@@ -13,7 +13,7 @@ import { ProductCard } from '@/components/product-card/product-card'
 
 import { HeaderNew } from '@/components/header/header-new'
 
-import Productos from "@/components/productos-tienda/productos.js"
+import Productos from "@/components/productos-tienda/Productos"
 const searchClient = algoliasearch('235XIUIEK1', 'c502207ec53e080f5223f93210e9f2be');
 function Hit({ hit }) {
     return (
