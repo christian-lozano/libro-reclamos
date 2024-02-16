@@ -49,7 +49,7 @@ export default function Home({ serverState, serverUrl ,  homeNav, homeLogo,}) {
           router: createInstantSearchRouterNext({ singletonRouter, serverUrl }),
         }}
       >
-<Productos/>
+        <Productos/>
       </InstantSearch>
     </InstantSearchSSRProvider>
   );
