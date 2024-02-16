@@ -1,4 +1,5 @@
 import React from 'react'
+// import 'instantsearch.css/themes/algolia.css';
 import { useCallback, useEffect, useState } from 'react'
 import {
     Configure,
@@ -7,7 +8,7 @@ import {
     RefinementList,
     ToggleRefinement,
 
-    InfiniteHits,
+
     CurrentRefinements,
   } from 'react-instantsearch'
 
@@ -17,7 +18,10 @@ import { SearchBox } from '@/components/panel/SearchBox'
 import { Panel } from '@/components/panel2/Panel'
 import { QueryRuleCustomData } from '@/components/panel2/QueryRuleCustomData'
 import { ProductCard } from '@/components/product-card/product-card'
+import { InfiniteHits } from './Infinity-hits'
+
 function Hit({ hit }) {
+        console.log(hit);
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}

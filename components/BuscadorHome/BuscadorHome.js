@@ -43,7 +43,7 @@ export default function BuscadorHome({activeSearchGlobal = true}) {
                 </div>
             </form>
 
-              <div className={`px-5  2xl:h-[60vh] w-full ${dataSearch.length > 1 &&  search.length > 1 && "bg-white overflow-y-scroll"}`}>
+              <div className={`px-5  2xl:h-[60vh] w-full ${dataSearch.length > 1 &&  search.length > 1 ? "bg-white overflow-y-scroll block":"hidden"}`}>
               {dataSearch.length > 1 &&  search.length > 1  && 
             
                 dataSearch.map((el,i)=>(
