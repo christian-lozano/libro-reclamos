@@ -26,11 +26,16 @@ export function ProductDetails({
 
   return (
     <>
-      <img
-        className="rounded-md w-full hover:translate-y-1 delay-100 ease-in-out xl:hidden block"
-        src={mainImg}
-        // alt={alt}
-      />
+      <PhotoProvider>
+        <PhotoView src={mainImg}>
+          <img
+            className="rounded-md w-full hover:translate-y-1 delay-100 ease-in-out xl:hidden block"
+            src={mainImg}
+            // alt={alt}
+          />
+        </PhotoView>
+      </PhotoProvider>
+
       <div
         className={classNames(
           'w-full cursor-pointer flex  justify-center mb-3',
@@ -43,7 +48,6 @@ export function ProductDetails({
               <PhotoView src={mainImg}>
                 <img src={mainImg} className="w-full" alt="" />
               </PhotoView>
-              <PhotoView />
             </PhotoProvider>
           </div>
           <div className="flex justify-start items-start  dark:bg-[var(--dark-mode)] py-1 bg-white">
