@@ -192,7 +192,6 @@ export default function Productos() {
                 </div>
                 </div>
             </div>
-
             <Button
                 className={`fixed flex justify-end items-center  right-0 xl:hidden z-[10] pr-6  w-3/3 border-b-[1px] border-[#eeeeee] ${
                 altoScroll > 10 ? 'top-[9rem]' : 'top-[9rem]'
