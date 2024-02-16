@@ -21,7 +21,7 @@ import { ProductCard } from '@/components/product-card/product-card'
 import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
-        console.log(hit);
+   
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}

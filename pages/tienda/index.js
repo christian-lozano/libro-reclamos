@@ -43,11 +43,13 @@ export default function Home({ serverState, serverUrl ,  homeNav, homeLogo,}) {
       <InstantSearch
         searchClient={searchClient}
         indexName="pwa_ecom_ui_template_products"
+
+        insights={true}
         routing={{
           router: createInstantSearchRouterNext({ singletonRouter, serverUrl }),
         }}
       >
-<Productos></Productos>
+<Productos/>
       </InstantSearch>
     </InstantSearchSSRProvider>
   );

@@ -29,7 +29,6 @@ export function ProductCardHitComponent({
   // console.log(hit)
   const product: ProductCardProps = {
     url: `/product/${hit.objectID}?queryID=${hit.__queryID}`,
-
     image: hit.image_urls[0],
     tags: [],
     colors: [],
