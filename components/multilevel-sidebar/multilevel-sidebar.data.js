@@ -25,12 +25,12 @@ let options = [
               icon: <i className="fa fa-opera"></i>,
               to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas"
             },
-            // {
-            //   id: 9,
-            //   title: "Sandalias",
-            //   icon: <i className="fa fa-opera"></i>,
-            //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias"
-            // }
+            {
+              id: 9,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
+            }
             // ,
             // {
             //   id: 9,
@@ -62,7 +62,7 @@ let options = [
             ,
             // {
             //   id: 9,
-            //   title: "Básquet",
+            //   title: "Futbol",
             //   icon: <i className="fa fa-opera"></i>,
             //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20basquet"
             // }
@@ -86,14 +86,14 @@ let options = [
               to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas"
 
             },
-            // {
-            //   id: 3,
-            //   title: "Sandalias",
-            //   icon: <i className="fa fa-opera"></i>,
-            //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20sandalias"
+            {
+              id: 3,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
 
 
-            // }
+            }
             // ,
             // {
             //   id: 3,
@@ -133,7 +133,7 @@ let options = [
 
 
             }
-            ,
+      
             // {
             //   id: 3,
             //   title: "Básquet",
@@ -164,12 +164,14 @@ let options = [
               to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas"
 
             },
-            // {
-            //   id: 3,
-            //   title: "Sandalias",
-            //   icon: <i className="fa fa-opera"></i>,
-            //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=niños%20sandalias"
-            // }
+            {
+              id: 3,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
+
+
+            }
           ]
         },
     
@@ -203,12 +205,14 @@ let options = [
               to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas"
 
             },
-            // {
-            //   id: 3,
-            //   title: "Sandalias",
-            //   icon: <i className="fa fa-opera"></i>,
-            //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20zapatillas%20sandalias"
-            // }
+            {
+              id: 3,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
+
+
+            }
             ,
             // {
             //   id: 3,
@@ -433,13 +437,14 @@ let options = [
 
 
             },
-            // {
-            //   id: 9,
-            //   title: "Sandalias",
-            //   icon: <i className="fa fa-opera"></i>,
-            //   to:"/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20sandalias"
+            {
+              id: 3,
+              title: "Sandalias",
+              icon: <i className="fa fa-opera"></i>,
+              to:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
 
-            // }
+
+            },
             // ,
             // {
             //   id: 9,

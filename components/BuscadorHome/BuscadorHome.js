@@ -28,7 +28,7 @@ export default function BuscadorHome({activeSearchGlobal = true}) {
      {
 
       activeSearchGlobal && (
-                <div className='absolute xl:top-0 top-16  z-[999] laptop:w-[40vw]  2xl:w-[40vw] 2xl:right-2 w-full px-5'>
+                <div className='absolute xl:top-0 top-16  z-[999] laptop:w-[40vw]  2xl:w-[40vw] 2xl:right-2 w-full px-5 laptop:block xl:block hidden'>
               
 
 

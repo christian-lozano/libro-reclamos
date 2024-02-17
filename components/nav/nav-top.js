@@ -873,31 +873,31 @@ const dataHeader = [
           //   title: 'Running',
           //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '3',
-          //   title: 'Terrex',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-          // },
+          {
+            id: '3',
+            title: 'Terrex',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Terrex',
+          },
           // {
           //   id: '4',
           //   title: 'Chimpunes',
           //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '5',
-          //   title: 'Básquet',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-          // },
-          // {
-          //   id: '6',
-          //   title: 'Sandalias',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-          // },
-          // {
-          //   id: '7',
-          //   title: 'Calzado de Plataforma',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-          // },
+          {
+            id: '5',
+            title: 'Urbano',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Urbano',
+          },
+          {
+            id: '6',
+            title: 'Sandalias',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias',
+          },
+          {
+            id: '7',
+            title: 'Calzado de Plataforma',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Plataforma',
+          },
           {
             id: '8',
             title: 'Calzado Comodo',
@@ -905,94 +905,94 @@ const dataHeader = [
           },
         ],
       },
-      // {
-      //   categoria: [
-      //     {
-      //       id: '9',
-      //       title: ' Ropa',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '10',
-      //       title: 'Polos',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '11',
-      //       title: 'Licras',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Casacas',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Poleras',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Pantalones',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Camisetas de Futbol',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Shorts',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '12',
-      //       title: 'Buzos',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //   ],
-      // },
-      // {
-      //   categoria: [
-      //     {
-      //       id: '13',
-      //       title: 'Accesorios',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '14',
-      //       title: 'Bolsos',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '15',
-      //       title: 'Mochilas',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '16',
-      //       title: 'Guantes',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '16',
-      //       title: 'Gorras',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '16',
-      //       title: 'Medias',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //     {
-      //       id: '16',
-      //       title: 'Tomatodos',
-      //       url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
-      //     },
-      //   ],
-      // },
+      {
+        categoria: [
+          {
+            id: '9',
+            title: ' Ropa',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Ropa',
+          },
+          {
+            id: '10',
+            title: 'Polos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Polos',
+          },
+          // {
+          //   id: '11',
+          //   title: 'Licras',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+          {
+            id: '12',
+            title: 'Casacas',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Casacas',
+          },
+          {
+            id: '12',
+            title: 'Poleras',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Polera',
+          },
+          {
+            id: '12',
+            title: 'Pantalones',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Pantalones',
+          },
+          // {
+          //   id: '12',
+          //   title: 'Camisetas de Futbol',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+          // {
+          //   id: '12',
+          //   title: 'Shorts',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+          {
+            id: '12',
+            title: 'Buzos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Buzo',
+          },
+        ],
+      },
+      {
+        categoria: [
+          {
+            id: '13',
+            title: 'Accesorios',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Accesorios',
+          },
+          {
+            id: '14',
+            title: 'Bolsos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Bolso',
+          },
+          {
+            id: '15',
+            title: 'Mochilas',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Mochilas',
+          },
+          // {
+          //   id: '16',
+          //   title: 'Guantes',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+          {
+            id: '16',
+            title: 'Gorras',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Gorras',
+          },
+          // {
+          //   id: '16',
+          //   title: 'Medias',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+          // {
+          //   id: '16',
+          //   title: 'Tomatodos',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
+          // },
+        ],
+      },
       {
         categoria: [
           // {
@@ -1054,32 +1054,32 @@ const dataHeader = [
           // {
           //   id: '2',
           //   title: 'Running',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
-          // {
-          //   id: '3',
-          //   title: 'Terrex',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           {
-            id: '4',
-            title: 'Chimpunes',
-            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Chimpunes',
+            id: '3',
+            title: 'Terrex',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Terrex',
           },
           // {
-          //   id: '5',
-          //   title: 'Básquet',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   id: '4',
+          //   title: 'Chimpunes',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '6',
-          //   title: 'Sandalias',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
+          {
+            id: '5',
+            title: 'Urbano',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Urbano',
+          },
+          {
+            id: '6',
+            title: 'Sandalias',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias',
+          },
           // {
           //   id: '7',
           //   title: 'Calzado de Plataforma',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Plataforma',
           // },
           {
             id: '8',
@@ -1090,89 +1090,89 @@ const dataHeader = [
       },
       {
         categoria: [
-          // {
-          //   id: '9',
-          //   title: ' Ropa',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
-          // },
-          // {
-          //   id: '10',
-          //   title: 'Polos',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
-          // },
+          {
+            id: '9',
+            title: ' Ropa',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Ropa',
+          },
+          {
+            id: '10',
+            title: 'Polos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Polos',
+          },
           // {
           //   id: '11',
           //   title: 'Licras',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '12',
-          //   title: 'Casacas',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20casacas',
-          // },
-          // {
-          //   id: '12',
-          //   title: 'Poleras',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
-          // {
-          //   id: '12',
-          //   title: 'Pantalones',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
+          {
+            id: '12',
+            title: 'Casacas',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Casacas',
+          },
+          {
+            id: '12',
+            title: 'Poleras',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Polera',
+          },
+          {
+            id: '12',
+            title: 'Pantalones',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Pantalon',
+          },
           // {
           //   id: '12',
           //   title: 'Camisetas de Futbol',
-          //   url: '/tienda?q=camisetas&p=1',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           // {
           //   id: '12',
           //   title: 'Shorts',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20camisetas',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '12',
-          //   title: 'Buzos',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
+          {
+            id: '12',
+            title: 'Buzos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Buzos',
+          },
         ],
       },
       {
         categoria: [
-          // {
-          //   id: '13',
-          //   title: 'Accesorios',
-          //   url: '/tienda?q=accesorios&p=1',
-          // },
-          // {
-          //   id: '14',
-          //   title: 'Bolsos',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
-          // {
-          //   id: '15',
-          //   title: 'Mochilas',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20mochilas',
-          // },
+          {
+            id: '13',
+            title: 'Accesorios',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Accesorios',
+          },
+          {
+            id: '14',
+            title: 'Bolsos',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Bolso',
+          },
+          {
+            id: '15',
+            title: 'Mochilas',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Mochilas',
+          },
           // {
           //   id: '16',
           //   title: 'Guantes',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
-          // {
-          //   id: '16',
-          //   title: 'Gorras',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
-          // },
+          {
+            id: '16',
+            title: 'Gorras',
+            url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Unisex&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Gorras',
+          },
           // {
           //   id: '16',
           //   title: 'Medias',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           // {
           //   id: '16',
           //   title: 'Tomatodos',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
         ],
       },
@@ -1181,37 +1181,37 @@ const dataHeader = [
           // {
           //   id: '17',
           //   title: ' Deportes',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20futbol',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer20%comodo',
           // },
           // {
           //   id: '18',
           //   title: ' Running',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%running',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20running',
           // },
-          {
-            id: '19',
-            title: ' Futbol',
-            url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=futbol',
-          },
+          // {
+          //   id: '19',
+          //   title: ' Futbol',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer%20futbol',
+          // },
           // {
           //   id: '20',
           //   title: ' Training',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           // {
           //   id: '20',
           //   title: ' Tenis',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           // {
           //   id: '20',
           //   title: ' Natación',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
           // {
           //   id: '20',
           //   title: ' Básquet',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=mujer',
           // },
         ],
       },
@@ -1249,11 +1249,14 @@ const dataHeader = [
           //   title: 'Calzado Escolar Blanco',
           //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=niño',
           // },
-          // {
-          //   id: '38',
-          //   title: 'Sandalias',
-          //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=niño',
-          // },
+          {
+            id: "369",
+            title: "Sandalias",
+ 
+            url:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
+
+
+          },
         ],
       },
       {
