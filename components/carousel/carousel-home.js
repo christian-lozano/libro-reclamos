@@ -42,7 +42,7 @@ export default function CarouselHome({props}) {
                     <div className="">
                       <img className="z-dev" src={el.secure_url} alt="" />
                       <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
-                        <div className="absolute flex flex-col items-start justify-start  text w-auto bottom-[calc(14vh)]">
+                        <div className="absolute flex flex-col items-start justify-start  text w-auto xl:bottom-[calc(28vh)] laptop:bottom-[calc(24vh)]">
                           {/* <h6
                             className={`text-center  xl:text-4xl  2xl:text-2xl font-black  text-${el.color}`}
                           >
@@ -56,7 +56,7 @@ export default function CarouselHome({props}) {
                           </p> */}
                           <Link href={el.button_url}>
                             <Button
-                              className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-5 w-64 py-2 px-2 rounded-sm uppercase`}
+                              className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black mt-20 w-64 py-2 px-2 rounded-sm uppercase`}
                             >
                               Comprar Ahora
                               <svg
