@@ -1,6 +1,6 @@
 import React from 'react'
 import { useMediaQuery } from 'react-responsive'
-
+import { Button } from '../@ui/button/button'
 import { Link } from '../@ui/link/link'
 
 
@@ -64,29 +64,28 @@ export function BannerPromociones({props}) {
                       Nuevos Ingresos
                     </h1>
                   </div> */}
-                  <div className="w-full flex justify-start items-end h-full ml-10  ">
+                  <div className="w-full flex  justify-start items-end h-full  ">
                     <div className="flex justify-around ">
                       <Link href="/tienda">
-                        <span className="flex justify-center uppercase items-center text-black bg-white p-3  md:p-2 font-bold mr-6  text-sm 2xl:text-xl">
-                          Comprar
-                          <span className="ml-2">
-                            {' '}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="#000"
-                              className="w-4 h-4 laptop:w-5 laptop:h-5"
+                      <Button
+                              className={ `bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black w-64 py-2 px-2 rounded-sm uppercase`}
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                              ></path>
-                            </svg>
-                          </span>
-                        </span>
+                              Comprar Ahora
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-6 h-6"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                                />
+                              </svg>
+                            </Button>
                       </Link>
 
                       {/* <Link href="/hombre">
