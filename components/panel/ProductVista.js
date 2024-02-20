@@ -36,7 +36,7 @@ console.log(product.data.gender);
             <ProductDetail
               gender={product.data.gender}
               brand={product.data.brand}
-
+              product_type={product.data.product_type}
               queryID={product.queryID}
               price={product.data.price.value}
               units_in_stock={product.data.units_in_stock}

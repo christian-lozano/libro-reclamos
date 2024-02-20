@@ -1783,16 +1783,17 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
               <div
                 className={` w-[100%] relative bg-[var(--dark-mode)] px-10 z-50`}
               >
-                <div className="flex justify-around   w-full">
+                <div className="flex justify-around  items-center h-full w-full">
                   {/* logo nav */}
                   <div className="flex  items-center xl:justify-around 2xl:justify-between text-blue-gray-900 ">
                   <Logotipo logo={props.homeLogo} url={"/"}/>
-                    <div className=" lg:block h-full 2xl:ml-16">
+                  </div>
+                    <div className=" lg:block h-[5rem] ">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
                         {props.homeNav.map((el, index) => (
                           <a
                             href={`/${el.url}`}
-                            className="h-full flex justify-center items-center "
+                            className="h-full  flex justify-center items-center "
                             key={el._id}
                             onClick={() => setAndler(false)}
                             onMouseEnter={() => handleHover(index)}
@@ -1800,16 +1801,10 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                           >
                             <div className=" inline-flex items-center  justify-between  px-2  font-medium transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
                               <span
-                                className={`flex-shrink-0 font-normal ${
-                                  index === 3 && 'text-[#E32B2B]'
-                                } ${
-                                  index === 3 &&
-                                  activeHoverNavDesktop === 3 &&
-                                  'text-[#E32B2B] border-b-2 border-[#E32B2B] '
-                                } text-black xl:text-sm   ${
+                                className={`flex-shrink-0 uppercase  text-black font-[500] xl:text-sm laptop:text-lg  ${
                                   activeHoverNavDesktop === index &&
                                   'border-b-2 border-black '
-                                }  2xl:text-lg `}
+                                }  2xl:text-base `}
                               >
                                 {el.page}
                               </span>
@@ -1831,7 +1826,6 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                         </Link> */}
                       </div>
                     </div>
-                  </div>
                   {/* carrito y ubicanos */}
                   <div className="flex items-center w-28 justify-around">
                     <Tablet>
@@ -1899,7 +1893,7 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                 id="navMenuDesktop"
                 className={`absolute ${
                   andler ? 'flex' : 'hidden'
-                }  flex-col  w-[100%]  border-t-2 dark:bg-[var(--dark-mode)] bg-white xl:top-[64px]  2xl:top-[80px] justify-center items-center  z-50 `}
+                }  flex-col  w-[100%]  border-t-2 dark:bg-[var(--dark-mode)] bg-white  xl:top-[64px]  2xl:top-[80px] justify-center items-center  z-50 `}
                 onMouseEnter={() => setAndler(true)}
                 onMouseLeave={() => setAndler(false)}
               >

@@ -21,13 +21,16 @@ import { ProductCard } from '@/components/product-card/product-card'
 import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
+    let precio =15/100* Number(hit.price.value) 
+    let divd = Number(hit.price.value) - precio
+ let resultado =  Math.floor(precio*15)/100
    
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
         <ProductCard
           // currency={hit.price.currency.symbol}
-          price={Number(hit.price.value)}
+          price={divd}
           // colors={hit.color.original_name}
           url={`/product/${hit.objectID}?queryID=${hit.__queryID}`}
           // titleHighlighting={hit.brand}

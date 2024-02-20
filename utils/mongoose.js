@@ -12,7 +12,7 @@ export async function dbConnect() {
   )
 
   conn.isConnected = db.connections[0].readyState
-  console.log(db.connection.db.databaseName)
+ 
 }
 connection.on('connected', () => {
   console.log('mongo db is connected')
