@@ -9,29 +9,29 @@ const data = {
       nav: [
         {
           title: 'Calzado',
-          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20zapatillas',
+          url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Zapatillas',
         },
         {
           title: 'Ropa',
-          url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre%20ropa',
+          url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Ropa&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Niña&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B2%5D=Niños&pwa_ecom_ui_template_products%5Bpage%5D=2',
         },
-        {
-          title: 'Accesorios',
-          url: '/tienda?',
-        },
-        {
-          title: 'Descuento',
-          url: '/tienda?pwa_ecom_ui_template_products%5Brange%5D%5Bprice.value%5D=%3A200',
-        },
+        // {
+        //   title: 'Accesorios',
+        //   url: '/tienda?',
+        // },
+        // {
+        //   title: 'Descuento',
+        //   url: '/tienda?pwa_ecom_ui_template_products%5Brange%5D%5Bprice.value%5D=%3A200',
+        // },
       ],
       cardHeader: {
         imgDesktop:
           'https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/b759c6d4-9cea-4980-a66b-cb0763c67632/men-s-shoes-clothing-accessories.jpg',
         imgMobil:
           'https://static.nike.com/a/images/f_auto/dpr_2.0,cs_srgb/w_500,c_limit/de4714b2-e631-4e6a-89d9-afa2f16434cf/men-s-shoes-clothing-accessories.jpg',
-        titulo: 'LO MEJOR EN ROPA NIKE',
-        desc: 'Diseñado según las especificaciones exactas de los atletas de campeonato.',
-        url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=hombre',
+        titulo: 'LO MEJOR EN ROPA PARA NIÑO',
+        desc: '',
+        url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños',
       },
   
       tituloRecienLlegados: 'Recién Llegados',
@@ -207,12 +207,16 @@ export default function PaginaNinos({props}) {
               </p>
             </div>
             <div className=" md:px-5">
-              <a
+              <Link
                 href={data.dataPageHombre.cardHeader.url}
+              >
+              <span 
                 className="px-5 py-2 text-sm bg-black text-white  md:text-black md:bg-white font-semibold font-sans xl:text-lg"
               >
                 Tienda
-              </a>
+              </span>
+                
+              </Link>
             </div>
           </figcaption>
         </div>
