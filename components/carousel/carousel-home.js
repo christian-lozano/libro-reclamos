@@ -25,10 +25,10 @@ export default function CarouselHome({props}) {
             <div>
               <Carousel
                 autoplay={true}
-                autoplayInterval={5000}
+                autoplayInterval={1000}
                 wrapAround={true}
                 withoutControls={true}
-                adaptiveHeight={true}
+            
                 zoomScale={1}
                 enableKeyboardControls={true}
                 // speed={100}
