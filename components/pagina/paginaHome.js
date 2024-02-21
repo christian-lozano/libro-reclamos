@@ -42,10 +42,11 @@ slider desaparece porque voy a carrito
       <CategoriasGenero props={props} />
       <ProductsShowcase
         title="Lo mas Nuevo"
-        indexId="spring-summer-2021"
-        ruleContexts={['home-spring-summer-2021']}
+        indexId="ropa"
+        ruleContexts={['ropa']}
         className="laptop:bg-gray-50"
         hitComponent={ProductCardHitShowcase}
+        
       />
 
       <BannerPromociones props={props} />

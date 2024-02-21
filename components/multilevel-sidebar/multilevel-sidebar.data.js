@@ -1199,14 +1199,14 @@ let options = [
       disabled: false,
       to: "/nuestrastiendas"
     },
-    // {
-    //   id: 20,
-    //   title: "Nuestras Empresas",
-    //   icon: <i className="fa fa-graduation-cap"></i>,
-    //   hideBorder: false,
-    //   disabled: false,
-    //   to: "/"
-    // },
+    {
+      id: 28,
+      title: "OUTLET",
+      icon: <i className="fa fa-graduation-cap"></i>,
+      hideBorder: false,
+      disabled: false,
+      to: "/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bprice.discount_level%5D%5B0%5D=60"
+    },
   ];
   
   export default options;
