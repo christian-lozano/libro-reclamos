@@ -38,12 +38,18 @@ export function ProductPrice({
 
   return (
     <div className={classNames('flex', className)}>
+      <span className="font-semibold text-xs line-through text-[#767677]">
+        {currency === undefined ? 'S/' : 'S/'}{' '}
+        {price.toFixed(precision).toLocaleString()}
+      </span>
       <span className={classNames('text-venus-base font-bold', classNamePrice)}>
         {currency === undefined ? 'S/' : 'S/'}
         {/* {currency?.position === 'prefix' ? currency.symbol : null}
         {currency?.position === 'suffix' ? currency.symbol : null} */}
+
         {resultado.toFixed(precision).toLocaleString()}
       </span>
+
       {originalPrice && (
         <span
           className={classNames(

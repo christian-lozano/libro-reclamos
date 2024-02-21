@@ -65,7 +65,6 @@ export function ProductCard({
     []
   )
 
-
   const handleLinkClick = useCallback(
     (e: MouseEvent<HTMLAnchorElement>) => {
       if (typeof onLinkClick === 'function') onLinkClick(e)
@@ -108,7 +107,13 @@ export function ProductCard({
             </div>
           )}
         </div>
-
+        <div
+          className={`absolute top-0 text-white px-3 py-1 left-0 rounded-tl-xl ${
+            descuento === 20 ? 'bg-orange-500' : 'bg-red-500'
+          } font-bold `}
+        >
+          -{descuento}%
+        </div>
         <div className="flex flex-col gap-1">
           <header className="flex flex-col gap-1">
             {(label || labelHighlighting) && (
