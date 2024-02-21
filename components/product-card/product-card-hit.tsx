@@ -37,6 +37,7 @@ export function ProductCardHitComponent({
       symbol: hit.price.currency === 'USD' ? '$' : 'S/',
       position: hit.price.currency === 'EUR' ? 'suffix' : 'prefix',
     },
+    descuento: hit.price.discount_level,
     rating: hit.reviews.rating,
     reviews: hit.reviews.count,
   }

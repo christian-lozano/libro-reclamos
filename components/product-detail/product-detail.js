@@ -46,6 +46,7 @@ export function ProductDetail({
   price,
   originalPrice,
   currency,
+  descuento,
   popular,
   related,
   units_in_stock,
@@ -63,7 +64,7 @@ export function ProductDetail({
   // )
 
   // const [posts, setPosts] = useState([])
-console.log(product_type);
+
   // function fetchPosts() {
   //   const client = algoliasearch(
   //     'GXNXE1S5A4',
@@ -644,6 +645,7 @@ const [verGiaTallas, setVerGiaTallas] = useState(false)
             {price && (
               <ProductPrice
                 price={price}
+                descuento={descuento}
                 originalPrice={originalPrice}
                 currency={currency}
                 className="flex-row-reverse items-center justify-end gap-4 not-italic font-bold mt-3"

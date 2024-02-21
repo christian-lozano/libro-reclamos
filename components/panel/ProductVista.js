@@ -34,6 +34,7 @@ console.log(product.data.gender);
 <div>
       {product.data ? (
             <ProductDetail
+              descuento={product.data.price.discount_level}
               gender={product.data.gender}
               brand={product.data.brand}
               product_type={product.data.product_type}

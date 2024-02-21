@@ -28,6 +28,7 @@ export type ProductCardProps = {
   descriptionSnippeting?: React.ComponentType
   colors?: string[]
   price?: number
+  descuento?: number
   originalPrice?: number
   currency?: ProductPriceCurrency
   rating?: number
@@ -49,6 +50,7 @@ export function ProductCard({
   descriptionSnippeting,
   colors,
   price,
+  descuento,
   originalPrice,
   currency,
   rating,
@@ -131,10 +133,12 @@ export function ProductCard({
             {price && (
               <ProductPrice
                 price={price}
+                descuento={descuento}
                 originalPrice={originalPrice}
                 currency={currency}
               />
             )}
+
             {typeof rating !== 'undefined' && (
               <ProductRating rating={rating} reviews={reviews} />
             )}

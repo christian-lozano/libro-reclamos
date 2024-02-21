@@ -9,6 +9,7 @@ export type ProductPriceProps = {
   price: number
   originalPrice?: number
   currency?: ProductPriceCurrency
+  descuento?: number
   precision?: number
   className?: string
   classNamePrice?: string
@@ -17,6 +18,7 @@ export type ProductPriceProps = {
 
 export function ProductPrice({
   price,
+  descuento,
   originalPrice,
   currency,
   precision = 2,
@@ -26,6 +28,13 @@ export function ProductPrice({
 }: ProductPriceProps) {
   // const solesSimbol = currency.position
   // console.log(currency.symbol)
+  const porcentajeDescuento = descuento
+
+  const precio = price
+
+  const operation = (Number(porcentajeDescuento) / 100) * Number(precio)
+
+  const resultado = Number(precio) - operation
 
   return (
     <div className={classNames('flex', className)}>
@@ -33,7 +42,7 @@ export function ProductPrice({
         {currency === undefined ? 'S/' : 'S/'}
         {/* {currency?.position === 'prefix' ? currency.symbol : null}
         {currency?.position === 'suffix' ? currency.symbol : null} */}
-        {price.toFixed(precision).toLocaleString()}
+        {resultado.toFixed(precision).toLocaleString()}
       </span>
       {originalPrice && (
         <span

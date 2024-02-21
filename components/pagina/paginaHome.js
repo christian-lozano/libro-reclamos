@@ -14,7 +14,7 @@ export default function PaginaHome({props}) {
     <div>
 
     <HeaderNew props={props}/>
-    {/* <BuscadorHome /> */}
+
         <Configure
         hitsPerPage={6}
         // We cannot retrieve the user token at build time, so we disable perso
