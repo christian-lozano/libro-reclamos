@@ -1424,7 +1424,7 @@ const dataHeader = [
   {
     id: 'outlet',
     titulo: 'OUTLET',
-    url: '/tienda',
+    url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bprice.discount_level%5D%5B0%5D=60',
     // infoNav: [
     //   {
     //     categoria: [
@@ -1584,11 +1584,11 @@ const dataHeader = [
     titulo: 'Tienda',
     url: '/tienda',
   },
-  // {
-  //   id: 'outlet',
-  //   titulo: 'Emprende',
-  //   url: '/emprende',
-  // },
+  {
+    id: 'outlet',
+    titulo: 'outlet',
+    url: '/outlet',
+  },
   {
     id: 'Ntiendas',
     titulo: 'Nuestras Tiendas',
@@ -1743,6 +1743,7 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
   }, [andler])
 
   const handleHover = (index) => {
+    console.log(index);
     // setActiveHoverMenuNav(index)
     setActiveHoverNavDesktop(index)
 
@@ -1791,8 +1792,8 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                     <div className=" lg:block h-[5rem] ">
                       <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
                         {props.homeNav.map((el, index) => (
-                          <a
-                            href={`/${el.url}`}
+                          <Link
+                            href={el.url}
                             className="h-full  flex justify-center items-center "
                             key={el._id}
                             onClick={() => setAndler(false)}
@@ -1809,7 +1810,7 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                                 {el.page}
                               </span>
                             </div>
-                          </a>
+                          </Link>
                         ))}
 
                         {/* <Link

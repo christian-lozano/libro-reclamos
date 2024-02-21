@@ -152,6 +152,16 @@ export default function Productos() {
                         searchablePlaceholder="Buscar Marca"
                         showMore={false}
                         />
+                        
+                    </Panel>
+                    <Panel header="price.discount_level">
+                        <RefinementList
+                        attribute="price.discount_level"
+                        searchable={false}
+                        searchablePlaceholder="Buscar Marca"
+                        showMore={false}
+                        />
+                        
                     </Panel>
                     {/* <Panel header="Tallas">
                         <RefinementList
