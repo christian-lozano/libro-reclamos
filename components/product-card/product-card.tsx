@@ -108,7 +108,7 @@ export function ProductCard({
           )}
         </div>
         <div
-          className={`absolute top-0 text-white px-3 py-1 left-0 rounded-tl-xl ${
+          className={`absolute laptop:text-base text-xs laptop:py-1 top-0 text-white px-3 py-1 left-0 rounded-tl-xl ${
             descuento === 20 ? 'bg-orange-500' : 'bg-red-500'
           } font-bold `}
         >
