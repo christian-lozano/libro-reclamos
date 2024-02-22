@@ -588,7 +588,7 @@ const [verGiaTallas, setVerGiaTallas] = useState(false)
               <ProductDetails
                 src={image}
                 alt={title}
-                className="w-7/8 laptop:w-11/12 xl:w-9/12"
+                className="w-7/8 laptop:max-w-[770px] w-11/12 xl:w-9/12"
               />
             )}
           </div>

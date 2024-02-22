@@ -1085,8 +1085,6 @@ let options = [
     
       ]
     },
-
-
     // {
     //   id: 50,
     //   title: "OUTLET",
