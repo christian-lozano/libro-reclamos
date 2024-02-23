@@ -181,7 +181,6 @@
 import algoliasearch from 'algoliasearch/lite'
 import type { Hit as AlgoliaHit } from 'instantsearch.js'
 import { useCallback, useEffect, useState } from 'react'
-
 import {
   Configure,
   DynamicWidgets,
@@ -219,6 +218,7 @@ type HitProps = {
     }>
   }>
 }
+
 function Hit({ hit }: HitProps) {
   return (
     <>

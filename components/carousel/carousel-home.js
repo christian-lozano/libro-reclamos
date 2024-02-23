@@ -193,17 +193,17 @@ export default function CarouselHome({props}) {
               // autoplay={true}
               autoplay={true}
               // autoplayInterval={10000}
-              autoplayInterval={5000}
+              autoplayInterval={1000}
               wrapAround={true}
-              withoutControls={true}
-              adaptiveHeight={true}
-              zoomScale={1}
+              // withoutControls={true}
+              // adaptiveHeight={true}
+              // zoomScale={1}
               enableKeyboardControls={true}
               // speed={100}
               // goToSlide={indiceSlider}
               // slideIndex={indiceSlider}
               // dragThreshold={0}
-              afterSlide={(i) => setIndiceSlider(i)}
+              // afterSlide={(i) => setIndiceSlider(i)}
               // slideCount={indiceSlider}
             >
               {props.homeSliderMobil.map((el) => (

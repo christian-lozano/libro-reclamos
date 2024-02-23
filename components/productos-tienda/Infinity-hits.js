@@ -21,8 +21,8 @@ export function InfiniteHits({ hitComponent: HitComponent, ...props }) {
         observer.disconnect();
       };
     }
+  
   }, [isLastPage, showMore]);
-
   return (
     <div className="ais-InfiniteHits">
       <ul className="ais-InfiniteHits-list laptop:gap-5 gap-y-3 grid laptop:grid-cols-4 xl:grid-cols-3  grid-cols-2">
