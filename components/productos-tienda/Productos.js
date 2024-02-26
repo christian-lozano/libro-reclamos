@@ -24,7 +24,7 @@ import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
  
-    if (!hit) return <ProductCardSkeleton/>
+    if (!hit.image_urls[0]) return <ProductCardSkeleton/>
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}

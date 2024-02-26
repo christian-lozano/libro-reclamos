@@ -45,14 +45,14 @@ export default function CarouselHome({props}) {
 
 
                       <video
-                muted={true}
-                webkit-playsinline={true}
-                playsInline={true}
-                preload="auto"
-                autoPlay={true}
-                loop={true}
-                className="w-[100vw] laptop:h-full  hidden xl:block"
-              >
+                      muted={true}
+                      webkit-playsinline={true}
+                      playsInline={true}
+                      preload="auto"
+                      autoPlay={true}
+                      loop={true}
+                      className="w-[100vw] laptop:h-full  hidden xl:block"
+                    >
                 <source
                   src={"https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"}
                   type="video/mp4"
