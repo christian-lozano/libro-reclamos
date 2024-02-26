@@ -14,6 +14,7 @@ export function BannerPromociones({props}) {
 
 
   if (!props.homePromoMobil || !props.homePromoDesktop) return <div>Cargando</div>
+  console.log(props.homePromoDesktop[0].button_url);
   return (
     <div className="flex items-center">
       <section
@@ -66,7 +67,7 @@ export function BannerPromociones({props}) {
                   </div> */}
                   <div className="w-full flex  justify-start items-end h-full  ">
                     <div className="flex justify-around ">
-                      <Link href="/tienda">
+                      <Link href={`${props.homePromoDesktop[0].button_url}`}>
                       <Button
                               className={ `bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black w-64 py-2 px-2 rounded-sm uppercase`}
                             >
