@@ -18,11 +18,13 @@ import { SearchBox } from '@/components/panel/SearchBox'
 import { Panel } from '@/components/panel2/Panel'
 import { QueryRuleCustomData } from '@/components/panel2/QueryRuleCustomData'
 import { ProductCard } from '@/components/product-card/product-card'
+import  ProductCardSkeleton from '@/components/product-card/product-card-skeleton'
+
 import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
-    console.log(hit.gender);
-   
+ 
+    if (!hit) return <ProductCardSkeleton/>
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
