@@ -229,7 +229,7 @@ export default function CarouselHome({props}) {
               // autoplayInterval={10000}
               autoplayInterval={1000}
               wrapAround={true}
-              // withoutControls={true}
+              withoutControls={true}
               // adaptiveHeight={true}
               // zoomScale={1}
               enableKeyboardControls={true}
