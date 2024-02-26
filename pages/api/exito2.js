@@ -202,7 +202,7 @@ export default async function handler(req, res) {
                             //   console.log(result.collector_id);
 
             
-                                   res.redirect(`${process.env.URL_DOMINIO}/?clear=true`);
+                                   res.redirect(`https://www.fritzsport.pe/?clear=true`);
                      
                         
                           

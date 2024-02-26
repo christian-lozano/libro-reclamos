@@ -9,7 +9,7 @@ export default function Home(props: SearchPageLayoutProps) {
   const { emptyCart } = useCart()
 
   useEffect(() => {
-    if (window.location.href === `${process.env.URL_DOMINIO}/?clear=true`) {
+    if (window.location.href === `https://www.fritzsport.pe/?clear=true`) {
       emptyCart()
     }
   })
