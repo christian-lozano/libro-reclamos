@@ -1800,11 +1800,11 @@ export const NavTop = memo(function NavTop({props,activeSearchGlobal}) {
                             onMouseEnter={() => handleHover(index)}
                             onMouseLeave={() => setAndler(false)}
                           >
-                            <div className=" inline-flex items-center  justify-between  px-2  font-medium transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                            <div className=" inline-flex items-center  justify-between  px-2  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
                               <span
-                                className={`flex-shrink-0 uppercase  text-black font-[500] xl:text-sm laptop:text-lg  ${
-                                  activeHoverNavDesktop === index &&
-                                  'border-b-2 border-black '
+                                className={`flex-shrink-0 uppercase  text-black xl:text-sm laptop:text-lg ${index === 6 && "text-red-500 border-b-2 border-red-500"} ${el.page === "TIENDA" && " font-extrabold "} ${
+                                  activeHoverNavDesktop === index && index < 6 &&
+                                  `border-b-2 border-black `
                                 }  2xl:text-base `}
                               >
                                 {el.page}

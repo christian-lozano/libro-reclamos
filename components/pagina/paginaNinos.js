@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 
 const data = {
     dataPageHombre: {
-      page: 'Hombre',
+      page: 'Niños',
       nav: [
         {
           title: 'Calzado',
@@ -13,7 +13,7 @@ const data = {
         },
         {
           title: 'Ropa',
-          url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Ropa&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B1%5D=Niña&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B2%5D=Niños&pwa_ecom_ui_template_products%5Bpage%5D=2',
+          url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Ropa',
         },
         // {
         //   title: 'Accesorios',

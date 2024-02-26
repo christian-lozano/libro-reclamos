@@ -64,7 +64,7 @@ export function ControlledSearchBox({
         noValidate={true}
         action=""
         className={`ais-SearchBox-form  flex fixed  w-5/6 right-0 z-dev ${
-          altoScroll > 1
+          altoScroll > 10
             ? 'xl:top-[5rem] top-[6rem]'
             : 'xl:top-32 top-[7.9rem] '
         }  justify-end items-center`}
