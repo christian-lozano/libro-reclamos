@@ -18,6 +18,8 @@ import { Link } from '@ui/link/link'
 
 export type ProductCardProps = {
   url?: string
+  gender?: string
+
   image?: string
   tags?: ProductTagType[]
   label?: string
@@ -40,6 +42,7 @@ export type ProductCardProps = {
 
 export function ProductCard({
   url = '',
+  gender,
   image,
   tags,
   label,
@@ -75,7 +78,7 @@ export function ProductCard({
   return (
     <article
       className={classNames(
-        'w-full h-full z-dropdown relative border border-transparent transition-all laptop:p-3 group can-hover:laptop:hover:shadow-sm can-hover:laptop:hover:border-neutral-light',
+        'w-full h-full z-dropdown p-1 relative border border-neutral-light rounded-tl-xl transition-all laptop:p-3 group can-hover:laptop:hover:shadow-sm can-hover:laptop:hover:border-neutral-light ',
         { 'opacity-50': !available }
       )}
     >
@@ -121,10 +124,19 @@ export function ProductCard({
                 {label}
               </ProductLabel>
             )}
+
             {(title || titleHighlighting) && (
               <ProductTitle highlighting={titleHighlighting}>
                 {title}
               </ProductTitle>
+            )}
+            {(gender || labelHighlighting) && (
+              <ProductLabel
+                className="text-sm"
+                highlighting={labelHighlighting}
+              >
+                <span className="text-blue-gray-500">{gender}</span>
+              </ProductLabel>
             )}
             {(description || descriptionSnippeting) && view === 'list' && (
               <ProductDescription snippeting={descriptionSnippeting}>

@@ -21,12 +21,13 @@ import { ProductCard } from '@/components/product-card/product-card'
 import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
-
+    console.log(hit.gender);
    
     return (
       <>
         {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
         <ProductCard
+           gender={hit.gender}
           // currency={hit.price.currency.symbol}
           price={hit.precio}
           descuento={hit.price.discount_level}
@@ -154,7 +155,7 @@ export default function Productos() {
                         />
                         
                     </Panel>
-                    <Panel header="price.discount_level">
+                    <Panel header="Descuento">
                         <RefinementList
                         attribute="price.discount_level"
                         searchable={false}
