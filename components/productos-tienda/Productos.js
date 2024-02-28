@@ -208,7 +208,7 @@ export default function Productos() {
             </div>
             <Button
                 className={`fixed flex justify-end items-center  right-0 xl:hidden z-[10] pr-6 w-3/3 border-b-[1px] border-[#eeeeee] ${
-                altoScroll > 20 ? 'top-[1rem] ' : 'top-[11rem]'
+                altoScroll > 20 ? 'top-[1rem] transition-all' : 'top-[11rem] transition-all'
                 }   bg-white w-full `}
                 onClick={() => setfirst(true)}
             >
