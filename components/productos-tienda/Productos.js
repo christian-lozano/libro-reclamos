@@ -23,22 +23,33 @@ import  ProductCardSkeleton from '@/components/product-card/product-card-skeleto
 import { InfiniteHits } from './Infinity-hits'
 
 function Hit({ hit }) {
- 
-    if (!hit.image_urls[0]) return <ProductCardSkeleton/>
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 1000);
+      }, []);
+    // if (!hit.image_urls[0]) return <ProductCardSkeleton/>
     return (
       <>
-        {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
-        <ProductCard
+        {isLoading && (
+            <ProductCardSkeleton></ProductCardSkeleton>
+      )}
+      {!isLoading && (
+             <ProductCard
            gender={hit.gender}
-          // currency={hit.price.currency.symbol}
+    
           price={hit.precio}
           descuento={hit.price.discount_level}
           url={`/product/${hit.objectID}?queryID=${hit.__queryID}`}
-          // titleHighlighting={hit.brand}
+        
           label={hit.brand}
           title={hit.name}
           image={hit.image_urls[0]}
         />
+
+      )}
+  
+        {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
+ 
       </>
     )
   }
@@ -58,7 +69,10 @@ export default function Productos() {
         window.removeEventListener('scroll', handleNavigation)
       }
     }, [handleNavigation])
-
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 5000);
+      }, []);
 
   return (
     <>
@@ -66,7 +80,7 @@ export default function Productos() {
 
             <div className="Container mt-5 xl:mt-0">
             <div className="Search">
-                <SearchBox placeholder="Buscar" />
+                <SearchBox placeholder="Buscar"  />
                 <div className="Search-header">
                 {/* <PoweredBy /> */}
                 {/* <HitsPerPage
@@ -251,7 +265,10 @@ export default function Productos() {
                     }
                     />
                 </div>
-                <InfiniteHits showPrevious={false} hitComponent={Hit} />
+         
+            
+                    <InfiniteHits showPrevious={false} hitComponent={Hit} />
+
                 </div>
             </div>
             </div>
