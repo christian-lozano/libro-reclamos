@@ -54,8 +54,10 @@ export function ControlledSearchBoxTw({
 
   const handleNavigation = useCallback(
     () => setAltoScroll(window.scrollY),
+
     [altoScroll]
   )
+  console.log(altoScroll)
   useEffect(() => {
     window.addEventListener('scroll', handleNavigation)
 
@@ -68,10 +70,10 @@ export function ControlledSearchBoxTw({
       <form
         noValidate={true}
         action=""
-        className={`w-10/12  xl:w-full  fixed z-[11]  xl:flex xl:justify-end   left-0 xl:right-0  ${
-          altoScroll > 20
-            ? 'xl:top-[5rem] top-0 transition-all'
-            : 'xl:top-32 top-[11rem] transition-all '
+        className={`w-10/12  xl:w-full   z-[11]  xl:flex xl:justify-end   left-0 xl:right-0  ${
+          altoScroll > 174
+            ? 'xl:top-[5rem] fixed top-0 '
+            : 'xl:top-32 top-[11rem] absolute  '
         }   items-center`}
         onSubmit={() => handleSubmit}
       >
