@@ -55,16 +55,16 @@ export function ProductImage({ src, alt = '', className }: ProductImageProps) {
     //   </div>
     // </div>
 
-    <div className={classNames('bg-neutral-lightest', className)}>
+    <div className={classNames('bg-neutral-lightest ', className)}>
       <img
         src={src}
         alt={alt}
-        loading="lazy"
+        loading="eager"
         // layout="responsive"
         className={classNames(
-          'img-product transition-all xl:h-[340px] h-[146px]  duration-2000 ease-out-expo can-hover:group-hover:scale-110'
+          'img-product transition-all   duration-2000 ease-out-expo can-hover:group-hover:scale-110'
         )}
-        // onLoadingComplete={handleLoadingComplete}
+        // onLoadingComplete={handleLoadingComplete} xl:h-[340px] h-[146px]
       />
     </div>
   )

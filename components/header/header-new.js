@@ -16,7 +16,7 @@ export function HeaderNew({props,activeSearchGlobal}) {
   return (
     <header
       className={classNames(
-        'z-header sticky -top-px pt-px transition-shadow bg-white shadow-none',
+        'z-header sticky transition-shadow bg-white shadow-none',
         {
           'shadow-none': isSticky,
         }
