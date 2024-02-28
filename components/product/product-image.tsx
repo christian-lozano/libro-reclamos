@@ -59,12 +59,10 @@ export function ProductImage({ src, alt = '', className }: ProductImageProps) {
       <img
         src={src}
         alt={alt}
+        loading="lazy"
         // layout="responsive"
         className={classNames(
-          'transition-all duration-2000 ease-out-expo can-hover:group-hover:scale-110'
-          // {
-          //   '!opacity-0': !loaded,
-          // }
+          'img-product transition-all xl:h-[340px] h-[146px]  duration-2000 ease-out-expo can-hover:group-hover:scale-110'
         )}
         // onLoadingComplete={handleLoadingComplete}
       />
