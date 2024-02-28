@@ -60,7 +60,9 @@ export function NavBottom() {
             // onClick={() => handleSidebarToggle(true)}
           >
             {/* <span className="uppercase text-xs"> Tienda</span> */}
-            <span className="mr-2 uppercase font-medium ">Tienda</span>
+            <span className="mr-2 uppercase font-medium  text-[0.75rem]">
+              Tienda
+            </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
