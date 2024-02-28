@@ -69,8 +69,8 @@ export function ControlledSearchBoxTw({
         noValidate={true}
         action=""
         className={`w-10/12  xl:w-full  fixed z-[11]  xl:flex xl:justify-end   left-0 xl:right-0  ${
-          altoScroll > 10
-            ? 'xl:top-[5rem] top-[9rem]'
+          altoScroll > 20
+            ? 'xl:top-[5rem] top-[1rem]'
             : 'xl:top-32 top-[11rem] '
         }   items-center`}
         onSubmit={() => handleSubmit}
