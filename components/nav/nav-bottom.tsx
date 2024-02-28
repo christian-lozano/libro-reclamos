@@ -56,10 +56,11 @@ export function NavBottom() {
       <Tablet>
         <Link href={'/tienda'}>
           <Button
-            className="p-3 pl-2 2xl:hidden xl:hidden flex justify-end w-full"
+            className="p-3 pl-2 2xl:hidden xl:hidden flex items-center justify-end w-full"
             // onClick={() => handleSidebarToggle(true)}
           >
             {/* <span className="uppercase text-xs"> Tienda</span> */}
+            <span className="mr-2 uppercase font-medium ">Tienda</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -70,7 +70,7 @@ export function ControlledSearchBoxTw({
         action=""
         className={`w-10/12  xl:w-full  fixed z-[11]  xl:flex xl:justify-end   left-0 xl:right-0  ${
           altoScroll > 20
-            ? 'xl:top-[5rem] top-[1rem] transition-all'
+            ? 'xl:top-[5rem] top-0 transition-all'
             : 'xl:top-32 top-[11rem] transition-all '
         }   items-center`}
         onSubmit={() => handleSubmit}
