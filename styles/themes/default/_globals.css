@@ -452,6 +452,7 @@ input::-webkit-inner-spin-button {
   .absolute.\32 xl\:bg-transparent.xl\:bg-transparent.bg-white.right-0.w-full.xl\:w-2\/5.xl\:mt-2.xl\:-z-dev {
     width: 26%;
     margin-top: 0.8rem;
+    
   }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }

@@ -73,7 +73,7 @@ export function ControlledSearchBox({
       >
         <input
           ref={inputRef}
-          className="ais-SearchBox-input py-[0.79rem] xl:px-5 px-5 xl:w-2/5 w-3/6 border-[0.1px] border-black 	focus:outline-none	"
+          className="ais-SearchBox-input py-[0.79rem] xl:px-5 px-5 xl:w-2/5 w-3/6 border-[0.1px] border-black  	focus:outline-none	"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"

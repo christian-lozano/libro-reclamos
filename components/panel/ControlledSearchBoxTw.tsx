@@ -57,7 +57,7 @@ export function ControlledSearchBoxTw({
 
     [altoScroll]
   )
-  console.log(altoScroll)
+
   useEffect(() => {
     window.addEventListener('scroll', handleNavigation)
 
@@ -79,11 +79,11 @@ export function ControlledSearchBoxTw({
       >
         <input
           ref={inputRef}
-          className=" py-[0.79rem]  xl:px-5 px-5 xl:w-2/5 w-11/12 border-[0.1px] 	focus:outline-none	"
+          className=" py-[0.79rem]  xl:px-5 px-5 xl:w-2/5 w-11/12 border-r-[0.1px]  border-blue-gray-100 text-black placeholder:text-black	focus:outline-none	"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
-          placeholder={placeholder || 'Buscar'}
+          placeholder={'Buscar...'}
           spellCheck={false}
           maxLength={512}
           type="search"
