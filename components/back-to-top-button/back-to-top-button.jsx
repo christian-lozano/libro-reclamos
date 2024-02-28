@@ -50,7 +50,7 @@ export default function BackToTopButton() {
       <button
         onClick={topFunction}
         id="myBtn"
-        className={`${showBtn}  ${altoScroll < 200 && "hidden"} bg-black xl:h-[36px] xl:w-[36px]  h-[26px] w-[26px] rounded-sm  flex justify-center items-center    stroke-white  fixed bottom-5 xl:left-96 left-10 z-[999]`}
+        className={`${showBtn}  ${altoScroll < 200 && "hidden"} bg-black xl:h-[46px] xl:w-[46px]  h-[26px] w-[26px] rounded-sm  flex justify-center items-center    stroke-white  fixed bottom-10 xl:left-96 left-10  z-[999]`}
         title="Go to top"
       >
 <svg
