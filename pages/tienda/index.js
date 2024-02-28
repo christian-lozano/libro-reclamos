@@ -10,6 +10,7 @@ import { history } from 'instantsearch.js/es/lib/routers/index.js';
 import singletonRouter from 'next/router';
 import { createInstantSearchRouterNext } from 'react-instantsearch-router-nextjs';
 import { ProductCard } from '@/components/product-card/product-card'
+import BackToTopButton from '@/components/back-to-top-button/back-to-top-button'
 
 import { HeaderNew } from '@/components/header/header-new'
 
@@ -50,6 +51,8 @@ export default function Home({ serverState, serverUrl ,  homeNav, homeLogo,}) {
         }}
       >
         <Productos/>
+      <BackToTopButton />
+
       </InstantSearch>
     </InstantSearchSSRProvider>
   );

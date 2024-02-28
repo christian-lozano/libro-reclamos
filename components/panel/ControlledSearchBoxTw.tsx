@@ -79,7 +79,7 @@ export function ControlledSearchBoxTw({
       >
         <input
           ref={inputRef}
-          className=" py-[0.79rem]  xl:px-5 px-5 xl:w-2/5 w-11/12 border-r-[0.1px]  border-blue-gray-100 text-black placeholder:text-black	focus:outline-none	"
+          className=" py-[0.79rem]  xl:px-5 px-5 xl:w-2/5 w-11/12 border-r-[0.1px] xl:border-[0.1px] xl:border-black border-blue-gray-100 text-black placeholder:text-black	focus:outline-none	"
           autoComplete="off"
           autoCorrect="off"
           autoCapitalize="off"
