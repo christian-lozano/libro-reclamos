@@ -247,7 +247,7 @@ export default function PaginaNinos({props}) {
                       <div>
                         <div className="my-7">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl font-extrabold font-sans">
                             {el.button_title}
                           </h3>
                         </div>
@@ -280,7 +280,7 @@ export default function PaginaNinos({props}) {
                       <div>
                         <div className="m-1">
                           {/* <h2 className="text-white text-lg">Nike ACG</h2> */}
-                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl 2xl:font-extrabold 2xl:font-sans font-medium">
+                          <h3 className="text-black py-1 text-2xl 2xl:text-3xl font-extrabold font-sans ">
                             {el.button_title}
                           </h3>
                         </div>
