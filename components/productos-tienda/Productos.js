@@ -25,15 +25,13 @@ import { InfiniteHits } from './Infinity-hits'
 function Hit({ hit }) {
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        setTimeout(() => setIsLoading(false), 3000);
+        setTimeout(() => setIsLoading(false), 1000);
       }, []);
     // if (!hit.image_urls[0]) return <ProductCardSkeleton/>
     return (
       <>
-        {isLoading && (
-            <ProductCardSkeleton></ProductCardSkeleton>
-      )}
-      {!isLoading && (
+  
+      {!isLoading && hit.image_urls[0] ? (
              <ProductCard
            gender={hit.gender}
     
@@ -45,6 +43,10 @@ function Hit({ hit }) {
           title={hit.name}
           image={hit.image_urls[0]}
         />
+
+      ) : (
+        <ProductCardSkeleton></ProductCardSkeleton>
+
 
       )}
   
@@ -69,10 +71,7 @@ export default function Productos() {
         window.removeEventListener('scroll', handleNavigation)
       }
     }, [handleNavigation])
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        setTimeout(() => setIsLoading(false), 5000);
-      }, []);
+
 
   return (
     <>
