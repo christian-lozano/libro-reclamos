@@ -41,43 +41,12 @@ export default function CarouselHome({props}) {
                   <div className='cursor-pointer'>
                     <div className="">
                        <img className="z-dev w-full" src={"https://res.cloudinary.com/da868wsih/image/upload/v1709331514/fritz_sport/ecommerce/home/slider_desktop/DE_VUELTA_AL_COLE_SLIDER_y1kizg.jpg"} alt="" />
-
-
-
-              //         <video
-              //         muted={true}
-              //         webkit-playsinline={true}
-              //         playsInline={true}
-              //         preload="auto"
-              //         autoPlay={true}
-              //         loop={true}
-              //         className="w-[100vw] laptop:h-full  hidden xl:block"
-              //       >
-              //   <source
-              //     src={"https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"}
-              //     type="video/mp4"
-              //   />
-              //   <track
-              //     src="captions_en.vtt"
-              //     kind="captions"
-              //     srcLang="en"
-              //     label="english_captions"
-              //   />
-              //   <track
-              //     src="captions_es.vtt"
-              //     kind="captions"
-              //     srcLang="es"
-              //     label="spanish_captions"
-              //   />
-              // </video>
-
-
-                      {/* <video  className="z-dev w-full"  src="https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"></video> */}
                       <div className="relative text-2xl text-black flex justify-start xl:ml-16 2xl:ml-40 ml-20 items-start top-24 bottom-0 w-full h-full z-50">
                         <div className="absolute flex flex-col items-start justify-start  text w-auto xl:bottom-[calc(28vh)] laptop:bottom-[calc(24vh)]">
                           {/* <h6
                             className={`text-center  xl:text-4xl  2xl:text-2xl font-black  text-${el.color}`}
                           >
+                          
                             {' '}
                             {el.title}
                           </h6>
