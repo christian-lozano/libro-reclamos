@@ -37,7 +37,7 @@ export default function CarouselHome({props}) {
                 afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={0}
               >
-                <Link href={"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bprice.discount_level%5D%5B0%5D=60"}>
+                <Link href={"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bprice.discount_level%5D%5B0%5D=25"}>
                   <div className='cursor-pointer'>
                     <div className="">
                        <img className="z-dev w-full" src={"https://res.cloudinary.com/da868wsih/image/upload/v1709331514/fritz_sport/ecommerce/home/slider_desktop/DE_VUELTA_AL_COLE_SLIDER_y1kizg.jpg"} alt="" />
