@@ -45,7 +45,7 @@ export default function PaginaPagar() {
       telefono: '',
       direccion: '',
       comprobante:'Boleta',
-      ruc:'',
+      ruc:'null',
     //   provincia: '',
       distrito: '',
     //   adicional: '',
