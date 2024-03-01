@@ -40,36 +40,36 @@ export default function CarouselHome({props}) {
                 <Link href={"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bprice.discount_level%5D%5B0%5D=60"}>
                   <div className='cursor-pointer'>
                     <div className="">
-                      {/* <img className="z-dev w-full" src={"https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"} alt="" /> */}
+                       <img className="z-dev w-full" src={"https://res.cloudinary.com/da868wsih/image/upload/v1709331514/fritz_sport/ecommerce/home/slider_desktop/DE_VUELTA_AL_COLE_SLIDER_y1kizg.jpg"} alt="" />
 
 
 
-                      <video
-                      muted={true}
-                      webkit-playsinline={true}
-                      playsInline={true}
-                      preload="auto"
-                      autoPlay={true}
-                      loop={true}
-                      className="w-[100vw] laptop:h-full  hidden xl:block"
-                    >
-                <source
-                  src={"https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"}
-                  type="video/mp4"
-                />
-                <track
-                  src="captions_en.vtt"
-                  kind="captions"
-                  srcLang="en"
-                  label="english_captions"
-                />
-                <track
-                  src="captions_es.vtt"
-                  kind="captions"
-                  srcLang="es"
-                  label="spanish_captions"
-                />
-              </video>
+              //         <video
+              //         muted={true}
+              //         webkit-playsinline={true}
+              //         playsInline={true}
+              //         preload="auto"
+              //         autoPlay={true}
+              //         loop={true}
+              //         className="w-[100vw] laptop:h-full  hidden xl:block"
+              //       >
+              //   <source
+              //     src={"https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"}
+              //     type="video/mp4"
+              //   />
+              //   <track
+              //     src="captions_en.vtt"
+              //     kind="captions"
+              //     srcLang="en"
+              //     label="english_captions"
+              //   />
+              //   <track
+              //     src="captions_es.vtt"
+              //     kind="captions"
+              //     srcLang="es"
+              //     label="spanish_captions"
+              //   />
+              // </video>
 
 
                       {/* <video  className="z-dev w-full"  src="https://res.cloudinary.com/da868wsih/video/upload/v1708969255/fritz_sport/ecommerce/home/slider_desktop/SALE_y8rmgm.mp4"></video> */}
