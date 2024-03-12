@@ -263,7 +263,7 @@ export default function PaginaPagar() {
             >
               <div className="ml-5">
                 <span className="mt-2 font-semibold">
-                  Recojo en Tienda Miguel Graú
+                  Envio previa coordinación
                 </span>
               </div>
             </label>
