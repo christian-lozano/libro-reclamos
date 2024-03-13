@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Button } from '../@ui/button/button'
 
-export default function NotFund() {
+export default function NotFound() {
   return (
     <div className="w-full flex justify-center">
       <div className="h-screen  bg-gray-50 flex items-center">
