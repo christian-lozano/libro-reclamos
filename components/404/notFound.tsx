@@ -18,7 +18,7 @@ export default function NotFound() {
             </p>
             <Link href="/tienda">
               <Button
-                href="/tienda"
+               
                 className="px-5 uppercase inline py-3 text-sm font-medium leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-black active:text-white hover:text-white hover:bg-green-600"
               >
                 Buscar Producto
