@@ -57,6 +57,13 @@ export function ProductDetail({
 }// product_type,
 // onCheckoutClick,
 ) {
+
+
+    const precio = price
+
+  const operation = (Number(descuento) / 100) * Number(precio)
+
+  const resultado = Number(precio) - operation
   // const [isFavorite, setIsFavorite] = useState(false)
   // const handleFavoriteClick = useCallback(
   //   () => setIsFavorite((favorite) => !favorite),
@@ -385,11 +392,11 @@ const solicitudAlgoliaCarrito = (items,tallas) =>{
         addItem({
           img: image,
           title,
-          precio: price,
+          precio: resultado,
           objectID,
           // id: String(`${objectID}_${talla}`),
           id: String(`${tallas}`),
-          price: Number(price),
+          price: Number(resultado),
           tallas: data.msg.talla,
           talla,
           stockProductActual: stockProduct,
