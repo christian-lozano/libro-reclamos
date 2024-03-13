@@ -15,11 +15,7 @@ export default function NotFound() {
             <p className="text-2xl md:text-3xl font-light leading-normal mb-8">
               Lo sentimos, no pudimos encontrar la página que estás buscando.
             </p>
-            <Link href="/tienda">
-           <span className="px-5 cursor-pointer uppercase inline py-3 text-sm font-medium leading-5 shadow-2xl text-white transition-all duration-400 border border-transparent rounded-lg focus:outline-none bg-black active:text-white hover:text-white hover:bg-green-600">
-                Buscar Producto
-              </span>
-            </Link>
+        
           </div>
           <div className="w-full lg:flex lg:justify-end lg:w-1/2 mx-5 my-12">
             <img
