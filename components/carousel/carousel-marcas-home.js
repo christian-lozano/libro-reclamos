@@ -3,27 +3,40 @@ import React, { useEffect, useState } from 'react'
 
 import { Link } from '../@ui/link/link'
 
-
-export function CarouselMarcasHome({props}) {
+export function CarouselMarcasHome({ props }) {
   // console.log(props);
 
   const [indiceSlider, setIndiceSlider] = useState(0)
 
-
-  if (!props.homeSliderMarcas) return <div>Cargando</div> 
+  if (!props.homeSliderMarcas) return <div>Cargando</div>
 
   return (
     <div className="my-8 ">
       <h4 className=" my-5 text-center">Nuestras Marcas</h4>
       <div className="hidden laptop:block">
         <div className="grid grid-flow-col-dense w-full  my-10 justify-items-center">
-          {props.homeSliderMarcas.map((el) => (
-            <Link key={el._id} href={el.button_url} className="border-indigo-600">
-              <div className="h-24 w-24 flex items-center  border ">
-                <img src={el.secure_url} alt="" />
-              </div>
-            </Link>
-          ))}
+          <Link
+            href="/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bbrand%5D%5B0%5D=Adidas"
+            className="border-indigo-600"
+          >
+            <div className="h-24 w-24 flex items-center  border ">
+              <img
+                src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710780236/fritz_sport/Adidas_Logo_1_pqilud.jpg"
+                alt=""
+              />
+            </div>
+          </Link>
+          <Link
+            href="/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bbrand%5D%5B0%5D=Nike"
+            className="border-indigo-600"
+          >
+            <div className="h-24 w-24 flex items-center  border ">
+              <img
+                src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710780259/fritz_sport/logo_nike_principal_fsc80c.jpg"
+                alt=""
+              />
+            </div>
+          </Link>
         </div>
       </div>
       <div className="laptop:hidden">
@@ -42,19 +55,30 @@ export function CarouselMarcasHome({props}) {
           afterSlide={(i) => setIndiceSlider(i)}
           // slideCount={indiceSlider}
         >
-          {props.homeSliderMarcas.map((el) => (
-            <Link
-              key={el._id}
-              href={el.button_url}
-              className="border-indigo-600 flex justify-center"
-            >
-              <div className="h-24 w-24 flex items-center justify-center border ">
-                <img src={el.secure_url} alt="" />
-              </div>
-            </Link>
-          ))}
+          <Link
+            href="/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bbrand%5D%5B0%5D=Adidas"
+            className="border-indigo-600"
+          >
+            <div className="h-24 w-24 flex items-center  border ">
+              <img
+                src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710780236/fritz_sport/Adidas_Logo_1_pqilud.jpg"
+                alt=""
+              />
+            </div>
+          </Link>
+          <Link
+            href="/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5Bbrand%5D%5B0%5D=Nike"
+            className="border-indigo-600"
+          >
+            <div className="h-24 w-24 flex items-center  border ">
+              <img
+                src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710780259/fritz_sport/logo_nike_principal_fsc80c.jpg"
+                alt=""
+              />
+            </div>
+          </Link>
         </Carousel>
-        <div className="flex w-full mt-5 ">
+        {/* <div className="flex w-full mt-5 ">
           {props.homeSliderMarcas.map((el, i) => (
             <div
               key={i}
@@ -70,7 +94,7 @@ export function CarouselMarcasHome({props}) {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )

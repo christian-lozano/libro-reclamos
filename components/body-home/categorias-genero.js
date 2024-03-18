@@ -5,41 +5,39 @@ import { Link } from '../@ui/link/link'
 
 const DataCardBg = [
   {
-    url: '/mujer',
+    url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer',
     button: 'Mujer',
     imgCategory:
-      'https://res.cloudinary.com/da868wsih/image/upload/v1700864622/fritz-ecommerce/home-body-genero/MUJER_ujgqpj.png',
+      'https://res.cloudinary.com/dmtq82guq/image/upload/v1710778375/fritz_sport/mujer-web_fotu3b.jpg',
   },
 
   {
-    url: '/hombre',
+    url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre&pwa_ecom_ui_template_products%5Bpage%5D=2',
     button: 'Hombre',
     imgCategory:
-      'https://res.cloudinary.com/da868wsih/image/upload/v1700864291/fritz-ecommerce/home-body-genero/HOMBRE_ujxyb1.png',
+      'https://res.cloudinary.com/dmtq82guq/image/upload/v1710778380/fritz_sport/hombre-web_f376dl.jpg',
   },
 
   {
-    url: '/ninos',
+    url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños',
     button: 'Niños',
     imgCategory:
-      'https://res.cloudinary.com/da868wsih/image/upload/v1702661432/fritz-ecommerce/home-body-genero/adadasdasdsad_t2h7ns.jpg',
+      'https://res.cloudinary.com/dmtq82guq/image/upload/v1710778378/fritz_sport/nino-web_u2m3bt.jpg',
   },
 ]
 
-
-export function CategoriasGenero({props}) {
-
+export function CategoriasGenero({ props }) {
   const [dataCategorias, setDataCategorias] = useState([])
 
-async function fetchDataCategorias() {
-  const request = await fetch('/api/home/homeCategorias')
-  const data = await request.json()
-  setDataCategorias(data)
-}
-useEffect(() => {
-  fetchDataCategorias()
-}, [])
-if (!props.homeCategorias) return <div>Cargando</div>
+  async function fetchDataCategorias() {
+    const request = await fetch('/api/home/homeCategorias')
+    const data = await request.json()
+    setDataCategorias(data)
+  }
+  useEffect(() => {
+    fetchDataCategorias()
+  }, [])
+  if (!props.homeCategorias) return <div>Cargando</div>
   return (
     <div className=" flex justify-center w-full h-auto items-center z-20">
       <div className=" flex flex-col items-center justify-center w-full">
@@ -47,18 +45,18 @@ if (!props.homeCategorias) return <div>Cargando</div>
           Nuestras Categorías
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-y-10 md:grid-cols-2 justify-items-center items-center gap-x-5 ">
-          {props.homeCategorias.map((el) => (
+          {DataCardBg.map((el, i) => (
             <Link
-              key={el._id}
-              href={el.button_url}
+              key={i}
+              href={el.url}
               className="laptop:rounded-xl  text-center"
             >
-              <img src={el.secure_url} alt="" />
+              <img src={el.imgCategory} alt="" />
               <div className="flex justify-center w-full">
                 <Button
                   className={`bg-black flex justify-around items-center laptop:text-lg  text-sm  font-medium border border-black shadow-lg text-black mt-5  py-1 px-3 rounded-sm uppercase`}
                 >
-                  <span className="mr-1 text-white"> {el.button_title}</span>
+                  <span className="mr-1 text-white"> {el.button}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

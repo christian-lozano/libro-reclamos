@@ -129,11 +129,11 @@ export default function NavUbicanosEmergente() {
                     className="flex flex-col py-6 sm:flex-row sm:justify-between items-center"
                   >
                     <div className="flex w-full space-x-2 sm:space-x-4 items-center">
-                      <img
+                      {/* <img
                         className="flex-shrink-0 object-cover w-24 h-24 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500"
                         src={el.img[0]}
                         alt="Polaroid camera"
-                      />
+                      /> */}
                       <div className="flex justify-center items-center w-full h-full">
                         <div className="flex flex-col justify-between w-full">
                           <div className="flex justify-between w-full pb-2 space-x-2">

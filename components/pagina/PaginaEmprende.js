@@ -1,55 +1,37 @@
 import React from 'react'
 import {
-    Button,
-    Tab,
-    TabPanel,
-    Tabs,
-    TabsBody,
-    TabsHeader,
-  } from '@material-tailwind/react'
+  Button,
+  Tab,
+  TabPanel,
+  Tabs,
+  TabsBody,
+  TabsHeader,
+} from '@material-tailwind/react'
 import { HeaderNew } from '../header/header-new'
-export default function PaginaEmprende({props}) {
-
-
-    if(!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
+export default function PaginaEmprende({ props }) {
+  if (!props.PortadaMobil || !props.PortadaDesktop) return <div>Cargando..</div>
 
   return (
     <>
-
-    <HeaderNew activeSearchGlobal={false} props={props}/>
-    <div className=" pt-14 md:pt-16">
-
+      <HeaderNew activeSearchGlobal={false} props={props} />
+      <div className=" pt-14 md:pt-16">
         <div className="">
-
-        {
-            props.PortadaDesktop.map(el=>(
-
-                <img
-                    src={el.secure_url}
-                    alt=""
-                    className="hidden md:block"
-                />
-                
-            ))
-        }
-        {
-            props.PortadaMobil.map(el=>(
-
-                <img
-                    src="https://res.cloudinary.com/da868wsih/image/upload/v1701370311/fritz-ecommerce/emprende/celular-pt-fritz_z6fpcs.jpg"
-                    alt=""
-                    className="block md:hidden"
-                />
-                
-            ))
-        }
-
+          {props.PortadaDesktop.map((el) => (
+            <img src={el.secure_url} alt="" className="hidden md:block" />
+          ))}
+          {props.PortadaMobil.map((el) => (
+            <img
+              src="https://res.cloudinary.com/da868wsih/image/upload/v1701370311/fritz-ecommerce/emprende/celular-pt-fritz_z6fpcs.jpg"
+              alt=""
+              className="block md:hidden"
+            />
+          ))}
         </div>
 
         <div className="bg-white">
           <div className="container flex flex-col mx-auto bg-white">
             <div className="w-full draggable">
-                <h3 className='text-center mt-20'>Nuestros Beneficios</h3>  
+              <h3 className="text-center mt-20">Nuestros Beneficios</h3>
               <div className="container flex flex-col items-center gap-16 mx-auto mt-20">
                 <div className="grid w-full grid-cols-2 gap-5 md:grid-cols-2 lg:grid-cols-5">
                   {/* Beneficios */}
@@ -86,147 +68,112 @@ export default function PaginaEmprende({props}) {
                     onResize={undefined}
                     onResizeCapture={undefined}
                   >
-              
-                      <Tab
-            
-                        key="Emprendedores"
-                        value="Emprendedores"
-                        className="text-lg font-bold mb-5"
-                        nonce={undefined}
-                        onResize={undefined}
-                        onResizeCapture={undefined}
-                      >
-                        Emprendedores
-                      </Tab>
-                      <Tab
-                        key="Mayoristas"
-                        value="Mayoristas"
-                        className="text-lg font-bold mb-5"
-                        nonce={undefined}
-                        onResize={undefined}
-                        onResizeCapture={undefined}
-                      >
-                        Mayoristas
-                      </Tab>
-            
+                    <Tab
+                      key="Emprendedores"
+                      value="Emprendedores"
+                      className="text-lg font-bold mb-5"
+                      nonce={undefined}
+                      onResize={undefined}
+                      onResizeCapture={undefined}
+                    >
+                      Emprendedores
+                    </Tab>
+                    <Tab
+                      key="Mayoristas"
+                      value="Mayoristas"
+                      className="text-lg font-bold mb-5"
+                      nonce={undefined}
+                      onResize={undefined}
+                      onResizeCapture={undefined}
+                    >
+                      Mayoristas
+                    </Tab>
                   </TabsHeader>
-        
+
                   <TabsBody
-          
                     nonce={undefined}
                     onResize={undefined}
                     onResizeCapture={undefined}
                   >
-          
-                        <TabPanel
-                                key= {"Emprendedor"}
-                          value={"Emprendedores"}
-                          className="text-black"
-                        >
-                          <div className="flex flex-col laptop:flex-row xl:flex-row">
-                            <div>
-                            {props.EmprendedorCard.map(el=>(
-                              <img src={el.secure_url} alt="" />
-
-                            ))}
-                            </div>
-                            
-                            <div className="xl:px-5">
-                              <div className="text-center text-3xl font-bold my-7">
-                                  Beneficios
-                              </div>
-                              <ul className="flex flex-col">
-                              {props.listTipoEmprendedorBeneficios.map(el=>(
-                                  <li
-                                    
-                                    className="my-3 mx-3 font-semibold"
-                                  >
-                                  {el.page}
-                                  </li>
-
-
-                              ))}
-                            
-                              </ul>
-                        
-                              <div className="xl:px-5">
-                                <div className="text-center text-3xl font-bold my-7">
-                                  Requisitos
-                                </div>
-                                <ul className="flex flex-col">
-                                
-                                {props.listTipoEmprendedorRequisitos.map(el=>(
-                                  <li
-                                    
-                                    className="my-3 mx-3 font-semibold"
-                                  >
-                                  {el.page}
-                                  </li>
-
-
-                              ))}
-                              
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </TabPanel>
-
-
-                        <TabPanel
-                      key={"Mayoristas"}
-                    value={"Mayoristas"}
-                    className="text-black"
-                  >
-                    <div className="flex flex-col laptop:flex-row xl:flex-row">
-                      <div>
-                      {props.MayoristaCard.map(el=>(
-                        <img src={el.secure_url} alt="" />
-
-                      ))}
-                      </div>
-                      
-                      <div className="xl:px-5">
-                        <div className="text-center text-3xl font-bold my-7">
-                            Beneficios
+                    <TabPanel
+                      key={'Emprendedor'}
+                      value={'Emprendedores'}
+                      className="text-black"
+                    >
+                      <div className="flex flex-col laptop:flex-row xl:flex-row">
+                        <div>
+                          {props.EmprendedorCard.map((el) => (
+                            <img src={el.secure_url} alt="" />
+                          ))}
                         </div>
-                        <ul className="flex flex-col">
-                        {props.listTipoMayoristaBeneficios.map(el=>(
-                            <li
-                              
-                              className="my-3 mx-3 font-semibold"
-                            >
-                              {el.page}
-                            </li>
 
-
-                        ))}
-                      
-                        </ul>
-                    
                         <div className="xl:px-5">
                           <div className="text-center text-3xl font-bold my-7">
-                            Requisitos
+                            Beneficios
                           </div>
                           <ul className="flex flex-col">
-                          
-                          {props.listTipoMayoristaRequisitos.map(el=>(
-                            <li
-                              
-                              className="my-3 mx-3 font-semibold"
-                            >
-                              {el.page}
-                            </li>
-
-
-                        ))}
-                          
+                            {props.listTipoEmprendedorBeneficios.map((el) => (
+                              <li className="my-3 mx-3 font-semibold">
+                                {el.page}
+                              </li>
+                            ))}
                           </ul>
+
+                          <div className="xl:px-5">
+                            <div className="text-center text-3xl font-bold my-7">
+                              Requisitos
+                            </div>
+                            <ul className="flex flex-col">
+                              {props.listTipoEmprendedorRequisitos.map((el) => (
+                                <li className="my-3 mx-3 font-semibold">
+                                  {el.page}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                          </TabPanel>
-                  
+                    </TabPanel>
+
+                    <TabPanel
+                      key={'Mayoristas'}
+                      value={'Mayoristas'}
+                      className="text-black"
+                    >
+                      <div className="flex flex-col laptop:flex-row xl:flex-row">
+                        <div>
+                          {props.MayoristaCard.map((el) => (
+                            <img src={el.secure_url} alt="" />
+                          ))}
+                        </div>
+
+                        <div className="xl:px-5">
+                          <div className="text-center text-3xl font-bold my-7">
+                            Beneficios
+                          </div>
+                          <ul className="flex flex-col">
+                            {props.listTipoMayoristaBeneficios.map((el) => (
+                              <li className="my-3 mx-3 font-semibold">
+                                {el.page}
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="xl:px-5">
+                            <div className="text-center text-3xl font-bold my-7">
+                              Requisitos
+                            </div>
+                            <ul className="flex flex-col">
+                              {props.listTipoMayoristaRequisitos.map((el) => (
+                                <li className="my-3 mx-3 font-semibold">
+                                  {el.page}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </TabPanel>
                   </TabsBody>
 
                   {/* ---------------------------------------------------------------- */}
@@ -237,16 +184,13 @@ export default function PaginaEmprende({props}) {
                     </h5>
 
                     <div className="md:flex flex-col xl:flex-row w-5/6">
-                    {
-                        props.ImageCardPasos.map(el=>(
-
-                            <img
-                                className="md:w-5/12 xl:w-6/12"
-                                src={el.secure_url}
-                                alt=""
-                            />
-                        ))
-                    }
+                      {props.ImageCardPasos.map((el) => (
+                        <img
+                          className="md:w-5/12 xl:w-6/12"
+                          src={el.secure_url}
+                          alt=""
+                        />
+                      ))}
 
                       <div className="px-10 flex flex-col items-start justify-center">
                         {props.PasosList.map((el, i) => (

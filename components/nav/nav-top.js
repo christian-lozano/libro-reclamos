@@ -1,34 +1,32 @@
-
 import { memo, useEffect, useState } from 'react'
 import Logotipo from '@/components/Logotipo/Logo'
 import { Button } from '@ui/button/button'
 import { Link } from '@ui/link/link'
-import NavUbicanosEmergente from "./nav-ubicanos-carrito"
-
+import NavUbicanosEmergente from './nav-ubicanos-carrito'
 
 const dataHeader = {
-    header:{
-      text:"text-black",
-      background:"bg-white",
-      hoverMenutextColor:"text-white",
-      hoverMenuBackground:"bg-white",
-    },
+  header: {
+    text: 'text-black',
+    background: 'bg-white',
+    hoverMenutextColor: 'text-white',
+    hoverMenuBackground: 'bg-white',
+  },
 
-    logoNav:{
-      id:"adasd",
-      svg:"https://res.cloudinary.com/da868wsih/image/upload/v1707170861/fritz_sport/ecommerce/home/logo/chpb2gzquotjbzkvf8ug.png",
-      color:"white",
-      url:"/",
-      width:"5px",
-      height:"20px"
-     },
+  logoNav: {
+    id: 'adasd',
+    svg: 'https://res.cloudinary.com/da868wsih/image/upload/v1707170861/fritz_sport/ecommerce/home/logo/chpb2gzquotjbzkvf8ug.png',
+    color: 'white',
+    url: '/',
+    width: '5px',
+    height: '20px',
+  },
 
-   menuSubmenu : [
+  menuSubmenu: [
     {
       id: 'mujer',
       titulo: 'Mujer',
       url: 'mujer',
- 
+
       infoNav: [
         {
           categoria: [
@@ -226,7 +224,7 @@ const dataHeader = {
         },
       ],
     },
-  
+
     {
       id: 'ninos',
       titulo: 'Niños',
@@ -255,12 +253,10 @@ const dataHeader = {
             //   url: '/tienda?pwa_ecom_ui_template_products%5Bquery%5D=niño',
             // },
             {
-              id: "369",
-              title: "Sandalias",
-   
-              url:"/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias"
-  
-  
+              id: '369',
+              title: 'Sandalias',
+
+              url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños&pwa_ecom_ui_template_products%5BrefinementList%5D%5BCategoria%5D%5B0%5D=Sandalias',
             },
           ],
         },
@@ -599,16 +595,10 @@ const dataHeader = {
       titulo: 'Nuestras Tiendas',
       url: '/nuestrastiendas',
     },
-  
-  ]
-
+  ],
 }
 
-
-export const NavTop = memo(function NavTop({props}) {
-
-
-
+export const NavTop = memo(function NavTop({ props }) {
   const [activeHoverNavDesktop, setActiveHoverNavDesktop] = useState()
 
   // desktop nav
@@ -620,7 +610,6 @@ export const NavTop = memo(function NavTop({props}) {
     }
   }, [andler])
 
-  
   const handleHover = (index) => {
     setActiveHoverNavDesktop(index)
 
@@ -628,12 +617,10 @@ export const NavTop = memo(function NavTop({props}) {
     setHoverMenu(dataHeader.menuSubmenu[index].infoNav)
   }
 
-
-
-  if(!props.homeNav) return <div>Cargando..</div>
+  if (!props.homeNav) return <div>Cargando..</div>
 
   return (
-    <div className='bg-blue-white'>
+    <div className="bg-blue-white">
       {/* /*---------------------------------*/
       /* Desktop menu and Hover*/
       /* ---------------------------------*/}
@@ -645,39 +632,40 @@ export const NavTop = memo(function NavTop({props}) {
                 <div className="flex justify-around items-center ">
                   {/* logo nav */}
                   <div className="flex  items-center xl:justify-around 2xl:justify-between ">
-                  <Logotipo logo={props.homeLogo} url={"/"}/>
+                    <Logotipo logo={props.homeLogo} url={'/'} />
                   </div>
-                    <div className=" lg:block h-[5rem] ">
-                      <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                        {props.homeNav.map((el, index) => (
-                          <Link
-                            href={`/${el.url}`}
-                            className="h-full  flex justify-center items-center "
-                            key={el._id}
-                            onClick={() => setAndler(false)}
-                            onMouseEnter={() => handleHover(index)}
-                            onMouseLeave={() => setAndler(false)}
-                          >
-                            <div className=" inline-flex items-center  justify-between  px-2  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
-                              <span
-                                className={`flex-shrink-0 uppercase  text-black xl:text-sm laptop:text-lg ${index === 6 && el.page === "OUTLET" && "text-red-500 border-b-2 border-red-500"} ${el.page === "TIENDA" && " font-extrabold "} ${
-                                  activeHoverNavDesktop === index && index < 6 &&
-                                  `border-b-2 border-black `
-                                }  2xl:text-base `}
-                              >
-                                {el.page}
-                              </span>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
+                  <div className=" lg:block h-[5rem] ">
+                    <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
+                      {props.homeNav.map((el, index) => (
+                        <Link
+                          href={`/${el.url}`}
+                          className="h-full  flex justify-center items-center "
+                          key={el._id}
+                          onClick={() => setAndler(false)}
+                          onMouseEnter={() => handleHover(index)}
+                          onMouseLeave={() => setAndler(false)}
+                        >
+                          <div className=" inline-flex items-center  justify-between  px-2  transition-all duration-500 rounded-md focus:outline-none focus:text-brand-900 sm:focus:shadow-outline">
+                            <span
+                              className={`flex-shrink-0 uppercase  text-black xl:text-sm laptop:text-lg ${
+                                index === 6 &&
+                                el.page === 'OUTLET' &&
+                                'text-red-500 border-b-2 border-red-500'
+                              } ${el.page === 'TIENDA' && ' font-extrabold '} ${
+                                activeHoverNavDesktop === index &&
+                                index < 6 &&
+                                `border-b-2 border-black `
+                              }  2xl:text-base `}
+                            >
+                              {el.page}
+                            </span>
+                          </div>
+                        </Link>
+                      ))}
                     </div>
-  
-                    <NavUbicanosEmergente/>
+                  </div>
 
-    
-
-    
+                  <NavUbicanosEmergente />
                 </div>
               </div>
 
@@ -732,7 +720,6 @@ export const NavTop = memo(function NavTop({props}) {
                       </div>
                     ))}
                 </div>
-        
               </Button>
             </div>
           </div>
@@ -743,19 +730,12 @@ export const NavTop = memo(function NavTop({props}) {
       /* ---------------------------------*/}
       <div className="xl:hidden flex flex-col px-4 py-2 border-b border-neutral-light laptop:mx-20 laptop:px-0 laptop:pt-8 laptop:pb-0 laptop:mb-5">
         <div className="flex justify-between w-full gap-3 laptop:mb-8">
-    
-
           <div className="flex justify-between  items-center w-full xl:hidden">
-       
-            <Logotipo logo={props.homeLogo} url={"/"}/>
-            <NavUbicanosEmergente/>
-
-           
+            <Logotipo logo={props.homeLogo} url={'/'} />
+            <NavUbicanosEmergente />
           </div>
         </div>
       </div>
-
-
     </div>
   )
 })
