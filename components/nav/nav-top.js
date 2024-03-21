@@ -586,11 +586,6 @@ const dataHeader = {
       url: '/tienda',
     },
     {
-      id: 'outlet',
-      titulo: 'outlet',
-      url: '/outlet',
-    },
-    {
       id: 'Ntiendas',
       titulo: 'Nuestras Tiendas',
       url: '/nuestrastiendas',

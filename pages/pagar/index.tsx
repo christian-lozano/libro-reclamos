@@ -14,21 +14,4 @@ export default function Home(props: SearchPageLayoutProps) {
     </SearchPageLayout>
   )
 }
-export const getStaticProps = async () => {
 
-  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
-  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
-  const homeNav = await resNav.json()
-  const homeLogo = await resLogo.json()
-
-
-  getStaticPropsPage(Home)
-  return {
-    props: {
-      homeNav,
-      homeLogo
-    },
-    // MujerPortadaDesktop,
-    revalidate: 80, // In seconds
-  }
-}
