@@ -37,7 +37,7 @@ export function CategoriasGenero({ props }) {
   useEffect(() => {
     fetchDataCategorias()
   }, [])
-  if (!props.homeCategorias) return <div>Cargando</div>
+
   return (
     <div className=" flex justify-center w-full h-auto items-center z-20">
       <div className=" flex flex-col items-center justify-center w-full">

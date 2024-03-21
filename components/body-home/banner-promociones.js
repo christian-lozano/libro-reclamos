@@ -8,9 +8,8 @@ export function BannerPromociones({ props }) {
     query: '(min-width: 1224px)',
   })
 
-  if (!props.homePromoMobil || !props.homePromoDesktop)
-    return <div>Cargando</div>
-  console.log(props.homePromoDesktop[0].button_url)
+
+
   return (
     <div className="flex items-center">
       <section
@@ -19,26 +18,26 @@ export function BannerPromociones({ props }) {
         <div className=" w-full text-center text-white relative">
           {isDesktopOrLaptop && (
             <>
-              {props.homePromoDesktop.map((el) => (
+           
                 <img
                   src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710778357/fritz_sport/adidas_4_iijrua.jpg"
                   className="w-full h-full"
                   alt=""
                 />
-              ))}
+         
             </>
           )}
 
           {!isDesktopOrLaptop && (
             <>
               <>
-                {props.homePromoMobil.map((el) => (
+             
                   <img
                     src="https://res.cloudinary.com/dmtq82guq/image/upload/v1710778363/fritz_sport/adidas_4_2_dyrysx.jpg"
                     className="w-full h-full "
                     alt=""
                   />
-                ))}
+         
               </>
             </>
           )}
@@ -55,7 +54,7 @@ export function BannerPromociones({ props }) {
                   </div> */}
                   <div className="w-full flex  justify-start items-end h-full  ">
                     <div className="flex justify-around ">
-                      <Link href={`${props.homePromoDesktop[0].button_url}`}>
+                      <Link href={`/tienda`}>
                         <Button
                           className={`bg-white flex justify-around text-lg font-medium border border-black shadow-lg text-black w-64 py-2 px-2 rounded-sm uppercase`}
                         >
@@ -89,13 +88,13 @@ export function BannerPromociones({ props }) {
             </div>
           ) : (
             <>
-              {props.homePromoMobil.map((el) => (
+            
                 <div className=" top-0 w-full h-full ">
                   <div className=" h-full w-full flex-col  flex justify-center items-center ">
                     <div className="w-full flex flex-col items-center ">
                       <div className=" ">
                         <h1 className="xl:text-4xl text-black text-xl md:text-3xl 2xl:text-6xl font-bold text-left py-5 ">
-                          {el.title_banner}
+                          {/* {el.title_banner} */}
                         </h1>
                       </div>
                       <div className="w-full flex justify-center  ">
@@ -149,7 +148,7 @@ export function BannerPromociones({ props }) {
                     </div>
                   </div>
                 </div>
-              ))}
+   
             </>
           )}
           {/* mobil */}

@@ -25,7 +25,7 @@ const dataHeader = {
     {
       id: 'mujer',
       titulo: 'Mujer',
-      url: 'mujer',
+      url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Mujer',
 
       infoNav: [
         {
@@ -129,7 +129,7 @@ const dataHeader = {
     {
       id: 'Hombre',
       titulo: 'Hombre',
-      url: 'hombre',
+      url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Hombre',
       infoNav: [
         {
           categoria: [
@@ -228,7 +228,7 @@ const dataHeader = {
     {
       id: 'ninos',
       titulo: 'Niños',
-      url: 'ninos',
+      url: '/tienda?pwa_ecom_ui_template_products%5BrefinementList%5D%5BGenero%5D%5B0%5D=Niños',
       infoNav: [
         {
           categoria: [
@@ -617,8 +617,6 @@ export const NavTop = memo(function NavTop({ props }) {
     setHoverMenu(dataHeader.menuSubmenu[index].infoNav)
   }
 
-  if (!props.homeNav) return <div>Cargando..</div>
-
   return (
     <div className="bg-blue-white">
       {/* /*---------------------------------*/
@@ -636,11 +634,11 @@ export const NavTop = memo(function NavTop({ props }) {
                   </div>
                   <div className=" lg:block h-[5rem] ">
                     <div className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:px-1 grid grid-flow-col gap-x-10 h-full ">
-                      {props.homeNav.map((el, index) => (
+                      {dataHeader.menuSubmenu.map((el, index) => (
                         <Link
                           href={`/${el.url}`}
                           className="h-full  flex justify-center items-center "
-                          key={el._id}
+                          key={el.id}
                           onClick={() => setAndler(false)}
                           onMouseEnter={() => handleHover(index)}
                           onMouseLeave={() => setAndler(false)}
@@ -649,15 +647,17 @@ export const NavTop = memo(function NavTop({ props }) {
                             <span
                               className={`flex-shrink-0 uppercase  text-black xl:text-sm laptop:text-lg ${
                                 index === 6 &&
-                                el.page === 'OUTLET' &&
+                                el.titulo === 'OUTLET' &&
                                 'text-red-500 border-b-2 border-red-500'
-                              } ${el.page === 'TIENDA' && ' font-extrabold '} ${
+                              } ${
+                                el.titulo === 'TIENDA' && ' font-extrabold '
+                              } ${
                                 activeHoverNavDesktop === index &&
                                 index < 6 &&
                                 `border-b-2 border-black `
                               }  2xl:text-base `}
                             >
-                              {el.page}
+                              {el.titulo}
                             </span>
                           </div>
                         </Link>

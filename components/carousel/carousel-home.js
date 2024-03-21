@@ -16,7 +16,7 @@ export default function CarouselHome({ props }) {
     <>
       {isDesktopOrLaptop || isTablet ? (
         <>
-          {isDesktopOrLaptop && (
+      
             <div>
               <Carousel
                 autoplay={true}
@@ -28,7 +28,7 @@ export default function CarouselHome({ props }) {
                 // speed={100}
                 // slideIndex={indiceSlider}
                 // dragThreshold={1}
-                afterSlide={(i) => setIndiceSlider(i)}
+                // afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={0}
               >
                 <Link
@@ -85,8 +85,8 @@ export default function CarouselHome({ props }) {
                 </Link>
               </Carousel>
               <div className="flex w-full mt-5 ">
-                {props.homeSliderDesktop.map((el, i) => (
-                  <div
+                
+                  {/* <div
                     key={i}
                     // onClick={() => setIndiceSlider(i)}
                     className=" w-full bg-transparent "
@@ -98,11 +98,11 @@ export default function CarouselHome({ props }) {
                         }`}
                       ></div>
                     </div>
-                  </div>
-                ))}
+                  </div> */}
+          
               </div>
             </div>
-          )}
+  
 
           {isTablet && (
             <div>
@@ -120,11 +120,11 @@ export default function CarouselHome({ props }) {
                 // goToSlide={indiceSlider}
                 // slideIndex={indiceSlider}
                 // dragThreshold={0}
-                afterSlide={(i) => setIndiceSlider(i)}
+                // afterSlide={(i) => setIndiceSlider(i)}
                 // slideCount={indiceSlider}
               >
-                {props.homeSliderTablet.map((el, i) => (
-                  <div key={el._id} className="mt-12">
+          
+                  <div  className="mt-12">
                     <div className="">
                       <img
                         className="z-dev"
@@ -169,25 +169,25 @@ export default function CarouselHome({ props }) {
                       </div>
                     </div>
                   </div>
-                ))}
+           
               </Carousel>
 
               <div className="flex w-full mt-0">
-                {props.homeSliderTablet.map((el, i) => (
+          
                   <div
-                    key={i}
+            
                     // onClick={() => setIndiceSlider(i)}
                     className="py-5 w-full bg-transparent "
                   >
-                    <div className="w-full bg-blue-gray-100">
+                    {/* <div className="w-full bg-blue-gray-100">
                       <div
                         className={`p-[1px] w-full transition  ease-in-out ${
                           i === indiceSlider && 'bg-black '
                         }`}
                       ></div>
-                    </div>
+                    </div> */}
                   </div>
-                ))}
+             
               </div>
             </div>
           )}
@@ -212,8 +212,8 @@ export default function CarouselHome({ props }) {
               // afterSlide={(i) => setIndiceSlider(i)}
               // slideCount={indiceSlider}
             >
-              {props.homeSliderMobil.map((el) => (
-                <div key={el._id} className="mt-12">
+        
+                <div  className="mt-12">
                   <div className="">
                     <img
                       className="z-dev"
@@ -231,7 +231,7 @@ export default function CarouselHome({ props }) {
                         <p className={`text-center text-${el.color} text-base`}>
                           {el.desc}
                         </p> */}
-                        <Link href={el.button_url}>
+                        <Link href={"#"}>
                           <Button
                             className={`bg-white  flex justify-around items-center text-sm font-medium border border-black shadow-lg text-black w-48 py-1 px-2 rounded-sm uppercase`}
                           >
@@ -256,24 +256,10 @@ export default function CarouselHome({ props }) {
                     </div>
                   </div>
                 </div>
-              ))}
+           
             </Carousel>
             <div className="flex w-full mt-0">
-              {props.homeSliderMobil.map((el, i) => (
-                <div
-                  key={i}
-                  // onClick={() => setIndiceSlider(i)}
-                  className="py-5 w-full bg-transparent "
-                >
-                  <div className="w-full bg-blue-gray-100">
-                    <div
-                      className={`p-[1px] w-full transition  ease-in-out ${
-                        i === indiceSlider && 'bg-black '
-                      }`}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+
             </div>
           </div>
         </>
