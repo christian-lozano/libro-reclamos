@@ -85,9 +85,14 @@ export const Footer = memo(function Footer() {
       setDesable(true)
     }
   }, [nombre, telefono, email, apellido, documento, direccion, quejaReclamo, detalleReclamo])
+
+
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   })
+
+
+  
   return (
     <div>
       <footer className="bg-black xl:bg-black font-sans dark:bg-white mt-10">

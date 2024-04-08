@@ -91,16 +91,16 @@ export const getServerSideProps = async (
   //     return object
   //   })
   // }
-  const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
-  const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
-  const homeNav = await resNav.json()
-  const homeLogo = await resLogo.json()
+  // const resNav = await fetch('https://www.fritzsport.pe/api/home/nav')
+  // const resLogo = await fetch('https://www.fritzsport.pe/api/home/logo')
+  // const homeNav = await resNav.json()
+  // const homeLogo = await resLogo.json()
   return getServerSidePropsPage(Product, context, {
     props: {
       objectID: context.params?.objectID,
       queryID: context.query?.queryID,
-      homeNav,
-      homeLogo,
+      // homeNav,
+      // homeLogo,
       data,
     },
   })
