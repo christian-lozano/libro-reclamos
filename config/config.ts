@@ -82,7 +82,6 @@ const sorts = [
   { value: `${indexName}_price_asc`, label: 'Precio mas Bajo a Alto' },
   { value: `${indexName}_price_desc`, label: 'Precio mas Alto a Bajo' },
 ]
-
 const breadcrumbAttributes = [
   'hierarchical_categories.lvl0',
   'hierarchical_categories.lvl1',
